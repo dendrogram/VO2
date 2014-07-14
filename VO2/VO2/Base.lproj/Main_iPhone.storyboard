@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Item 1-->
+        <!--View Controller - About-->
         <scene sceneID="mP2-hh-bph">
             <objects>
-                <viewController id="5R5-lv-JSb" sceneMemberID="viewController">
+                <viewController title="About" id="5R5-lv-JSb" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aRI-wr-usB"/>
                         <viewControllerLayoutGuide type="bottom" id="ibH-da-5C2"/>
@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Qgp-gg-tub"/>
+                    <tabBarItem key="tabBarItem" title="About" id="Qgp-gg-tub" userLabel="Tab Bar Item - About"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlW-0N-Qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="-674"/>
+            <point key="canvasLocation" x="833" y="-703"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="K1o-n2-kCg">
@@ -35,17 +35,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="5R5-lv-JSb" kind="relationship" relationship="viewControllers" id="PAL-Yx-ziF"/>
+                        <segue destination="POu-Nb-rvQ" kind="relationship" relationship="viewControllers" id="edQ-DA-wHq"/>
+                        <segue destination="w9a-IB-qgs" kind="relationship" relationship="viewControllers" id="deZ-rV-6Wb"/>
                         <segue destination="A4O-u3-AmH" kind="relationship" relationship="viewControllers" id="2dT-IF-yri"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtE-xm-GdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="-347"/>
+            <point key="canvasLocation" x="207" y="-363"/>
         </scene>
-        <!--View Controller - Item 2-->
+        <!--View Controller - Results-->
         <scene sceneID="p7y-Iz-Wka">
             <objects>
-                <viewController id="A4O-u3-AmH" sceneMemberID="viewController">
+                <viewController title="Results" id="A4O-u3-AmH" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ztm-Fa-5rv"/>
                         <viewControllerLayoutGuide type="bottom" id="512-Ia-Wfi"/>
@@ -55,11 +57,51 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="74F-ae-ErO"/>
+                    <tabBarItem key="tabBarItem" title="Results" id="74F-ae-ErO" userLabel="Tab Bar Item - Results"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zag-uh-itc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="-21"/>
+            <point key="canvasLocation" x="833" y="-28"/>
+        </scene>
+        <!--View Controller - Settings-->
+        <scene sceneID="sHM-sh-3iI">
+            <objects>
+                <viewController title="Settings" id="POu-Nb-rvQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HOR-O1-YKG"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVb-kd-Wcn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NCP-nr-94f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="wCu-BG-g9G"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgn-Dx-k8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279" y="-18"/>
+        </scene>
+        <!--View Controller - Data Entry-->
+        <scene sceneID="Oog-DS-60G">
+            <objects>
+                <viewController title="Data Entry" id="w9a-IB-qgs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kSE-ut-P0R"/>
+                        <viewControllerLayoutGuide type="bottom" id="CED-05-4BC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yXr-r4-7C5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Data Entry" id="bHz-Mr-jhN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fvg-km-3Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271" y="-698"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

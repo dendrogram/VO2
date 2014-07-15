@@ -14,7 +14,7 @@ static mySingleton * sharedSingleton = nil;
     
 }
 
-//note, some of these vars unused from another app, left for reference and future use
+//note, some of these vars unused from other apps, left for reference and future use
 
 //Counters
 @synthesize counter;
@@ -49,7 +49,7 @@ static mySingleton * sharedSingleton = nil;
     return sharedSingleton;
 }
 
-+(id)allocWithZone:(NSZone *)zone {
++ (id)allocWithZone:(NSZone *) zone {
     return [self sharedSingleton];
 }
 

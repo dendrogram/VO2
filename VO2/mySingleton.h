@@ -15,38 +15,42 @@
     int counter;
     int lineWidth;
     int scalingFactor;
+    int     crossType;
+
+    BOOL    boxShow;
+    BOOL    hypot;
+    BOOL    floatAngle;
+
     UIColor *lineColour;
-    BOOL boxShow;
-    BOOL hypot;
-    BOOL floatAngle;
-    int  crossType;
-    CGRect picturePos;
+    CGRect  picturePos;
     
-    UIImage *imageForDisplay;
+    UIImage        * imageForDisplay;
     NSMutableArray * cardReactionTimeResult;
     
-    NSString *resultsStrings;
-    NSString *subjectName;
+    NSString       * resultsStrings;
+    NSString       * subjectName;
 }
-
+//Integers
 @property (nonatomic) int  offset;
 @property (nonatomic) int  counter;
 @property (nonatomic) int  lineWidth;
-@property (nonatomic,retain) UIColor *lineColour;
 @property (nonatomic) int  scalingFactor;
+@property (nonatomic) int  crossType;
+
+//Flags BOOL
 @property (nonatomic) BOOL boxShow;
 @property (nonatomic) BOOL hypot;
 @property (nonatomic) BOOL floatAngle;
-@property (nonatomic) int  crossType;
+//Images and Colours
+@property (nonatomic,retain) UIColor *lineColour;
 @property (nonatomic) CGRect picturePos;
+
 @property (nonatomic) UIImage *imageForDisplay;
+
+//Strings
 @property (nonatomic, retain) NSMutableArray *cardReactionTimeResult;
 @property (nonatomic, retain) NSString *resultStrings;
 @property (nonatomic, retain) NSString *subjectName;
-
-//Flags BOOL
-
-//Strings
 
 //set up singleton shared
 

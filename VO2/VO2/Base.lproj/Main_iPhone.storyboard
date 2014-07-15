@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="68u-QD-Jkh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="About VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="68u-QD-Jkh">
                                 <rect key="frame" x="20" y="20" width="280" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -76,6 +76,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="68u-QD-Jkh" secondAttribute="centerX" id="fOw-Ll-hEP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="about50x50.png" id="I8P-AL-7br"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -84,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="810" y="-747"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Standard Gas Conversions-->
         <scene sceneID="rUe-vD-umn">
             <objects>
-                <viewController id="RQW-BJ-y9T" sceneMemberID="viewController">
+                <viewController title="Standard Gas Conversions" modalTransitionStyle="crossDissolve" id="RQW-BJ-y9T" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gPS-fV-vJi"/>
                         <viewControllerLayoutGuide type="bottom" id="u76-vc-ghg"/>
@@ -103,13 +106,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="yy7-gm-PdG">
-                                <rect key="frame" x="20" y="49" width="280" height="458"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">In the laboratory, gas is measured by the instruments at ATPS, which is Ambient Temperature, Pressure Saturated with water vapour.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOJ-1r-slS">
                                 <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -119,16 +115,48 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5R5-lv-JSb" kind="modal" id="D0E-So-AyL"/>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="bdc-NV-oDQ"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-Di-v2N">
+                                <rect key="frame" x="23" y="60" width="277" height="501"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">ATPS vs SPTD
+
+In the laboratory, gasses are measured by measuring instruments at rtf, which is Ambient Temperature, Pressure Saturated with water vapour.
+
+To enable us to compare VO2 measured in different environments and labs, the readings must be converted to STPD, which is Standard Temperature, Pressure Dry.
+
+Tables of correction factors can be used to give the calculated value for a given pressure and Temperature.
+
+The correction factor is used in the calculation of VE.
+
+This App calculates the correction factor for you.
+
+You will need to read the Temperature and Atmospheric Pressure in the Lab and enter the details in the Data Entry Screen.
+
+The correction factor is shown when the values are entered.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCe-AI-Plh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="-1434"/>
+            <point key="canvasLocation" x="77" y="-1453"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="K1o-n2-kCg">
@@ -324,7 +352,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="D0E-So-AyL"/>
         <segue reference="2dT-IF-yri"/>
     </inferredMetricsTieBreakers>
 </document>

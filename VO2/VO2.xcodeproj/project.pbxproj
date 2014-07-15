@@ -19,6 +19,7 @@
 		E12EEAB919752EF300CEDBD5 /* settings50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAC19752EF300CEDBD5 /* settings50x50@2x.png */; };
 		E12EEABA19752EF300CEDBD5 /* vo2_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAD19752EF300CEDBD5 /* vo2_50x50.png */; };
 		E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */; };
+		E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E12EEABD19758ABF00CEDBD5 /* mySingleton.m */; };
 		E1F13E201974537000A9748D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E1F1974537000A9748D /* Foundation.framework */; };
 		E1F13E221974537000A9748D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E211974537000A9748D /* CoreGraphics.framework */; };
 		E1F13E241974537000A9748D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E231974537000A9748D /* UIKit.framework */; };
@@ -59,6 +60,8 @@
 		E12EEAAC19752EF300CEDBD5 /* settings50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings50x50@2x.png"; sourceTree = "<group>"; };
 		E12EEAAD19752EF300CEDBD5 /* vo2_50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vo2_50x50.png; sourceTree = "<group>"; };
 		E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vo2_50x50@2x.png"; sourceTree = "<group>"; };
+		E12EEABC19758ABF00CEDBD5 /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySingleton.h; sourceTree = "<group>"; };
+		E12EEABD19758ABF00CEDBD5 /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySingleton.m; sourceTree = "<group>"; };
 		E1F13E1C1974537000A9748D /* VO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F13E1F1974537000A9748D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1F13E211974537000A9748D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 		E1F13E131974537000A9748D = {
 			isa = PBXGroup;
 			children = (
+				E12EEABC19758ABF00CEDBD5 /* mySingleton.h */,
+				E12EEABD19758ABF00CEDBD5 /* mySingleton.m */,
 				E1F13E251974537000A9748D /* VO2 */,
 				E1F13E471974537000A9748D /* VO2Tests */,
 				E1F13E1E1974537000A9748D /* Frameworks */,
@@ -310,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F13E391974537000A9748D /* ViewController.m in Sources */,
+				E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */,
 				E1F13E301974537000A9748D /* AppDelegate.m in Sources */,
 				E1F13E2C1974537000A9748D /* main.m in Sources */,
 			);

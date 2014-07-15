@@ -7,7 +7,34 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
+{
+    NSDate        *startDate;
+    
+    NSFileManager *fileMgr;
+    NSString      *homeDir;
+    NSString      *filename;
+    NSString      *filepath;
+}
+
+//file ops stuff
+@property(nonatomic,retain) NSFileManager *fileMgr;
+@property(nonatomic,retain) NSString *homeDir;
+@property(nonatomic,retain) NSString *filename;
+@property(nonatomic,retain) NSString *filepath;
+
+-(NSString *) GetDocumentDirectory;
+-(void) WriteToStringFile:(NSMutableString *)textToWrite;
+-(NSString *) setFilename;
+
+@property (nonatomic, copy) NSDate *startDate;
+
+//email stuff
+@property (nonatomic, strong) IBOutlet UITextField *subjectNameTxt;
+
+// button press to send the mail
+-(IBAction)sendEmail:(id)sender;
 
 @end

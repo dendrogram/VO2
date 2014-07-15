@@ -26,8 +26,8 @@
 @property(nonatomic,retain) NSString *filepath;
 
 -(NSString *) GetDocumentDirectory;
--(void) WriteToStringFile:(NSMutableString *)textToWrite;
 -(NSString *) setFilename;
+-(void) WriteToStringFile:(NSMutableString *)textToWrite;
 
 @property (nonatomic, copy) NSDate *startDate;
 

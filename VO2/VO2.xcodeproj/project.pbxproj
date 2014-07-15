@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		913BCB991974ADED00CB112C /* about64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB951974ADED00CB112C /* about64.png */; };
-		913BCB9A1974ADED00CB112C /* analy64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB961974ADED00CB112C /* analy64.png */; };
-		913BCB9B1974ADED00CB112C /* results64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB971974ADED00CB112C /* results64.png */; };
-		913BCB9C1974ADED00CB112C /* settings64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB981974ADED00CB112C /* settings64.png */; };
+		E12EEAAF19752EF300CEDBD5 /* about50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA219752EF300CEDBD5 /* about50x50.png */; };
+		E12EEAB119752EF300CEDBD5 /* about50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */; };
+		E12EEAB219752EF300CEDBD5 /* calc50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA519752EF300CEDBD5 /* calc50x50.png */; };
+		E12EEAB319752EF300CEDBD5 /* calc50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA619752EF300CEDBD5 /* calc50x50@2x.png */; };
+		E12EEAB419752EF300CEDBD5 /* results50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA719752EF300CEDBD5 /* results50x50.png */; };
+		E12EEAB519752EF300CEDBD5 /* results50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA819752EF300CEDBD5 /* results50x50@2x.png */; };
+		E12EEAB619752EF300CEDBD5 /* send50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA919752EF300CEDBD5 /* send50x50.png */; };
+		E12EEAB719752EF300CEDBD5 /* send50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAA19752EF300CEDBD5 /* send50x50@2x.png */; };
+		E12EEAB819752EF300CEDBD5 /* settings50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAB19752EF300CEDBD5 /* settings50x50.png */; };
+		E12EEAB919752EF300CEDBD5 /* settings50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAC19752EF300CEDBD5 /* settings50x50@2x.png */; };
+		E12EEABA19752EF300CEDBD5 /* vo2_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAD19752EF300CEDBD5 /* vo2_50x50.png */; };
+		E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */; };
 		E1F13E201974537000A9748D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E1F1974537000A9748D /* Foundation.framework */; };
 		E1F13E221974537000A9748D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E211974537000A9748D /* CoreGraphics.framework */; };
 		E1F13E241974537000A9748D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E231974537000A9748D /* UIKit.framework */; };
@@ -39,10 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		913BCB951974ADED00CB112C /* about64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about64.png; sourceTree = "<group>"; };
-		913BCB961974ADED00CB112C /* analy64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analy64.png; sourceTree = "<group>"; };
-		913BCB971974ADED00CB112C /* results64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = results64.png; sourceTree = "<group>"; };
-		913BCB981974ADED00CB112C /* settings64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings64.png; sourceTree = "<group>"; };
+		E12EEAA219752EF300CEDBD5 /* about50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about50x50.png; sourceTree = "<group>"; };
+		E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about50x50@2x.png"; sourceTree = "<group>"; };
+		E12EEAA519752EF300CEDBD5 /* calc50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calc50x50.png; sourceTree = "<group>"; };
+		E12EEAA619752EF300CEDBD5 /* calc50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calc50x50@2x.png"; sourceTree = "<group>"; };
+		E12EEAA719752EF300CEDBD5 /* results50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = results50x50.png; sourceTree = "<group>"; };
+		E12EEAA819752EF300CEDBD5 /* results50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "results50x50@2x.png"; sourceTree = "<group>"; };
+		E12EEAA919752EF300CEDBD5 /* send50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send50x50.png; sourceTree = "<group>"; };
+		E12EEAAA19752EF300CEDBD5 /* send50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send50x50@2x.png"; sourceTree = "<group>"; };
+		E12EEAAB19752EF300CEDBD5 /* settings50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings50x50.png; sourceTree = "<group>"; };
+		E12EEAAC19752EF300CEDBD5 /* settings50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings50x50@2x.png"; sourceTree = "<group>"; };
+		E12EEAAD19752EF300CEDBD5 /* vo2_50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vo2_50x50.png; sourceTree = "<group>"; };
+		E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vo2_50x50@2x.png"; sourceTree = "<group>"; };
 		E1F13E1C1974537000A9748D /* VO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F13E1F1974537000A9748D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1F13E211974537000A9748D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,10 +108,18 @@
 		913BCB9D1974ADFD00CB112C /* images */ = {
 			isa = PBXGroup;
 			children = (
-				913BCB951974ADED00CB112C /* about64.png */,
-				913BCB961974ADED00CB112C /* analy64.png */,
-				913BCB971974ADED00CB112C /* results64.png */,
-				913BCB981974ADED00CB112C /* settings64.png */,
+				E12EEAA219752EF300CEDBD5 /* about50x50.png */,
+				E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */,
+				E12EEAA519752EF300CEDBD5 /* calc50x50.png */,
+				E12EEAA619752EF300CEDBD5 /* calc50x50@2x.png */,
+				E12EEAA719752EF300CEDBD5 /* results50x50.png */,
+				E12EEAA819752EF300CEDBD5 /* results50x50@2x.png */,
+				E12EEAA919752EF300CEDBD5 /* send50x50.png */,
+				E12EEAAA19752EF300CEDBD5 /* send50x50@2x.png */,
+				E12EEAAB19752EF300CEDBD5 /* settings50x50.png */,
+				E12EEAAC19752EF300CEDBD5 /* settings50x50@2x.png */,
+				E12EEAAD19752EF300CEDBD5 /* vo2_50x50.png */,
+				E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -251,14 +275,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				913BCB991974ADED00CB112C /* about64.png in Resources */,
+				E12EEABA19752EF300CEDBD5 /* vo2_50x50.png in Resources */,
+				E12EEAB719752EF300CEDBD5 /* send50x50@2x.png in Resources */,
 				E1F13E361974537000A9748D /* Main_iPad.storyboard in Resources */,
+				E12EEAB319752EF300CEDBD5 /* calc50x50@2x.png in Resources */,
 				E1F13E3B1974537000A9748D /* Images.xcassets in Resources */,
 				E1F13E331974537000A9748D /* Main_iPhone.storyboard in Resources */,
-				913BCB9C1974ADED00CB112C /* settings64.png in Resources */,
+				E12EEAAF19752EF300CEDBD5 /* about50x50.png in Resources */,
 				E1F13E2A1974537000A9748D /* InfoPlist.strings in Resources */,
-				913BCB9A1974ADED00CB112C /* analy64.png in Resources */,
-				913BCB9B1974ADED00CB112C /* results64.png in Resources */,
+				E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */,
+				E12EEAB219752EF300CEDBD5 /* calc50x50.png in Resources */,
+				E12EEAB419752EF300CEDBD5 /* results50x50.png in Resources */,
+				E12EEAB619752EF300CEDBD5 /* send50x50.png in Resources */,
+				E12EEAB819752EF300CEDBD5 /* settings50x50.png in Resources */,
+				E12EEAB919752EF300CEDBD5 /* settings50x50@2x.png in Resources */,
+				E12EEAB119752EF300CEDBD5 /* about50x50@2x.png in Resources */,
+				E12EEAB519752EF300CEDBD5 /* results50x50@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

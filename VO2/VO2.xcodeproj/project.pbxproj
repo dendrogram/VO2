@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		913BCB991974ADED00CB112C /* about64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB951974ADED00CB112C /* about64.png */; };
+		913BCB9A1974ADED00CB112C /* analy64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB961974ADED00CB112C /* analy64.png */; };
+		913BCB9B1974ADED00CB112C /* results64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB971974ADED00CB112C /* results64.png */; };
+		913BCB9C1974ADED00CB112C /* settings64.png in Resources */ = {isa = PBXBuildFile; fileRef = 913BCB981974ADED00CB112C /* settings64.png */; };
 		E1F13E201974537000A9748D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E1F1974537000A9748D /* Foundation.framework */; };
 		E1F13E221974537000A9748D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E211974537000A9748D /* CoreGraphics.framework */; };
 		E1F13E241974537000A9748D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E231974537000A9748D /* UIKit.framework */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		913BCB951974ADED00CB112C /* about64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about64.png; sourceTree = "<group>"; };
+		913BCB961974ADED00CB112C /* analy64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analy64.png; sourceTree = "<group>"; };
+		913BCB971974ADED00CB112C /* results64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = results64.png; sourceTree = "<group>"; };
+		913BCB981974ADED00CB112C /* settings64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings64.png; sourceTree = "<group>"; };
 		E1F13E1C1974537000A9748D /* VO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F13E1F1974537000A9748D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1F13E211974537000A9748D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		913BCB9D1974ADFD00CB112C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				913BCB951974ADED00CB112C /* about64.png */,
+				913BCB961974ADED00CB112C /* analy64.png */,
+				913BCB971974ADED00CB112C /* results64.png */,
+				913BCB981974ADED00CB112C /* settings64.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		E1F13E131974537000A9748D = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +136,7 @@
 				E1F13E2E1974537000A9748D /* AppDelegate.h */,
 				E1F13E2F1974537000A9748D /* AppDelegate.m */,
 				E1F13E311974537000A9748D /* Main_iPhone.storyboard */,
+				913BCB9D1974ADFD00CB112C /* images */,
 				E1F13E341974537000A9748D /* Main_iPad.storyboard */,
 				E1F13E371974537000A9748D /* ViewController.h */,
 				E1F13E381974537000A9748D /* ViewController.m */,
@@ -231,10 +251,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913BCB991974ADED00CB112C /* about64.png in Resources */,
 				E1F13E361974537000A9748D /* Main_iPad.storyboard in Resources */,
 				E1F13E3B1974537000A9748D /* Images.xcassets in Resources */,
 				E1F13E331974537000A9748D /* Main_iPhone.storyboard in Resources */,
+				913BCB9C1974ADED00CB112C /* settings64.png in Resources */,
 				E1F13E2A1974537000A9748D /* InfoPlist.strings in Resources */,
+				913BCB9A1974ADED00CB112C /* analy64.png in Resources */,
+				913BCB9B1974ADED00CB112C /* results64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +494,7 @@
 				E1F13E531974537000A9748D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1F13E541974537000A9748D /* Build configuration list for PBXNativeTarget "VO2Tests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +503,7 @@
 				E1F13E561974537000A9748D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

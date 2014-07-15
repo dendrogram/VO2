@@ -13,25 +13,33 @@
                         <viewControllerLayoutGuide type="bottom" id="ibH-da-5C2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Hs-dN-pLT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="About VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="68u-QD-Jkh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="68u-QD-Jkh">
                                 <rect key="frame" x="20" y="20" width="280" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the buttons below to find information on how to use this App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-4m-Y5l">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the buttons below to find information on how to use this App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-4m-Y5l">
                                 <rect key="frame" x="20" y="123" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Vlb-Nh-NGv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-zp-zye">
-                                <rect key="frame" x="20" y="191" width="127" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFd-zp-zye">
+                                <rect key="frame" x="20" y="201" width="127" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Co4-LX-QEy"/>
+                                    <constraint firstAttribute="width" constant="127" id="wzG-7x-lNy"/>
+                                </constraints>
                                 <state key="normal" title="Readings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -39,9 +47,13 @@
                                     <segue destination="48P-Na-bzN" kind="modal" id="kwH-4T-yQ2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y93-fy-GMg">
-                                <rect key="frame" x="173" y="191" width="127" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y93-fy-GMg">
+                                <rect key="frame" x="173" y="201" width="127" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="C4I-xw-LUM"/>
+                                </constraints>
                                 <state key="normal" title="Calculations">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -49,9 +61,13 @@
                                     <segue destination="l4V-zq-ngV" kind="modal" id="I0l-ei-WyN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-FK-OQ5">
-                                <rect key="frame" x="20" y="260" width="127" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-FK-OQ5">
+                                <rect key="frame" x="20" y="257" width="127" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="y17-dt-15A"/>
+                                </constraints>
                                 <state key="normal" title="Data Entry">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -59,9 +75,14 @@
                                     <segue destination="9HC-SB-Ewo" kind="modal" id="NYh-DI-Zo4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-h9-G5r">
-                                <rect key="frame" x="97" y="439" width="127" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-h9-G5r">
+                                <rect key="frame" x="97" y="376" width="127" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="JEw-mj-cMZ"/>
+                                    <constraint firstAttribute="width" constant="127" id="nam-my-a9w"/>
+                                </constraints>
                                 <state key="normal" title="Contact Links">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -69,9 +90,13 @@
                                     <segue destination="eSj-Wu-xI1" kind="modal" id="KQN-6m-SWJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubV-lj-NFf">
-                                <rect key="frame" x="20" y="329" width="127" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubV-lj-NFf">
+                                <rect key="frame" x="20" y="317" width="127" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="IFl-2U-zYc"/>
+                                </constraints>
                                 <state key="normal" title="Export ~Data">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -79,9 +104,13 @@
                                     <segue destination="3as-jY-w0C" kind="modal" id="Ifh-93-9rv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IN-l4-t30">
-                                <rect key="frame" x="173" y="329" width="127" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IN-l4-t30">
+                                <rect key="frame" x="173" y="317" width="127" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="c78-AJ-Tw4"/>
+                                </constraints>
                                 <state key="normal" title="Symbols">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -89,9 +118,13 @@
                                     <segue destination="lvB-uo-1OB" kind="modal" id="IGy-ve-NZe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1Y-3t-jeY">
-                                <rect key="frame" x="173" y="260" width="127" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1Y-3t-jeY">
+                                <rect key="frame" x="173" y="257" width="127" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="680-gt-XP2"/>
+                                </constraints>
                                 <state key="normal" title="Conversions">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -102,15 +135,43 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="68u-QD-Jkh" secondAttribute="centerX" id="fOw-Ll-hEP"/>
+                            <constraint firstItem="EFS-FK-OQ5" firstAttribute="top" secondItem="M1Y-3t-jeY" secondAttribute="top" id="4jk-XO-1an"/>
+                            <constraint firstItem="ubV-lj-NFf" firstAttribute="top" secondItem="EFS-FK-OQ5" secondAttribute="bottom" constant="18" id="4k5-sa-atb"/>
+                            <constraint firstItem="ubV-lj-NFf" firstAttribute="top" secondItem="8IN-l4-t30" secondAttribute="top" id="4v4-cx-CSn"/>
+                            <constraint firstItem="M1Y-3t-jeY" firstAttribute="trailing" secondItem="8IN-l4-t30" secondAttribute="trailing" id="69T-Jd-L3b"/>
+                            <constraint firstItem="M1Y-3t-jeY" firstAttribute="leading" secondItem="8IN-l4-t30" secondAttribute="leading" id="7mI-Tk-0wF"/>
+                            <constraint firstItem="EFS-FK-OQ5" firstAttribute="leading" secondItem="EFd-zp-zye" secondAttribute="leading" id="90D-Nm-uiv"/>
+                            <constraint firstItem="y93-fy-GMg" firstAttribute="trailing" secondItem="lR4-4m-Y5l" secondAttribute="trailing" id="D2z-Hg-9rD"/>
+                            <constraint firstItem="y93-fy-GMg" firstAttribute="bottom" secondItem="EFd-zp-zye" secondAttribute="bottom" id="Igc-JI-vH4"/>
+                            <constraint firstItem="EFd-zp-zye" firstAttribute="top" secondItem="y93-fy-GMg" secondAttribute="top" id="KPa-WX-Kvt"/>
+                            <constraint firstItem="EFd-zp-zye" firstAttribute="top" secondItem="lR4-4m-Y5l" secondAttribute="bottom" constant="18" id="Puq-dK-tUT"/>
+                            <constraint firstItem="lR4-4m-Y5l" firstAttribute="top" secondItem="68u-QD-Jkh" secondAttribute="bottom" constant="8" symbolic="YES" id="PvG-Na-rS5"/>
+                            <constraint firstItem="ibH-da-5C2" firstAttribute="top" secondItem="XwV-h9-G5r" secondAttribute="bottom" constant="13" id="Unu-9d-WsT"/>
+                            <constraint firstItem="68u-QD-Jkh" firstAttribute="top" secondItem="5Hs-dN-pLT" secondAttribute="top" constant="20" symbolic="YES" id="aUW-1d-Ino"/>
+                            <constraint firstItem="y93-fy-GMg" firstAttribute="leading" secondItem="M1Y-3t-jeY" secondAttribute="leading" id="eAd-tf-I8s"/>
+                            <constraint firstItem="EFS-FK-OQ5" firstAttribute="top" secondItem="EFd-zp-zye" secondAttribute="bottom" constant="14" id="kBh-T0-taH"/>
+                            <constraint firstItem="68u-QD-Jkh" firstAttribute="leading" secondItem="lR4-4m-Y5l" secondAttribute="leading" id="lYl-OU-Rh1"/>
+                            <constraint firstItem="M1Y-3t-jeY" firstAttribute="bottom" secondItem="EFS-FK-OQ5" secondAttribute="bottom" id="mel-c2-wDH"/>
+                            <constraint firstItem="lR4-4m-Y5l" firstAttribute="centerX" secondItem="XwV-h9-G5r" secondAttribute="centerX" id="n1q-RP-NHV"/>
+                            <constraint firstItem="ubV-lj-NFf" firstAttribute="trailing" secondItem="EFS-FK-OQ5" secondAttribute="trailing" id="neP-mn-cDy"/>
+                            <constraint firstItem="ubV-lj-NFf" firstAttribute="leading" secondItem="EFS-FK-OQ5" secondAttribute="leading" id="nyg-ZY-jRg"/>
+                            <constraint firstItem="68u-QD-Jkh" firstAttribute="trailing" secondItem="lR4-4m-Y5l" secondAttribute="trailing" id="o8d-Ef-R1K"/>
+                            <constraint firstAttribute="trailing" secondItem="68u-QD-Jkh" secondAttribute="trailing" constant="20" symbolic="YES" id="oFJ-b2-x03"/>
+                            <constraint firstItem="M1Y-3t-jeY" firstAttribute="trailing" secondItem="y93-fy-GMg" secondAttribute="trailing" id="osF-SS-crf"/>
+                            <constraint firstItem="lR4-4m-Y5l" firstAttribute="leading" secondItem="EFd-zp-zye" secondAttribute="leading" id="ozB-RN-WvQ"/>
+                            <constraint firstItem="EFS-FK-OQ5" firstAttribute="trailing" secondItem="EFd-zp-zye" secondAttribute="trailing" id="rAE-5T-9eM"/>
+                            <constraint firstItem="XwV-h9-G5r" firstAttribute="top" secondItem="ubV-lj-NFf" secondAttribute="bottom" constant="17" id="wE5-kT-Lap"/>
+                            <constraint firstItem="ubV-lj-NFf" firstAttribute="bottom" secondItem="8IN-l4-t30" secondAttribute="bottom" id="wlE-kJ-fAX"/>
+                            <constraint firstItem="68u-QD-Jkh" firstAttribute="leading" secondItem="5Hs-dN-pLT" secondAttribute="leading" constant="20" symbolic="YES" id="xD8-et-mVE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="about50x50.png" id="I8P-AL-7br"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlW-0N-Qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="-747"/>
+            <point key="canvasLocation" x="811" y="-742"/>
         </scene>
         <!--View Controller - Standard Gas Conversions-->
         <scene sceneID="rUe-vD-umn">
@@ -121,7 +182,7 @@
                         <viewControllerLayoutGuide type="bottom" id="u76-vc-ghg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VRt-x3-w0P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Standard Gas Conversions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-nt-gZc">
@@ -243,7 +304,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <viewControllerLayoutGuide type="bottom" id="512-Ia-Wfi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fbw-qK-YfE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results for VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-OI-542">
@@ -289,7 +350,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <viewControllerLayoutGuide type="bottom" id="nGR-eu-YLL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RCg-o0-6XB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ix4-X6-HMi">
@@ -326,7 +387,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <viewControllerLayoutGuide type="bottom" id="xVb-kd-Wcn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NCP-nr-94f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings for VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="TAv-7Z-HGS">
@@ -367,7 +428,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <viewControllerLayoutGuide type="bottom" id="CED-05-4BC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yXr-r4-7C5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Entry for VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KLV-50-u78">
@@ -403,7 +464,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <viewControllerLayoutGuide type="bottom" id="hrk-0Y-KzI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hhp-AW-G5O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Glossary of Symbols Used" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAW-gM-RtM">
@@ -472,7 +533,7 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="Hzr-pp-fiH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gK7-Kd-rhi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-bD-G2e">
@@ -529,7 +590,7 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="6pU-Bm-PAo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K64-Ei-Ubf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-ua-zQ9">
@@ -586,7 +647,7 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="yja-9Z-uoM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oil-Jr-lsu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exporting Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ks-aa-8On">
@@ -643,7 +704,7 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="okn-MC-DyL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vO5-iw-TOE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Taking Readings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPD-Tn-4lD">
@@ -700,7 +761,7 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="ijj-vw-Yhu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8GJ-Ii-SY2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact The Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-Ly-OII">
@@ -746,7 +807,7 @@ RER
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gl-b4-a5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672" y="-778"/>
+            <point key="canvasLocation" x="1692" y="-742"/>
         </scene>
     </scenes>
     <resources>
@@ -758,10 +819,10 @@ RER
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2dT-IF-yri"/>
-        <segue reference="7Ce-go-Vv8"/>
+        <segue reference="mJl-SZ-4w8"/>
     </inferredMetricsTieBreakers>
 </document>

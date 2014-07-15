@@ -42,6 +42,9 @@
                                 <state key="normal" title="Calculations">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="l4V-zq-ngV" kind="modal" id="I0l-ei-WyN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-FK-OQ5">
                                 <rect key="frame" x="20" y="260" width="127" height="61"/>
@@ -49,13 +52,19 @@
                                 <state key="normal" title="Data Entry">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9HC-SB-Ewo" kind="modal" id="NYh-DI-Zo4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-h9-G5r">
-                                <rect key="frame" x="173" y="260" width="127" height="61"/>
+                                <rect key="frame" x="97" y="439" width="127" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calculations">
+                                <state key="normal" title="Contact Links">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eSj-Wu-xI1" kind="modal" id="KQN-6m-SWJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubV-lj-NFf">
                                 <rect key="frame" x="20" y="329" width="127" height="61"/>
@@ -63,9 +72,22 @@
                                 <state key="normal" title="Export ~Data">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="3as-jY-w0C" kind="modal" id="Ifh-93-9rv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IN-l4-t30">
+                                <rect key="frame" x="173" y="329" width="127" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Symbols">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lvB-uo-1OB" kind="modal" id="IGy-ve-NZe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1Y-3t-jeY">
-                                <rect key="frame" x="173" y="329" width="127" height="61"/>
+                                <rect key="frame" x="173" y="260" width="127" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Conversions">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,30 +141,60 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-Di-v2N">
-                                <rect key="frame" x="23" y="60" width="277" height="501"/>
+                                <rect key="frame" x="23" y="60" width="277" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">ATPS vs SPTD
-
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
 In the laboratory, gasses are measured by measuring instruments at rtf, which is Ambient Temperature, Pressure Saturated with water vapour.
 
 To enable us to compare VO2 measured in different environments and labs, the readings must be converted to STPD, which is Standard Temperature, Pressure Dry.
 
 Tables of correction factors can be used to give the calculated value for a given pressure and Temperature.
 
-The correction factor is used in the calculation of VE.
+The correction factor is used in the calculation of V</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="E">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSSuperScript" value="-1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">.
 
 This App calculates the correction factor for you.
 
 You will need to read the Temperature and Atmospheric Pressure in the Lab and enter the details in the Data Entry Screen.
 
-The correction factor is shown when the values are entered.</string>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="The correction factor is shown when the values are entered.">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -156,7 +208,7 @@ The correction factor is shown when the values are entered.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCe-AI-Plh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="-1453"/>
+            <point key="canvasLocation" x="75" y="-1428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="K1o-n2-kCg">
@@ -339,6 +391,357 @@ The correction factor is shown when the values are entered.</string>
             </objects>
             <point key="canvasLocation" x="1279" y="-742"/>
         </scene>
+        <!--View Controller - ABT Glossary-->
+        <scene sceneID="d09-Wp-iTe">
+            <objects>
+                <viewController title="ABT Glossary" modalTransitionStyle="crossDissolve" id="lvB-uo-1OB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xko-Sc-hld"/>
+                        <viewControllerLayoutGuide type="bottom" id="hrk-0Y-KzI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hhp-AW-G5O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Glossary of Symbols Used" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAW-gM-RtM">
+                                <rect key="frame" x="57" y="20" width="204" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppd-MK-Rpr">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="About" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="Uot-1z-0g3"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPQ-LC-iIo">
+                                <rect key="frame" x="23" y="60" width="277" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">ATPS
+STPD
+VE
+%O2E
+%O2I
+%CO2E
+%CO2I
+Pressure ATPS mmHg
+Temperature 'C
+BodyMassIndex
+RER
+%N2E</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnN-NJ-Pei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="-1428"/>
+        </scene>
+        <!--View Controller - ABT Calculations-->
+        <scene sceneID="o1O-ah-A1G">
+            <objects>
+                <viewController title="ABT Calculations" modalTransitionStyle="crossDissolve" id="l4V-zq-ngV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JZP-Z3-Gde"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hzr-pp-fiH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gK7-Kd-rhi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-bD-G2e">
+                                <rect key="frame" x="114" y="20" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSF-DB-e1h">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="About" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="2wx-U3-et2"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-jz-efv">
+                                <rect key="frame" x="23" y="60" width="277" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Display the individual calculations here">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMG-tp-0tH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="-1433"/>
+        </scene>
+        <!--View Controller - ABT Data Entry-->
+        <scene sceneID="fiY-Hw-1DV">
+            <objects>
+                <viewController title="ABT Data Entry" modalTransitionStyle="crossDissolve" id="9HC-SB-Ewo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PPS-rX-246"/>
+                        <viewControllerLayoutGuide type="bottom" id="6pU-Bm-PAo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K64-Ei-Ubf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-ua-zQ9">
+                                <rect key="frame" x="120" y="20" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-KQ-ABi">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="About" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="Hww-Qd-MAb"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-aD-EaN">
+                                <rect key="frame" x="23" y="60" width="277" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Data Entry Help Here">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oci-Up-Yfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1269" y="-1428"/>
+        </scene>
+        <!--View Controller - ABT Export-->
+        <scene sceneID="lXb-zR-5aV">
+            <objects>
+                <viewController title="ABT Export" modalTransitionStyle="crossDissolve" id="3as-jY-w0C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C5B-F5-zQI"/>
+                        <viewControllerLayoutGuide type="bottom" id="yja-9Z-uoM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oil-Jr-lsu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exporting Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ks-aa-8On">
+                                <rect key="frame" x="104" y="20" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-yR-iMe">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="About" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="POW-CU-OFH"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plN-XZ-68J">
+                                <rect key="frame" x="23" y="60" width="277" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment content="How to export data here via file or email">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JrF-8o-lVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661" y="-1428"/>
+        </scene>
+        <!--View Controller - ABT Readings-->
+        <scene sceneID="ZkM-t0-ixm">
+            <objects>
+                <viewController title="ABT Readings" modalTransitionStyle="crossDissolve" id="48P-Na-bzN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dff-Rr-6bK"/>
+                        <viewControllerLayoutGuide type="bottom" id="okn-MC-DyL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vO5-iw-TOE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Taking Readings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPD-Tn-4lD">
+                                <rect key="frame" x="72" y="20" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12e-wx-Vmt">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="About" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S88-t2-4bf">
+                                <rect key="frame" x="23" y="60" width="277" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment content="About taking readings from lab instruments and entering the data in the App">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPo-BM-gbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032" y="-1428"/>
+        </scene>
+        <!--View Controller - Glossary-->
+        <scene sceneID="hO0-Rg-gwS">
+            <objects>
+                <viewController title="Glossary" modalTransitionStyle="crossDissolve" id="eSj-Wu-xI1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jH9-uz-O79"/>
+                        <viewControllerLayoutGuide type="bottom" id="ijj-vw-Yhu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8GJ-Ii-SY2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact The Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-Ly-OII">
+                                <rect key="frame" x="72" y="20" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-Dw-FF6">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="About" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="mJl-SZ-4w8"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-y7-wyv">
+                                <rect key="frame" x="23" y="60" width="277" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Links to web, email, etc to report comments and send feedback.">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gl-b4-a5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="-778"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about50x50.png" width="25" height="25"/>
@@ -353,5 +756,6 @@ The correction factor is shown when the values are entered.</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2dT-IF-yri"/>
+        <segue reference="mJl-SZ-4w8"/>
     </inferredMetricsTieBreakers>
 </document>

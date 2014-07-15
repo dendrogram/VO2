@@ -35,6 +35,9 @@
                                 <state key="normal" title="Readings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="48P-Na-bzN" kind="modal" id="kwH-4T-yQ2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y93-fy-GMg">
                                 <rect key="frame" x="173" y="191" width="127" height="61"/>
@@ -658,6 +661,9 @@ RER
                                     <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="7Ce-go-Vv8"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S88-t2-4bf">
                                 <rect key="frame" x="23" y="60" width="277" height="455"/>
@@ -756,6 +762,6 @@ RER
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2dT-IF-yri"/>
-        <segue reference="mJl-SZ-4w8"/>
+        <segue reference="7Ce-go-Vv8"/>
     </inferredMetricsTieBreakers>
 </document>

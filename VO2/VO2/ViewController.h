@@ -18,8 +18,6 @@
     NSString      * filepath;
     
     // for calculations and functions
-    NSString      * labLocation;
-    
     NSDate        * startDate;
     NSDate        * testDate;
     
@@ -68,14 +66,7 @@
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;
 
--(IBAction)convertPressure_to_mmHg:(id)sender;
--(IBAction)convertPressure_to_mBar:(id)sender;
--(IBAction)calcVESPTD:(id)sender;
--(IBAction)calcVO2:(id)sender;
--(IBAction)calcVCO2:(id)sender;
--(IBAction)calcVO2Kg:(id)sender;
--(IBAction)calcVCO2Kg:(id)sender;
--(IBAction)calcRER:(id)sender;
+-(void)calculateGasses:(id)sender;
 
 
 @end

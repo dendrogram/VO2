@@ -57,6 +57,9 @@
 //email stuff
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
+
+//text field inputs
+@property (nonatomic, strong) IBOutlet UITextField * labLocationTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labLocationTxt;
 
 

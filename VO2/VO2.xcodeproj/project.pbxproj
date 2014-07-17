@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912C01B3197755A7001C6093 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912C01B2197755A7001C6093 /* MessageUI.framework */; };
 		E12EEAAF19752EF300CEDBD5 /* about50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA219752EF300CEDBD5 /* about50x50.png */; };
 		E12EEAB119752EF300CEDBD5 /* about50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */; };
 		E12EEAB219752EF300CEDBD5 /* calc50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA519752EF300CEDBD5 /* calc50x50.png */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		912C01B2197755A7001C6093 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E12EEAA219752EF300CEDBD5 /* about50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about50x50.png; sourceTree = "<group>"; };
 		E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about50x50@2x.png"; sourceTree = "<group>"; };
 		E12EEAA519752EF300CEDBD5 /* calc50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calc50x50.png; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912C01B3197755A7001C6093 /* MessageUI.framework in Frameworks */,
 				E1F13E221974537000A9748D /* CoreGraphics.framework in Frameworks */,
 				E1F13E241974537000A9748D /* UIKit.framework in Frameworks */,
 				E1F13E201974537000A9748D /* Foundation.framework in Frameworks */,
@@ -151,6 +154,7 @@
 		E1F13E1E1974537000A9748D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				912C01B2197755A7001C6093 /* MessageUI.framework */,
 				E1F13E1F1974537000A9748D /* Foundation.framework */,
 				E1F13E211974537000A9748D /* CoreGraphics.framework */,
 				E1F13E231974537000A9748D /* UIKit.framework */,

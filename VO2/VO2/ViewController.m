@@ -20,53 +20,24 @@
 
 @interface ViewController ()
 {
-    //array of card images needed
-    UIImageView *card[50];
+    //array result lines
+    NSString * resultLine[50];
     
     //text fields for inputs
 
-    IBOutlet UITextField *subjectCodeTxt;
+    IBOutlet UITextField * subjectCodeTxt;
     
     //text views for text displays ie results or help screens
-    IBOutlet UITextView  *resultsView;
-    IBOutlet UITextView  *resultsViewBorder;
-    IBOutlet UITextView  *infoView;
+    IBOutlet UITextView  * resultsView;
+    IBOutlet UITextView  * resultsViewBorder;
+    IBOutlet UITextView  * infoView;
     
-    //image views for pictures
-    IBOutlet UIImageView *logoImage;
-    IBOutlet UIImageView *cardHolder;
-    IBOutlet UIImageView *subjectCodeLab;
-    IBOutlet UIImageView *cardsLab;
-    IBOutlet UIImageView *stimLab;
-    IBOutlet UIImageView *respLab;
-    IBOutlet UIImageView *settingsLab;
-    IBOutlet UIImageView *settingsBG;
-    IBOutlet UIImageView *JumpingManLogo;
-    
+    //image views for pictures -edit, not really needed
+    IBOutlet UIImageView * logoImage;
+
     //labels for various input boxes or messages
-    IBOutlet UILabel     *statusMessageLab;
-    IBOutlet UILabel     *ms1Lab;
-    IBOutlet UILabel     *ms2Lab;
-    IBOutlet UILabel     *XbutLab;
-    IBOutlet UILabel     *ObutLab;
-    IBOutlet UILabel     *versionNumberLab;
-    IBOutlet UILabel     *clickMessageLab;
-    IBOutlet UIImageView *title1Lab;
-    IBOutlet UIImageView *title2Lab;
-    
-    
-    //action buttons for methods
-    IBOutlet UIButton    *noBut;
-    IBOutlet UIButton    *yesBut;
-    IBOutlet UIButton    *startBut;
-    IBOutlet UIButton    *newTestBut;
-    IBOutlet UIButton    *results;
-    IBOutlet UIButton    *hideResultsBut;
-    IBOutlet UIButton    *saveDataToEmailBut;
-    IBOutlet UIButton    *infoBut;
-    IBOutlet UIButton    *newSubjectBut;
-    
-    IBOutlet UIView      *TachistView;
+    IBOutlet UILabel     * statusMessageLab;
+
 }
 @end
 
@@ -77,13 +48,38 @@
 //****  inits
 //************
 
-@synthesize startDate;
+@synthesize
+//dates
+            startDate,
+            testDate,
+            startDateTxt,
+            testDateTxt,
+//subject
+            subjectNameTxt,
+            testerNameTxt,
+            subHtTxt,
+            subWtTxt,
+//file
+            fileMgr,
+            homeDir,
+            filename,
+            filepath,
+//lab
+            labLocationTxt,
+            labTempTxt,
+            labPressureTxt,
+            labHumidityTxt,
+//calc
+            corFactorTxt,
+//sample gas
+            sampTimeTxt,
+            FECO2Txt,
+            FEO2Txt
+            ;
+//end
+            
 
-@synthesize subjectNameTxt;
-@synthesize fileMgr;
-@synthesize homeDir;
-@synthesize filename;
-@synthesize filepath;
+
 
 
 -(NSString *) setFilename{
@@ -136,12 +132,32 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/vo2/"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_webview loadRequest:request];
     
     //set the delegates or text did start/end will not work
-    textinput1-rename.delegate = self;
-    textinput2-rename.delegate = self;
-    //add as many as there are inputs
     
+    startDateTxt.delegate = self;
+    testDateTxt.delegate = self;
+    //subject
+    subjectNameTxt.delegate = self;
+    testerNameTxt.delegate = self;
+    subHtTxt.delegate = self;
+    subWtTxt.delegate = self;
+    //lab
+    labLocationTxt.delegate = self;
+    labTempTxt.delegate = self;
+    labPressureTxt.delegate = self;
+    labHumidityTxt.delegate = self;
+    //calc
+    corFactorTxt.delegate = self;
+    //sample gas
+    sampTimeTxt.delegate = self;
+    FECO2Txt.delegate = self;
+    FEO2Txt.delegate = self;
+
     //run calcs with defaults once
     [self calculateGasses:self];
 }
@@ -162,7 +178,7 @@
     [mailComposer setMailComposeDelegate:self];
     if ([MFMailComposeViewController canSendMail]){
         [mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
-        [mailComposer setSubject:@"iPad Restults from Tachistoscope V3.3 App"];
+        [mailComposer setSubject:@"Restults from VO2 App"];
         //[mailComposer setMessageBody:@"Dear Tachistoscope User: " isHTML:YES];
         
         [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
@@ -216,48 +232,33 @@
                      contents: databuffer attributes:nil];
 }
 
-- (void)calculateBtn:(id)sender {
+- (void)calculateGasses:(id)sender {
     //from text boxes
-    module      = [moduleTxt.text floatValue];
-    teethWheel  = [wheelTeethTxt.text intValue];
-    teethPinion = (leavesPinionSegCtrl.selectedSegmentIndex)+6;
-    NSLog(@"teeth pinion=%f",teethPinion);
+    labHumidity       = [labHumidityTxt.text floatValue];
+    labTempC          = [labTempTxt.text floatValue];
+    labTempF          = [labTempTxt.text floatValue];
+    labPressure_mBar  = [labPressureTxt.text floatValue];
+    labPressure_mmHg  = [labPressureTxt.text floatValue];
+    subHt             = [subHtTxt.text floatValue];
+    subWt             = [subWtTxt.text floatValue];
+
     
     //constants
-    //addendaWheels        = 2.76;
+    //email address
+    NSString * emailTxt = @"j.a.howell@mmu.ac.uk";
     //addendaPinions678    = 1.71;
     //addendaPinions101216 = 1.61;
     
     //do the calculation
     //(nt + addendum) * module
-    odWheelmm  = (addendaWheels + teethWheel)*module;
-    
-    if (teethPinion<10) {
-        odPinionmm  = (addendaPinions678 + teethPinion) * module;
-    }else{
-        odPinionmm  = (addendaPinions101216 + teethPinion) * module;
-    }
-    
-    //convert to thousandths mm x 100 / 2.54
-    odWheelth = odWheelmm * 100 / 2.54;
-    odPinionth = odPinionmm * 100 / 2.54;
-    
-    dp  = 25.4 / module;
-    pd  = module * teethWheel;
-    pdp = module * teethPinion;
+
     
     //newStr = [str substringToIndex:8]; //chars to print
     
     //put the results in the labels
     //mm's
-    odWheelLbl.text = [[NSString stringWithFormat:@"%f00000",odWheelmm]substringToIndex:6];
-    odPinionLbl.text = [[NSString stringWithFormat:@"%f00000",odPinionmm]substringToIndex:6];
-    //thou's
-    odWheelThLbl.text = [[NSString stringWithFormat:@"%f00000",odWheelth]substringToIndex:6];
-    odPinionThLbl.text = [[NSString stringWithFormat:@"%f000",odPinionth]substringToIndex:5];
-    dpLbl.text = [[NSString stringWithFormat:@"%f000",dp]substringToIndex:5];
-    pdLbl.text = [[NSString stringWithFormat:@"%f000",pd]substringToIndex:5];
-    pdpLbl.text = [[NSString stringWithFormat:@"%f000",pdp]substringToIndex:5];
+    //odWheelLbl.text = [[NSString stringWithFormat:@"%f00000",odWheelmm]substringToIndex:6];
+
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -276,54 +277,124 @@
     //***** change all to suit inputs *****
     
     // change the color of the text box when you touch it
-    if(textField==self->moduleTxt){
-        moduleTxt.backgroundColor = [UIColor greenColor];
-        // NSLog(@"module");
+    if(textField==self->startDateTxt){
+        startDateTxt.backgroundColor = [UIColor greenColor];
     }
-    if(textField==self->wheelTeethTxt){
-        wheelTeethTxt.backgroundColor = [UIColor greenColor];
-        // NSLog(@"teeth");
+    if(textField==self->testDateTxt){
+        testDateTxt.backgroundColor = [UIColor greenColor];
     }
+    if(textField==self->subjectNameTxt){
+        subjectNameTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->testerNameTxt){
+        testerNameTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->subHtTxt){
+        subHtTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->subWtTxt){
+        subWtTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->labLocationTxt){
+        labLocationTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->labTempTxt){
+        labTempTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->labHumidityTxt){
+        labHumidityTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->corFactorTxt){
+        corFactorTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->sampTimeTxt){
+        sampTimeTxt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->FECO2Txt){
+        FECO2Txt.backgroundColor = [UIColor greenColor];
+    }
+    if(textField==self->FEO2Txt){
+        FEO2Txt.backgroundColor = [UIColor greenColor];
+    }
+
 }
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
     //***** change all to suit inputs *****
-    
+
     //set int values to the text field inputs
-    module = [moduleTxt.text floatValue];
-    teethWheel = [wheelTeethTxt.text intValue];
+    //from text boxes
+    labHumidity       = [labHumidityTxt.text floatValue];
+    labTempC          = [labTempTxt.text floatValue];
+    labTempF          = [labTempTxt.text floatValue];
+    labPressure_mBar  = [labPressureTxt.text floatValue];
+    labPressure_mmHg  = [labPressureTxt.text floatValue];
+    subHt             = [subHtTxt.text floatValue];
+    subWt             = [subWtTxt.text floatValue];
     
     //set all backgrounds to white
-    moduleTxt.backgroundColor = [UIColor whiteColor];
-    wheelTeethTxt.backgroundColor = [UIColor whiteColor];
+
+        startDateTxt.backgroundColor   = [UIColor whiteColor];
+        testDateTxt.backgroundColor    = [UIColor whiteColor];
+        subjectNameTxt.backgroundColor = [UIColor whiteColor];
+        testerNameTxt.backgroundColor  = [UIColor whiteColor];
+        subHtTxt.backgroundColor       = [UIColor whiteColor];
+        subWtTxt.backgroundColor       = [UIColor whiteColor];
+        labLocationTxt.backgroundColor = [UIColor whiteColor];
+        labTempTxt.backgroundColor     = [UIColor whiteColor];
+        labHumidityTxt.backgroundColor = [UIColor whiteColor];
+        corFactorTxt.backgroundColor   = [UIColor whiteColor];
+        sampTimeTxt.backgroundColor    = [UIColor whiteColor];
+        FECO2Txt.backgroundColor       = [UIColor whiteColor];
+        FEO2Txt.backgroundColor        = [UIColor whiteColor];
+
+    //set backgrounds to yellow/red if had to correct
+    labTempTxt.textColor=[UIColor blackColor];
+    if (labTempC<-50) {
+        labTempTxt.textColor=[UIColor redColor];
+        labTempC=-50.0;
+        labTempTxt.text=@"-50.0";
+        labTempTxt.backgroundColor = [UIColor yellowColor];
+    }
+
+    if (labTempC>60) {
+        labTempTxt.textColor=[UIColor redColor];
+        labTempC=60.0;
+        labTempTxt.text=@"60.0";
+        labTempTxt.backgroundColor = [UIColor yellowColor];
+    }
+
+    labPressureTxt.textColor=[UIColor blackColor];
+    if (labPressure_mmHg<600) {
+        labPressureTxt.textColor=[UIColor redColor];
+        labPressure_mmHg=600;
+        labPressureTxt.text=@"600.0";
+        labPressureTxt.backgroundColor = [UIColor yellowColor];
+    }
+
+    if (labPressure_mmHg>900) {
+        labPressureTxt.textColor=[UIColor redColor];
+        labPressure_mmHg=900;
+        labPressureTxt.text=@"900.0";
+        labPressureTxt.backgroundColor = [UIColor yellowColor];
+    }
+
+    corFactorTxt.textColor=[UIColor blackColor];
+    if (corrFactor<0.000) {
+        corFactorTxt.textColor=[UIColor redColor];
+        corrFactor=0.000;
+        corFactorTxt.text=@"0.000";
+        corFactorTxt.backgroundColor = [UIColor yellowColor];
+    }
     
-    //set backgrounds to yellow if had to correct
-    moduleTxt.textColor=[UIColor blackColor];
-    if (module<0.1) {
-        moduleTxt.textColor=[UIColor redColor];
-        module=0.1;
-        moduleTxt.text=@"0.1";
-        moduleTxt.backgroundColor = [UIColor yellowColor];
+    if (corrFactor>1.000) {
+        corFactorTxt.textColor=[UIColor redColor];
+        corrFactor=1.000;
+        corFactorTxt.text=@"1.000";
+        corFactorTxt.backgroundColor = [UIColor yellowColor];
     }
-    if (teethWheel>600) {
-        wheelTeethTxt.textColor=[UIColor redColor];
-        teethWheel=600;
-        wheelTeethTxt.text=@"600";
-        wheelTeethTxt.backgroundColor = [UIColor yellowColor];
-    }
-    if (module>9.0) {
-        moduleTxt.textColor=[UIColor redColor];
-        module=9.0;
-        moduleTxt.text=@"9.0";
-        moduleTxt.backgroundColor = [UIColor yellowColor];
-    }
-    if (teethWheel<4) {
-        wheelTeethTxt.textColor=[UIColor redColor];
-        teethWheel=4;
-        wheelTeethTxt.text=@"4";
-        wheelTeethTxt.backgroundColor = [UIColor yellowColor];
-    }
-    [self calculateBtn:self];
+       //calculate results and display
+    [self calculateGasses:self];
 }
 
 @end

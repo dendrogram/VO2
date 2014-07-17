@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.29999999999999966" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KM4-b4-LGw">
+                            <view alpha="0.14999999999999969" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KM4-b4-LGw">
                                 <rect key="frame" x="20" y="123" width="280" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -107,28 +107,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About VO2/CO2 Gas Analysis Calculations" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="284" translatesAutoresizingMaskIntoConstraints="NO" id="68u-QD-Jkh">
-                                <rect key="frame" x="20" y="20" width="284" height="53"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laboratory Gas VCO2/VO2 Analysis Calculator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="T2N-Kh-c8t">
+                                <rect key="frame" x="20" y="20" width="280" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select the buttons below to find information on how to use this App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="284" translatesAutoresizingMaskIntoConstraints="NO" id="lR4-4m-Y5l">
-                                <rect key="frame" x="20" y="81" width="284" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="68u-QD-Jkh" firstAttribute="top" secondItem="5Hs-dN-pLT" secondAttribute="top" constant="20" symbolic="YES" id="9YY-WZ-nhd"/>
-                            <constraint firstItem="68u-QD-Jkh" firstAttribute="leading" secondItem="lR4-4m-Y5l" secondAttribute="leading" id="L0N-qP-0Er"/>
-                            <constraint firstItem="lR4-4m-Y5l" firstAttribute="trailing" secondItem="68u-QD-Jkh" secondAttribute="trailing" id="eRP-Xi-f3X"/>
-                            <constraint firstItem="68u-QD-Jkh" firstAttribute="leading" secondItem="5Hs-dN-pLT" secondAttribute="leading" constant="20" symbolic="YES" id="enL-Jf-A3S"/>
-                            <constraint firstItem="lR4-4m-Y5l" firstAttribute="top" secondItem="68u-QD-Jkh" secondAttribute="bottom" constant="32" id="pPR-Mu-9jv"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="about50x50.png" id="I8P-AL-7br"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -136,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlW-0N-Qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="-742"/>
+            <point key="canvasLocation" x="505" y="-754"/>
         </scene>
         <!--View Controller - Standard Gas Conversions-->
         <scene sceneID="rUe-vD-umn">
@@ -258,7 +245,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtE-xm-GdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="-372"/>
+            <point key="canvasLocation" x="75" y="-760"/>
         </scene>
         <!--View Controller - Results-->
         <scene sceneID="p7y-Iz-Wka">
@@ -306,7 +293,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zag-uh-itc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="-18"/>
+            <point key="canvasLocation" x="1661" y="-760"/>
         </scene>
         <!--View Controller - Email Results-->
         <scene sceneID="cDx-mQ-7RJ">
@@ -320,14 +307,16 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ix4-X6-HMi">
-                                <rect key="frame" x="101" y="518" width="119" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ix4-X6-HMi">
+                                <rect key="frame" x="20" y="518" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Return to Results">
+                                <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A4O-u3-AmH" kind="modal" id="zXS-lf-MUN"/>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="LwW-oY-btl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Results" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41u-Mx-8QP">
@@ -336,7 +325,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkl-6l-7c5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jkl-6l-7c5">
                                 <rect key="frame" x="20" y="49" width="280" height="461"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -347,28 +336,22 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ix4-X6-HMi" firstAttribute="top" secondItem="jkl-6l-7c5" secondAttribute="bottom" constant="8" id="0Hu-an-TKt"/>
                             <constraint firstItem="jkl-6l-7c5" firstAttribute="top" secondItem="41u-Mx-8QP" secondAttribute="bottom" constant="8" id="8cg-FO-FWI"/>
                             <constraint firstAttribute="trailing" secondItem="41u-Mx-8QP" secondAttribute="trailing" constant="108" id="BWy-Gg-8Wz"/>
                             <constraint firstAttribute="centerX" secondItem="jkl-6l-7c5" secondAttribute="centerX" id="Lqy-w1-jeg"/>
                             <constraint firstAttribute="centerX" secondItem="41u-Mx-8QP" secondAttribute="centerX" id="MZF-Vt-iny"/>
-                            <constraint firstItem="Ix4-X6-HMi" firstAttribute="top" secondItem="jkl-6l-7c5" secondAttribute="bottom" constant="8" id="NWg-23-TeG"/>
                             <constraint firstItem="41u-Mx-8QP" firstAttribute="top" secondItem="2gx-5q-oFe" secondAttribute="bottom" id="NzS-Th-7gH"/>
                             <constraint firstItem="jkl-6l-7c5" firstAttribute="top" secondItem="41u-Mx-8QP" secondAttribute="bottom" constant="8" id="Rah-db-yEW"/>
-                            <constraint firstItem="Ix4-X6-HMi" firstAttribute="leading" secondItem="RCg-o0-6XB" secondAttribute="leading" constant="101" id="TgB-Kw-sXP"/>
-                            <constraint firstAttribute="centerX" secondItem="Ix4-X6-HMi" secondAttribute="centerX" id="a0g-YM-btX"/>
                             <constraint firstAttribute="trailing" secondItem="jkl-6l-7c5" secondAttribute="trailing" constant="20" id="aaP-7Z-k2z"/>
                             <constraint firstItem="41u-Mx-8QP" firstAttribute="leading" secondItem="RCg-o0-6XB" secondAttribute="leading" constant="108" id="cf8-sc-ebl"/>
-                            <constraint firstItem="nGR-eu-YLL" firstAttribute="top" secondItem="Ix4-X6-HMi" secondAttribute="bottom" constant="20" id="k71-zT-6D9"/>
                             <constraint firstItem="jkl-6l-7c5" firstAttribute="leading" secondItem="RCg-o0-6XB" secondAttribute="leading" constant="20" id="rSm-1q-lji"/>
-                            <constraint firstAttribute="trailing" secondItem="Ix4-X6-HMi" secondAttribute="trailing" constant="100" id="uIB-2H-Htb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bi7-Sx-4Gc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnL-hm-hxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="693"/>
+            <point key="canvasLocation" x="1669" y="-95"/>
         </scene>
         <!--View Controller - Data Input-->
         <scene sceneID="sHM-sh-3iI">
@@ -382,7 +365,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.29999999999999966" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-T7-jGb">
+                            <view alpha="0.14999999999999969" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-T7-jGb">
                                 <rect key="frame" x="20" y="129" width="280" height="382"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -563,7 +546,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgn-Dx-k8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279" y="-18"/>
+            <point key="canvasLocation" x="1269" y="-760"/>
         </scene>
         <!--View Controller - Subject Settings-->
         <scene sceneID="Oog-DS-60G">
@@ -577,7 +560,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.29999999999999966" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZg-GV-bOh">
+                            <view alpha="0.14999999999999969" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZg-GV-bOh">
                                 <rect key="frame" x="20" y="65" width="280" height="252"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -697,7 +680,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvg-km-3Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279" y="-742"/>
+            <point key="canvasLocation" x="883" y="-760"/>
         </scene>
         <!--View Controller - ABT Glossary-->
         <scene sceneID="d09-Wp-iTe">
@@ -965,36 +948,9 @@ RER
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Taking Readings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPD-Tn-4lD">
-                                <rect key="frame" x="72" y="20" width="177" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S88-t2-4bf">
-                                <rect key="frame" x="20" y="60" width="280" height="447"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
-                                <attributedString key="attributedText">
-                                    <fragment content="About taking readings from lab instruments and entering the data in the App">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Pz-Tm0">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Pz-Tm0">
                                 <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="VPD-rP-3I9"/>
-                                </constraints>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
                                     <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1003,17 +959,6 @@ RER
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="RgW-Pz-Tm0" secondAttribute="bottom" constant="20" symbolic="YES" id="6W1-xg-NYU"/>
-                            <constraint firstItem="nPD-Tn-4lD" firstAttribute="top" secondItem="vO5-iw-TOE" secondAttribute="top" constant="20" symbolic="YES" id="T9E-eB-xeW"/>
-                            <constraint firstItem="nPD-Tn-4lD" firstAttribute="leading" secondItem="vO5-iw-TOE" secondAttribute="leading" constant="72" id="dJ1-k4-oRU"/>
-                            <constraint firstItem="S88-t2-4bf" firstAttribute="centerX" secondItem="RgW-Pz-Tm0" secondAttribute="centerX" id="eUS-VV-22s"/>
-                            <constraint firstItem="S88-t2-4bf" firstAttribute="leading" secondItem="vO5-iw-TOE" secondAttribute="leading" constant="20" symbolic="YES" id="qPA-SQ-XFt"/>
-                            <constraint firstAttribute="trailing" secondItem="S88-t2-4bf" secondAttribute="trailing" constant="20" symbolic="YES" id="rdM-yI-wpp"/>
-                            <constraint firstItem="nPD-Tn-4lD" firstAttribute="centerX" secondItem="S88-t2-4bf" secondAttribute="centerX" id="s60-gs-Lke"/>
-                            <constraint firstItem="S88-t2-4bf" firstAttribute="top" secondItem="nPD-Tn-4lD" secondAttribute="bottom" constant="19" id="s7r-JA-ksA"/>
-                            <constraint firstItem="RgW-Pz-Tm0" firstAttribute="top" secondItem="S88-t2-4bf" secondAttribute="bottom" constant="16" id="tad-TR-IUo"/>
-                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
@@ -1024,7 +969,7 @@ RER
         <!--View Controller - Contact-->
         <scene sceneID="hO0-Rg-gwS">
             <objects>
-                <viewController title="Contact" modalTransitionStyle="crossDissolve" id="eSj-Wu-xI1" sceneMemberID="viewController">
+                <viewController title="Contact" modalTransitionStyle="crossDissolve" id="eSj-Wu-xI1" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jH9-uz-O79"/>
                         <viewControllerLayoutGuide type="bottom" id="ijj-vw-Yhu"/>
@@ -1040,8 +985,8 @@ RER
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-Dw-FF6">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-Dw-FF6">
+                                <rect key="frame" x="102" y="513" width="116" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="bNd-MP-RoM"/>
@@ -1055,8 +1000,8 @@ RER
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="mJl-SZ-4w8"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kck-XH-oz8">
-                                <rect key="frame" x="20" y="59" width="280" height="450"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kck-XH-oz8">
+                                <rect key="frame" x="20" y="49" width="280" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Acknowledgements:
@@ -1076,6 +1021,12 @@ www.ess.mmu.ac.uk/vo2
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-0J-d6D">
+                                <rect key="frame" x="20" y="316" width="280" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1090,10 +1041,13 @@ www.ess.mmu.ac.uk/vo2
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="webview" destination="SeT-0J-d6D" id="JQG-Kd-dfu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gl-b4-a5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="-757"/>
+            <point key="canvasLocation" x="494" y="-95"/>
         </scene>
     </scenes>
     <resources>

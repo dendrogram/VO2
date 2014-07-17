@@ -10,6 +10,8 @@
 #import <MessageUI/MFMailComposeViewController.h>
 
 @interface ViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
+
+
 {
     // for file manager
     NSFileManager * fileMgr;
@@ -20,12 +22,13 @@
     // for calculations and functions
     NSDate        * startDate;
     NSDate        * testDate;
-    
+
     float subWt;
     float subHt;
     float labPressure_mmHg;
     float labPressure_mBar;
-    float labTemp;
+    float labTempC;
+    float labTempF;
     float labHumidity;
     float VEATPS;
     float VESTPD;
@@ -37,14 +40,13 @@
     float FEO2;
     float corrFactor;
 }
+@property (strong, nonatomic) IBOutlet UIWebView *webview;
 
 //file ops stuff
 @property(nonatomic,retain) NSFileManager * fileMgr;
 @property(nonatomic,retain) NSString      * homeDir;
 @property(nonatomic,retain) NSString      * filename;
 @property(nonatomic,retain) NSString      * filepath;
-
-
 
 -(NSString *) GetDocumentDirectory;
 -(NSString *) setFilename;
@@ -53,15 +55,23 @@
 //dates
 @property (nonatomic, copy) NSDate * startDate;
 @property (nonatomic, copy) NSDate * testDate;
-
+@property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
+@property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
 //email stuff
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
 
 //text field inputs
 @property (nonatomic, strong) IBOutlet UITextField * labLocationTxt;
-@property (nonatomic, strong) IBOutlet UITextField * labLocationTxt;
-
+@property (nonatomic, strong) IBOutlet UITextField * labPressureTxt;
+@property (nonatomic, strong) IBOutlet UITextField * labTempTxt;
+@property (nonatomic, strong) IBOutlet UITextField * labHumidityTxt;
+@property (nonatomic, strong) IBOutlet UITextField * corFactorTxt;
+@property (nonatomic, strong) IBOutlet UITextField * sampTimeTxt;
+@property (nonatomic, strong) IBOutlet UITextField * FEO2Txt;
+@property (nonatomic, strong) IBOutlet UITextField * FECO2Txt;
+@property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
+@property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
 
 // for calculations and functions
 

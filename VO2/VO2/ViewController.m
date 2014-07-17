@@ -54,16 +54,19 @@
             testDate,
             startDateTxt,
             testDateTxt,
+
 //subject
             subjectNameTxt,
             testerNameTxt,
             subHtTxt,
             subWtTxt,
+
 //file
             fileMgr,
             homeDir,
             filename,
             filepath,
+
 //lab
             labLocationTxt,
             labTempTxt,
@@ -71,17 +74,18 @@
             labHumidityTxt,
 //calc
             corFactorTxt,
+
 //sample gas
             sampTimeTxt,
             FECO2Txt,
             FEO2Txt,
-//results
+
+//results Labels
             RERlbl,
             VESTPDlbl,
             VEATPSlbl,
             VO2lbl,
             VCO2lbl,
-
             datelbl,
             lablbl,
             testerlbl,
@@ -89,7 +93,13 @@
             templbl,
             pressurelbl,
             humiditylbl,
-            samptimelbl
+            samptimelbl,
+            VCO2Kglbllbl,
+            subHtlbl,
+            subWtlbllbl,
+            corrFaclbl,
+            FEO2bl,
+            FECO2lbl
             ;
 //end
             
@@ -263,7 +273,19 @@
     //VEsptd
 
     VESTPD = (60 *(VEATPS * ( 273 / (273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760))) / sampTime;
-    VESTPDlbl.text = [[NSString stringWithFormat:@"%f00000", VESTPD]substringToIndex:4];
+    VESTPDlbl.text = [[NSString stringWithFormat:@"%f00000", VESTPD]substringToIndex:6];
+
+    //VO2
+    VO2 = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / 79.03 ) * 20.93) - (VESTPD * FEO2));
+    VO2lbl.text = [[NSString stringWithFormat:@"%f00000", VO2]substringToIndex:6];
+
+    //VCO2
+    VCO2 = 0.01 * (VESTPD * FECO2);
+    VCO2lbl.text = [[NSString stringWithFormat:@"%f00000", VCO2]substringToIndex:6];
+
+    //VCO2Kg
+    VO2Kg = (VO2 * 1000) / subWt;
+    VO2Kglbl.text = [[NSString stringWithFormat:@"%f00000", VO2Kg]substringToIndex:6];
 
     
     //newStr = [str substringToIndex:8]; //chars to print

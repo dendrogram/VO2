@@ -39,6 +39,7 @@
     float FECO2;
     float FEO2;
     float corrFactor;
+    float VO2Kg;
 }
 @property (strong, nonatomic) IBOutlet UIWebView *webview;
 
@@ -86,10 +87,12 @@
 @property (nonatomic, strong) IBOutlet UILabel * pressurelbl;
 @property (nonatomic, strong) IBOutlet UILabel * humiditylbl;
 @property (nonatomic, strong) IBOutlet UILabel * samptimelbl;
-
-
-
-
+@property (nonatomic, strong) IBOutlet UILabel * VO2Kglbllbl;
+@property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
+@property (nonatomic, strong) IBOutlet UILabel * subWtlbllbl;
+@property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
+@property (nonatomic, strong) IBOutlet UILabel * FEO2bl;
+@property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
 
 
 

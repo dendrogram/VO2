@@ -73,6 +73,27 @@
 @property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
 
+@property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
+@property (nonatomic, strong) IBOutlet UILabel * VEATPSlbl;
+@property (nonatomic, strong) IBOutlet UILabel * RERlbl;
+@property (nonatomic, strong) IBOutlet UILabel * VO2lbl;
+@property (nonatomic, strong) IBOutlet UILabel * VCO2lbl;
+@property (nonatomic, strong) IBOutlet UILabel * datelbl;
+@property (nonatomic, strong) IBOutlet UILabel * lablbl;
+@property (nonatomic, strong) IBOutlet UILabel * testerlbl;
+@property (nonatomic, strong) IBOutlet UILabel * subjectlbl;
+@property (nonatomic, strong) IBOutlet UILabel * templbl;
+@property (nonatomic, strong) IBOutlet UILabel * pressurelbl;
+@property (nonatomic, strong) IBOutlet UILabel * humiditylbl;
+@property (nonatomic, strong) IBOutlet UILabel * samptimelbl;
+
+
+
+
+
+
+
+
 // for calculations and functions
 
 

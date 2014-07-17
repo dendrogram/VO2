@@ -74,7 +74,22 @@
 //sample gas
             sampTimeTxt,
             FECO2Txt,
-            FEO2Txt
+            FEO2Txt,
+//results
+            RERlbl,
+            VESTPDlbl,
+            VEATPSlbl,
+            VO2lbl,
+            VCO2lbl,
+
+            datelbl,
+            lablbl,
+            testerlbl,
+            subjectlbl,
+            templbl,
+            pressurelbl,
+            humiditylbl,
+            samptimelbl
             ;
 //end
             
@@ -209,7 +224,6 @@
 
 - (void)saveText
 {
-    
     statusMessageLab.text=@"Saving\nData\nFile.";
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSFileManager *filemgr;
@@ -242,15 +256,14 @@
     subHt             = [subHtTxt.text floatValue];
     subWt             = [subWtTxt.text floatValue];
 
-    
-    //constants
     //email address
     NSString * emailTxt = @"j.a.howell@mmu.ac.uk";
-    //addendaPinions678    = 1.71;
-    //addendaPinions101216 = 1.61;
-    
-    //do the calculation
-    //(nt + addendum) * module
+
+    //do the calculations
+    //VEsptd
+
+    VESTPD = (60 *(VEATPS * ( 273 / (273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760))) / sampTime;
+    VESTPDlbl.text = [[NSString stringWithFormat:@"%f00000", VESTPD]substringToIndex:4];
 
     
     //newStr = [str substringToIndex:8]; //chars to print

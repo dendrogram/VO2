@@ -94,7 +94,7 @@
             pressurelbl,
             humiditylbl,
             samptimelbl,
-            VCO2Kglbllbl,
+            VO2Kglbl,
             subHtlbl,
             subWtlbllbl,
             corrFaclbl,

@@ -133,7 +133,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/vo2/"];
+    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webview loadRequest:request];
     

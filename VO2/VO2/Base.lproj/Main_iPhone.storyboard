@@ -250,7 +250,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
         <!--View Controller - Results-->
         <scene sceneID="p7y-Iz-Wka">
             <objects>
-                <viewController title="Results" modalTransitionStyle="flipHorizontal" id="A4O-u3-AmH" sceneMemberID="viewController">
+                <viewController title="Results" modalTransitionStyle="flipHorizontal" id="A4O-u3-AmH" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ztm-Fa-5rv"/>
                         <viewControllerLayoutGuide type="bottom" id="512-Ia-Wfi"/>
@@ -281,6 +281,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="sendEmail:" destination="A4O-u3-AmH" eventType="touchUpInside" id="Y9g-Qn-auI"/>
                                     <segue destination="yHl-SO-vvr" kind="modal" id="ZEc-v8-ogA"/>
                                 </connections>
                             </button>
@@ -356,7 +357,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
         <!--View Controller - Data Input-->
         <scene sceneID="sHM-sh-3iI">
             <objects>
-                <viewController title="Data Input" modalTransitionStyle="flipHorizontal" id="POu-Nb-rvQ" sceneMemberID="viewController">
+                <viewController title="Data Input" modalTransitionStyle="flipHorizontal" id="POu-Nb-rvQ" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HOR-O1-YKG"/>
                         <viewControllerLayoutGuide type="bottom" id="xVb-kd-Wcn"/>
@@ -543,6 +544,15 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                     </view>
                     <tabBarItem key="tabBarItem" title="Data Entry" image="calc50x50.png" id="wCu-BG-g9G"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="FECO2Txt" destination="DbV-z4-FHE" id="teB-SD-z3A"/>
+                        <outlet property="FEO2Txt" destination="Lb6-uy-qIs" id="QM1-2Y-c2Z"/>
+                        <outlet property="corFactorTxt" destination="eCe-WT-bcp" id="PRk-Xd-CA8"/>
+                        <outlet property="labHumidityTxt" destination="BFG-2z-dfk" id="g4O-aH-YbG"/>
+                        <outlet property="labPressureTxt" destination="Wqj-8s-kDZ" id="1JI-mO-Nks"/>
+                        <outlet property="labTempTxt" destination="naE-km-Tr8" id="r1Q-3P-7nk"/>
+                        <outlet property="sampTimeTxt" destination="EvV-qS-Tit" id="fT8-Qo-YbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgn-Dx-k8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -551,7 +561,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
         <!--View Controller - Subject Settings-->
         <scene sceneID="Oog-DS-60G">
             <objects>
-                <viewController title="Subject Settings" modalTransitionStyle="flipHorizontal" id="w9a-IB-qgs" sceneMemberID="viewController">
+                <viewController title="Subject Settings" modalTransitionStyle="flipHorizontal" id="w9a-IB-qgs" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kSE-ut-P0R"/>
                         <viewControllerLayoutGuide type="bottom" id="CED-05-4BC"/>
@@ -677,6 +687,15 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                     </view>
                     <tabBarItem key="tabBarItem" title="Subject Data" image="results50x50.png" id="bHz-Mr-jhN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="labLocationTxt" destination="fZX-3p-XFQ" id="wV1-ct-jfB"/>
+                        <outlet property="startDateTxt" destination="H9L-48-gBT" id="D8R-pf-XKa"/>
+                        <outlet property="subHtTxt" destination="Aeo-6w-ZyQ" id="7kc-mp-kWv"/>
+                        <outlet property="subWtTxt" destination="mB2-Yd-tae" id="Xh2-UE-7J6"/>
+                        <outlet property="subjectNameTxt" destination="EzX-ij-jW7" id="nGx-hq-dDu"/>
+                        <outlet property="testDateTxt" destination="MX2-Ay-WCW" id="hkd-6c-gtP"/>
+                        <outlet property="testerNameTxt" destination="fex-76-LBk" id="PcC-ld-N6I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvg-km-3Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1021,11 +1040,11 @@ www.ess.mmu.ac.uk/vo2
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-0J-d6D">
+                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-0J-d6D">
                                 <rect key="frame" x="20" y="316" width="280" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>

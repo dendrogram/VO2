@@ -310,51 +310,100 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     //***** change all to suit inputs *****
-    
+    //the number refers to the scrolling of the text input field to avoid the keyboard when it appears, then it is moved back afterwards to the 0 origin
+    //page1
     // change the color of the text box when you touch it
-    if(textField==self->startDateTxt){
-        startDateTxt.backgroundColor = [UIColor greenColor];
+    if(textField==self->testerNameTxt){
+        testerNameTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-250;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->testDateTxt){
         testDateTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-250;
+        [self keyBoardAppeared:oft];
     }
-    if(textField==self->subjectNameTxt){
-        subjectNameTxt.backgroundColor = [UIColor greenColor];
-    }
-    if(textField==self->testerNameTxt){
-        testerNameTxt.backgroundColor = [UIColor greenColor];
-    }
-    if(textField==self->subHtTxt){
-        subHtTxt.backgroundColor = [UIColor greenColor];
-    }
-    if(textField==self->subWtTxt){
-        subWtTxt.backgroundColor = [UIColor greenColor];
+    if(textField==self->startDateTxt){
+        startDateTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-250;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->labLocationTxt){
         labLocationTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-250;
+        [self keyBoardAppeared:oft];
+    }
+    if(textField==self->subjectNameTxt){
+        subjectNameTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-250;
+        [self keyBoardAppeared:oft];
+    }
+        if(textField==self->subWtTxt){
+        subWtTxt.backgroundColor = [UIColor greenColor];
+            textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+            int oft=textField.frame.origin.y-250;
+            [self keyBoardAppeared:oft];
+    }
+    if(textField==self->subHtTxt){
+        subHtTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-250;
+        [self keyBoardAppeared:oft];
+    }
+    //page2
+    if(textField==self->labPressureTxt){
+        labPressureTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->labTempTxt){
         labTempTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->labHumidityTxt){
         labHumidityTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->corFactorTxt){
         corFactorTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->sampTimeTxt){
         sampTimeTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->FECO2Txt){
         FECO2Txt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
     }
     if(textField==self->FEO2Txt){
         FEO2Txt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
     }
-
 }
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
+    //move the screen back to the original place
+    [self keyBoardDisappeared:0];
+
     //***** change all to suit inputs *****
 
     //set int values to the text field inputs
@@ -432,4 +481,36 @@
     [self calculateGasses:self];
 }
 
+
+-(void) keyBoardAppeared :(int)oft
+{
+    CGRect frame = self.view.frame;
+    //oft= the y of the text field?  make some code to find it
+    NSLog(@"oring y = %i",oft);
+    [UIView animateWithDuration:1.0
+                          delay:0.5
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+
+                     }];
+}
+
+-(void) keyBoardDisappeared :(int)oft
+{
+    CGRect frame = self.view.frame;
+    //oft= the y of the text field?  make some code to find it
+
+    [UIView animateWithDuration:1.0
+                          delay:0.5
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.view.frame = CGRectMake(frame.origin.x, oft, frame.size.width, frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+}
 @end

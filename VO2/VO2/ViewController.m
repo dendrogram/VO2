@@ -96,7 +96,7 @@
             samptimelbl,
             VO2Kglbl,
             subHtlbl,
-            subWtlbllbl,
+            subWtlbl,
             corrFaclbl,
             FEO2bl,
             FECO2lbl
@@ -254,6 +254,23 @@
     databuffer = [singleton.resultStrings dataUsingEncoding: NSASCIIStringEncoding];
     [filemgr createFileAtPath: dataFile
                      contents: databuffer attributes:nil];
+}
+
+-(IBAction)setDateNow:(id)sender{
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [dateFormat stringFromDate:today];
+    testDateTxt.text=dateString;
+    NSLog(@"date: %@", dateString);
+}
+-(IBAction)setTimeNow:(id)sender{
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh-mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    startDateTxt.text=resultString;
+    NSLog(@"time: %@", resultString);
 }
 
 - (void)calculateGasses:(id)sender {

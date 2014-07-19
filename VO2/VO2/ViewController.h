@@ -89,7 +89,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * samptimelbl;
 @property (nonatomic, strong) IBOutlet UILabel * VO2Kglbl;
 @property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
-@property (nonatomic, strong) IBOutlet UILabel * subWtlbllbl;
+@property (nonatomic, strong) IBOutlet UILabel * subWtlbl;
 @property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
 @property (nonatomic, strong) IBOutlet UILabel * FEO2bl;
 @property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
@@ -98,10 +98,12 @@
 
 
 // for calculations and functions
-
+-(IBAction)setDateNow:(id)sender;
+-(IBAction)setTimeNow:(id)sender;
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;
+
 
 -(void)calculateGasses:(id)sender;
 

@@ -561,18 +561,6 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Humidity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nub-8N-l7c">
-                                        <rect key="frame" x="20" y="195" width="69" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ema-z4-NiI">
-                                        <rect key="frame" x="121" y="195" width="94" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16H-oj-5Qz">
                                         <rect key="frame" x="223" y="195" width="18" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -616,7 +604,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <outlet property="VCO2lbl" destination="OkC-24-UDz" id="9Ww-l6-MCp"/>
                         <outlet property="VEATPSlbl" destination="0hS-QX-GoI" id="CEo-qT-mbe"/>
                         <outlet property="VESTPDlbl" destination="rdh-20-0kJ" id="mLU-0o-vUg"/>
-                        <outlet property="VO2Kglbllbl" destination="iDT-UE-K8d" id="nrc-nE-QrA"/>
+                        <outlet property="VO2Kglbl" destination="iDT-UE-K8d" id="6k7-4o-eqT"/>
                         <outlet property="VO2lbl" destination="cXk-Tb-6Hm" id="t39-lw-49R"/>
                         <outlet property="corrFaclbl" destination="X41-KN-t1p" id="J5y-Xb-Kl7"/>
                         <outlet property="datelbl" destination="o9e-Ce-vtH" id="ATg-T0-A6o"/>
@@ -625,7 +613,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <outlet property="pressurelbl" destination="DdM-IH-03v" id="3jM-Ys-5Ob"/>
                         <outlet property="samptimelbl" destination="w36-4k-uL8" id="aEg-5g-jUn"/>
                         <outlet property="subHtlbl" destination="crh-zq-chZ" id="Uh2-z3-XOy"/>
-                        <outlet property="subWtlbllbl" destination="n2N-Ag-ffJ" id="ngv-Kp-WKe"/>
+                        <outlet property="subWtlbl" destination="n2N-Ag-ffJ" id="eAI-qT-twA"/>
                         <outlet property="subjectlbl" destination="cTR-7b-mBT" id="c6I-in-SOJ"/>
                         <outlet property="templbl" destination="Gls-hz-4Wx" id="K04-p0-t3j"/>
                         <outlet property="testerlbl" destination="lMg-k8-dHY" id="T8o-bZ-Zix"/>
@@ -934,7 +922,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZX-3p-XFQ">
-                                        <rect key="frame" x="32" y="93" width="216" height="30"/>
+                                        <rect key="frame" x="32" y="216" width="216" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
@@ -976,13 +964,13 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MX2-Ay-WCW">
-                                        <rect key="frame" x="32" y="216" width="216" height="30"/>
+                                        <rect key="frame" x="32" y="93" width="129" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="H9L-48-gBT">
-                                        <rect key="frame" x="32" y="154" width="216" height="30"/>
+                                        <rect key="frame" x="32" y="154" width="129" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
@@ -993,6 +981,26 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hw-Yp-h4m">
+                                        <rect key="frame" x="219" y="93" width="41" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Today">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setDateNow:" destination="w9a-IB-qgs" eventType="touchUpInside" id="qcq-tD-z5E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMf-Wg-2Hn">
+                                        <rect key="frame" x="191" y="153" width="69" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Time Now">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setTimeNow:" destination="w9a-IB-qgs" eventType="touchUpInside" id="LIB-AX-rUl"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -1383,6 +1391,6 @@ www.ess.mmu.ac.uk/vo2
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="mJl-SZ-4w8"/>
-        <segue reference="2dT-IF-yri"/>
+        <segue reference="nbS-k4-ZJu"/>
     </inferredMetricsTieBreakers>
 </document>

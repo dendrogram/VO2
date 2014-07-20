@@ -191,6 +191,12 @@
     FECO2Txt.delegate = self;
     FEO2Txt.delegate = self;
 
+    //initialise
+    labTempC=22;
+    labTempF=68;
+    labPressure_mmHg=760;
+    labPressure_mBar=1010.4;
+
     //run calcs with defaults once
     [self calculateGasses:self];
 }
@@ -523,9 +529,9 @@
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
 
-    if (labPressure_mmHg>900) {
+    if (labPressure_mmHg>1000) {
         labPressureTxt.textColor=[UIColor redColor];
-        labPressure_mmHg=900;
+        labPressure_mmHg=1000;
         labPressureTxt.text=@"900.00";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }

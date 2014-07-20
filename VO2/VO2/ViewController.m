@@ -99,14 +99,16 @@
             subWtlbl,
             corrFaclbl,
             FEO2bl,
-            FECO2lbl
+            FECO2lbl,
+            press,
+            degc,
+
+//switches
+            pressureChange,
+            tempChange
             ;
 //end
-            
-
-
-
-
+     
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *extn = @"csv";
@@ -161,6 +163,12 @@
     NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webview loadRequest:request];
+
+    //look for switch changs on pressure and temperature
+    [self.pressureChange addTarget:self
+                      action:@selector(pressureChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.tempChange addTarget:self
+                            action:@selector(tempChanged:) forControlEvents:UIControlEventValueChanged];
     
     //set the delegates or text did start/end will not work
     
@@ -193,7 +201,44 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+//Pressure switch changed, so recalculate and update textfield
+- (void)pressureChanged:(UISwitch *)switchState
+{
+    if ([switchState isOn]) {
+        press.text=@"mmHg";
+        labPressure_mmHg = 0.75218 * [labPressureTxt.text floatValue];
+        labPressure_mBar = labPressure_mmHg / 0.75218;
+        labPressureTxt.text = [NSString stringWithFormat:@"%.2f",labPressure_mmHg];
+        NSLog( @"Pressure mmHg %f",labPressure_mmHg);
+    } else {
+        press.text=@"mBar";
+        labPressure_mBar = [labPressureTxt.text floatValue] / 0.75218;
+        labPressure_mmHg = 0.75218 * labPressure_mBar;
+        labPressureTxt.text = [NSString stringWithFormat:@"%.2f",labPressure_mBar];
+        NSLog( @"Pressure mBar %f",labPressure_mBar);
+    }
+}
+//Pressure switch changed, so recalculate and update textfield
+- (void)tempChanged:(UISwitch *)switchState
+{
+    if ([switchState isOn]) {
+        degc.text=@"'C";
+        labTempC = 5 * ([labTempTxt.text floatValue] - 32) / 9;
+        labTempF = (9 * labTempC / 5 ) + 32;
+        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempC ];
+        NSLog( @"temp %f 'C",labTempC);
+    } else {
+        degc.text=@"'F";
+        labTempF = (9 * [labTempTxt.text floatValue] / 5 ) + 32;
+        labTempC = 5 * (labTempF - 32) / 9;
+        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempF ];
+        NSLog( @"temp %f 'F",labTempF);
+    }
+}
+//Fahrenheit to Celsius:
+//Celsius = (5 ÷ 9) × (Fahrenheit - 32)
+//Celsius to Fahrenheit:
+//Fahrenheit = (9 ÷ 5) × Celsius + 32
 //--------------------------------
 //mail from button press
 -(IBAction)sendEmail:(id)sender {
@@ -267,19 +312,22 @@
 -(IBAction)setTimeNow:(id)sender{
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"hh-mm"];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
     startDateTxt.text=resultString;
     NSLog(@"time: %@", resultString);
 }
 
+
 - (void)calculateGasses:(id)sender {
     //from text boxes
     labHumidity       = [labHumidityTxt.text floatValue];
     labTempC          = [labTempTxt.text floatValue];
-    labTempF          = [labTempTxt.text floatValue];
+    //labTempF          = [labTempTxt.text floatValue];
     labPressure_mBar  = [labPressureTxt.text floatValue];
-    labPressure_mmHg  = [labPressureTxt.text floatValue];
+    //labPressure_mmHg  = [labPressureTxt.text floatValue];
+
+
     subHt             = [subHtTxt.text floatValue];
     subWt             = [subWtTxt.text floatValue];
 
@@ -290,19 +338,19 @@
     //VEsptd
 
     VESTPD = (60 *(VEATPS * ( 273 / (273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760))) / sampTime;
-    VESTPDlbl.text = [[NSString stringWithFormat:@"%f00000", VESTPD]substringToIndex:6];
+    VESTPDlbl.text = [NSString stringWithFormat:@"%.2f", VESTPD];
 
     //VO2
     VO2 = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / 79.03 ) * 20.93) - (VESTPD * FEO2));
-    VO2lbl.text = [[NSString stringWithFormat:@"%f00000", VO2]substringToIndex:6];
+    VO2lbl.text = [NSString stringWithFormat:@"%.2f", VO2];
 
     //VCO2
     VCO2 = 0.01 * (VESTPD * FECO2);
-    VCO2lbl.text = [[NSString stringWithFormat:@"%f00000", VCO2]substringToIndex:6];
+    VCO2lbl.text = [NSString stringWithFormat:@"%.2f", VCO2];
 
     //VCO2Kg
     VO2Kg = (VO2 * 1000) / subWt;
-    VO2Kglbl.text = [[NSString stringWithFormat:@"%f00000", VO2Kg]substringToIndex:6];
+    VO2Kglbl.text = [NSString stringWithFormat:@"%.2f", VO2Kg];
 
     
     //newStr = [str substringToIndex:8]; //chars to print
@@ -426,10 +474,11 @@
     //set int values to the text field inputs
     //from text boxes
     labHumidity       = [labHumidityTxt.text floatValue];
-    labTempC          = [labTempTxt.text floatValue];
-    labTempF          = [labTempTxt.text floatValue];
-    labPressure_mBar  = [labPressureTxt.text floatValue];
-    labPressure_mmHg  = [labPressureTxt.text floatValue];
+    //labTempC          = [labTempTxt.text floatValue];
+    //labTempF          = [labTempTxt.text floatValue];
+    //labPressure_mBar  = [labPressureTxt.text floatValue];
+    //labPressure_mmHg  = [labPressureTxt.text floatValue];
+
     subHt             = [subHtTxt.text floatValue];
     subWt             = [subWtTxt.text floatValue];
     
@@ -443,6 +492,7 @@
         subWtTxt.backgroundColor       = [UIColor whiteColor];
         labLocationTxt.backgroundColor = [UIColor whiteColor];
         labTempTxt.backgroundColor     = [UIColor whiteColor];
+        labPressureTxt.backgroundColor = [UIColor whiteColor];
         labHumidityTxt.backgroundColor = [UIColor whiteColor];
         corFactorTxt.backgroundColor   = [UIColor whiteColor];
         sampTimeTxt.backgroundColor    = [UIColor whiteColor];
@@ -454,14 +504,14 @@
     if (labTempC<-50) {
         labTempTxt.textColor=[UIColor redColor];
         labTempC=-50.0;
-        labTempTxt.text=@"-50.0";
+        labTempTxt.text=@"-50.00";
         labTempTxt.backgroundColor = [UIColor yellowColor];
     }
 
     if (labTempC>60) {
         labTempTxt.textColor=[UIColor redColor];
         labTempC=60.0;
-        labTempTxt.text=@"60.0";
+        labTempTxt.text=@"60.00";
         labTempTxt.backgroundColor = [UIColor yellowColor];
     }
 
@@ -469,14 +519,14 @@
     if (labPressure_mmHg<600) {
         labPressureTxt.textColor=[UIColor redColor];
         labPressure_mmHg=600;
-        labPressureTxt.text=@"600.0";
+        labPressureTxt.text=@"600.00";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
 
     if (labPressure_mmHg>900) {
         labPressureTxt.textColor=[UIColor redColor];
         labPressure_mmHg=900;
-        labPressureTxt.text=@"900.0";
+        labPressureTxt.text=@"900.00";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
 

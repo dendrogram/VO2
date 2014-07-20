@@ -94,12 +94,18 @@
 @property (nonatomic, strong) IBOutlet UILabel * FEO2bl;
 @property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
 
+@property (nonatomic, strong) IBOutlet UILabel * degc;
+@property (nonatomic, strong) IBOutlet UILabel * press;
 
+
+@property (nonatomic,strong) IBOutlet UISwitch * pressureChange;
+@property (nonatomic,strong) IBOutlet UISwitch * tempChange;
 
 
 // for calculations and functions
 -(IBAction)setDateNow:(id)sender;
 -(IBAction)setTimeNow:(id)sender;
+
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;

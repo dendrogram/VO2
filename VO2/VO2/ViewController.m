@@ -331,6 +331,7 @@
 - (IBAction)presentResults:(id)sender {
     [self calculateGasses:self];
     [self updateResults:self];
+    subjectlbl.text=@"Jonathan";
 }
 
 - (void)calculateGasses:(id)sender {

@@ -19,28 +19,29 @@ static mySingleton * sharedSingleton = nil;
 // @synthesize counter;
 
 //Counters
-@synthesize  addedToResults;
-@synthesize  dataCompleted;
-@synthesize  sing_subWt;
-@synthesize  sing_subHt;
-@synthesize  sing_labTemp;
-@synthesize  sing_labPressure_mmHg;
-@synthesize  sing_labHumidity;
-@synthesize  sing_sampTime;
-@synthesize  sing_veatps;
-@synthesize  sing_vestpd;
-@synthesize  sing_feco2;
-@synthesize  sing_feo2;
-@synthesize  sing_corrFactor;
-@synthesize  sing_vo2;
-@synthesize  sing_vco2;
-@synthesize  sing_vo2kg;
-@synthesize  sing_rer;
-@synthesize  sing_testerName;
-@synthesize  sing_testDate;
-@synthesize  sing_testTime;
-@synthesize  sing_resultStrings;
-@synthesize  sing_subjectName;
+@synthesize  addedToResults,
+            dataCompleted,
+            subWt,
+            subHt,
+            labTemp,
+            labPressure_mmHg,
+            labHumidity,
+            labLocation,
+            sampTime,
+            veatps,
+            vestpd,
+            feco2,
+            feo2,
+            corrFactor,
+            vo2,
+            vco2,
+            vo2kg,
+            rer,
+            testerName,
+            testDate,
+            testTime,
+            resultStrings,
+            subjectName;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -71,8 +72,32 @@ static mySingleton * sharedSingleton = nil;
         //subjectName=@"TempSubject";
         //picturePos=CGRectMake(10,50,1000,800);//approx, will be updated in a moment anyway
         //cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: nil];
-        
-        sing_resultStrings = @"";
+
+        addedToResults     = NO;
+        dataCompleted      = NO;
+        subWt              = @"- none -";
+        subHt              = @"- none -";
+        labTemp            = @"- none -";
+        labPressure_mmHg   = @"- none -";
+        labHumidity        = @"- none -";
+        labLocation        = @"- none -";
+        sampTime           = @"- none -";
+        veatps             = @"- none -";
+        vestpd             = @"- none -";
+        feco2              = @"- none -";
+        feo2               = @"- none -";
+        corrFactor         = @"- none -";
+        vo2                = @"- none -";
+        vco2               = @"- none -";
+        vo2kg              = @"- none -";
+        rer                = @"- none -";
+        testerName         = @"- none -";
+        testDate           = @"- none -";
+        testTime           = @"- none -";
+        resultStrings      = @"- none -";
+        subjectName        = @"- none -";
+       
+        resultStrings      = @"- none -";
     }
     return self;
 }

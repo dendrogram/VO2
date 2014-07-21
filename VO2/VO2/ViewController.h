@@ -19,8 +19,8 @@
     NSString      * filepath;
     
     // for calculations and functions
-    NSDate        * startDate;
-    NSDate        * testDate;
+    NSDate        * startDateVar;
+    NSDate        * testDateVar;
 
     float subWt;
     float subHt;
@@ -53,8 +53,8 @@
 -(void) WriteToStringFile:(NSMutableString *)textToWrite;
 
 //dates
-@property (nonatomic, copy) NSDate * startDate;
-@property (nonatomic, copy) NSDate * testDate;
+@property (nonatomic, copy) NSDate * startDateVar;
+@property (nonatomic, copy) NSDate * testDateVar;
 
 //email stuff
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
@@ -80,6 +80,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * VO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * VCO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * datelbl;
+@property (nonatomic, strong) IBOutlet UILabel * timelbl;
 @property (nonatomic, strong) IBOutlet UILabel * lablbl;
 @property (nonatomic, strong) IBOutlet UILabel * testerlbl;
 @property (nonatomic, strong) IBOutlet UILabel * subjectlbl;

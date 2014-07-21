@@ -11,7 +11,8 @@
 @interface mySingleton : NSObject {
     // add all the objects that you want to be globally abailable here:
     //eg types defs
-    // int counter;
+    //int counter;
+    //float test;
     //BOOL    boxShow;
     //UIColor *lineColour;
     //CGRect  picturePos;
@@ -22,27 +23,28 @@
     BOOL     addedToResults;
     BOOL     dataCompleted;
     
-    float    sing_subWt;
-    float    sing_subHt;
-    float    sing_labTemp;
-    float    sing_labPressure_mmHg;
-    float    sing_labHumidity;
-    float    sing_sampTime;
-    float    sing_veatps;
-    float    sing_vestpd;
-    float    sing_feco2;
-    float    sing_feo2;
-    float    sing_corrFactor;
-    float    sing_vo2;
-    float    sing_vco2;
-    float    sing_vo2kg;
-    float    sing_rer;
+    NSString * subWt;
+    NSString * subHt;
+    NSString * labTemp;
+    NSString * labPressure_mmHg;
+    NSString * labHumidity;
+    NSString * labLocation;
+    NSString * sampTime;
+    NSString * veatps;
+    NSString * svestpd;
+    NSString * feco2;
+    NSString * feo2;
+    NSString * corrFactor;
+    NSString * vo2;
+    NSString * vco2;
+    NSString * vo2kg;
+    NSString * rer;
 
-    NSString * sing_testerName;
-    NSString * sing_testDate;
-    NSString * sing_testTime;
-    NSString * sing_resultStrings;
-    NSString * sing_subjectName;
+    NSString * testerName;
+    NSString * testDate;
+    NSString * testTime;
+    NSString * resultStrings;
+    NSString * subjectName;
 }
 //eg defs pt2
 //@property (nonatomic) int  counter;
@@ -56,28 +58,29 @@
 //Integers
 
 //floats
-@property (nonatomic) float  sing_subWt;
-@property (nonatomic) float  sing_subHt;
-@property (nonatomic) float  sing_labTemp;
-@property (nonatomic) float  sing_labPressure_mmHg;
-@property (nonatomic) float  sing_labHumidity;
-@property (nonatomic) float  sing_sampTime;
-@property (nonatomic) float  sing_veatps;
-@property (nonatomic) float  sing_vestpd;
-@property (nonatomic) float  sing_feco2;
-@property (nonatomic) float  sing_feo2;
-@property (nonatomic) float  sing_corrFactor;
-@property (nonatomic) float  sing_vo2;
-@property (nonatomic) float  sing_vco2;
-@property (nonatomic) float  sing_vo2kg;
-@property (nonatomic) float  sing_rer;
 
 //Strings
-@property (nonatomic, retain) NSString * sing_resultStrings;
-@property (nonatomic, retain) NSString * sing_subjectName;
-@property (nonatomic, retain) NSString * sing_testerName;
-@property (nonatomic, retain) NSString * sing_testDate;
-@property (nonatomic, retain) NSString * sing_testTime;
+@property (nonatomic, retain) NSString * subWt;
+@property (nonatomic, retain) NSString * subHt;
+@property (nonatomic, retain) NSString * labTemp;
+@property (nonatomic, retain) NSString * labPressure_mmHg;
+@property (nonatomic, retain) NSString * labHumidity;
+@property (nonatomic, retain) NSString * labLocation;
+@property (nonatomic, retain) NSString * sampTime;
+@property (nonatomic, retain) NSString * veatps;
+@property (nonatomic, retain) NSString * vestpd;
+@property (nonatomic, retain) NSString * feco2;
+@property (nonatomic, retain) NSString * feo2;
+@property (nonatomic, retain) NSString * corrFactor;
+@property (nonatomic, retain) NSString * vo2;
+@property (nonatomic, retain) NSString * vco2;
+@property (nonatomic, retain) NSString * vo2kg;
+@property (nonatomic, retain) NSString * rer;
+@property (nonatomic, retain) NSString * resultStrings;
+@property (nonatomic, retain) NSString * subjectName;
+@property (nonatomic, retain) NSString * testerName;
+@property (nonatomic, retain) NSString * testDate;
+@property (nonatomic, retain) NSString * testTime;
 
 //Flags BOOL
 @property (nonatomic) BOOL addedToResults;

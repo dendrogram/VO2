@@ -50,8 +50,8 @@
 
 @synthesize
 //dates
-            startDate,
-            testDate,
+            startDateVar,
+            testDateVar,
             startDateTxt,
             testDateTxt,
 
@@ -87,6 +87,7 @@
             VO2lbl,
             VCO2lbl,
             datelbl,
+            timelbl,
             lablbl,
             testerlbl,
             subjectlbl,
@@ -114,7 +115,7 @@
     NSString *extn = @"csv";
     //add unique dientifier to sub name, eg date and time
     
-    filename = [NSString stringWithFormat:@"%@_%@_%@.%@", singleton.sing_subjectName,singleton.sing_testDate,singleton.sing_testTime, extn];
+    filename = [NSString stringWithFormat:@"%@_%@_%@.%@", singleton.subjectName,singleton.testDate,singleton.testTime, extn];
     
     return filename;
 }
@@ -201,6 +202,7 @@
 
     //run calcs with defaults once
     [self calculateGasses:self];
+    [self updateResults:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -259,7 +261,7 @@
         [mailComposer setSubject:@"Restults from VO2 App"];
         //[mailComposer setMessageBody:@"Dear Tachistoscope User: " isHTML:YES];
         
-        [mailComposer setMessageBody: singleton.sing_resultStrings isHTML:NO];
+        [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
         [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
         [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
     }else{
@@ -304,7 +306,7 @@
     NSString *fileNameS = [NSString stringWithFormat:@"%@.csv", subjectCodeTxt.text];
     dataFile = [docsDir stringByAppendingPathComponent:fileNameS];
     
-    databuffer = [singleton.sing_resultStrings dataUsingEncoding: NSASCIIStringEncoding];
+    databuffer = [singleton.resultStrings dataUsingEncoding: NSASCIIStringEncoding];
     [filemgr createFileAtPath: dataFile
                      contents: databuffer attributes:nil];
 }
@@ -326,18 +328,34 @@
     NSLog(@"time: %@", resultString);
 }
 
+- (IBAction)presentResults:(id)sender {
+    [self calculateGasses:self];
+    [self updateResults:self];
+}
 
 - (void)calculateGasses:(id)sender {
+    // set up link to singleton
+    mySingleton *singleton = [mySingleton sharedSingleton];
+
     //from text boxes
     labHumidity       = [labHumidityTxt.text floatValue];
-    labTempC          = [labTempTxt.text floatValue];
-    //labTempF          = [labTempTxt.text floatValue];
-    labPressure_mBar  = [labPressureTxt.text floatValue];
-    //labPressure_mmHg  = [labPressureTxt.text floatValue];
+    singleton.labHumidity=[NSString stringWithFormat:@"%f",labHumidity];
 
+    labTempC          = [labTempTxt.text floatValue];
+    singleton.labTemp=[NSString stringWithFormat:@"%f",labTempC];
+
+    //labTempF          = [labTempTxt.text floatValue];
+
+    //labPressure_mBar  = [labPressureTxt.text floatValue];
+
+    labPressure_mmHg  = [labPressureTxt.text floatValue];
+    singleton.labPressure_mmHg=[NSString stringWithFormat:@"%f",labPressure_mmHg];
 
     subHt             = [subHtTxt.text floatValue];
+    singleton.subHt=[NSString stringWithFormat:@"%f",subHt];
+
     subWt             = [subWtTxt.text floatValue];
+    singleton.subWt=[NSString stringWithFormat:@"%f",subWt];
 
     //email address
     NSString * emailTxt = @"j.a.howell@mmu.ac.uk";
@@ -347,18 +365,22 @@
 
     VESTPD = (60 *(VEATPS * ( 273 / (273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760))) / sampTime;
     VESTPDlbl.text = [NSString stringWithFormat:@"%.2f", VESTPD];
+    singleton.vestpd=VESTPDlbl.text;
 
     //VO2
     VO2 = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / 79.03 ) * 20.93) - (VESTPD * FEO2));
     VO2lbl.text = [NSString stringWithFormat:@"%.2f", VO2];
+    singleton.vo2=VO2lbl.text;
 
     //VCO2
     VCO2 = 0.01 * (VESTPD * FECO2);
     VCO2lbl.text = [NSString stringWithFormat:@"%.2f", VCO2];
+    singleton.vco2=VCO2lbl.text;
 
     //VCO2Kg
     VO2Kg = (VO2 * 1000) / subWt;
     VO2Kglbl.text = [NSString stringWithFormat:@"%.2f", VO2Kg];
+    singleton.vo2kg=VO2Kglbl.text;
 
     
     //newStr = [str substringToIndex:8]; //chars to print
@@ -366,7 +388,7 @@
     //put the results in the labels
     //mm's
     //odWheelLbl.text = [[NSString stringWithFormat:@"%f00000",odWheelmm]substringToIndex:6];
-
+    [self updateResults:self];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -554,8 +576,39 @@
     }
        //calculate results and display
     [self calculateGasses:self];
+    [self updateResults:self];
 }
 
+-(void)updateResults:(id)sender{
+    // set up link to singleton
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.subjectName=subjectNameTxt.text;
+    singleton.testerName=testerNameTxt.text;
+    singleton.subWt=subWtTxt.text;
+    singleton.subHt=subHtTxt.text;
+
+    subjectlbl.text=singleton.subjectName;
+    testerlbl.text=singleton.testerName;
+    datelbl.text=singleton.testDate;
+    timelbl.text=singleton.testTime;
+    lablbl.text=singleton.labLocation;
+    subWtlbl.text=singleton.subWt;
+    subHtlbl.text=singleton.subHt;
+    templbl.text=singleton.labTemp;
+    pressurelbl.text=singleton.labPressure_mmHg;
+    humiditylbl.text=singleton.labHumidity;
+    samptimelbl.text=singleton.sampTime;
+    VEATPSlbl.text=singleton.veatps;
+    VESTPDlbl.text=singleton.vestpd;
+    FEO2bl.text=singleton.feo2;
+    FECO2lbl.text=singleton.feco2;
+    corrFaclbl.text=singleton.corrFactor;
+    VO2lbl.text=singleton.vo2;
+    VCO2lbl.text=singleton.vco2;
+    VO2Kglbl.text=singleton.vo2kg;
+    RERlbl.text=singleton.rer;
+    
+}
 
 -(void) keyBoardAppeared :(int)oft
 {

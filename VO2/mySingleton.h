@@ -19,29 +19,29 @@
     //NSMutableArray * cardReactionTimeResult;
     //NSString       * resultsStrings;
     
-    BOOL   addedToResults;
-    BOOL   dataCompleted;
+    BOOL     addedToResults;
+    BOOL     dataCompleted;
     
-    float  sing_subWt;
-    float  sing_subHt;
-    float  sing_labTemp;
-    float  sing_labPressure_mmHg;
-    float  sing_labHumidity;
-    float  sing_sampTime;
-    float  sing_veatps;
-    float  sing_vestpd;
-    float  sing_feco2;
-    float  sing_feo2;
-    float  sing_corrFactor;
-    float  sing_vo2;
-    float  sing_vco2;
-    float  sing_vo2kg;
-    float  sing_rer;
+    float    sing_subWt;
+    float    sing_subHt;
+    float    sing_labTemp;
+    float    sing_labPressure_mmHg;
+    float    sing_labHumidity;
+    float    sing_sampTime;
+    float    sing_veatps;
+    float    sing_vestpd;
+    float    sing_feco2;
+    float    sing_feo2;
+    float    sing_corrFactor;
+    float    sing_vo2;
+    float    sing_vco2;
+    float    sing_vo2kg;
+    float    sing_rer;
 
     NSString * sing_testerName;
     NSString * sing_testDate;
     NSString * sing_testTime;
-    NSString * sing_resultsStrings;
+    NSString * sing_resultStrings;
     NSString * sing_subjectName;
 }
 //eg defs pt2
@@ -73,11 +73,11 @@
 @property (nonatomic) float  sing_rer;
 
 //Strings
-@property (nonatomic, retain) NSString *sing_resultStrings;
-@property (nonatomic, retain) NSString *sing_subjectName;
-@property (nonatomic, retain) NSString *sing_testerName;
-@property (nonatomic, retain) NSString *sing_testDate;
-@property (nonatomic, retain) NSString *sing_testTime;
+@property (nonatomic, retain) NSString * sing_resultStrings;
+@property (nonatomic, retain) NSString * sing_subjectName;
+@property (nonatomic, retain) NSString * sing_testerName;
+@property (nonatomic, retain) NSString * sing_testDate;
+@property (nonatomic, retain) NSString * sing_testTime;
 
 //Flags BOOL
 @property (nonatomic) BOOL addedToResults;

@@ -15,29 +15,32 @@ static mySingleton * sharedSingleton = nil;
 }
 
 //note, some of these vars unused from other apps, left for reference and future use
+// eg for all in .h
+// @synthesize counter;
 
 //Counters
-@synthesize counter;
-@synthesize offset;
-@synthesize lineWidth;
-@synthesize lineColour;
-@synthesize scalingFactor;
-@synthesize crossType;
-@synthesize picturePos;
-
-@synthesize resultStrings;
-@synthesize subjectName;
-
-//image
-@synthesize imageForDisplay;
-
-//Flags BOOL
-@synthesize boxShow;
-@synthesize hypot;
-@synthesize floatAngle;
-
-//Array
-@synthesize cardReactionTimeResult;
+@synthesize  addedToResults;
+@synthesize  dataCompleted;
+@synthesize  sing_subWt;
+@synthesize  sing_subHt;
+@synthesize  sing_labTemp;
+@synthesize  sing_labPressure_mmHg;
+@synthesize  sing_labHumidity;
+@synthesize  sing_sampTime;
+@synthesize  sing_veatps;
+@synthesize  sing_vestpd;
+@synthesize  sing_feco2;
+@synthesize  sing_feo2;
+@synthesize  sing_corrFactor;
+@synthesize  sing_vo2;
+@synthesize  sing_vco2;
+@synthesize  sing_vo2kg;
+@synthesize  sing_rer;
+@synthesize  sing_testerName;
+@synthesize  sing_testDate;
+@synthesize  sing_testTime;
+@synthesize  sing_resultStrings;
+@synthesize  sing_subjectName;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -59,24 +62,17 @@ static mySingleton * sharedSingleton = nil;
 
 - (id) init {
     if(self = [super init]) {
-        //Arrays
         
-        //Counters
-        counter=0;
-        offset=30;
-        lineWidth=1;
-        lineColour=[UIColor blueColor];
-        scalingFactor=1;
-        boxShow=YES;
-        hypot=NO;
-        floatAngle=NO;
-        crossType=1;
+        //initialise with values, eg
+        //linewidth=1;
+        //counter=0;
+        //lineColour=[UIColor blueColor];
+        //boxShow=YES;
+        //subjectName=@"TempSubject";
+        //picturePos=CGRectMake(10,50,1000,800);//approx, will be updated in a moment anyway
+        //cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: nil];
         
-        resultStrings = @"";
-        subjectName=@"TempSubject";
-        
-        picturePos=CGRectMake(10,50,1000,800);//approx, will be updated in a moment anyway
-        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: nil];
+        sing_resultStrings = @"";
     }
     return self;
 }

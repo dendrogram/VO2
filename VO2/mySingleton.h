@@ -10,47 +10,80 @@
 
 @interface mySingleton : NSObject {
     // add all the objects that you want to be globally abailable here:
+    //eg types defs
+    // int counter;
+    //BOOL    boxShow;
+    //UIColor *lineColour;
+    //CGRect  picturePos;
+    //UIImage        * imageForDisplay;
+    //NSMutableArray * cardReactionTimeResult;
+    //NSString       * resultsStrings;
     
-    int offset;
-    int counter;
-    int lineWidth;
-    int scalingFactor;
-    int     crossType;
+    BOOL   addedToResults;
+    BOOL   dataCompleted;
+    
+    float  sing_subWt;
+    float  sing_subHt;
+    float  sing_labTemp;
+    float  sing_labPressure_mmHg;
+    float  sing_labHumidity;
+    float  sing_sampTime;
+    float  sing_veatps;
+    float  sing_vestpd;
+    float  sing_feco2;
+    float  sing_feo2;
+    float  sing_corrFactor;
+    float  sing_vo2;
+    float  sing_vco2;
+    float  sing_vo2kg;
+    float  sing_rer;
 
-    BOOL    boxShow;
-    BOOL    hypot;
-    BOOL    floatAngle;
-
-    UIColor *lineColour;
-    CGRect  picturePos;
-    
-    UIImage        * imageForDisplay;
-    NSMutableArray * cardReactionTimeResult;
-    
-    NSString       * resultsStrings;
-    NSString       * subjectName;
+    NSString * sing_testerName;
+    NSString * sing_testDate;
+    NSString * sing_testTime;
+    NSString * sing_resultsStrings;
+    NSString * sing_subjectName;
 }
+//eg defs pt2
+//@property (nonatomic) int  counter;
+//@property (nonatomic) BOOL boxShow;
+//@property (nonatomic,retain) UIColor *lineColour;
+//@property (nonatomic) CGRect picturePos;
+//@property (nonatomic) UIImage *imageForDisplay;
+//@property (nonatomic, retain) NSMutableArray *cardReactionTimeResult;
+//@property (nonatomic, retain) NSString *resultStrings;
+
 //Integers
-@property (nonatomic) int  offset;
-@property (nonatomic) int  counter;
-@property (nonatomic) int  lineWidth;
-@property (nonatomic) int  scalingFactor;
-@property (nonatomic) int  crossType;
 
-//Flags BOOL
-@property (nonatomic) BOOL boxShow;
-@property (nonatomic) BOOL hypot;
-@property (nonatomic) BOOL floatAngle;
-//Images and Colours
-@property (nonatomic,retain) UIColor *lineColour;
-@property (nonatomic) CGRect picturePos;
-
-@property (nonatomic) UIImage *imageForDisplay;
+//floats
+@property (nonatomic) float  sing_subWt;
+@property (nonatomic) float  sing_subHt;
+@property (nonatomic) float  sing_labTemp;
+@property (nonatomic) float  sing_labPressure_mmHg;
+@property (nonatomic) float  sing_labHumidity;
+@property (nonatomic) float  sing_sampTime;
+@property (nonatomic) float  sing_veatps;
+@property (nonatomic) float  sing_vestpd;
+@property (nonatomic) float  sing_feco2;
+@property (nonatomic) float  sing_feo2;
+@property (nonatomic) float  sing_corrFactor;
+@property (nonatomic) float  sing_vo2;
+@property (nonatomic) float  sing_vco2;
+@property (nonatomic) float  sing_vo2kg;
+@property (nonatomic) float  sing_rer;
 
 //Strings
-@property (nonatomic, retain) NSMutableArray *cardReactionTimeResult;
-@property (nonatomic, retain) NSString *resultStrings;
-@property (nonatomic, retain) NSString *subjectName;
+@property (nonatomic, retain) NSString *sing_resultStrings;
+@property (nonatomic, retain) NSString *sing_subjectName;
+@property (nonatomic, retain) NSString *sing_testerName;
+@property (nonatomic, retain) NSString *sing_testDate;
+@property (nonatomic, retain) NSString *sing_testTime;
+
+//Flags BOOL
+@property (nonatomic) BOOL addedToResults;
+@property (nonatomic) BOOL dataCompleted;
+
+//Images and Colours
 
 //set up singleton shared
 

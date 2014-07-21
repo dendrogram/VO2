@@ -259,7 +259,7 @@
         [mailComposer setSubject:@"Restults from VO2 App"];
         //[mailComposer setMessageBody:@"Dear Tachistoscope User: " isHTML:YES];
         
-        [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
+        [mailComposer setMessageBody: singleton.sing_resultStrings isHTML:NO];
         [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
         [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
     }else{
@@ -304,7 +304,7 @@
     NSString *fileNameS = [NSString stringWithFormat:@"%@.csv", subjectCodeTxt.text];
     dataFile = [docsDir stringByAppendingPathComponent:fileNameS];
     
-    databuffer = [singleton.resultStrings dataUsingEncoding: NSASCIIStringEncoding];
+    databuffer = [singleton.sing_resultStrings dataUsingEncoding: NSASCIIStringEncoding];
     [filemgr createFileAtPath: dataFile
                      contents: databuffer attributes:nil];
 }

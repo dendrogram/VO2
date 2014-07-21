@@ -112,7 +112,9 @@
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *extn = @"csv";
-    filename = [NSString stringWithFormat:@"%@.%@", singleton.subjectName, extn];
+    //add unique dientifier to sub name, eg date and time
+    
+    filename = [NSString stringWithFormat:@"%@_%@_%@.%@", singleton.sing_subjectName,singleton.sing_testDate,singleton.sing_testTime, extn];
     
     return filename;
 }

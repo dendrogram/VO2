@@ -11,7 +11,6 @@
 
 @interface ViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
 
-
 {
     // for file manager
     NSFileManager * fileMgr;
@@ -56,13 +55,14 @@
 //dates
 @property (nonatomic, copy) NSDate * startDate;
 @property (nonatomic, copy) NSDate * testDate;
-@property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
-@property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
+
 //email stuff
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
 
 //text field inputs
+@property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
+@property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labLocationTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labPressureTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labTempTxt;
@@ -97,21 +97,16 @@
 @property (nonatomic, strong) IBOutlet UILabel * degc;
 @property (nonatomic, strong) IBOutlet UILabel * press;
 
-
 @property (nonatomic,strong) IBOutlet UISwitch * pressureChange;
 @property (nonatomic,strong) IBOutlet UISwitch * tempChange;
-
 
 // for calculations and functions
 -(IBAction)setDateNow:(id)sender;
 -(IBAction)setTimeNow:(id)sender;
 
-
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;
 
-
 -(void)calculateGasses:(id)sender;
-
 
 @end

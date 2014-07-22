@@ -11,19 +11,6 @@
 @interface readingsViewController : UIViewController <UITextFieldDelegate>
 
 {
-    // for file manager
-/*    NSFileManager * fileMgr;
-    NSString      * homeDir;
-    NSString      * filename;
-    NSString      * filepath;
-    
-    // for calculations and functions
-    NSDate        * startDateVar;
-    NSDate        * testDateVar;
-    
-    float subWt;
-    float subHt;
- */
     float labPressure_mmHg;
     float labPressure_mBar;
     float labTempC;
@@ -40,37 +27,7 @@
     UITextField * FECO2Txt;
     UISwitch * pressureChange;
     UISwitch * tempChange;
-    
-    /*
-    float labHumidity;
-    float VEATPS;
-    float VESTPD;
-    float VO2;
-    float VCO2;
-    float RER;
-    float sampTime;
-    float FECO2;
-    float FEO2;
-    
-    float VO2Kg;
- */
 }
-/*
-@property (strong, nonatomic) IBOutlet UIWebView *webview;
-
-//file ops stuff
-@property(nonatomic,retain) NSFileManager * fileMgr;
-@property(nonatomic,retain) NSString      * homeDir;
-@property(nonatomic,retain) NSString      * filename;
-@property(nonatomic,retain) NSString      * filepath;
-
--(NSString *) GetDocumentDirectory;
--(NSString *) setFilename;
-
-//dates
-@property (nonatomic, copy) NSDate * startDateVar;
-@property (nonatomic, copy) NSDate * testDateVar;
-*/
 
 //text field inputs
 //readings
@@ -86,23 +43,8 @@
 @property (nonatomic,strong) IBOutlet UISwitch * pressureChange;
 @property (nonatomic,strong) IBOutlet UISwitch * tempChange;
 
-//subject
-/*
-@property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
-@property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
-@property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
-@property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
-@property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
-@property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
-*/
 @property (nonatomic, strong) IBOutlet UILabel * degc;
 @property (nonatomic, strong) IBOutlet UILabel * press;
 
-// for calculations and functions
-//-(IBAction)setDateNow:(id)sender;
-//-(IBAction)setTimeNow:(id)sender;
-
-//-(void)calculateGasses:(id)sender;
-//-(void) WriteToStringFile:(NSMutableString *)textToWrite;
 @end
 

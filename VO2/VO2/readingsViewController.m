@@ -10,56 +10,17 @@
 #import "mySingleton.h" //for global variables
 
 @interface readingsViewController ()
-/*
-{
-    //array result lines
-    NSString * resultLine[50];
-    
-    //text fields for inputs
-    
-    IBOutlet UITextField * subjectCodeTxt;
-    
-    //text views for text displays ie results or help screens
-    IBOutlet UITextView  * resultsView;
-    IBOutlet UITextView  * resultsViewBorder;
-    IBOutlet UITextView  * infoView;
-    
-    //image views for pictures -edit, not really needed
-    IBOutlet UIImageView * logoImage;
-    //labels for email messages
-    IBOutlet UILabel     * statusMessageLab;
- 
-}
- */
+
 @end
 
 @implementation readingsViewController
 
 #pragma mark Inits
-//************
-//****  inits
-//************
+// ************
+// ****  inits
+// ************
 
 @synthesize
-//dates
-
-/*
-startDateTxt,
-testDateTxt,
-
-//subject
-subjectNameTxt,
-testerNameTxt,
-subHtTxt,
-subWtTxt,
-
-//file
-fileMgr,
-homeDir,
-filename,
-filepath,
-*/
-
 //lab
 labLocationTxt,
 labTempTxt,
@@ -81,66 +42,12 @@ tempChange,
 press,
 degc
 ;
-//end
-
-/*
- -(NSString *) setFilename{
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    NSString *extn = @"csv";
-    //add unique dientifier to sub name, eg date and time
-    
-    filename = [NSString stringWithFormat:@"%@_%@_%@.%@", singleton.subjectName,singleton.testDate,singleton.testTime, extn];
-    
-    return filename;
-}
-
-//find the home directory for Document
--(NSString *)GetDocumentDirectory{
-    fileMgr = [NSFileManager defaultManager];
-    NSString *docsDir;
-    NSArray *dirPaths;
-    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = dirPaths[0];
-    return docsDir;
-}
-
-//Create a new file
--(void)WriteToStringFile:(NSMutableString *)textToWrite{
-    filepath = [[NSString alloc] init];
-    //NSError *err;
-    filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
-    
-    //check if file exists
-    //int fileCounter = 0;
-    //BOOL fileExists = TRUE;
-    /*if([NSFileManager defaultManager] fileExistsAtPath:filepath) {
-     //exists, error, add 1 to filename and repeat
-     BOOL fileExists = TRUE;
-     }
-     else
-     {
-     //not exists, write
-     BOOL fileExists = FALSE;
-     }
-     //needs more work *****************************
-     BOOL ok;
-     ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
-     if (!ok) {
-     NSLog(@"Error writing file at %@\n%@",
-     filepath, [err localizedFailureReason]);
-     
-     }
-}
-*/
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-//    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    [_webview loadRequest:request];
+
     
     //look for switch changs on pressure and temperature
     [self.pressureChange addTarget:self
@@ -149,16 +56,6 @@ degc
                         action:@selector(tempChanged:) forControlEvents:UIControlEventValueChanged];
     
     //set the delegates or text did start/end will not work
-/*
-    startDateTxt.delegate = self;
-    testDateTxt.delegate = self;
-    //subject
-    subjectNameTxt.delegate = self;
-    testerNameTxt.delegate = self;
-    subHtTxt.delegate = self;
-    subWtTxt.delegate = self;
- */
- 
     //lab
     labLocationTxt.delegate = self;
     labTempTxt.delegate = self;
@@ -176,7 +73,6 @@ degc
     labTempF=68;
     labPressure_mmHg=760;
     labPressure_mBar=1010.4;
-    
 }
 
 //Pressure switch changed, so recalculate and update textfield
@@ -203,7 +99,7 @@ degc
         NSLog( @"Pressure mBar %f",labPressure_mBar);
     }
 }
-//Pressure switch changed, so recalculate and update textfield
+//Temperature switch changed, so recalculate and update textfield
 - (void)tempChanged:(UISwitch *)switchState
 {
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -233,103 +129,6 @@ degc
 //Fahrenheit = (9 ÷ 5) × Celsius + 32
 //--------------------------------
 
-/*
-- (void)saveText
-{
-    statusMessageLab.text=@"Saving\nData\nFile.";
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    NSFileManager *filemgr;
-    NSData *databuffer;
-    NSString *dataFile;
-    NSString *docsDir;
-    NSArray *dirPaths;
-    
-    filemgr = [NSFileManager defaultManager];
-    
-    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    
-    docsDir = dirPaths[0];
-    
-    NSString *fileNameS = [NSString stringWithFormat:@"%@.csv", subjectCodeTxt.text];
-    dataFile = [docsDir stringByAppendingPathComponent:fileNameS];
-    
-    databuffer = [singleton.resultStrings dataUsingEncoding: NSASCIIStringEncoding];
-    [filemgr createFileAtPath: dataFile
-                     contents: databuffer attributes:nil];
-}
-
--(IBAction)setDateNow:(id)sender{
-    NSDate *today = [NSDate date];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"dd/MM/yyyy"];
-    NSString *dateString = [dateFormat stringFromDate:today];
-    testDateTxt.text=dateString;
-    NSLog(@"date: %@", dateString);
-}
--(IBAction)setTimeNow:(id)sender{
-    NSDate *currentTime = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss"];
-    NSString *resultString = [dateFormatter stringFromDate: currentTime];
-    startDateTxt.text=resultString;
-    NSLog(@"time: %@", resultString);
-}
-
-- (void)calculateGasses:(id)sender {
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    //from text boxes
-    labHumidity       = [labHumidityTxt.text floatValue];
-    singleton.labHumidity=[NSString stringWithFormat:@"%f",labHumidity];
-    
-    labTempC          = [labTempTxt.text floatValue];
-    singleton.labTemp=[NSString stringWithFormat:@"%f",labTempC];
-    
-    //labTempF          = [labTempTxt.text floatValue];
-    
-    //labPressure_mBar  = [labPressureTxt.text floatValue];
-    
-    labPressure_mmHg  = [labPressureTxt.text floatValue];
-    singleton.labPressure_mmHg=[NSString stringWithFormat:@"%f",labPressure_mmHg];
-    
-    subHt             = [subHtTxt.text floatValue];
-    singleton.subHt=[NSString stringWithFormat:@"%f",subHt];
-    
-    subWt             = [subWtTxt.text floatValue];
-    singleton.subWt=[NSString stringWithFormat:@"%f",subWt];
-    
-    //email address
-    NSString * emailTxt = @"j.a.howell@mmu.ac.uk";
-    
-    //do the calculations
-    //VEsptd
-    
-    VESTPD = (60 *(VEATPS * ( 273 / (273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760))) / sampTime;
-    singleton.vestpd = [NSString stringWithFormat:@"%.2f", VESTPD];
-    
-    //VO2
-    VO2 = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / 79.03 ) * 20.93) - (VESTPD * FEO2));
-    singleton.vo2= [NSString stringWithFormat:@"%.2f", VO2];
-    
-    //VCO2
-    VCO2 = 0.01 * (VESTPD * FECO2);
-    singleton.vco2= [NSString stringWithFormat:@"%.2f", VCO2];
-    
-    //VCO2Kg
-    VO2Kg = (VO2 * 1000) / subWt;
-    singleton.vo2kg= [NSString stringWithFormat:@"%.2f", VO2Kg];
-    
-    
-    //newStr = [str substringToIndex:8]; //chars to print
-    
-    //put the results in the labels
-    //mm's
-    //odWheelLbl.text = [[NSString stringWithFormat:@"%f00000",odWheelmm]substringToIndex:6];
-    [self updateResults:self];
-}
-*/
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     //used to clear keyboard if screen touched
     // NSLog(@"Touches began with this event");
@@ -341,60 +140,13 @@ degc
 //one block for each input var to colour the boxes and test the validity
 //******** Start of block *********
 
-
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    //***** change all to suit inputs *****
-    //the number refers to the scrolling of the text input field to avoid the keyboard when it appears, then it is moved back afterwards to the 0 origin
-    //page1
-    // change the color of the text box when you touch it
-
-    /*
-    if(textField==self->testerNameTxt){
-        testerNameTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
-        [self keyBoardAppeared:oft];
-    }
-    if(textField==self->testDateTxt){
-        testDateTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
-        [self keyBoardAppeared:oft];
-    }
-    if(textField==self->startDateTxt){
-        startDateTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
-        [self keyBoardAppeared:oft];
-    }
-     */
-    if(textField==self->labLocationTxt){
+     if(textField==self->labLocationTxt){
         labLocationTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
         int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
-    /*
-     
-    if(textField==self->subjectNameTxt){
-        subjectNameTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
-        [self keyBoardAppeared:oft];
-    }
-    if(textField==self->subWtTxt){
-        subWtTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
-        [self keyBoardAppeared:oft];
-    }
-    if(textField==self->subHtTxt){
-        subHtTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
-        [self keyBoardAppeared:oft];
-    }
-     */
     //page2
     if(textField==self->labPressureTxt){
         labPressureTxt.backgroundColor = [UIColor greenColor];
@@ -447,29 +199,6 @@ degc
     
     //move the screen back to the original place
     [self keyBoardDisappeared:0];
-    
-    //***** change all to suit inputs *****
-    
-    //set int values to the text field inputs
-    //from text boxes
-    //labHumidity       = [labHumidityTxt.text floatValue];
-    //labTempC          = [labTempTxt.text floatValue];
-    //labTempF          = [labTempTxt.text floatValue];
-    //labPressure_mBar  = [labPressureTxt.text floatValue];
-    //labPressure_mmHg  = [labPressureTxt.text floatValue];
-    
-    //subHt             = [subHtTxt.text floatValue];
-    //subWt             = [subWtTxt.text floatValue];
-    
-    //set all backgrounds to white
-    /*
-    startDateTxt.backgroundColor   = [UIColor whiteColor];
-    testDateTxt.backgroundColor    = [UIColor whiteColor];
-    subjectNameTxt.backgroundColor = [UIColor whiteColor];
-    testerNameTxt.backgroundColor  = [UIColor whiteColor];
-    subHtTxt.backgroundColor       = [UIColor whiteColor];
-    subWtTxt.backgroundColor       = [UIColor whiteColor];
-     */
     
     labLocationTxt.backgroundColor = [UIColor whiteColor];
     labTempTxt.backgroundColor     = [UIColor whiteColor];
@@ -527,32 +256,9 @@ degc
     }
     
     [self updateResults:self];
- /*
-    if(textField==self->testerNameTxt){
-        //save to singleton
-        singleton.testerName=testerNameTxt.text;
-    }
-    if(textField==self->testDateTxt){
-        singleton.testDate=testDateTxt.text;
-    }
-    if(textField==self->startDateTxt){
-        singleton.testTime=startDateTxt.text;
-    }
-  */
     if(textField==self->labLocationTxt){
         singleton.labLocation=labLocationTxt.text;
     }
-    /*
-    if(textField==self->subjectNameTxt){
-        singleton.subjectName=subjectNameTxt.text;
-    }
-    if(textField==self->subWtTxt){
-        singleton.subWt=subWtTxt.text;
-    }
-    if(textField==self->subHtTxt){
-        singleton.subHt=subHtTxt.text;
-    }
-     */
     //page2
     if(textField==self->labPressureTxt){
         //aways mmHg
@@ -578,35 +284,20 @@ degc
     if(textField==self->FEO2Txt){
         singleton.feo2=FEO2Txt.text;
     }
-    
-    
-    //calculate results and display
-    //[self calculateGasses:self];
-    //[self updateResults:self];
 }
 
 -(void)updateResults:(id)sender{
     // set up link to singleton
     mySingleton *singleton = [mySingleton sharedSingleton];
-/*
-    singleton.subjectName  = subjectNameTxt.text;
-    singleton.testerName   = testerNameTxt.text;
-    singleton.subWt        = subWtTxt.text;
-    singleton.subHt        = subHtTxt.text;
-*/
     singleton.feo2         = FEO2Txt.text;
     singleton.feco2        = FECO2Txt.text;
     singleton.corrFactor   = corFactorTxt.text;
     
     singleton.labLocation  = labLocationTxt.text;
-    //singleton.testerName   = testerNameTxt.text;
     singleton.labTemp      = labTempTxt.text;
     singleton.labHumidity  = labHumidityTxt.text;
     singleton.labPressure_mmHg   = labPressureTxt.text;
-    //singleton.testDate     = testDateTxt.text;
-    //singleton.testTime     = startDateTxt.text;
     singleton.sampTime     = sampTimeTxt.text;
-    
 }
 
 -(void) keyBoardAppeared :(int)oft
@@ -621,7 +312,6 @@ degc
                          self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);
                      }
                      completion:^(BOOL finished){
-                         
                      }];
 }
 
@@ -637,7 +327,6 @@ degc
                          self.view.frame = CGRectMake(frame.origin.x, oft, frame.size.width, frame.size.height);
                      }
                      completion:^(BOOL finished){
-                         
                      }];
 }
 @end

@@ -186,10 +186,10 @@
 				E12BF2B7197E898300E19036 /* subjectViewController.m */,
 				E12BF2B9197E899F00E19036 /* readingsViewController.h */,
 				E12BF2BA197E899F00E19036 /* readingsViewController.m */,
-				E1F13E3A1974537000A9748D /* Images.xcassets */,
-				E1F13E261974537000A9748D /* Supporting Files */,
 				E12BF2B3197E519600E19036 /* resultsView.h */,
 				E12BF2B4197E519600E19036 /* resultsView.m */,
+				E1F13E3A1974537000A9748D /* Images.xcassets */,
+				E1F13E261974537000A9748D /* Supporting Files */,
 			);
 			path = VO2;
 			sourceTree = "<group>";

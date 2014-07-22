@@ -11,7 +11,26 @@
 
 @interface resultsView : UIViewController <MFMailComposeViewControllerDelegate>
 {
-    
+    UILabel * VESTPDlbl;
+    UILabel * VEATPSlbl;
+    UILabel * RERlbl;
+    UILabel * VO2lbl;
+    UILabel * VCO2lbl;
+    UILabel * datelbl;
+    UILabel * timelbl;
+    UILabel * lablbl;
+    UILabel * testerlbl;
+    UILabel * subjectlbl;
+    UILabel * templbl;
+    UILabel * pressurelb;
+    UILabel * humiditylb;
+    UILabel * samptimelb;
+    UILabel * VO2Kglbl;
+    UILabel * subHtlbl;
+    UILabel * subWtlbl;
+    UILabel * corrFaclbl;
+    UILabel * FEO2lbl;
+    UILabel * FECO2lbl;
 }
 
 @property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
@@ -32,7 +51,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
 @property (nonatomic, strong) IBOutlet UILabel * subWtlbl;
 @property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
-@property (nonatomic, strong) IBOutlet UILabel * FEO2bl;
+@property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
 
 // button press to send the mail

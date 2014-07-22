@@ -8,6 +8,8 @@
 
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
+//#import "subjectViewController.m"
+//#import "resultsView.m"
 
 @interface resultsView()
 {
@@ -39,10 +41,8 @@ VO2Kglbl,
 subHtlbl,
 subWtlbl,
 corrFaclbl,
-FEO2bl,
+FEO2lbl,
 FECO2lbl;
-
-
 
 - (void)viewDidLoad
 {
@@ -65,7 +65,7 @@ FECO2lbl;
     samptimelbl.text=singleton.sampTime;
     VEATPSlbl.text=singleton.veatps;
     VESTPDlbl.text=singleton.vestpd;
-    FEO2bl.text=singleton.feo2;
+    FEO2lbl.text=singleton.feo2;
     FECO2lbl.text=singleton.feco2;
     corrFaclbl.text=singleton.corrFactor;
     VO2lbl.text=singleton.vo2;

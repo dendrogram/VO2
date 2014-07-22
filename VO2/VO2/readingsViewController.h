@@ -12,7 +12,7 @@
 
 {
     // for file manager
-    NSFileManager * fileMgr;
+/*    NSFileManager * fileMgr;
     NSString      * homeDir;
     NSString      * filename;
     NSString      * filepath;
@@ -23,10 +23,25 @@
     
     float subWt;
     float subHt;
+ */
     float labPressure_mmHg;
     float labPressure_mBar;
     float labTempC;
     float labTempF;
+    float corrFactor;
+    
+    UITextField * labLocationTxt;
+    UITextField * labPressureTxt;
+    UITextField * labTempTxt;
+    UITextField * labHumidityTxt;
+    UITextField * corFactorTxt;
+    UITextField * sampTimeTxt;
+    UITextField * FEO2Txt;
+    UITextField * FECO2Txt;
+    UISwitch * pressureChange;
+    UISwitch * tempChange;
+    
+    /*
     float labHumidity;
     float VEATPS;
     float VESTPD;
@@ -36,9 +51,11 @@
     float sampTime;
     float FECO2;
     float FEO2;
-    float corrFactor;
+    
     float VO2Kg;
+ */
 }
+/*
 @property (strong, nonatomic) IBOutlet UIWebView *webview;
 
 //file ops stuff
@@ -53,7 +70,7 @@
 //dates
 @property (nonatomic, copy) NSDate * startDateVar;
 @property (nonatomic, copy) NSDate * testDateVar;
-
+*/
 
 //text field inputs
 //readings
@@ -69,24 +86,23 @@
 @property (nonatomic,strong) IBOutlet UISwitch * pressureChange;
 @property (nonatomic,strong) IBOutlet UISwitch * tempChange;
 
-
-
 //subject
+/*
 @property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
 @property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
-
+*/
 @property (nonatomic, strong) IBOutlet UILabel * degc;
 @property (nonatomic, strong) IBOutlet UILabel * press;
 
 // for calculations and functions
--(IBAction)setDateNow:(id)sender;
--(IBAction)setTimeNow:(id)sender;
+//-(IBAction)setDateNow:(id)sender;
+//-(IBAction)setTimeNow:(id)sender;
 
--(void)calculateGasses:(id)sender;
--(void) WriteToStringFile:(NSMutableString *)textToWrite;
+//-(void)calculateGasses:(id)sender;
+//-(void) WriteToStringFile:(NSMutableString *)textToWrite;
 @end
 

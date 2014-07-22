@@ -593,7 +593,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mB-he-3Qg">
-                                <rect key="frame" x="105" y="481" width="123" height="30"/>
+                                <rect key="frame" x="99" y="481" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -614,7 +614,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="FECO2lbl" destination="pfj-eC-Fbj" id="pQI-UQ-dl5"/>
-                        <outlet property="FEO2bl" destination="ie0-MH-vSI" id="zr2-B4-xQ1"/>
+                        <outlet property="FEO2lbl" destination="ie0-MH-vSI" id="2pY-GP-OjX"/>
                         <outlet property="RERlbl" destination="Pht-tn-QCs" id="RjD-HQ-QGg"/>
                         <outlet property="VCO2lbl" destination="OkC-24-UDz" id="dep-oS-AKP"/>
                         <outlet property="VEATPSlbl" destination="0hS-QX-GoI" id="57s-Ze-dvm"/>
@@ -686,10 +686,10 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
             </objects>
             <point key="canvasLocation" x="1669" y="-95"/>
         </scene>
-        <!--View Controller - Data Input-->
+        <!--Readings View Controller - Data Input-->
         <scene sceneID="sHM-sh-3iI">
             <objects>
-                <viewController title="Data Input" modalTransitionStyle="flipHorizontal" id="POu-Nb-rvQ" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Data Input" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="POu-Nb-rvQ" customClass="readingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HOR-O1-YKG"/>
                         <viewControllerLayoutGuide type="bottom" id="xVb-kd-Wcn"/>
@@ -882,15 +882,29 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                     </view>
                     <tabBarItem key="tabBarItem" title="Data Entry" image="calc50x50.png" id="wCu-BG-g9G"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="FECO2Txt" destination="DbV-z4-FHE" id="7Ov-0d-qco"/>
+                        <outlet property="FEO2Txt" destination="Lb6-uy-qIs" id="Hvn-Y1-fGu"/>
+                        <outlet property="corFactorTxt" destination="eCe-WT-bcp" id="2hF-2S-x2Q"/>
+                        <outlet property="degc" destination="lq1-Ps-oWf" id="EUu-Sw-cMA"/>
+                        <outlet property="labHumidityTxt" destination="BFG-2z-dfk" id="Oq5-EM-AF7"/>
+                        <outlet property="labLocationTxt" destination="fZX-3p-XFQ" id="rYz-wP-FVb"/>
+                        <outlet property="labPressureTxt" destination="Wqj-8s-kDZ" id="72M-TI-VgQ"/>
+                        <outlet property="labTempTxt" destination="naE-km-Tr8" id="2BR-TM-5iJ"/>
+                        <outlet property="press" destination="N9Y-qY-Ow8" id="I6f-It-IyF"/>
+                        <outlet property="pressureChange" destination="q0e-NP-xAM" id="D1u-Lm-vk7"/>
+                        <outlet property="sampTimeTxt" destination="EvV-qS-Tit" id="wSq-e8-NeP"/>
+                        <outlet property="tempChange" destination="n4B-T3-wxO" id="CmJ-hp-xqW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgn-Dx-k8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1269" y="-760"/>
         </scene>
-        <!--View Controller - Subject Settings-->
+        <!--Subject View Controller - Subject Settings-->
         <scene sceneID="Oog-DS-60G">
             <objects>
-                <viewController title="Subject Settings" modalTransitionStyle="flipHorizontal" id="w9a-IB-qgs" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Subject Settings" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w9a-IB-qgs" customClass="subjectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kSE-ut-P0R"/>
                         <viewControllerLayoutGuide type="bottom" id="CED-05-4BC"/>
@@ -990,7 +1004,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="setDateNow:" destination="w9a-IB-qgs" eventType="touchUpInside" id="qcq-tD-z5E"/>
+                                            <action selector="setDateNow:" destination="w9a-IB-qgs" eventType="touchUpInside" id="uCP-wB-v8n"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMf-Wg-2Hn">
@@ -1001,7 +1015,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="setTimeNow:" destination="w9a-IB-qgs" eventType="touchUpInside" id="LIB-AX-rUl"/>
+                                            <action selector="setTimeNow:" destination="w9a-IB-qgs" eventType="touchUpInside" id="0HI-VE-XPT"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upo-Aj-t7R">
@@ -1040,6 +1054,14 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                     </view>
                     <tabBarItem key="tabBarItem" title="Subject Data" image="results50x50.png" id="bHz-Mr-jhN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="startDateTxt" destination="H9L-48-gBT" id="6wm-ZN-4cf"/>
+                        <outlet property="subHtTxt" destination="Aeo-6w-ZyQ" id="J86-Mh-bHK"/>
+                        <outlet property="subWtTxt" destination="mB2-Yd-tae" id="VCg-yC-HwX"/>
+                        <outlet property="subjectNameTxt" destination="EzX-ij-jW7" id="99k-cR-iqc"/>
+                        <outlet property="testDateTxt" destination="MX2-Ay-WCW" id="Boo-1K-akR"/>
+                        <outlet property="testerNameTxt" destination="fex-76-LBk" id="Cdp-ez-QMf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvg-km-3Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

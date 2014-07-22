@@ -19,8 +19,9 @@ static mySingleton * sharedSingleton = nil;
 // @synthesize counter;
 
 //Counters
-@synthesize  addedToResults,
+@synthesize addedToResults,
             dataCompleted,
+
             subWt,
             subHt,
             labTemp,
@@ -98,6 +99,8 @@ static mySingleton * sharedSingleton = nil;
         subjectName        = @"- none -";
        
         resultStrings      = @"- none -";
+ 
+ 
     }
     return self;
 }

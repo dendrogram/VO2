@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		912C01B3197755A7001C6093 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912C01B2197755A7001C6093 /* MessageUI.framework */; };
 		E12BF2B5197E519600E19036 /* resultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E12BF2B4197E519600E19036 /* resultsView.m */; };
+		E12BF2B8197E898300E19036 /* subjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12BF2B7197E898300E19036 /* subjectViewController.m */; };
+		E12BF2BB197E899F00E19036 /* readingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12BF2BA197E899F00E19036 /* readingsViewController.m */; };
 		E12EEAAF19752EF300CEDBD5 /* about50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA219752EF300CEDBD5 /* about50x50.png */; };
 		E12EEAB119752EF300CEDBD5 /* about50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */; };
 		E12EEAB219752EF300CEDBD5 /* calc50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA519752EF300CEDBD5 /* calc50x50.png */; };
@@ -53,6 +55,10 @@
 		912C01B2197755A7001C6093 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E12BF2B3197E519600E19036 /* resultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsView.h; sourceTree = "<group>"; };
 		E12BF2B4197E519600E19036 /* resultsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsView.m; sourceTree = "<group>"; };
+		E12BF2B6197E898300E19036 /* subjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subjectViewController.h; sourceTree = "<group>"; };
+		E12BF2B7197E898300E19036 /* subjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = subjectViewController.m; sourceTree = "<group>"; };
+		E12BF2B9197E899F00E19036 /* readingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = readingsViewController.h; sourceTree = "<group>"; };
+		E12BF2BA197E899F00E19036 /* readingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = readingsViewController.m; sourceTree = "<group>"; };
 		E12EEAA219752EF300CEDBD5 /* about50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about50x50.png; sourceTree = "<group>"; };
 		E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about50x50@2x.png"; sourceTree = "<group>"; };
 		E12EEAA519752EF300CEDBD5 /* calc50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calc50x50.png; sourceTree = "<group>"; };
@@ -176,6 +182,10 @@
 				E1F13E341974537000A9748D /* Main_iPad.storyboard */,
 				E1F13E371974537000A9748D /* ViewController.h */,
 				E1F13E381974537000A9748D /* ViewController.m */,
+				E12BF2B6197E898300E19036 /* subjectViewController.h */,
+				E12BF2B7197E898300E19036 /* subjectViewController.m */,
+				E12BF2B9197E899F00E19036 /* readingsViewController.h */,
+				E12BF2BA197E899F00E19036 /* readingsViewController.m */,
 				E1F13E3A1974537000A9748D /* Images.xcassets */,
 				E1F13E261974537000A9748D /* Supporting Files */,
 				E12BF2B3197E519600E19036 /* resultsView.h */,
@@ -327,8 +337,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F13E391974537000A9748D /* ViewController.m in Sources */,
+				E12BF2BB197E899F00E19036 /* readingsViewController.m in Sources */,
 				E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */,
 				E1F13E301974537000A9748D /* AppDelegate.m in Sources */,
+				E12BF2B8197E898300E19036 /* subjectViewController.m in Sources */,
 				E1F13E2C1974537000A9748D /* main.m in Sources */,
 				E12BF2B5197E519600E19036 /* resultsView.m in Sources */,
 			);

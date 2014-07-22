@@ -49,13 +49,11 @@
 
 -(NSString *) GetDocumentDirectory;
 -(NSString *) setFilename;
--(void) WriteToStringFile:(NSMutableString *)textToWrite;
 
 //dates
 @property (nonatomic, copy) NSDate * startDateVar;
 @property (nonatomic, copy) NSDate * testDateVar;
 
-//email stuff
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
 
@@ -86,5 +84,5 @@
 -(IBAction)setTimeNow:(id)sender;
 
 -(void)calculateGasses:(id)sender;
-
+-(void) WriteToStringFile:(NSMutableString *)textToWrite;
 @end

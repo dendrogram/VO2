@@ -34,8 +34,7 @@
     
     //image views for pictures -edit, not really needed
     IBOutlet UIImageView * logoImage;
-
-    //labels for various input boxes or messages
+    //labels for email messages
     IBOutlet UILabel     * statusMessageLab;
 
 }
@@ -230,42 +229,7 @@
 //Celsius to Fahrenheit:
 //Fahrenheit = (9 ÷ 5) × Celsius + 32
 //--------------------------------
-//mail from button press
--(IBAction)sendEmail:(id)sender {
-    statusMessageLab.text=@"E-Mail\nResults\nLoading...";
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
-    [mailComposer setMailComposeDelegate:self];
-    if ([MFMailComposeViewController canSendMail]){
-        [mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
-        [mailComposer setSubject:@"Restults from VO2 App"];
-        //[mailComposer setMessageBody:@"Dear Tachistoscope User: " isHTML:YES];
-        
-        [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
-        [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
-    }else{
-        
-    } //end of if else to check if mail is able to be sent, send message if not
-    statusMessageLab.text=@"Select\nNext\nTask";
-} // end of mail function
 
-//set out mail controller warnings screen
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
-    statusMessageLab.text=@"Mail\nController";
-    if (error) {
-        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@",[error description]] delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil,nil];
-        [alertview show];
-        //[alert release];
-        [self dismissViewControllerAnimated:YES completion:^{/*error*/}];
-        statusMessageLab.text=@"An mail\nError\nOccurred.";
-    }
-    else{
-        [self dismissViewControllerAnimated:YES completion:^{/*ok*/}];
-        statusMessageLab.text=@"E-Mail Sent\nOK.";
-    }
-    statusMessageLab.text=@"Select\nNext\nTask";
-}
 
 - (void)saveText
 {
@@ -308,12 +272,6 @@
     NSLog(@"time: %@", resultString);
 }
 
-- (IBAction)presentResults:(id)sender {
-    [self calculateGasses:self];
-    [self updateResults:self];
-    subjectlbl.text=@"Jonathan";
-}
-
 - (void)calculateGasses:(id)sender {
     // set up link to singleton
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -345,24 +303,20 @@
     //VEsptd
 
     VESTPD = (60 *(VEATPS * ( 273 / (273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760))) / sampTime;
-    VESTPDlbl.text = [NSString stringWithFormat:@"%.2f", VESTPD];
-    singleton.vestpd=VESTPDlbl.text;
-
+    singleton.vestpd = [NSString stringWithFormat:@"%.2f", VESTPD];
+    
     //VO2
     VO2 = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / 79.03 ) * 20.93) - (VESTPD * FEO2));
-    VO2lbl.text = [NSString stringWithFormat:@"%.2f", VO2];
-    singleton.vo2=VO2lbl.text;
-
+    singleton.vo2= [NSString stringWithFormat:@"%.2f", VO2];
+    
     //VCO2
     VCO2 = 0.01 * (VESTPD * FECO2);
-    VCO2lbl.text = [NSString stringWithFormat:@"%.2f", VCO2];
-    singleton.vco2=VCO2lbl.text;
-
+    singleton.vco2= [NSString stringWithFormat:@"%.2f", VCO2];
+    
     //VCO2Kg
     VO2Kg = (VO2 * 1000) / subWt;
-    VO2Kglbl.text = [NSString stringWithFormat:@"%.2f", VO2Kg];
-    singleton.vo2kg=VO2Kglbl.text;
-
+    singleton.vo2kg= [NSString stringWithFormat:@"%.2f", VO2Kg];
+    
     
     //newStr = [str substringToIndex:8]; //chars to print
     
@@ -563,31 +517,26 @@
 -(void)updateResults:(id)sender{
     // set up link to singleton
     mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.subjectName=subjectNameTxt.text;
-    singleton.testerName=testerNameTxt.text;
-    singleton.subWt=subWtTxt.text;
-    singleton.subHt=subHtTxt.text;
-
-    subjectlbl.text=singleton.subjectName;
-    testerlbl.text=singleton.testerName;
-    datelbl.text=singleton.testDate;
-    timelbl.text=singleton.testTime;
-    lablbl.text=singleton.labLocation;
-    subWtlbl.text=singleton.subWt;
-    subHtlbl.text=singleton.subHt;
-    templbl.text=singleton.labTemp;
-    pressurelbl.text=singleton.labPressure_mmHg;
-    humiditylbl.text=singleton.labHumidity;
-    samptimelbl.text=singleton.sampTime;
-    VEATPSlbl.text=singleton.veatps;
-    VESTPDlbl.text=singleton.vestpd;
-    FEO2bl.text=singleton.feo2;
-    FECO2lbl.text=singleton.feco2;
-    corrFaclbl.text=singleton.corrFactor;
-    VO2lbl.text=singleton.vo2;
-    VCO2lbl.text=singleton.vco2;
-    VO2Kglbl.text=singleton.vo2kg;
-    RERlbl.text=singleton.rer;
+    
+    singleton.subjectName  = subjectNameTxt.text;
+    singleton.testerName   = testerNameTxt.text;
+    singleton.subWt        = subWtTxt.text;
+    singleton.subHt        = subHtTxt.text;
+    
+    singleton.feo2  = subjectNameTxt.text;
+    singleton.feco2   = testerNameTxt.text;
+    singleton.corrFactor        = subWtTxt.text;
+    singleton.sampTime        = subHtTxt.text;
+    
+    singleton.labLocation  = subjectNameTxt.text;
+    singleton.testerName   = testerNameTxt.text;
+ 
+    
+    
+    
+    
+    
+    
     
 }
 

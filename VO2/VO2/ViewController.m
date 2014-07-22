@@ -80,33 +80,13 @@
             FECO2Txt,
             FEO2Txt,
 
-//results Labels
-            RERlbl,
-            VESTPDlbl,
-            VEATPSlbl,
-            VO2lbl,
-            VCO2lbl,
-            datelbl,
-            timelbl,
-            lablbl,
-            testerlbl,
-            subjectlbl,
-            templbl,
-            pressurelbl,
-            humiditylbl,
-            samptimelbl,
-            VO2Kglbl,
-            subHtlbl,
-            subWtlbl,
-            corrFaclbl,
-            FEO2bl,
-            FECO2lbl,
-            press,
-            degc,
-
 //switches
             pressureChange,
-            tempChange
+            tempChange,
+
+//labels for units
+            press,
+            degc
             ;
 //end
      

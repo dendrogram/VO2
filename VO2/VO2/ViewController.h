@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate>
 
 {
     // for file manager
@@ -74,26 +73,7 @@
 @property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
 
-@property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
-@property (nonatomic, strong) IBOutlet UILabel * VEATPSlbl;
-@property (nonatomic, strong) IBOutlet UILabel * RERlbl;
-@property (nonatomic, strong) IBOutlet UILabel * VO2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * VCO2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * datelbl;
-@property (nonatomic, strong) IBOutlet UILabel * timelbl;
-@property (nonatomic, strong) IBOutlet UILabel * lablbl;
-@property (nonatomic, strong) IBOutlet UILabel * testerlbl;
-@property (nonatomic, strong) IBOutlet UILabel * subjectlbl;
-@property (nonatomic, strong) IBOutlet UILabel * templbl;
-@property (nonatomic, strong) IBOutlet UILabel * pressurelbl;
-@property (nonatomic, strong) IBOutlet UILabel * humiditylbl;
-@property (nonatomic, strong) IBOutlet UILabel * samptimelbl;
-@property (nonatomic, strong) IBOutlet UILabel * VO2Kglbl;
-@property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
-@property (nonatomic, strong) IBOutlet UILabel * subWtlbl;
-@property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
-@property (nonatomic, strong) IBOutlet UILabel * FEO2bl;
-@property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
+
 
 @property (nonatomic, strong) IBOutlet UILabel * degc;
 @property (nonatomic, strong) IBOutlet UILabel * press;
@@ -104,9 +84,6 @@
 // for calculations and functions
 -(IBAction)setDateNow:(id)sender;
 -(IBAction)setTimeNow:(id)sender;
-
-// button press to send the mail
--(IBAction)sendEmail:(id)sender;
 
 -(void)calculateGasses:(id)sender;
 

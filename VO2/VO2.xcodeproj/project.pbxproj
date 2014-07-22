@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		912C01B3197755A7001C6093 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912C01B2197755A7001C6093 /* MessageUI.framework */; };
+		E12BF2B5197E519600E19036 /* resultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E12BF2B4197E519600E19036 /* resultsView.m */; };
 		E12EEAAF19752EF300CEDBD5 /* about50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA219752EF300CEDBD5 /* about50x50.png */; };
 		E12EEAB119752EF300CEDBD5 /* about50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */; };
 		E12EEAB219752EF300CEDBD5 /* calc50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAA519752EF300CEDBD5 /* calc50x50.png */; };
@@ -50,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		912C01B2197755A7001C6093 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E12BF2B3197E519600E19036 /* resultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsView.h; sourceTree = "<group>"; };
+		E12BF2B4197E519600E19036 /* resultsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsView.m; sourceTree = "<group>"; };
 		E12EEAA219752EF300CEDBD5 /* about50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about50x50.png; sourceTree = "<group>"; };
 		E12EEAA419752EF300CEDBD5 /* about50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about50x50@2x.png"; sourceTree = "<group>"; };
 		E12EEAA519752EF300CEDBD5 /* calc50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calc50x50.png; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				E1F13E381974537000A9748D /* ViewController.m */,
 				E1F13E3A1974537000A9748D /* Images.xcassets */,
 				E1F13E261974537000A9748D /* Supporting Files */,
+				E12BF2B3197E519600E19036 /* resultsView.h */,
+				E12BF2B4197E519600E19036 /* resultsView.m */,
 			);
 			path = VO2;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */,
 				E1F13E301974537000A9748D /* AppDelegate.m in Sources */,
 				E1F13E2C1974537000A9748D /* main.m in Sources */,
+				E12BF2B5197E519600E19036 /* resultsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

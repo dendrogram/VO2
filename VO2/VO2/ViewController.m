@@ -179,9 +179,6 @@
     labPressure_mmHg=760;
     labPressure_mBar=1010.4;
 
-    //run calcs with defaults once
-    [self calculateGasses:self];
-    [self updateResults:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -193,34 +190,48 @@
 //Pressure switch changed, so recalculate and update textfield
 - (void)pressureChanged:(UISwitch *)switchState
 {
+        mySingleton *singleton = [mySingleton sharedSingleton];
+    
     if ([switchState isOn]) {
         press.text=@"mmHg";
         labPressure_mmHg = 0.75218 * [labPressureTxt.text floatValue];
         labPressure_mBar = labPressure_mmHg / 0.75218;
         labPressureTxt.text = [NSString stringWithFormat:@"%.2f",labPressure_mmHg];
+        
+        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.2f",labPressure_mmHg];
         NSLog( @"Pressure mmHg %f",labPressure_mmHg);
+        
     } else {
         press.text=@"mBar";
         labPressure_mBar = [labPressureTxt.text floatValue] / 0.75218;
         labPressure_mmHg = 0.75218 * labPressure_mBar;
         labPressureTxt.text = [NSString stringWithFormat:@"%.2f",labPressure_mBar];
+        
+        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.2f",labPressure_mmHg];
         NSLog( @"Pressure mBar %f",labPressure_mBar);
     }
 }
 //Pressure switch changed, so recalculate and update textfield
 - (void)tempChanged:(UISwitch *)switchState
 {
+        mySingleton *singleton = [mySingleton sharedSingleton];
+    
     if ([switchState isOn]) {
         degc.text=@"'C";
         labTempC = 5 * ([labTempTxt.text floatValue] - 32) / 9;
         labTempF = (9 * labTempC / 5 ) + 32;
-        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempC ];
+        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempC];
+        
+        singleton.labTemp=[NSString stringWithFormat:@"%.2f",labTempC];
         NSLog( @"temp %f 'C",labTempC);
+        
     } else {
         degc.text=@"'F";
         labTempF = (9 * [labTempTxt.text floatValue] / 5 ) + 32;
         labTempC = 5 * (labTempF - 32) / 9;
-        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempF ];
+        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempF];
+        
+        singleton.labTemp=[NSString stringWithFormat:@"%.2f",labTempC];
         NSLog( @"temp %f 'F",labTempF);
     }
 }
@@ -431,6 +442,10 @@
 }
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
+    
+    // set up link to singleton
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     //move the screen back to the original place
     [self keyBoardDisappeared:0];
 
@@ -509,9 +524,61 @@
         corFactorTxt.text=@"1.000";
         corFactorTxt.backgroundColor = [UIColor yellowColor];
     }
-       //calculate results and display
-    [self calculateGasses:self];
+    
     [self updateResults:self];
+    
+    if(textField==self->testerNameTxt){
+        //save to singleton
+        singleton.testerName=testerNameTxt.text;
+    }
+    if(textField==self->testDateTxt){
+        singleton.testDate=testDateTxt.text;
+    }
+    if(textField==self->startDateTxt){
+        singleton.testTime=startDateTxt.text;
+    }
+    if(textField==self->labLocationTxt){
+        singleton.labLocation=labLocationTxt.text;
+    }
+    if(textField==self->subjectNameTxt){
+        singleton.subjectName=subjectNameTxt.text;
+    }
+    if(textField==self->subWtTxt){
+        singleton.subWt=subWtTxt.text;
+    }
+    if(textField==self->subHtTxt){
+        singleton.subHt=subHtTxt.text;
+    }
+    //page2
+    if(textField==self->labPressureTxt){
+        //aways mmHg
+        
+        singleton.labPressure_mmHg=labPressureTxt.text;
+    }
+    if(textField==self->labTempTxt){
+        //always 'C
+        singleton.labTemp=labTempTxt.text;
+    }
+    if(textField==self->labHumidityTxt){
+        singleton.labHumidity=labHumidityTxt.text;
+    }
+    if(textField==self->corFactorTxt){
+        singleton.corrFactor=corFactorTxt.text;
+    }
+    if(textField==self->sampTimeTxt){
+        singleton.sampTime=sampTimeTxt.text;
+    }
+    if(textField==self->FECO2Txt){
+        singleton.feco2=FECO2Txt.text;
+    }
+    if(textField==self->FEO2Txt){
+        singleton.feo2=FEO2Txt.text;
+    }
+
+    
+    //calculate results and display
+    //[self calculateGasses:self];
+    //[self updateResults:self];
 }
 
 -(void)updateResults:(id)sender{
@@ -523,20 +590,18 @@
     singleton.subWt        = subWtTxt.text;
     singleton.subHt        = subHtTxt.text;
     
-    singleton.feo2  = subjectNameTxt.text;
-    singleton.feco2   = testerNameTxt.text;
-    singleton.corrFactor        = subWtTxt.text;
-    singleton.sampTime        = subHtTxt.text;
+    singleton.feo2         = subjectNameTxt.text;
+    singleton.feco2        = testerNameTxt.text;
+    singleton.corrFactor   = corFactorTxt.text;
     
-    singleton.labLocation  = subjectNameTxt.text;
+    singleton.labLocation  = labLocationTxt.text;
     singleton.testerName   = testerNameTxt.text;
- 
-    
-    
-    
-    
-    
-    
+    singleton.labTemp      = labTempTxt.text;
+    singleton.labHumidity  = labHumidityTxt.text;
+    singleton.labPressure_mmHg   = labPressureTxt.text;
+    singleton.testDate     = testDateTxt.text;
+    singleton.testTime     = startDateTxt.text;
+    singleton.sampTime     = sampTimeTxt.text;
     
 }
 

@@ -54,12 +54,9 @@
 @property (nonatomic, copy) NSDate * startDateVar;
 @property (nonatomic, copy) NSDate * testDateVar;
 
-@property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
-@property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
 
 //text field inputs
-@property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
-@property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
+//readings
 @property (nonatomic, strong) IBOutlet UITextField * labLocationTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labPressureTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labTempTxt;
@@ -68,16 +65,22 @@
 @property (nonatomic, strong) IBOutlet UITextField * sampTimeTxt;
 @property (nonatomic, strong) IBOutlet UITextField * FEO2Txt;
 @property (nonatomic, strong) IBOutlet UITextField * FECO2Txt;
+//readings delegate
+@property (nonatomic,strong) IBOutlet UISwitch * pressureChange;
+@property (nonatomic,strong) IBOutlet UISwitch * tempChange;
+
+
+
+//subject
 @property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
-
-
+@property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
+@property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
+@property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
+@property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
 
 @property (nonatomic, strong) IBOutlet UILabel * degc;
 @property (nonatomic, strong) IBOutlet UILabel * press;
-
-@property (nonatomic,strong) IBOutlet UISwitch * pressureChange;
-@property (nonatomic,strong) IBOutlet UISwitch * tempChange;
 
 // for calculations and functions
 -(IBAction)setDateNow:(id)sender;

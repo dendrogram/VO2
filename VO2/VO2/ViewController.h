@@ -12,6 +12,8 @@
 
 {
     // for file manager
+    /*
+     
     NSFileManager * fileMgr;
     NSString      * homeDir;
     NSString      * filename;
@@ -38,10 +40,12 @@
     float FEO2;
     float corrFactor;
     float VO2Kg;
+     */
 }
 @property (strong, nonatomic) IBOutlet UIWebView *webview;
 
 //file ops stuff
+/*
 @property(nonatomic,retain) NSFileManager * fileMgr;
 @property(nonatomic,retain) NSString      * homeDir;
 @property(nonatomic,retain) NSString      * filename;
@@ -88,4 +92,5 @@
 
 -(void)calculateGasses:(id)sender;
 -(void) WriteToStringFile:(NSMutableString *)textToWrite;
+ */
 @end

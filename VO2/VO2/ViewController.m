@@ -20,6 +20,7 @@
 
 @interface ViewController ()
 {
+    /*
     //array result lines
     NSString * resultLine[50];
     
@@ -36,18 +37,19 @@
     IBOutlet UIImageView * logoImage;
     //labels for email messages
     IBOutlet UILabel     * statusMessageLab;
-
+*/
 }
 @end
 
 @implementation ViewController
 
 #pragma mark Inits
-//************
-//****  inits
-//************
-
-@synthesize
+/*
+// ************
+// ****  inits
+// ************ */
+@synthesize webview;
+/*
 //dates
             startDateVar,
             testDateVar,
@@ -88,7 +90,7 @@
             degc
             ;
 //end
-     
+
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *extn = @"csv";
@@ -109,7 +111,7 @@
     return docsDir;
 }
 
-/*Create a new file*/
+//Create a new file
 -(void)WriteToStringFile:(NSMutableString *)textToWrite{
     filepath = [[NSString alloc] init];
     //NSError *err;
@@ -118,7 +120,7 @@
     //check if file exists
     //int fileCounter = 0;
     //BOOL fileExists = TRUE;
-    /*if([NSFileManager defaultManager] fileExistsAtPath:filepath) {
+    //if([NSFileManager defaultManager] fileExistsAtPath:filepath) {
      //exists, error, add 1 to filename and repeat
      BOOL fileExists = TRUE;
      }
@@ -134,18 +136,18 @@
      NSLog(@"Error writing file at %@\n%@",
      filepath, [err localizedFailureReason]);
      
-     }*/
+     }
 }
-
+*/
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
+    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/vo2"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [_webview loadRequest:request];
-
+    [webview loadRequest:request];
+/*
     //look for switch changs on pressure and temperature
     [self.pressureChange addTarget:self
                       action:@selector(pressureChanged:) forControlEvents:UIControlEventValueChanged];
@@ -178,14 +180,10 @@
     labTempF=68;
     labPressure_mmHg=760;
     labPressure_mBar=1010.4;
-
+*/
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+/*
 
 //Pressure switch changed, so recalculate and update textfield
 - (void)pressureChanged:(UISwitch *)switchState
@@ -636,4 +634,5 @@
                          
                      }];
 }
+ */
 @end

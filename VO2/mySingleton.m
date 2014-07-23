@@ -37,6 +37,7 @@ static mySingleton * sharedSingleton = nil;
             vo2,
             vco2,
             vo2kg,
+            labO2,
             rer,
             testerName,
             testDate,
@@ -76,31 +77,29 @@ static mySingleton * sharedSingleton = nil;
 
         addedToResults     = NO;
         dataCompleted      = NO;
-        subWt              = @"- none -";
-        subHt              = @"- none -";
-        labTemp            = @"- none -";
-        labPressure_mmHg   = @"- none -";
-        labHumidity        = @"- none -";
-        labLocation        = @"- none -";
-        sampTime           = @"- none -";
-        veatps             = @"- none -";
-        vestpd             = @"- none -";
-        feco2              = @"- none -";
-        feo2               = @"- none -";
-        corrFactor         = @"- none -";
-        vo2                = @"- none -";
-        vco2               = @"- none -";
-        vo2kg              = @"- none -";
-        rer                = @"- none -";
-        testerName         = @"- none -";
-        testDate           = @"- none -";
-        testTime           = @"- none -";
-        resultStrings      = @"- none -";
-        subjectName        = @"- none -";
-       
-        resultStrings      = @"- none -";
- 
- 
+        subWt              = @"75";
+        subHt              = @"1.75";
+        labTemp            = @"20";
+        labPressure_mmHg   = @"760";
+        labHumidity        = @"35";
+        labLocation        = @"hpl";
+        sampTime           = @"60";
+        veatps             = @"nil";
+        vestpd             = @"nil";
+        feco2              = @"";
+        feo2               = @"";
+        corrFactor         = @"1";
+        vo2                = @"nil";
+        vco2               = @"nil";
+        vo2kg              = @"nil";
+        labO2              = @"20.93";
+        rer                = @"nil";
+        testerName         = @"";
+        testDate           = @"";
+        testTime           = @"";
+        resultStrings      = @"";
+        subjectName        = @"subject";
+        resultStrings      = @"";
     }
     return self;
 }

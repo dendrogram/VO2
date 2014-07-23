@@ -44,28 +44,43 @@
     subWtTxt.delegate       = self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+// set up link to singleton
+    mySingleton *singleton  = [mySingleton sharedSingleton];
+    
+    subjectNameTxt.text     =   singleton.subjectName ;
+    testerNameTxt.text      =   singleton.testerName  ;
+    subWtTxt.text           =   singleton.subWt       ;
+    subHtTxt.text           =   singleton.subHt       ;
+    testDateTxt.text        =   singleton.testDate    ;
+    startDateTxt.text       =   singleton.testTime    ;  
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+// set up link to singleton
+    mySingleton *singleton  = [mySingleton sharedSingleton];
+    singleton.subjectName   = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
+    singleton.testerName    = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
+    singleton.subWt         = [NSString stringWithFormat:@"%@",  subWtTxt.text];
+    singleton.subHt         = [NSString stringWithFormat:@"%@",  subHtTxt.text];
+    singleton.testDate      = [NSString stringWithFormat:@"%@",  testDateTxt.text];
+    singleton.testTime      = [NSString stringWithFormat:@"%@",  startDateTxt.text];
+}
+
 -(IBAction)setDateNow:(id)sender{
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [dateFormat stringFromDate:today];
     testDateTxt.text=dateString;
-    [self updateResults:self];
-    NSLog(@"date: %@", dateString);
-
 }
+
 -(IBAction)setTimeNow:(id)sender{
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
     startDateTxt.text=resultString;
-    [self updateResults:self];
-    NSLog(@"time: %@", resultString);
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -122,10 +137,7 @@
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
     
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    //move the screen back to the original place
+//move the screen back to the original place
     [self keyBoardDisappeared:0];
     
     startDateTxt.backgroundColor   = [UIColor whiteColor];
@@ -134,27 +146,13 @@
     testerNameTxt.backgroundColor  = [UIColor whiteColor];
     subHtTxt.backgroundColor       = [UIColor whiteColor];
     subWtTxt.backgroundColor       = [UIColor whiteColor];
-    [self updateResults:self];
-}
-
--(void)updateResults:(id)sender{
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.subjectName  = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
-    singleton.testerName   = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
-    singleton.subWt        = [NSString stringWithFormat:@"%@",  subWtTxt.text];
-    singleton.subHt        = [NSString stringWithFormat:@"%@",  subHtTxt.text];
-    singleton.testDate     = [NSString stringWithFormat:@"%@",  testDateTxt.text];
-    singleton.testTime     = [NSString stringWithFormat:@"%@",  startDateTxt.text];
-    singleton.feo2         = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
-    singleton.feco2        = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
 }
 
 -(void) keyBoardAppeared :(int)oft
 {
+    //move screen up or down as needed to avoid text field entry
     CGRect frame = self.view.frame;
     //oft= the y of the text field?  make some code to find it
-    NSLog(@"oring y = %i",oft);
     [UIView animateWithDuration:1.0
                           delay:0.5
                         options: UIViewAnimationOptionCurveEaseOut
@@ -162,17 +160,14 @@
                          self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);
                      }
                      completion:^(BOOL finished){
-                         
                      }];
 }
 
 -(void) keyBoardDisappeared :(int)oft
 {
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
+    //move the screen back to original position
     CGRect frame = self.view.frame;
     //oft= the y of the text field?  make some code to find it
-    
     [UIView animateWithDuration:1.0
                           delay:0.5
                         options: UIViewAnimationOptionCurveEaseOut
@@ -180,8 +175,6 @@
                          self.view.frame = CGRectMake(frame.origin.x, oft, frame.size.width, frame.size.height);
                      }
                      completion:^(BOOL finished){
-                         
                      }];
-[self updateResults:self];
 }
 @end

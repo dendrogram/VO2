@@ -38,6 +38,7 @@
     NSString * vo2;
     NSString * vco2;
     NSString * vo2kg;
+    NSString * labO2; // percent O2 in air, obviously low if hypoxic, 20.93 approx normal stp
     NSString * rer;
 
     NSString * testerName;
@@ -75,6 +76,7 @@
 @property (nonatomic, retain) NSString * vo2;
 @property (nonatomic, retain) NSString * vco2;
 @property (nonatomic, retain) NSString * vo2kg;
+@property (nonatomic, retain) NSString * labO2;
 @property (nonatomic, retain) NSString * rer;
 @property (nonatomic, retain) NSString * resultStrings;
 @property (nonatomic, retain) NSString * subjectName;

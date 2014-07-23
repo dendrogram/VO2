@@ -46,34 +46,35 @@ FECO2lbl;
 
 - (void)viewDidLoad
 {
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    //read the singleton values and put into the labels
-    subjectlbl.text=singleton.subjectName;
-    testerlbl.text=singleton.testerName;
-    datelbl.text=singleton.testDate;
-    timelbl.text=singleton.testTime;
-    lablbl.text=singleton.labLocation;
-    subWtlbl.text=singleton.subWt;
-    subHtlbl.text=singleton.subHt;
-    templbl.text=singleton.labTemp;
-    pressurelbl.text=singleton.labPressure_mmHg;
-    humiditylbl.text=singleton.labHumidity;
-    samptimelbl.text=singleton.sampTime;
-    VEATPSlbl.text=singleton.veatps;
-    VESTPDlbl.text=singleton.vestpd;
-    FEO2lbl.text=singleton.feo2;
-    FECO2lbl.text=singleton.feco2;
-    corrFaclbl.text=singleton.corrFactor;
-    VO2lbl.text=singleton.vo2;
-    VCO2lbl.text=singleton.vco2;
-    VO2Kglbl.text=singleton.vo2kg;
-    RERlbl.text=singleton.rer;
-}
 
+}
+-(void)viewDidAppear:(BOOL)animated{
+    // set up link to singleton
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    //read the singleton values and put into the labels
+    subjectlbl.text     =   singleton.subjectName;
+    testerlbl.text      =   singleton.testerName;
+    datelbl.text        =   singleton.testDate;
+    timelbl.text        =   singleton.testTime;
+    lablbl.text         =   singleton.labLocation;
+    subWtlbl.text       =   singleton.subWt;
+    subHtlbl.text       =   singleton.subHt;
+    templbl.text        =   singleton.labTemp;
+    pressurelbl.text    =   singleton.labPressure_mmHg;
+    humiditylbl.text    =   singleton.labHumidity;
+    samptimelbl.text    =   singleton.sampTime;
+    VEATPSlbl.text      =   singleton.veatps;
+    VESTPDlbl.text      =   singleton.vestpd;
+    FEO2lbl.text        =   singleton.feo2;
+    FECO2lbl.text       =   singleton.feco2;
+    corrFaclbl.text     =   singleton.corrFactor;
+    VO2lbl.text         =   singleton.vo2;
+    VCO2lbl.text        =   singleton.vco2;
+    VO2Kglbl.text       =   singleton.vo2kg;
+    RERlbl.text         =   singleton.rer;
+}
 //mail from button press
 -(IBAction)sendEmail:(id)sender {
     statusMessageLab.text=@"E-Mail\nResults\nLoading...";

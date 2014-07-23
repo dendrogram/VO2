@@ -28,6 +28,7 @@
 #pragma mark Inits
 
 @synthesize webview;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

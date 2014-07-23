@@ -221,8 +221,7 @@ degc
 -(void)textFieldDidEndEditing:(UITextField *) textField {
     
     // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
+       
     //move the screen back to the original place
     [self keyBoardDisappeared:0];
     

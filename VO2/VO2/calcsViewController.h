@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface calcsViewController : UIViewController{
-    UILabel * FEO2lbl;
-    UILabel * FECO2lbl;
-    UILabel * labO2lbl;
-    UILabel * n2lbl;
-    UILabel * hypoxic02;
+    UILabel * line1;
+    UILabel * line2;
+    UILabel * line3;
+    UILabel * line4;
+    UILabel * line5;
 }
-@property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * labO2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * n2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * hypoxic02;
+@property (nonatomic, strong) IBOutlet UILabel * line1;
+@property (nonatomic, strong) IBOutlet UILabel * line2;
+@property (nonatomic, strong) IBOutlet UILabel * line3;
+@property (nonatomic, strong) IBOutlet UILabel * line4;
+@property (nonatomic, strong) IBOutlet UILabel * line5;
 @end

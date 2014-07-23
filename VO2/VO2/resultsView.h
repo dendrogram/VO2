@@ -31,6 +31,7 @@
     UILabel * corrFaclbl;
     UILabel * FEO2lbl;
     UILabel * FECO2lbl;
+    UILabel * labO2lbl;
 }
 
 @property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
@@ -53,6 +54,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
 @property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
+@property (nonatomic, strong) IBOutlet UILabel * labO2lbl;
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;

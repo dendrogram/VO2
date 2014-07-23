@@ -42,7 +42,8 @@ subHtlbl,
 subWtlbl,
 corrFaclbl,
 FEO2lbl,
-FECO2lbl;
+FECO2lbl,
+labO2lbl;
 
 - (void)viewDidLoad
 {
@@ -74,6 +75,7 @@ FECO2lbl;
     VCO2lbl.text        =   singleton.vco2;
     VO2Kglbl.text       =   singleton.vo2kg;
     RERlbl.text         =   singleton.rer;
+    labO2lbl.text       =   singleton.labO2;
 }
 //mail from button press
 -(IBAction)sendEmail:(id)sender {

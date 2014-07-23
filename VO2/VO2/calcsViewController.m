@@ -17,11 +17,11 @@
     
 }
 @synthesize
-            FECO2lbl,
-            FEO2lbl,
-            labO2lbl,
-            hypoxic02,
-            n2lbl;
+            line1,
+            line2,
+            line3,
+            line4,
+            line5;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,15 +45,17 @@
     float N2=0;
     float HyN2=0;
     
-    FEO2lbl.text                =   singleton.feo2              ;
-    FECO2lbl.text               =   singleton.feco2             ;
-    labO2lbl.text               =   singleton.labO2             ;
+    //FEO2lbl.text                =   singleton.feo2              ;
+    //FECO2lbl.text               =   singleton.feco2             ;
+    //labO2lbl.text               =   singleton.labO2             ;
     
-    N2 = 100 - ([FEO2lbl.text floatValue] + [FECO2lbl.text floatValue]) ;
-    HyN2 = N2 + (20.93 - [labO2lbl.text floatValue]);
-            
-    n2lbl.text=[NSString stringWithFormat:@"%.2F", N2];
-    hypoxic02.text=[NSString stringWithFormat:@"%.2F", HyN2];
+    N2 = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
+    HyN2 = N2 + (20.93 - [singleton.labO2 floatValue]);
+
+    line1.text=[NSString stringWithFormat:@"N2E = 100 - %@ - %@ %%",singleton.feo2,singleton.feco2];
+    line2.text=[NSString stringWithFormat:@"Therfore:- N2E = %.2f %%", N2];
+    line3.text=[NSString stringWithFormat:@"For Lab O2i = %@ %%", singleton.labO2];
+    line4.text=[NSString stringWithFormat:@"N2E = %.2f", HyN2];
 }
 
 - (void)didReceiveMemoryWarning

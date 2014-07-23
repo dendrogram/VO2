@@ -63,7 +63,8 @@ degc
     //sample gas
     sampTimeTxt.delegate    = self;
     FECO2Txt.delegate       = self;
-    FEO2Txt.delegate        = self;  
+    FEO2Txt.delegate        = self;
+    labO2Txt.delegate       = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -72,6 +73,7 @@ degc
     
     FEO2Txt.text                =   singleton.feo2              ;
     FECO2Txt.text               =   singleton.feco2             ;
+    labO2Txt.text               =   singleton.labO2             ;
     corFactorTxt.text           =   singleton.corrFactor        ;
     labLocationTxt.text         =   singleton.labLocation       ;
     labTempTxt.text             =   singleton.labTemp           ;
@@ -83,8 +85,10 @@ degc
 -(void)viewDidDisappear:(BOOL)animated{
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
+    
     singleton.feo2              = [NSString stringWithFormat:@"%@",FEO2Txt.text];
     singleton.feco2             = [NSString stringWithFormat:@"%@",FECO2Txt.text];
+    singleton.labO2             = [NSString stringWithFormat:@"%@",labO2Txt.text];
     singleton.corrFactor        = [NSString stringWithFormat:@"%@",corFactorTxt.text];
     singleton.labLocation       = [NSString stringWithFormat:@"%@",labLocationTxt.text];
     singleton.labTemp           = [NSString stringWithFormat:@"%@",labTempTxt.text];
@@ -163,7 +167,6 @@ degc
         int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
-    //page2
     if(textField==self->labPressureTxt){
         labPressureTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
@@ -206,6 +209,12 @@ degc
         int oft=textField.frame.origin.y-190;
         [self keyBoardAppeared:oft];
     }
+    if(textField==self->labO2Txt){
+        labO2Txt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
+    }
 }
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
@@ -224,6 +233,7 @@ degc
     sampTimeTxt.backgroundColor    = [UIColor whiteColor];
     FECO2Txt.backgroundColor       = [UIColor whiteColor];
     FEO2Txt.backgroundColor        = [UIColor whiteColor];
+    labO2Txt.backgroundColor       = [UIColor whiteColor];
     
     //set backgrounds to yellow/red if had to correct
     labTempTxt.textColor=[UIColor blackColor];
@@ -252,7 +262,7 @@ degc
     if (labPressure_mmHg>1000) {
         labPressureTxt.textColor=[UIColor redColor];
         labPressure_mmHg=1000;
-        labPressureTxt.text=@"900.00";
+        labPressureTxt.text=@"1000.00";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
     
@@ -269,35 +279,6 @@ degc
         corrFactor=1.000;
         corFactorTxt.text=@"1.000";
         corFactorTxt.backgroundColor = [UIColor yellowColor];
-    }
-    
-    if(textField==self->labLocationTxt){
-        singleton.labLocation=labLocationTxt.text;
-    }
-    //page2
-    if(textField==self->labPressureTxt){
-        //aways mmHg
-        
-        singleton.labPressure_mmHg=labPressureTxt.text;
-    }
-    if(textField==self->labTempTxt){
-        //always 'C
-        singleton.labTemp=labTempTxt.text;
-    }
-    if(textField==self->labHumidityTxt){
-        singleton.labHumidity=labHumidityTxt.text;
-    }
-    if(textField==self->corFactorTxt){
-        singleton.corrFactor=corFactorTxt.text;
-    }
-    if(textField==self->sampTimeTxt){
-        singleton.sampTime=sampTimeTxt.text;
-    }
-    if(textField==self->FECO2Txt){
-        singleton.feco2=FECO2Txt.text;
-    }
-    if(textField==self->FEO2Txt){
-        singleton.feo2=FEO2Txt.text;
     }
 }
 

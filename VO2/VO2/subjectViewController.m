@@ -19,9 +19,6 @@
 @implementation subjectViewController
 
 #pragma mark Inits
-//************
-//****  inits
-//************
 
 @synthesize
     startDateTxt,
@@ -36,33 +33,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
+
 //set the delegates or text did start/end will not work
     
-    startDateTxt.delegate = self;
-    testDateTxt.delegate = self;
-    //subject
+    startDateTxt.delegate   = self;
+    testDateTxt.delegate    = self;
     subjectNameTxt.delegate = self;
-    testerNameTxt.delegate = self;
-    subHtTxt.delegate = self;
-    subWtTxt.delegate = self;
+    testerNameTxt.delegate  = self;
+    subHtTxt.delegate       = self;
+    subWtTxt.delegate       = self;
 }
 
 -(IBAction)setDateNow:(id)sender{
+    // set up link to singleton
+    mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [dateFormat stringFromDate:today];
     testDateTxt.text=dateString;
+    [self updateResults:self];
     NSLog(@"date: %@", dateString);
+
 }
 -(IBAction)setTimeNow:(id)sender{
+    // set up link to singleton
+    mySingleton *singleton = [mySingleton sharedSingleton];
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
     startDateTxt.text=resultString;
+    [self updateResults:self];
     NSLog(@"time: %@", resultString);
 }
 
@@ -132,16 +134,20 @@
     testerNameTxt.backgroundColor  = [UIColor whiteColor];
     subHtTxt.backgroundColor       = [UIColor whiteColor];
     subWtTxt.backgroundColor       = [UIColor whiteColor];
+    [self updateResults:self];
+}
+
+-(void)updateResults:(id)sender{
     // set up link to singleton
-    
-    singleton.subjectName  = subjectNameTxt.text;
-    singleton.testerName   = testerNameTxt.text;
-    singleton.subWt        = subWtTxt.text;
-    singleton.subHt        = subHtTxt.text;
-    singleton.testDate     = testDateTxt.text;
-    singleton.testTime     = startDateTxt.text;
-    singleton.feo2         = subjectNameTxt.text;
-    singleton.feco2        = testerNameTxt.text;
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.subjectName  = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
+    singleton.testerName   = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
+    singleton.subWt        = [NSString stringWithFormat:@"%@",  subWtTxt.text];
+    singleton.subHt        = [NSString stringWithFormat:@"%@",  subHtTxt.text];
+    singleton.testDate     = [NSString stringWithFormat:@"%@",  testDateTxt.text];
+    singleton.testTime     = [NSString stringWithFormat:@"%@",  startDateTxt.text];
+    singleton.feo2         = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
+    singleton.feco2        = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
 }
 
 -(void) keyBoardAppeared :(int)oft
@@ -176,13 +182,6 @@
                      completion:^(BOOL finished){
                          
                      }];
-    singleton.subjectName  = subjectNameTxt.text;
-    singleton.testerName   = testerNameTxt.text;
-    singleton.testDate     = testDateTxt.text;
-    singleton.testTime     = startDateTxt.text;
-    singleton.subWt        = subWtTxt.text;
-    singleton.subHt        = subHtTxt.text;
-    singleton.feo2         = subjectNameTxt.text;
-    singleton.feco2        = testerNameTxt.text;
+[self updateResults:self];
 }
 @end

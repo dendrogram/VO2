@@ -26,16 +26,13 @@
 @implementation ViewController
 
 #pragma mark Inits
-/*
-// ************
-// ****  inits
-// ************ */
+
 @synthesize webview;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    // for web page link
     NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/vo2"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webview loadRequest:request];

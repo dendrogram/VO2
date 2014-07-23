@@ -25,8 +25,8 @@
     UITextField * sampTimeTxt;
     UITextField * FEO2Txt;
     UITextField * FECO2Txt;
-    UISwitch * pressureChange;
-    UISwitch * tempChange;
+    UISwitch    * pressureChange;
+    UISwitch    * tempChange;
 }
 
 //text field inputs

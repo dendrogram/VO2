@@ -16,9 +16,6 @@
 @implementation readingsViewController
 
 #pragma mark Inits
-// ************
-// ****  inits
-// ************
 
 @synthesize
 //lab
@@ -26,6 +23,7 @@ labLocationTxt,
 labTempTxt,
 labPressureTxt,
 labHumidityTxt,
+
 //calc
 corFactorTxt,
 
@@ -58,21 +56,17 @@ degc
     //set the delegates or text did start/end will not work
     //lab
     labLocationTxt.delegate = self;
-    labTempTxt.delegate = self;
+    labTempTxt.delegate     = self;
     labPressureTxt.delegate = self;
     labHumidityTxt.delegate = self;
     //calc
-    corFactorTxt.delegate = self;
+    corFactorTxt.delegate   = self;
     //sample gas
-    sampTimeTxt.delegate = self;
-    FECO2Txt.delegate = self;
-    FEO2Txt.delegate = self;
+    sampTimeTxt.delegate    = self;
+    FECO2Txt.delegate       = self;
+    FEO2Txt.delegate        = self;
     
-    //initialise
-    labTempC=22;
-    labTempF=68;
-    labPressure_mmHg=760;
-    labPressure_mBar=1010.4;
+    [self updateResults:self];
 }
 
 //Pressure switch changed, so recalculate and update textfield
@@ -88,6 +82,7 @@ degc
         
         singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.2f",labPressure_mmHg];
         NSLog( @"Pressure mmHg %f",labPressure_mmHg);
+
         
     } else {
         press.text=@"mBar";
@@ -97,7 +92,9 @@ degc
         
         singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.2f",labPressure_mmHg];
         NSLog( @"Pressure mBar %f",labPressure_mBar);
+
     }
+    [self updateResults:self];
 }
 //Temperature switch changed, so recalculate and update textfield
 - (void)tempChanged:(UISwitch *)switchState
@@ -122,6 +119,7 @@ degc
         singleton.labTemp=[NSString stringWithFormat:@"%.2f",labTempC];
         NSLog( @"temp %f 'F",labTempF);
     }
+    [self updateResults:self];
 }
 //Fahrenheit to Celsius:
 //Celsius = (5 ÷ 9) × (Fahrenheit - 32)
@@ -284,20 +282,21 @@ degc
     if(textField==self->FEO2Txt){
         singleton.feo2=FEO2Txt.text;
     }
+    [self updateResults:self];
 }
 
 -(void)updateResults:(id)sender{
     // set up link to singleton
     mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.feo2         = FEO2Txt.text;
-    singleton.feco2        = FECO2Txt.text;
-    singleton.corrFactor   = corFactorTxt.text;
+    singleton.feo2         = [NSString stringWithFormat:@"%@",FEO2Txt.text];
+    singleton.feco2        = [NSString stringWithFormat:@"%@",FECO2Txt.text];
+    singleton.corrFactor   = [NSString stringWithFormat:@"%@",corFactorTxt.text];
     
-    singleton.labLocation  = labLocationTxt.text;
-    singleton.labTemp      = labTempTxt.text;
-    singleton.labHumidity  = labHumidityTxt.text;
-    singleton.labPressure_mmHg   = labPressureTxt.text;
-    singleton.sampTime     = sampTimeTxt.text;
+    singleton.labLocation  = [NSString stringWithFormat:@"%@",labLocationTxt.text];
+    singleton.labTemp      = [NSString stringWithFormat:@"%@",labTempTxt.text];
+    singleton.labHumidity  = [NSString stringWithFormat:@"%@",labHumidityTxt.text];
+    singleton.labPressure_mmHg   = [NSString stringWithFormat:@"%@",labPressureTxt.text];
+    singleton.sampTime     = [NSString stringWithFormat:@"%@",sampTimeTxt.text];
 }
 
 -(void) keyBoardAppeared :(int)oft
@@ -328,5 +327,6 @@ degc
                      }
                      completion:^(BOOL finished){
                      }];
+    [self updateResults:self];
 }
 @end

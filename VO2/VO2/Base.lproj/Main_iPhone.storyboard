@@ -7,7 +7,7 @@
         <!--View Controller - About-->
         <scene sceneID="mP2-hh-bph">
             <objects>
-                <viewController title="About" modalTransitionStyle="flipHorizontal" id="5R5-lv-JSb" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="About" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5R5-lv-JSb" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aRI-wr-usB"/>
                         <viewControllerLayoutGuide type="bottom" id="ibH-da-5C2"/>
@@ -642,7 +642,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
         <!--View Controller - Email Results-->
         <scene sceneID="cDx-mQ-7RJ">
             <objects>
-                <viewController title="Email Results" modalTransitionStyle="flipHorizontal" id="yHl-SO-vvr" userLabel="View Controller - Email Results" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Email Results" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yHl-SO-vvr" userLabel="View Controller - Email Results" customClass="emailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2gx-5q-oFe"/>
                         <viewControllerLayoutGuide type="bottom" id="nGR-eu-YLL"/>

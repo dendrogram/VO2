@@ -31,6 +31,7 @@ corFactorTxt,
 sampTimeTxt,
 FECO2Txt,
 FEO2Txt,
+labO2Txt,
 
 //switches
 pressureChange,

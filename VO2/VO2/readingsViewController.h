@@ -31,7 +31,7 @@
 }
 
 //text field inputs
-//readings
+//readings screen
 @property (nonatomic, strong) IBOutlet UITextField * labLocationTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labPressureTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labTempTxt;
@@ -41,12 +41,10 @@
 @property (nonatomic, strong) IBOutlet UITextField * FEO2Txt;
 @property (nonatomic, strong) IBOutlet UITextField * FECO2Txt;
 @property (nonatomic, strong) IBOutlet UITextField * labO2Txt;
-//readings delegate
-@property (nonatomic,strong) IBOutlet UISwitch * pressureChange;
-@property (nonatomic,strong) IBOutlet UISwitch * tempChange;
-
-@property (nonatomic, strong) IBOutlet UILabel * degc;
-@property (nonatomic, strong) IBOutlet UILabel * press;
+@property (nonatomic, strong) IBOutlet UISwitch    * pressureChange;
+@property (nonatomic, strong) IBOutlet UISwitch    * tempChange;
+@property (nonatomic, strong) IBOutlet UILabel     * degc;
+@property (nonatomic, strong) IBOutlet UILabel     * press;
 
 @end
 

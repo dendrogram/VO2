@@ -7,12 +7,21 @@
 //
 
 #import "calcsViewController.h"
+#import "mySingleton.h"
 
 @interface calcsViewController ()
 
 @end
 
-@implementation calcsViewController
+@implementation calcsViewController{
+    
+}
+@synthesize
+            FECO2lbl,
+            FEO2lbl,
+            labO2lbl,
+            hypoxic02,
+            n2lbl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +36,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    // set up link to singleton
+    mySingleton *singleton      = [mySingleton sharedSingleton];
+    
+    float N2=0;
+    float HyN2=0;
+    
+    FEO2lbl.text                =   singleton.feo2              ;
+    FECO2lbl.text               =   singleton.feco2             ;
+    labO2lbl.text               =   singleton.labO2             ;
+    
+    N2 = 100 - ([FEO2lbl.text floatValue] + [FECO2lbl.text floatValue]) ;
+    HyN2 = N2 + (20.93 - [labO2lbl.text floatValue]);
+            
+    n2lbl.text=[NSString stringWithFormat:@"%.2F", N2];
+    hypoxic02.text=[NSString stringWithFormat:@"%.2F", HyN2];
 }
 
 - (void)didReceiveMemoryWarning

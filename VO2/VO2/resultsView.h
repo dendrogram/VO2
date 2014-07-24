@@ -11,7 +11,8 @@
 
 @interface resultsView : UIViewController <MFMailComposeViewControllerDelegate>
 {
-    IBOutlet UILabel     *statusMessageLab;
+    IBOutlet UILabel     * statusMessageLab;
+    //text views for text displays ie results or help screens
     
 // for file manager
     NSFileManager * fileMgr;

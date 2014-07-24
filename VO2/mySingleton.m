@@ -19,31 +19,39 @@ static mySingleton * sharedSingleton = nil;
 // @synthesize counter;
 
 //Counters
-@synthesize addedToResults,
-            dataCompleted,
-
+@synthesize
+            testDate,
+            testTime,
+            testerName,
+            subjectName,
             subWt,
             subHt,
+
             labTemp,
             labPressure_mmHg,
             labHumidity,
             labLocation,
             sampTime,
-            veatps,
-            vestpd,
             feco2,
             feo2,
+            labO2,
+
+            veatps,
+            vestpd,
             corrFactor,
             vo2,
             vco2,
             vo2kg,
-            labO2,
             rer,
-            testerName,
-            testDate,
-            testTime,
+
+            addedToResults,
+            dataCompleted,
             resultStrings,
-            subjectName;
+            cardReactionTimeResult,
+            counter,
+
+versionNumber
+            ;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -100,6 +108,9 @@ static mySingleton * sharedSingleton = nil;
         resultStrings      = @"";
         subjectName        = @"subject";
         resultStrings      = @"";
+        versionNumber      = @"";
+        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: nil]; //empty array
+        counter            = 0;
     }
     return self;
 }

@@ -20,7 +20,8 @@
 
 @interface ViewController ()
 {
-  }
+
+}
 @end
 
 @implementation ViewController
@@ -29,10 +30,23 @@
 
 @synthesize webview;
 
+// ************************************************
+// ************************************************
+
+int v1=1;   // version: v1.v2.v3
+int v2=0;   // 24/7/14 jah
+int v3=0;   //
+
+// ************************************************
+// ************************************************
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    //display the version number in the opening vc
+        NSString *versionNo = [NSString stringWithFormat:@"V.%i.%i.%i",v1,v2,v3];
+    
+    versionNumberLab.text=versionNo;
     // for web page link
     NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/vo2"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

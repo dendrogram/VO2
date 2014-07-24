@@ -13,47 +13,120 @@
 
 @interface resultsView()
 {
-    
-//labels for email messages
-IBOutlet UILabel     * statusMessageLab;
-    
+
 }
 @end
 
 @implementation resultsView
 @synthesize
 //results Labels
-RERlbl,
-VESTPDlbl,
-VEATPSlbl,
-VO2lbl,
-VCO2lbl,
-datelbl,
-timelbl,
-lablbl,
-testerlbl,
-subjectlbl,
-templbl,
-pressurelbl,
-humiditylbl,
-samptimelbl,
-VO2Kglbl,
-subHtlbl,
-subWtlbl,
-corrFaclbl,
-FEO2lbl,
-FECO2lbl,
-labO2lbl;
+        RERlbl,
+        VESTPDlbl,
+        VEATPSlbl,
+        VO2lbl,
+        VCO2lbl,
+        datelbl,
+        timelbl,
+        lablbl,
+        testerlbl,
+        subjectlbl,
+        templbl,
+        pressurelbl,
+        humiditylbl,
+        samptimelbl,
+        VO2Kglbl,
+        subHtlbl,
+        subWtlbl,
+        corrFaclbl,
+        FEO2lbl,
+        FECO2lbl,
+        labO2lbl,
+        testDate;
+
+@synthesize startDate,
+            fileMgr,
+            homeDir,
+            filename,
+            filepath;
+
+-(NSString *) setFilename{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    NSString *extn = @"csv";
+    filename = [NSString stringWithFormat:@"%@.%@", singleton.subjectName, extn];
+    return filename;
+}
+
+//find the home directory for Document
+-(NSString *)GetDocumentDirectory{
+    fileMgr = [NSFileManager defaultManager];
+    NSString *docsDir;
+    NSArray *dirPaths;
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = dirPaths[0];
+    return docsDir;
+}
+
+/*Create a new file*/
+-(void)WriteToStringFile:(NSMutableString *)textToWrite{
+    filepath = [[NSString alloc] init];
+    //NSError *err;
+    filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
+    
+    //check if file exists
+    //int fileCounter = 0;
+    //BOOL fileExists = TRUE;
+    /*if([NSFileManager defaultManager] fileExistsAtPath:filepath) {
+     //exists, error, add 1 to filename and repeat
+     BOOL fileExists = TRUE;
+     }
+     else
+     {
+     //not exists, write
+     BOOL fileExists = FALSE;
+     }
+     //needs more work *****************************
+     BOOL ok;
+     ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
+     if (!ok) {
+     NSLog(@"Error writing file at %@\n%@",
+     filepath, [err localizedFailureReason]);
+     }*/
+}
+
+- (void)saveText
+{
+    
+    statusMessageLab.text=@"Saving\nData\nFile.";
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    NSFileManager   * filemgr;
+    NSData          * databuffer;
+    NSString        * dataFile;
+    NSString        * docsDir;
+    NSArray         * dirPaths;
+    
+    filemgr = [NSFileManager defaultManager];
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    docsDir = dirPaths[0];
+    
+    NSString * fileNameS = [NSString stringWithFormat:@"%@.csv", subjectlbl.text];
+    dataFile = [docsDir stringByAppendingPathComponent:fileNameS];
+    
+    databuffer = [singleton.resultStrings dataUsingEncoding: NSASCIIStringEncoding];
+    [filemgr createFileAtPath: dataFile
+                     contents: databuffer attributes:nil];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     // set up link to singleton
     mySingleton *singleton = [mySingleton sharedSingleton];
+    
     //read the singleton values and put into the labels
     subjectlbl.text     =   singleton.subjectName;
     testerlbl.text      =   singleton.testerName;

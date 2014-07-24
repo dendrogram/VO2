@@ -21,10 +21,11 @@
 #pragma mark Inits
 
 @synthesize
+//subject
     startDateTxt,
     testDateTxt,
 
-//subject
+
     subjectNameTxt,
     testerNameTxt,
     subHtTxt,

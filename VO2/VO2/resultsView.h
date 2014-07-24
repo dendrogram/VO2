@@ -11,6 +11,18 @@
 
 @interface resultsView : UIViewController <MFMailComposeViewControllerDelegate>
 {
+    IBOutlet UILabel     *statusMessageLab;
+    
+// for file manager
+    NSFileManager * fileMgr;
+    NSString      * homeDir;
+    NSString      * filename;
+    NSString      * filepath;
+
+// for calculations and functions
+    NSDate        * startDate;
+    NSDate        * testDate;
+    
     UILabel * VESTPDlbl;
     UILabel * VEATPSlbl;
     UILabel * RERlbl;
@@ -32,8 +44,38 @@
     UILabel * FEO2lbl;
     UILabel * FECO2lbl;
     UILabel * labO2lbl;
+    
+    float subWt;
+    float subHt;
+    float labPressure_mmHg;
+    float labPressure_mBar;
+    float labTempC;
+    float labTempF;
+    float labHumidity;
+    float VEATPS;
+    float VESTPD;
+    float VO2;
+    float VCO2;
+    float RER;
+    float sampTime;
+    float FECO2;
+    float FEO2;
+    float corrFactor;
+    float VO2Kg;
+    float labO2;
 }
 
+//file ops stuff
+@property(nonatomic,retain) NSFileManager * fileMgr;
+@property(nonatomic,retain) NSString      * homeDir;
+@property(nonatomic,retain) NSString      * filename;
+@property(nonatomic,retain) NSString      * filepath;
+
+//dates
+@property (nonatomic, copy) NSDate * startDate;
+@property (nonatomic, copy) NSDate * testDate;
+
+//var label outlets
 @property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
 @property (nonatomic, strong) IBOutlet UILabel * VEATPSlbl;
 @property (nonatomic, strong) IBOutlet UILabel * RERlbl;
@@ -58,5 +100,9 @@
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error;
+-(NSString *) GetDocumentDirectory;
+-(NSString *) setFilename;
+-(void) WriteToStringFile:(NSMutableString *)textToWrite;
 
 @end

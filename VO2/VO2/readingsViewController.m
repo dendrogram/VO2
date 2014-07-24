@@ -19,23 +19,23 @@
 
 @synthesize
 //lab
-labLocationTxt,
-labTempTxt,
-labPressureTxt,
-labHumidityTxt,
+        labLocationTxt,
+        labTempTxt,
+        labPressureTxt,
+        labHumidityTxt,
 
 //calc
-corFactorTxt,
+        corFactorTxt,
 
 //sample gas
-sampTimeTxt,
-FECO2Txt,
-FEO2Txt,
-labO2Txt,
+        sampTimeTxt,
+        FECO2Txt,
+        FEO2Txt,
+        labO2Txt,
 
 //switches
-pressureChange,
-tempChange,
+        pressureChange,
+        tempChange,
 
 //labels for units
 press,
@@ -54,14 +54,11 @@ degc
                         action:@selector(tempChanged:) forControlEvents:UIControlEventValueChanged];
     
     //set the delegates or text did start/end will not work
-    //lab
     labLocationTxt.delegate = self;
     labTempTxt.delegate     = self;
     labPressureTxt.delegate = self;
     labHumidityTxt.delegate = self;
-    //calc
     corFactorTxt.delegate   = self;
-    //sample gas
     sampTimeTxt.delegate    = self;
     FECO2Txt.delegate       = self;
     FEO2Txt.delegate        = self;
@@ -86,7 +83,7 @@ degc
 -(void)viewDidDisappear:(BOOL)animated{
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
-    
+
     singleton.feo2              = [NSString stringWithFormat:@"%@",FEO2Txt.text];
     singleton.feco2             = [NSString stringWithFormat:@"%@",FECO2Txt.text];
     singleton.labO2             = [NSString stringWithFormat:@"%@",labO2Txt.text];
@@ -159,7 +156,6 @@ degc
 }
 
 //one block for each input var to colour the boxes and test the validity
-//******** Start of block *********
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
      if(textField==self->labLocationTxt){
@@ -220,8 +216,6 @@ degc
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
     
-    // set up link to singleton
-       
     //move the screen back to the original place
     [self keyBoardDisappeared:0];
     

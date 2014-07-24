@@ -11,7 +11,7 @@
 @interface ViewController : UIViewController <UITextFieldDelegate>
 
 {
-
+    IBOutlet UILabel     * versionNumberLab;
 }
 
 @property (strong, nonatomic) IBOutlet UIWebView *webview;

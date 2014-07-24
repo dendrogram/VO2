@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KM4-b4-LGw">
-                                <rect key="frame" x="20" y="109" width="280" height="380"/>
+                                <rect key="frame" x="20" y="130" width="280" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-h9-G5r">
@@ -114,12 +114,22 @@
                                 <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-FB-Tvd">
+                                <rect key="frame" x="80" y="81" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="about50x50.png" id="I8P-AL-7br"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="versionNumberLab" destination="Wgh-FB-Tvd" id="C6U-P3-sYe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlW-0N-Qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -618,7 +628,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mB-he-3Qg">
-                                <rect key="frame" x="99" y="481" width="123" height="30"/>
+                                <rect key="frame" x="177" y="481" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -631,6 +641,12 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                     <segue destination="yHl-SO-vvr" kind="modal" id="ZEc-v8-ogA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz3-zC-vpZ">
+                                <rect key="frame" x="20" y="481" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -649,9 +665,11 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                         <outlet property="corrFaclbl" destination="X41-KN-t1p" id="fZ4-gv-smR"/>
                         <outlet property="datelbl" destination="o9e-Ce-vtH" id="Lva-Kn-Z1K"/>
                         <outlet property="humiditylbl" destination="BSC-K1-dKA" id="3Dw-cP-SOA"/>
+                        <outlet property="labO2lbl" destination="qpf-rX-5Yc" id="qSv-Xm-Jgu"/>
                         <outlet property="lablbl" destination="GkQ-iZ-YME" id="cK7-Kd-Cir"/>
                         <outlet property="pressurelbl" destination="DdM-IH-03v" id="Dfq-pc-O2G"/>
                         <outlet property="samptimelbl" destination="w36-4k-uL8" id="UUV-0u-cLh"/>
+                        <outlet property="statusMessageLab" destination="oz3-zC-vpZ" id="1Vu-T1-m2a"/>
                         <outlet property="subHtlbl" destination="crh-zq-chZ" id="RFZ-vp-pWX"/>
                         <outlet property="subWtlbl" destination="n2N-Ag-ffJ" id="8CD-Rl-Usr"/>
                         <outlet property="subjectlbl" destination="cTR-7b-mBT" id="Z7K-XP-YgI"/>

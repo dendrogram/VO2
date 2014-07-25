@@ -15,14 +15,14 @@
     float labPressure_mBar;
     float labTempC;
     float labTempF;
-    float corrFactor;
+    float VEATPS;
     
     UITextField * labLocationTxt;
     UITextField * labPressureTxt;
     UITextField * labTempTxt;
     UITextField * labHumidityTxt;
-    UITextField * corFactorTxt;
     UITextField * sampTimeTxt;
+    UITextField * VEATPSTxt;
     UITextField * FEO2Txt;
     UITextField * FECO2Txt;
     UITextField * labO2Txt;
@@ -36,7 +36,7 @@
 @property (nonatomic, strong) IBOutlet UITextField * labPressureTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labTempTxt;
 @property (nonatomic, strong) IBOutlet UITextField * labHumidityTxt;
-@property (nonatomic, strong) IBOutlet UITextField * corFactorTxt;
+@property (nonatomic, strong) IBOutlet UITextField * VEATPSTxt;
 @property (nonatomic, strong) IBOutlet UITextField * sampTimeTxt;
 @property (nonatomic, strong) IBOutlet UITextField * FEO2Txt;
 @property (nonatomic, strong) IBOutlet UITextField * FECO2Txt;

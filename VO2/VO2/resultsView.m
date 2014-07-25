@@ -125,27 +125,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    //read the singleton values and put into the labels
-    subjectlbl.text     =   singleton.subjectName;
-    testerlbl.text      =   singleton.testerName;
-    datelbl.text        =   singleton.testDate;
-    timelbl.text        =   singleton.testTime;
-    lablbl.text         =   singleton.labLocation;
-    subWtlbl.text       =   singleton.subWt;
-    subHtlbl.text       =   singleton.subHt;
-    templbl.text        =   singleton.labTemp;
-    pressurelbl.text    =   singleton.labPressure_mmHg;
-    humiditylbl.text    =   singleton.labHumidity;
-    samptimelbl.text    =   singleton.sampTime;
-    FEO2lbl.text        =   singleton.feo2;
-    FECO2lbl.text       =   singleton.feco2;
-    corrFaclbl.text     =   singleton.corrFactor;
-    labO2lbl.text       =   singleton.labO2;
-   
+       
     [self calculateStats];
-
 }
 
 
@@ -170,7 +151,24 @@
     
 //set inits zeros her for vars
     
-    VEATPSlbl.text      =   @"0.00";
+    //read the singleton values and put into the labels
+    subjectlbl.text     =   singleton.subjectName;
+    testerlbl.text      =   singleton.testerName;
+    datelbl.text        =   singleton.testDate;
+    timelbl.text        =   singleton.testTime;
+    lablbl.text         =   singleton.labLocation;
+    subWtlbl.text       =   singleton.subWt;
+    subHtlbl.text       =   singleton.subHt;
+    templbl.text        =   singleton.labTemp;
+    pressurelbl.text    =   singleton.labPressure_mmHg;
+    humiditylbl.text    =   singleton.labHumidity;
+    samptimelbl.text    =   singleton.sampTime;
+    FEO2lbl.text        =   singleton.feo2;
+    FECO2lbl.text       =   singleton.feco2;
+    corrFaclbl.text     =   singleton.corrFactor;
+    labO2lbl.text       =   singleton.labO2;
+    VEATPSlbl.text      =   singleton.veatps;
+    
     VESTPDlbl.text      =   @"0.00";
     //corrFaclbl.text     =   @"0.00";
     VO2lbl.text         =   @"0.00";
@@ -198,33 +196,35 @@
     //N2 (if adjust formula, cahnge same in calcViewController
     
     float N2  = 0;
-    float HyN2= 0;
+    // float HyN2= 0;
     float O2  = 0;
     
-    N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
-    HyN2 = N2 + (20.93 - [singleton.labO2 floatValue]);
-    O2   = 100 - HyN2;
+    //N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
+    //HyN2 = N2 + (20.93 - [singleton.labO2 floatValue]);
+    //O2   = 100 - HyN2;
+    N2 = 79.03;
+    O2 = 20.93;
     
     
     //vestpd
-    VESTPD = (60 * (VEATPS * (273 / (273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760))) / sampTime;
-    singleton.vestpd = [NSString stringWithFormat:@"%.2f",VESTPD];
+    VESTPD = ( 60 * ( VEATPS * ( 273 / (273 + labTempC )) * (( labPressure_mmHg - (( 1.001 * labTempC ) - 4.19 )) / 760 ))) / sampTime;
+    singleton.vestpd = [NSString stringWithFormat:@"%.2f", VESTPD];
     
     //vo2
-    VO2 = 0.01 * (VESTPD * ((( 100 - (FEO2 +FECO2)) / N2) * O2) - (VESTPD * FEO2));
-    singleton.vo2 = [NSString stringWithFormat:@"%.2f",VO2];
+    VO2    = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / N2) * O2) - (VESTPD * FEO2));
+    singleton.vo2    = [NSString stringWithFormat:@"%.2f", VO2];
     
     //vco2
-    VCO2 = 0.01 * (VESTPD * FECO2);
-    singleton.vco2 = [NSString stringWithFormat:@"%.2f",VCO2];
+    VCO2   = 0.01 * (VESTPD * FECO2);
+    singleton.vco2   = [NSString stringWithFormat:@"%.2f", VCO2];
    
     //vo2kg
-    VO2Kg = ( VO2 * 1000 ) / subWt ;
-    singleton.vo2kg = [NSString stringWithFormat:@"%.2f",VO2Kg];
+    VO2Kg  = ( VO2 * 1000 ) / subWt ;
+    singleton.vo2kg  = [NSString stringWithFormat:@"%.2f", VO2Kg];
     
     //rer
-    RER = ( VCO2 / VO2 );
-    singleton.rer = [NSString stringWithFormat:@"%.2f",RER];
+    RER    = ( VCO2 / VO2 );
+    singleton.rer    = [NSString stringWithFormat:@"%.2f", RER];
     
     VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   singleton.vestpd;

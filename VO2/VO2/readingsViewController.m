@@ -24,11 +24,9 @@
         labPressureTxt,
         labHumidityTxt,
 
-//calc
-        corFactorTxt,
-
 //sample gas
         sampTimeTxt,
+        VEATPSTxt,
         FECO2Txt,
         FEO2Txt,
         labO2Txt,
@@ -38,9 +36,9 @@
         tempChange,
 
 //labels for units
-press,
-degc
-;
+        press,
+        degc
+        ;
 
 - (void)viewDidLoad
 {
@@ -58,7 +56,7 @@ degc
     labTempTxt.delegate     = self;
     labPressureTxt.delegate = self;
     labHumidityTxt.delegate = self;
-    corFactorTxt.delegate   = self;
+    VEATPSTxt.delegate      = self;
     sampTimeTxt.delegate    = self;
     FECO2Txt.delegate       = self;
     FEO2Txt.delegate        = self;
@@ -72,7 +70,7 @@ degc
     FEO2Txt.text                =   singleton.feo2              ;
     FECO2Txt.text               =   singleton.feco2             ;
     labO2Txt.text               =   singleton.labO2             ;
-    corFactorTxt.text           =   singleton.corrFactor        ;
+    VEATPSTxt.text              =   singleton.veatps            ;
     labLocationTxt.text         =   singleton.labLocation       ;
     labTempTxt.text             =   singleton.labTemp           ;
     labHumidityTxt.text         =   singleton.labHumidity       ;
@@ -84,15 +82,15 @@ degc
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
 
-    singleton.feo2              = [NSString stringWithFormat:@"%@",FEO2Txt.text];
-    singleton.feco2             = [NSString stringWithFormat:@"%@",FECO2Txt.text];
-    singleton.labO2             = [NSString stringWithFormat:@"%@",labO2Txt.text];
-    singleton.corrFactor        = [NSString stringWithFormat:@"%@",corFactorTxt.text];
-    singleton.labLocation       = [NSString stringWithFormat:@"%@",labLocationTxt.text];
-    singleton.labTemp           = [NSString stringWithFormat:@"%@",labTempTxt.text];
-    singleton.labHumidity       = [NSString stringWithFormat:@"%@",labHumidityTxt.text];
-    singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@",labPressureTxt.text];
-    singleton.sampTime          = [NSString stringWithFormat:@"%@",sampTimeTxt.text];
+    singleton.feo2              = [NSString stringWithFormat:@"%@", FEO2Txt.text];
+    singleton.feco2             = [NSString stringWithFormat:@"%@", FECO2Txt.text];
+    singleton.labO2             = [NSString stringWithFormat:@"%@", labO2Txt.text];
+    singleton.veatps            = [NSString stringWithFormat:@"%@", VEATPSTxt.text];
+    singleton.labLocation       = [NSString stringWithFormat:@"%@", labLocationTxt.text];
+    singleton.labTemp           = [NSString stringWithFormat:@"%@", labTempTxt.text];
+    singleton.labHumidity       = [NSString stringWithFormat:@"%@", labHumidityTxt.text];
+    singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@", labPressureTxt.text];
+    singleton.sampTime          = [NSString stringWithFormat:@"%@", sampTimeTxt.text];
 }
 
 //Pressure switch changed, so recalculate and update textfield
@@ -182,12 +180,6 @@ degc
         int oft=textField.frame.origin.y-190;
         [self keyBoardAppeared:oft];
     }
-    if(textField==self->corFactorTxt){
-        corFactorTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
-        [self keyBoardAppeared:oft];
-    }
     if(textField==self->sampTimeTxt){
         sampTimeTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
@@ -206,6 +198,12 @@ degc
         int oft=textField.frame.origin.y-190;
         [self keyBoardAppeared:oft];
     }
+    if(textField==self->VEATPSTxt){
+        VEATPSTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-190;
+        [self keyBoardAppeared:oft];
+    }
     if(textField==self->labO2Txt){
         labO2Txt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
@@ -219,11 +217,13 @@ degc
     //move the screen back to the original place
     [self keyBoardDisappeared:0];
     
+    //convert strings to floats, check and write back strings.
+    
     labLocationTxt.backgroundColor = [UIColor whiteColor];
     labTempTxt.backgroundColor     = [UIColor whiteColor];
     labPressureTxt.backgroundColor = [UIColor whiteColor];
     labHumidityTxt.backgroundColor = [UIColor whiteColor];
-    corFactorTxt.backgroundColor   = [UIColor whiteColor];
+    VEATPSTxt.backgroundColor      = [UIColor whiteColor];
     sampTimeTxt.backgroundColor    = [UIColor whiteColor];
     FECO2Txt.backgroundColor       = [UIColor whiteColor];
     FEO2Txt.backgroundColor        = [UIColor whiteColor];
@@ -260,19 +260,19 @@ degc
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    corFactorTxt.textColor=[UIColor blackColor];
-    if (corrFactor<0.000) {
-        corFactorTxt.textColor=[UIColor redColor];
-        corrFactor=0.000;
-        corFactorTxt.text=@"0.000";
-        corFactorTxt.backgroundColor = [UIColor yellowColor];
+    VEATPSTxt.textColor=[UIColor blackColor];
+    if (VEATPS<0.000) {
+        VEATPSTxt.textColor=[UIColor redColor];
+        VEATPS=0.000;
+        VEATPSTxt.text=@"0.000";
+        VEATPSTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if (corrFactor>1.000) {
-        corFactorTxt.textColor=[UIColor redColor];
-        corrFactor=1.000;
-        corFactorTxt.text=@"1.000";
-        corFactorTxt.backgroundColor = [UIColor yellowColor];
+    if (VEATPS>1.000) {
+        VEATPSTxt.textColor=[UIColor redColor];
+        VEATPS=1.000;
+        VEATPSTxt.text=@"1.000";
+        VEATPSTxt.backgroundColor = [UIColor yellowColor];
     }
 }
 

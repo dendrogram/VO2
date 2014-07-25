@@ -24,8 +24,6 @@
 //subject
     startDateTxt,
     testDateTxt,
-
-
     subjectNameTxt,
     testerNameTxt,
     subHtTxt,

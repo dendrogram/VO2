@@ -107,5 +107,6 @@
 -(NSString *) GetDocumentDirectory;
 -(NSString *) setFilename;
 -(void) WriteToStringFile:(NSMutableString *)textToWrite;
+-(void)calculateStats;
 
 @end

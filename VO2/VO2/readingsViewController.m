@@ -102,17 +102,17 @@
         press.text=@"mmHg";
         labPressure_mmHg = 0.75218 * [labPressureTxt.text floatValue];
         labPressure_mBar = labPressure_mmHg / 0.75218;
-        labPressureTxt.text = [NSString stringWithFormat:@"%.2f",labPressure_mmHg];
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4f",labPressure_mmHg];
         
-        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.2f",labPressure_mmHg];
+        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.4f",labPressure_mmHg];
     
     } else {
         press.text=@"mBar";
         labPressure_mBar = [labPressureTxt.text floatValue] / 0.75218;
         labPressure_mmHg = 0.75218 * labPressure_mBar;
-        labPressureTxt.text = [NSString stringWithFormat:@"%.2f",labPressure_mBar];
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4f",labPressure_mBar];
         
-        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.2f",labPressure_mmHg];
+        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.4f",labPressure_mmHg];
     }
 }
 
@@ -125,17 +125,17 @@
         degc.text=@"'C";
         labTempC = 5 * ([labTempTxt.text floatValue] - 32) / 9;
         labTempF = (9 * labTempC / 5 ) + 32;
-        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempC];
+        labTempTxt.text = [NSString stringWithFormat:@"%.4f",labTempC];
         
-        singleton.labTemp=[NSString stringWithFormat:@"%.2f",labTempC];
+        singleton.labTemp=[NSString stringWithFormat:@"%.4f",labTempC];
         
     } else {
         degc.text=@"'F";
         labTempF = (9 * [labTempTxt.text floatValue] / 5 ) + 32;
         labTempC = 5 * (labTempF - 32) / 9;
-        labTempTxt.text = [NSString stringWithFormat:@"%.2f",labTempF];
+        labTempTxt.text = [NSString stringWithFormat:@"%.4f",labTempF];
         
-        singleton.labTemp=[NSString stringWithFormat:@"%.2f",labTempC];
+        singleton.labTemp=[NSString stringWithFormat:@"%.4f",labTempC];
     }
 }
 
@@ -228,8 +228,10 @@
     FECO2Txt.backgroundColor       = [UIColor whiteColor];
     FEO2Txt.backgroundColor        = [UIColor whiteColor];
     labO2Txt.backgroundColor       = [UIColor whiteColor];
-    
-    //set backgrounds to yellow/red if had to correct
+ /*
+  //colour change if out of range and insert range max/min value
+  //set backgrounds to yellow/red if had to correct
+  
     labTempTxt.textColor=[UIColor blackColor];
     if (labTempC<-50) {
         labTempTxt.textColor=[UIColor redColor];
@@ -274,6 +276,7 @@
         VEATPSTxt.text=@"1.000";
         VEATPSTxt.backgroundColor = [UIColor yellowColor];
     }
+  */
 }
 
 -(void) keyBoardAppeared :(int)oft

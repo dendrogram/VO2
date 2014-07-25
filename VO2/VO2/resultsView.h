@@ -35,9 +35,9 @@
     UILabel * testerlbl;
     UILabel * subjectlbl;
     UILabel * templbl;
-    UILabel * pressurelb;
-    UILabel * humiditylb;
-    UILabel * samptimelb;
+    UILabel * pressurelbl;
+    UILabel * humiditylbl;
+    UILabel * samptimelbl;
     UILabel * VO2Kglbl;
     UILabel * subHtlbl;
     UILabel * subWtlbl;
@@ -64,6 +64,8 @@
     float corrFactor;
     float VO2Kg;
     float labO2;
+    
+    int counter;
 }
 
 //file ops stuff

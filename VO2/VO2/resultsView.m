@@ -43,11 +43,12 @@
         labO2lbl,
         testDate;
 
-@synthesize startDate,
-            fileMgr,
-            homeDir,
-            filename,
-            filepath;
+@synthesize
+        startDate,
+        fileMgr,
+        homeDir,
+        filename,
+        filepath;
 
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -148,6 +149,17 @@
     VO2Kglbl.text       =   singleton.vo2kg;
     RERlbl.text         =   singleton.rer;
     labO2lbl.text       =   singleton.labO2;
+    
+    // convert strings to floats
+    subWt = [subWtlbl.text floatValue];
+    subHt = [subHtlbl.text floatValue];
+    labPressure_mmHg = [pressurelbl.text floatValue];
+    labTempC = [templbl.text floatValue];
+    labHumidity = [humiditylbl.text floatValue];
+    sampTime = [samptimelbl.text floatValue];
+    FECO2 = [FECO2lbl.text floatValue];
+    FEO2 = [FEO2lbl.text floatValue];
+    labO2 = [labO2lbl.text floatValue];
 }
 
 // +++++++++++++++++++++++++++++++++++
@@ -170,7 +182,8 @@
     
     //totalDelay=0;
 
-//do the calcs here
+//do the calcs here:
+    
     
     //put titles and basic params up first
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, VO2 Application Results"];
@@ -183,13 +196,42 @@
     [singleton.cardReactionTimeResult addObject:@" "];
     
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"Card No., Card, Result, Reaction (mS)"];
-    
+    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    // +++++++++++++++++++++++++++
+    //loop if rows of results
     //results, one per line upto number of cards
-    for (int y=1; y<singleton.counter+1; y++) {
-        //myNumbStr = [NSString stringWithFormat:@"      %d,          %d,        %d,          %d", y, r1[y],r2[y], ((int)(cardReactionTime[y]+roundUpFactor))];
+    //for (int y=1; y<singleton.counter+1; y++) {
+        //uncomment when formatted
+    
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f" ,
+                     counter,
+                     testerlbl.text,
+                     subjectlbl.text,
+                     datelbl.text,
+                     timelbl.text,
+                     lablbl.text,
+                     templbl.text,
+                     pressurelbl.text,
+                     humiditylbl.text,
+                     subHtlbl.text,
+                     subWtlbl.text,
+                     samptimelbl.text,
+                     FEO2lbl.text,
+                     FECO2lbl.text,
+                     labO2lbl.text,
+                     VEATPS,
+                     VESTPD,
+                     corrFactor,
+                     VO2,
+                     VCO2,
+                     VO2Kg,
+                     RER]
+    ;
+    
         [singleton.cardReactionTimeResult addObject: myNumbStr];
-    }
+    //}
+    // +++++++++++++++++++++++++++
+    
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
     
@@ -232,7 +274,9 @@
     
     singleton.resultStrings = printString;
     
-    resultsView.text = singleton.resultStrings;
+    // send to screen... need to link to emailVC so don't do code here in results VC
+    //resultsView.text = singleton.resultStrings;
+    
     //[self saveText];
     [self WriteToStringFile:[printString mutableCopy]];
     

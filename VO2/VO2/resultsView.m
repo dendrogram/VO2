@@ -8,8 +8,6 @@
 
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
-//#import "subjectViewController.m"
-//#import "resultsView.m"
 
 @interface resultsView()
 {
@@ -237,7 +235,7 @@
     
     //mmu copyright message 2014 JAH
     [singleton.cardReactionTimeResult addObject:@"(c) 2014 MMU written by Jonathan A. Howell for ESS VO2 App"];
-    [singleton.cardReactionTimeResult addObject:singleton.versionNumber];
+    //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
     
     //blank line
     [singleton.cardReactionTimeResult addObject:@" "];
@@ -311,9 +309,9 @@
     //add back if multi output
     
     //for(int i=0; i< (singleton.counter+37); i++)
-    int i=0;
+
     {
-        element = [singleton.cardReactionTimeResult objectAtIndex: i];
+        element = [singleton.cardReactionTimeResult objectAtIndex: 0];
         [printString appendString:[NSString stringWithFormat:@"\n%@", element]];
     }
     
@@ -331,6 +329,7 @@
     //resultsView.text = singleton.resultStrings;
     
     //[self saveText];
+
     [self WriteToStringFile:[printString mutableCopy]];
     
     statusMessageLab.text=@"Waiting\nfor\nNext\nInstruction.";
@@ -347,8 +346,8 @@
     [mailComposer setMailComposeDelegate:self];
     if ([MFMailComposeViewController canSendMail]){
         [mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
-        [mailComposer setSubject:@"Restults from VO2 App"];
-        //[mailComposer setMessageBody:@"Dear Tachistoscope User: " isHTML:YES];
+        [mailComposer setSubject:@"Results from VO2 App"];
+        //[mailComposer setMessageBody:@"Dear VO2 App User: " isHTML:YES];
         
         [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
         [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];

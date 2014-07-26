@@ -7,12 +7,17 @@
 //
 
 #import "emailViewController.h"
+#import "mySingleton.h" //for global variables
 
-@interface emailViewController ()
+@interface emailViewController (
+
+                                )
 
 @end
 
 @implementation emailViewController
+
+@synthesize resultsView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +32,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    resultsView.text = @"New Results";
 }
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    resultsView.text = singleton.resultStrings;
+    NSLog(@"%@",singleton.resultStrings);
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

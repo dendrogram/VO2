@@ -631,6 +631,7 @@ You will need to read the Temperature and Atmospheric Pressure in the Lab and en
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="sendEmail:" destination="A4O-u3-AmH" eventType="touchUpInside" id="hQ6-fW-M31"/>
                                     <segue destination="yHl-SO-vvr" kind="modal" id="kQV-SK-q5X"/>
                                 </connections>
                             </button>

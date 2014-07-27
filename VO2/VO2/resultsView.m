@@ -350,6 +350,7 @@
 -(IBAction)sendEmail:(id)sender {
     statusMessageLab.text=@"E-Mail\nResults\nLoading...";
     mySingleton *singleton = [mySingleton sharedSingleton];
+    
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     [mailComposer setMailComposeDelegate:self];
     if ([MFMailComposeViewController canSendMail]){

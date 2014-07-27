@@ -144,7 +144,8 @@
     
     //set counter to cards for singleton global var
     singleton.counter = 1;
-    
+
+    // clear any old rsults from  results array
     [singleton.cardReactionTimeResult removeAllObjects];
     
 //set inits zeros her for vars
@@ -232,16 +233,17 @@
     //Format for file and email outputs
     //put titles and basic params up first
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, VO2 Application Results"];
-    
+    singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
     [singleton.cardReactionTimeResult addObject:@"(c) 2014 MMU written by Jonathan A. Howell for ESS VO2 App"];
     //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
-    
+    singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@" "];
-    
+    singleton.counter = singleton.counter+1;
     //title line - results one row per data entry
     [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
     //results, one per line upto number of cards
@@ -274,22 +276,28 @@
     ;
     
         [singleton.cardReactionTimeResult addObject: myNumbStr];
+    singleton.counter = singleton.counter+1;
     //}
     // +++++++++++++++++++++++++++
     
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
     
     //end of data message
     [singleton.cardReactionTimeResult addObject:@"End of test data. " ];
+    singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
-    //mmu copyright message 2013 JAH
+    singleton.counter = singleton.counter+1;
+    //mmu copyright message
     [singleton.cardReactionTimeResult addObject:@"MMU (c) 2014 VO2 App Jonathan A. Howell SAS Technical Services. " ];
-    
+    singleton.counter = singleton.counter+1;
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" "];
-    
+    [singleton.cardReactionTimeResult addObject:@"."];
+    [singleton.cardReactionTimeResult addObject:@".."];
+    [singleton.cardReactionTimeResult addObject:@"..."];
+    singleton.counter = singleton.counter+1;
     //example for future
     
     // NSString* strRR = [NSString stringWithFormat:@"%@ %@ %@", str1, str2, str3];
@@ -303,19 +311,19 @@
     
     //make a text file from the array of results
     NSMutableString *element = [[NSMutableString alloc] init];
-    NSMutableString *printString = [NSMutableString stringWithString:@""];
+    NSMutableString *printString = [NSMutableString stringWithString:@"\n"];
     //
-    //array of rows, 1 at present
+    //array of rows put into one string for text output
     //add back if multi output
-    
-    //for(int i=0; i< (singleton.counter+37); i++)
 
+    [printString appendString:@"\n"];
+    for(int i=0; i< (singleton.counter); i++)
     {
-        element = [singleton.cardReactionTimeResult objectAtIndex: 0];
+        element = [singleton.cardReactionTimeResult objectAtIndex: i];
         [printString appendString:[NSString stringWithFormat:@"\n%@", element]];
     }
+    [printString appendString:@"\n"];
     
-    [printString appendString:@""];
     
     // NSLog(@"string to write pt1:%@",printString);
     //CREATE FILE to save in Documents Directory

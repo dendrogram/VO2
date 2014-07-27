@@ -50,7 +50,7 @@ static mySingleton * sharedSingleton = nil;
             cardReactionTimeResult,
             counter,
 
-versionNumber
+            versionNumber
             ;
 
 #pragma mark -

@@ -10,8 +10,7 @@
 #import "mySingleton.h" //for global variables
 
 @interface emailViewController (
-
-                                )
+)
 
 @end
 
@@ -34,7 +33,6 @@
     // Do any additional setup after loading the view.
     resultsView.text = @"New Results";
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
     mySingleton *singleton = [mySingleton sharedSingleton];

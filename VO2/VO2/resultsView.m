@@ -8,8 +8,6 @@
 
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
-//#import "subjectViewController.m"
-//#import "resultsView.m"
 
 @interface resultsView()
 {
@@ -53,7 +51,7 @@
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *extn = @"csv";
-    filename = [NSString stringWithFormat:@"%@.%@", singleton.subjectName, extn];
+    filename = [NSString stringWithFormat:@"%@.%@", singleton.oldSubjectName, extn];
     return filename;
 }
 
@@ -69,29 +67,49 @@
 
 /*Create a new file*/
 -(void)WriteToStringFile:(NSMutableString *)textToWrite{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    int trynumber = 0;
     filepath = [[NSString alloc] init];
-    //NSError *err;
+    NSError *err;
     filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
     
     //check if file exists
-    //int fileCounter = 0;
+
     //BOOL fileExists = TRUE;
-    /*if([NSFileManager defaultManager] fileExistsAtPath:filepath) {
-     //exists, error, add 1 to filename and repeat
-     BOOL fileExists = TRUE;
-     }
-     else
-     {
+    if([[NSFileManager defaultManager] fileExistsAtPath:filepath]) {
+        //exists, error, add +1 to filename and repeat
+        //BOOL fileExists = TRUE;
+
+
+        //singleton.subjectName = [singleton.oldSubjectName stringByAppendingString: [NSString stringWithFormat:@"_%@_%i",[self getCurrentDateTimeAsNSString], trynumber]];
+        //[self WriteToStringFile:textToWrite];
+        }
+    else
+        {
      //not exists, write
-     BOOL fileExists = FALSE;
-     }
+     //BOOL fileExists = FALSE;
+        singleton.subjectName = [singleton.oldSubjectName stringByAppendingString: [NSString stringWithFormat:@"_%@",[self getCurrentDateTimeAsNSString]]];
+        }
      //needs more work *****************************
+
      BOOL ok;
      ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
      if (!ok) {
-     NSLog(@"Error writing file at %@\n%@",
-     filepath, [err localizedFailureReason]);
-     }*/
+         (statusMessageLab.text=filepath, [err localizedFailureReason]);
+         //NSLog(@"Error writing file at %@\n%@",
+         //filepath, [err localizedFailureReason]);
+     }
+}
+
+
+-(NSString*)getCurrentDateTimeAsNSString
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"ddMMyyHHmmss"];
+    NSDate *now = [NSDate date];
+    NSString *retStr = [format stringFromDate:now];
+
+    return retStr;
 }
 
 - (void)saveText
@@ -146,7 +164,8 @@
     
     //set counter to cards for singleton global var
     singleton.counter = 1;
-    
+
+    // clear any old rsults from  results array
     [singleton.cardReactionTimeResult removeAllObjects];
     
 //set inits zeros her for vars
@@ -171,10 +190,10 @@
     
     VESTPDlbl.text      =   @"0.0000";
     //corrFaclbl.text     =   @"0.00";
-    VO2lbl.text         =   @"0.0000";
-    VCO2lbl.text        =   @"0.0000";
-    VO2Kglbl.text       =   @"0.0000";
-    RERlbl.text         =   @"0.0000";
+    VO2lbl.text         =   @"0.00";
+    VCO2lbl.text        =   @"0.00";
+    VO2Kglbl.text       =   @"0.00";
+    RERlbl.text         =   @"0.00";
     
     labTempC         = [templbl.text     floatValue];
     FECO2            = [FECO2lbl.text    floatValue];
@@ -182,9 +201,11 @@
     labPressure_mmHg = [pressurelbl.text floatValue];
     VEATPS           = [VEATPSlbl.text   floatValue];
     subWt            = [subWtlbl.text    floatValue];
+    subHt            = [subHtlbl.text    floatValue];
     sampTime         = [samptimelbl.text floatValue];
     labO2            = [labO2lbl.text    floatValue];
-    
+    labHumidity      = [humiditylbl.text floatValue];
+
     //totalDelay=0;
 
 //do the calcs here:
@@ -205,19 +226,19 @@
 // for branch 1
     /*
     //vestpd
-    VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
-    singleton.vestpd = [NSString stringWithFormat:@"%.8f", VESTPD];
+    VESTPD = ( 60 * ( VEATPS * ( 273 / (273 + labTempC )) * (( labPressure_mmHg - (( 1.001 * labTempC ) - 4.19 )) / 760 ))) / sampTime;
+    singleton.vestpd = [NSString stringWithFormat:@"%.6f", VESTPD];
     
     //vo2
-    VO2    = 0.0100 * (VESTPD * ((( 100.0000 - (FEO2 + FECO2)) / N2) * O2) - (VESTPD * FEO2));
-    singleton.vo2    = [NSString stringWithFormat:@"%.8f", VO2];
+    VO2    = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / N2) * O2) - (VESTPD * FEO2));
+    singleton.vo2    = [NSString stringWithFormat:@"%.6f", VO2];
     
     //vco2
-    VCO2   = 0.0100 * (VESTPD * FECO2);
-    singleton.vco2   = [NSString stringWithFormat:@"%.8f", VCO2];
+    VCO2   = 0.01 * (VESTPD * FECO2);
+    singleton.vco2   = [NSString stringWithFormat:@"%.6f", VCO2];
    
     //vo2kg
-    VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
+    VO2Kg  = ( VO2 * 1000 ) / subWt ;
     singleton.vo2kg  = [NSString stringWithFormat:@"%.6f", VO2Kg];
     
     //rer
@@ -259,16 +280,17 @@
     //Format for file and email outputs
     //put titles and basic params up first
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, VO2 Application Results"];
-    
+    singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
     [singleton.cardReactionTimeResult addObject:@"(c) 2014 MMU written by Jonathan A. Howell for ESS VO2 App"];
-    [singleton.cardReactionTimeResult addObject:singleton.versionNumber];
-    
+    //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
+    singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@" "];
-    
+    singleton.counter = singleton.counter+1;
     //title line - results one row per data entry
     [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
     //results, one per line upto number of cards
@@ -301,22 +323,28 @@
     ;
     
         [singleton.cardReactionTimeResult addObject: myNumbStr];
+    singleton.counter = singleton.counter+1;
     //}
     // +++++++++++++++++++++++++++
     
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
+    singleton.counter = singleton.counter+1;
     
     //end of data message
     [singleton.cardReactionTimeResult addObject:@"End of test data. " ];
+    singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
-    //mmu copyright message 2013 JAH
+    singleton.counter = singleton.counter+1;
+    //mmu copyright message
     [singleton.cardReactionTimeResult addObject:@"MMU (c) 2014 VO2 App Jonathan A. Howell SAS Technical Services. " ];
-    
+    singleton.counter = singleton.counter+1;
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" "];
-    
+    [singleton.cardReactionTimeResult addObject:@"."];
+    [singleton.cardReactionTimeResult addObject:@".."];
+    [singleton.cardReactionTimeResult addObject:@"..."];
+    singleton.counter = singleton.counter+1;
     //example for future
     
     // NSString* strRR = [NSString stringWithFormat:@"%@ %@ %@", str1, str2, str3];
@@ -330,19 +358,19 @@
     
     //make a text file from the array of results
     NSMutableString *element = [[NSMutableString alloc] init];
-    NSMutableString *printString = [NSMutableString stringWithString:@""];
+    NSMutableString *printString = [NSMutableString stringWithString:@"\n"];
     //
-    //array of rows, 1 at present
+    //array of rows put into one string for text output
     //add back if multi output
-    
-    //for(int i=0; i< (singleton.counter+37); i++)
-    int i=0;
+
+    [printString appendString:@"\n"];
+    for(int i=0; i< (singleton.counter); i++)
     {
         element = [singleton.cardReactionTimeResult objectAtIndex: i];
         [printString appendString:[NSString stringWithFormat:@"\n%@", element]];
     }
+    [printString appendString:@"\n"];
     
-    [printString appendString:@""];
     
     // NSLog(@"string to write pt1:%@",printString);
     //CREATE FILE to save in Documents Directory
@@ -356,6 +384,7 @@
     //resultsView.text = singleton.resultStrings;
     
     //[self saveText];
+
     [self WriteToStringFile:[printString mutableCopy]];
     
     statusMessageLab.text=@"Waiting\nfor\nNext\nInstruction.";
@@ -368,16 +397,19 @@
 -(IBAction)sendEmail:(id)sender {
     statusMessageLab.text=@"E-Mail\nResults\nLoading...";
     mySingleton *singleton = [mySingleton sharedSingleton];
+    
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     [mailComposer setMailComposeDelegate:self];
     if ([MFMailComposeViewController canSendMail]){
         [mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
-        [mailComposer setSubject:@"Restults from VO2 App"];
-        //[mailComposer setMessageBody:@"Dear Tachistoscope User: " isHTML:YES];
+        [mailComposer setSubject:@"Results from VO2 App"];
+        //[mailComposer setMessageBody:@"Dear VO2 App User: " isHTML:YES];
         
         [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
         [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+
         [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
+
     }else{
         
     } //end of if else to check if mail is able to be sent, send message if not
@@ -400,4 +432,53 @@
     }
     statusMessageLab.text=@"Select\nNext\nTask";
 }
+
+//- (IBAction)showEmail:(NSString*)file {
+    - (IBAction)showEmail:(id)sender {
+
+    NSString *emailTitle = @"Great Photo and Doc";
+    NSString *messageBody = @"Test Email from Jon Howell - with magic attachment";
+    NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
+
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+
+    filepath = [[NSString alloc] init];
+
+    filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
+
+// Get the resource path and read the file using NSData
+
+    NSData *fileData = [NSData dataWithContentsOfFile:filepath];
+
+    // Determine the MIME type
+    NSString *mimeType; /*
+    if ([extension isEqualToString:@"jpg"]) {
+        mimeType = @"image/jpeg";
+    } else if ([extension isEqualToString:@"png"]) {
+        mimeType = @"image/png";
+    } else if ([extension isEqualToString:@"doc"]) {
+        mimeType = @"application/msword";
+    } else if ([extension isEqualToString:@"csv"]) { */
+        mimeType = @"application/msexcel";
+        /*
+    } else if ([extension isEqualToString:@"ppt"]) {
+        mimeType = @"application/vnd.ms-powerpoint";
+    } else if ([extension isEqualToString:@"html"]){
+        mimeType = @"text/html";
+    } else if ([extension isEqualToString:@"pdf"]) {
+        mimeType = @"application/pdf";
+    } */
+
+    // Add attachment
+    [mc addAttachmentData:fileData mimeType:mimeType fileName:filename];
+
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+}
+
+
 @end

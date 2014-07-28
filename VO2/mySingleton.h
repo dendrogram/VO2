@@ -11,13 +11,17 @@
 @interface mySingleton : NSObject {
     // add all the objects that you want to be globally abailable here:
     //eg types defs
-    int counter;
-    //float test;
+
+
+
+    //float   test;
     //BOOL    boxShow;
     //UIColor *lineColour;
     //CGRect  picturePos;
     //UIImage        * imageForDisplay;
-    
+
+    int counter;
+
     NSMutableArray * cardReactionTimeResult;
     NSString       * resultsStrings;
     
@@ -47,6 +51,7 @@
     NSString * testTime;
     NSString * resultStrings;
     NSString * subjectName;
+    NSString * oldSubjectName;
     NSString * versionNumber;
 }
 //eg defs pt2
@@ -82,6 +87,7 @@
 @property (nonatomic, retain) NSString * rer;
 @property (nonatomic, retain) NSString * resultStrings;
 @property (nonatomic, retain) NSString * subjectName;
+@property (nonatomic, retain) NSString * oldSubjectName;
 @property (nonatomic, retain) NSString * testerName;
 @property (nonatomic, retain) NSString * testDate;
 @property (nonatomic, retain) NSString * testTime;

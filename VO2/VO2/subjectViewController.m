@@ -47,7 +47,7 @@
 // set up link to singleton
     mySingleton *singleton  = [mySingleton sharedSingleton];
     
-    subjectNameTxt.text     =   singleton.subjectName ;
+    subjectNameTxt.text     =   singleton.oldSubjectName ;
     testerNameTxt.text      =   singleton.testerName  ;
     subWtTxt.text           =   singleton.subWt       ;
     subHtTxt.text           =   singleton.subHt       ;
@@ -57,13 +57,14 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
 // set up link to singleton
-    mySingleton *singleton  = [mySingleton sharedSingleton];
-    singleton.subjectName   = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
-    singleton.testerName    = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
-    singleton.subWt         = [NSString stringWithFormat:@"%@",  subWtTxt.text];
-    singleton.subHt         = [NSString stringWithFormat:@"%@",  subHtTxt.text];
-    singleton.testDate      = [NSString stringWithFormat:@"%@",  testDateTxt.text];
-    singleton.testTime      = [NSString stringWithFormat:@"%@",  startDateTxt.text];
+    mySingleton *singleton   = [mySingleton sharedSingleton];
+    singleton.oldSubjectName = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
+    singleton.subjectName    = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
+    singleton.testerName     = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
+    singleton.subWt          = [NSString stringWithFormat:@"%@",  subWtTxt.text];
+    singleton.subHt          = [NSString stringWithFormat:@"%@",  subHtTxt.text];
+    singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
+    singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
 }
 
 -(IBAction)setDateNow:(id)sender{

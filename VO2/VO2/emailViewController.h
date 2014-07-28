@@ -13,4 +13,6 @@
     IBOutlet UITextView * resultsView;
     IBOutlet UITextView * resultsViewBorder;
 }
+@property (nonatomic, strong) IBOutlet UITextView * resultsView;
+
 @end

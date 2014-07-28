@@ -52,7 +52,18 @@
     subWtTxt.text           =   singleton.subWt       ;
     subHtTxt.text           =   singleton.subHt       ;
     testDateTxt.text        =   singleton.testDate    ;
-    startDateTxt.text       =   singleton.testTime    ;  
+    startDateTxt.text       =   singleton.testTime    ;
+    
+    if([testDateTxt.text isEqualToString: @""]){
+        //if blank put in today date
+        [self setDateNow:self];
+    }
+    if([startDateTxt.text isEqualToString: @""]){
+        //if blank put in now time
+        [self setTimeNow:self];
+    }
+    singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
+    singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -63,6 +74,16 @@
     singleton.testerName     = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
     singleton.subWt          = [NSString stringWithFormat:@"%@",  subWtTxt.text];
     singleton.subHt          = [NSString stringWithFormat:@"%@",  subHtTxt.text];
+
+    
+    if([testDateTxt.text isEqualToString: @""]){
+        //if blank put in today date
+        [self setDateNow:self];
+    }
+    if([startDateTxt.text isEqualToString: @""]){
+        //if blank put in now time
+        [self setTimeNow:self];
+    }
     singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
     singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
 }
@@ -79,8 +100,8 @@
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
-    NSString *resultString = [dateFormatter stringFromDate: currentTime];
-    startDateTxt.text=resultString;
+    NSString *timeString = [dateFormatter stringFromDate: currentTime];
+    startDateTxt.text=timeString;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

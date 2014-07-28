@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3me-aq-fBC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Hs-dN-pLT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KM4-b4-LGw">
@@ -150,7 +150,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ioz-kn-MfC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VRt-x3-w0P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Gas Conversions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-nt-gZc">
@@ -161,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOJ-1r-slS">
-                                <rect key="frame" x="102" y="435" width="116" height="25"/>
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" maximumZoomScale="6" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-Di-v2N">
-                                <rect key="frame" x="23" y="49" width="277" height="378"/>
+                                <rect key="frame" x="23" y="49" width="277" height="466"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -308,7 +308,7 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="7Dt-ho-Ayj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fbw-qK-YfE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPH-ag-q1Y">
@@ -723,7 +723,7 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="eop-7W-DOH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NCP-nr-94f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-T7-jGb">
@@ -963,7 +963,7 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="OrI-uE-V6v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yXr-r4-7C5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subject and Lab Settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KLV-50-u78">
@@ -1129,18 +1129,18 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="dBC-AO-Kdg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hhp-AW-G5O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Glossary of Symbols Used" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAW-gM-RtM">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glossary of Symbols Used" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAW-gM-RtM">
                                 <rect key="frame" x="57" y="20" width="204" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppd-MK-Rpr">
-                                <rect key="frame" x="101" y="523" width="116" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppd-MK-Rpr">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1151,8 +1151,8 @@ The calculation for the correction Factor is given by:-
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="Uot-1z-0g3"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPQ-LC-iIo">
-                                <rect key="frame" x="20" y="60" width="280" height="448"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPQ-LC-iIo">
+                                <rect key="frame" x="20" y="49" width="280" height="466"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1182,6 +1182,20 @@ RER
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cPQ-LC-iIo" firstAttribute="top" secondItem="oAW-gM-RtM" secondAttribute="bottom" constant="8" id="DSD-p5-ZLz"/>
+                            <constraint firstAttribute="trailing" secondItem="oAW-gM-RtM" secondAttribute="trailing" constant="59" id="HS3-Z1-BLZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ppd-MK-Rpr" secondAttribute="trailing" constant="102" id="J75-Ox-rFB"/>
+                            <constraint firstItem="oAW-gM-RtM" firstAttribute="top" secondItem="Es7-FU-pRq" secondAttribute="bottom" id="NB2-zD-Mn7"/>
+                            <constraint firstItem="ppd-MK-Rpr" firstAttribute="top" secondItem="cPQ-LC-iIo" secondAttribute="bottom" constant="8" id="YxT-qD-XfO"/>
+                            <constraint firstItem="cPQ-LC-iIo" firstAttribute="leading" secondItem="hhp-AW-G5O" secondAttribute="leading" constant="20" id="gZ6-xV-OOf"/>
+                            <constraint firstItem="cPQ-LC-iIo" firstAttribute="top" secondItem="oAW-gM-RtM" secondAttribute="bottom" constant="8" id="hxH-t9-Wfe"/>
+                            <constraint firstItem="ppd-MK-Rpr" firstAttribute="leading" secondItem="hhp-AW-G5O" secondAttribute="leading" constant="102" id="ju6-iY-Tiw"/>
+                            <constraint firstItem="oAW-gM-RtM" firstAttribute="leading" secondItem="hhp-AW-G5O" secondAttribute="leading" constant="57" id="oaR-2H-VVM"/>
+                            <constraint firstItem="ppd-MK-Rpr" firstAttribute="top" secondItem="cPQ-LC-iIo" secondAttribute="bottom" constant="8" id="rDj-E6-9pg"/>
+                            <constraint firstItem="dBC-AO-Kdg" firstAttribute="top" secondItem="ppd-MK-Rpr" secondAttribute="bottom" constant="20" id="uSb-dG-r7Z"/>
+                            <constraint firstAttribute="trailing" secondItem="cPQ-LC-iIo" secondAttribute="trailing" constant="20" id="xFS-EW-Ij8"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
@@ -1198,11 +1212,11 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="p7u-SH-vGP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gK7-Kd-rhi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" text="Nitrogen Ratio % Calculation" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-jz-efv">
-                                <rect key="frame" x="21" y="37" width="280" height="450"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" text="Nitrogen Ratio % Calculation" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-jz-efv">
+                                <rect key="frame" x="20" y="49" width="280" height="466"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1210,15 +1224,15 @@ RER
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calculations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-bD-G2e">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-bD-G2e">
                                 <rect key="frame" x="114" y="20" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSF-DB-e1h">
-                                <rect key="frame" x="103" y="523" width="116" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSF-DB-e1h">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1230,28 +1244,28 @@ RER
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px1-hp-SC4">
-                                <rect key="frame" x="41" y="69" width="239" height="21"/>
+                                <rect key="frame" x="41" y="82" width="239" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSz-lf-H7E">
-                                <rect key="frame" x="42" y="93" width="239" height="21"/>
+                                <rect key="frame" x="41" y="106" width="239" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gri-v4-Mbx">
-                                <rect key="frame" x="41" y="117" width="239" height="21"/>
+                                <rect key="frame" x="41" y="130" width="239" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl6-Ac-V0B">
-                                <rect key="frame" x="82" y="141" width="198" height="21"/>
+                                <rect key="frame" x="82" y="154" width="198" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1259,6 +1273,20 @@ RER
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oyX-jz-efv" firstAttribute="top" secondItem="OYX-bD-G2e" secondAttribute="bottom" constant="8" id="4o4-zm-Wma"/>
+                            <constraint firstAttribute="trailing" secondItem="oyX-jz-efv" secondAttribute="trailing" constant="20" id="Nwv-7L-f2T"/>
+                            <constraint firstItem="p7u-SH-vGP" firstAttribute="top" secondItem="tSF-DB-e1h" secondAttribute="bottom" constant="20" id="PeW-Tb-ngn"/>
+                            <constraint firstItem="OYX-bD-G2e" firstAttribute="top" secondItem="5ua-EV-rF5" secondAttribute="bottom" id="a0b-S3-epY"/>
+                            <constraint firstItem="OYX-bD-G2e" firstAttribute="leading" secondItem="gK7-Kd-rhi" secondAttribute="leading" constant="114" id="a56-lG-49y"/>
+                            <constraint firstItem="oyX-jz-efv" firstAttribute="top" secondItem="OYX-bD-G2e" secondAttribute="bottom" constant="8" id="hJu-QK-1CE"/>
+                            <constraint firstItem="oyX-jz-efv" firstAttribute="leading" secondItem="gK7-Kd-rhi" secondAttribute="leading" constant="20" id="jyE-Bv-0m4"/>
+                            <constraint firstItem="tSF-DB-e1h" firstAttribute="top" secondItem="oyX-jz-efv" secondAttribute="bottom" constant="8" id="n50-ae-nlZ"/>
+                            <constraint firstItem="tSF-DB-e1h" firstAttribute="leading" secondItem="gK7-Kd-rhi" secondAttribute="leading" constant="102" id="szr-lp-KQA"/>
+                            <constraint firstAttribute="trailing" secondItem="tSF-DB-e1h" secondAttribute="trailing" constant="102" id="wLm-W5-qeI"/>
+                            <constraint firstItem="tSF-DB-e1h" firstAttribute="top" secondItem="oyX-jz-efv" secondAttribute="bottom" constant="8" id="x62-Rt-KXa"/>
+                            <constraint firstAttribute="trailing" secondItem="OYX-bD-G2e" secondAttribute="trailing" constant="111" id="z6P-Tb-xmw"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
@@ -1270,7 +1298,7 @@ RER
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bMG-tp-0tH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872" y="-1433"/>
+            <point key="canvasLocation" x="883" y="-1461"/>
         </scene>
         <!--View Controller - ABT Data Entry-->
         <scene sceneID="fiY-Hw-1DV">
@@ -1281,17 +1309,17 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="GcV-zk-3NW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K64-Ei-Ubf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-ua-zQ9">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-ua-zQ9">
                                 <rect key="frame" x="120" y="20" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-KQ-ABi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-KQ-ABi">
                                 <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1303,17 +1331,43 @@ RER
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="Hww-Qd-MAb"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-aD-EaN">
-                                <rect key="frame" x="20" y="60" width="280" height="447"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-aD-EaN">
+                                <rect key="frame" x="20" y="49" width="280" height="466"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Data Entry Help Here">
+                                    <fragment>
+                                        <string key="content">Taking Readings
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="262.25" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                             <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">To enable the calculations to be made, you will need to read the following values in the laboratory:-
+
+The air pressure in mmHg (millimeters of Mercury).  This is on a pressure sensing device such as a barometer.  If the value you obtain is in mBar, the App will allow it to be converted.
+
+The Lab temperature in degrees Celcius.
+
+For completeness, the Lab humidity, although this is not used in the calculations.
+
+The Sample time in seconds.
+
+The volume of gas tested in litres.
+
+The percentage O2, CO2 expired and the Oxygen inspired for lab or testing environment.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="262.25" defaultTabInterval="36">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -1322,6 +1376,20 @@ RER
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="h5K-aD-EaN" firstAttribute="leading" secondItem="K64-Ei-Ubf" secondAttribute="leading" constant="20" id="02W-wd-GuR"/>
+                            <constraint firstAttribute="trailing" secondItem="Clg-KQ-ABi" secondAttribute="trailing" constant="102" id="4sK-QK-BfH"/>
+                            <constraint firstItem="Clg-KQ-ABi" firstAttribute="top" secondItem="h5K-aD-EaN" secondAttribute="bottom" constant="8" id="MeO-Ma-f6z"/>
+                            <constraint firstItem="h5K-aD-EaN" firstAttribute="top" secondItem="ymb-ua-zQ9" secondAttribute="bottom" constant="8" id="WAf-AJ-bVf"/>
+                            <constraint firstAttribute="trailing" secondItem="h5K-aD-EaN" secondAttribute="trailing" constant="20" id="XWh-pD-nHk"/>
+                            <constraint firstItem="ymb-ua-zQ9" firstAttribute="leading" secondItem="K64-Ei-Ubf" secondAttribute="leading" constant="120" id="cPT-jz-hDj"/>
+                            <constraint firstItem="Clg-KQ-ABi" firstAttribute="top" secondItem="h5K-aD-EaN" secondAttribute="bottom" constant="8" id="dDi-Se-8bg"/>
+                            <constraint firstAttribute="trailing" secondItem="ymb-ua-zQ9" secondAttribute="trailing" constant="119" id="gYb-jL-QpY"/>
+                            <constraint firstItem="Clg-KQ-ABi" firstAttribute="leading" secondItem="K64-Ei-Ubf" secondAttribute="leading" constant="102" id="jBS-Cu-ZKs"/>
+                            <constraint firstItem="ymb-ua-zQ9" firstAttribute="top" secondItem="mTq-OY-xLK" secondAttribute="bottom" id="lk4-jY-pp0"/>
+                            <constraint firstItem="GcV-zk-3NW" firstAttribute="top" secondItem="Clg-KQ-ABi" secondAttribute="bottom" constant="20" id="nUp-Ga-D18"/>
+                            <constraint firstItem="h5K-aD-EaN" firstAttribute="top" secondItem="ymb-ua-zQ9" secondAttribute="bottom" constant="8" id="o1q-Ok-kTF"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
@@ -1338,18 +1406,18 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="PdY-vb-hif"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oil-Jr-lsu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exporting Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ks-aa-8On">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exporting Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ks-aa-8On">
                                 <rect key="frame" x="104" y="20" width="115" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-yR-iMe">
-                                <rect key="frame" x="102" y="435" width="116" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-yR-iMe">
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1360,8 +1428,8 @@ RER
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="POW-CU-OFH"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plN-XZ-68J">
-                                <rect key="frame" x="20" y="60" width="280" height="359"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plN-XZ-68J">
+                                <rect key="frame" x="20" y="49" width="280" height="466"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1380,6 +1448,20 @@ RER
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MOI-yR-iMe" firstAttribute="top" secondItem="plN-XZ-68J" secondAttribute="bottom" constant="8" id="9Zu-TE-N89"/>
+                            <constraint firstItem="plN-XZ-68J" firstAttribute="leading" secondItem="oil-Jr-lsu" secondAttribute="leading" constant="20" id="B3f-0j-LDy"/>
+                            <constraint firstItem="MOI-yR-iMe" firstAttribute="top" secondItem="plN-XZ-68J" secondAttribute="bottom" constant="8" id="Nc4-os-VqU"/>
+                            <constraint firstAttribute="trailing" secondItem="plN-XZ-68J" secondAttribute="trailing" constant="20" id="OlM-O4-e0v"/>
+                            <constraint firstItem="PdY-vb-hif" firstAttribute="top" secondItem="MOI-yR-iMe" secondAttribute="bottom" constant="20" id="Qyw-VB-7Ch"/>
+                            <constraint firstItem="9ks-aa-8On" firstAttribute="top" secondItem="iRA-Zk-Ylt" secondAttribute="bottom" id="dN3-lL-7VH"/>
+                            <constraint firstItem="9ks-aa-8On" firstAttribute="leading" secondItem="oil-Jr-lsu" secondAttribute="leading" constant="104" id="eAQ-eZ-J1P"/>
+                            <constraint firstItem="MOI-yR-iMe" firstAttribute="leading" secondItem="oil-Jr-lsu" secondAttribute="leading" constant="102" id="gqx-x7-TRh"/>
+                            <constraint firstAttribute="trailing" secondItem="MOI-yR-iMe" secondAttribute="trailing" constant="102" id="qMU-Do-9xa"/>
+                            <constraint firstAttribute="trailing" secondItem="9ks-aa-8On" secondAttribute="trailing" constant="101" id="vDP-qx-09S"/>
+                            <constraint firstItem="plN-XZ-68J" firstAttribute="top" secondItem="9ks-aa-8On" secondAttribute="bottom" constant="8" id="x4q-jB-Nmg"/>
+                            <constraint firstItem="plN-XZ-68J" firstAttribute="top" secondItem="9ks-aa-8On" secondAttribute="bottom" constant="8" id="zNz-oI-9DK"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
@@ -1396,10 +1478,10 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="DXf-7M-Ti7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vO5-iw-TOE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Pz-Tm0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Pz-Tm0">
                                 <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1411,15 +1493,15 @@ RER
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="qP5-Te-Ppd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Readings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-jQ-JOU">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Readings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-jQ-JOU">
                                 <rect key="frame" x="124" y="20" width="73" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCY-yg-g3q">
-                                <rect key="frame" x="20" y="49" width="280" height="450"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCY-yg-g3q">
+                                <rect key="frame" x="20" y="49" width="280" height="466"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1437,6 +1519,20 @@ RER
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DXf-7M-Ti7" firstAttribute="top" secondItem="RgW-Pz-Tm0" secondAttribute="bottom" constant="20" id="KE2-RF-wfS"/>
+                            <constraint firstAttribute="trailing" secondItem="RgW-Pz-Tm0" secondAttribute="trailing" constant="102" id="LdR-p2-vZz"/>
+                            <constraint firstAttribute="trailing" secondItem="OCY-yg-g3q" secondAttribute="trailing" constant="20" id="MEb-f8-oqI"/>
+                            <constraint firstItem="OCY-yg-g3q" firstAttribute="top" secondItem="5Aj-jQ-JOU" secondAttribute="bottom" constant="8" id="P1b-fe-FwP"/>
+                            <constraint firstItem="OCY-yg-g3q" firstAttribute="top" secondItem="5Aj-jQ-JOU" secondAttribute="bottom" constant="8" id="anO-xg-Zkd"/>
+                            <constraint firstAttribute="trailing" secondItem="5Aj-jQ-JOU" secondAttribute="trailing" constant="123" id="cuu-Gr-lpk"/>
+                            <constraint firstItem="RgW-Pz-Tm0" firstAttribute="top" secondItem="OCY-yg-g3q" secondAttribute="bottom" constant="8" id="fUf-2L-x4w"/>
+                            <constraint firstItem="OCY-yg-g3q" firstAttribute="leading" secondItem="vO5-iw-TOE" secondAttribute="leading" constant="20" id="fw1-h4-mlG"/>
+                            <constraint firstItem="5Aj-jQ-JOU" firstAttribute="top" secondItem="Owh-O3-m0e" secondAttribute="bottom" id="ivf-kj-2SX"/>
+                            <constraint firstItem="5Aj-jQ-JOU" firstAttribute="leading" secondItem="vO5-iw-TOE" secondAttribute="leading" constant="124" id="loE-o2-981"/>
+                            <constraint firstItem="RgW-Pz-Tm0" firstAttribute="top" secondItem="OCY-yg-g3q" secondAttribute="bottom" constant="8" id="wg5-Wh-F3e"/>
+                            <constraint firstItem="RgW-Pz-Tm0" firstAttribute="leading" secondItem="vO5-iw-TOE" secondAttribute="leading" constant="102" id="xM7-C2-qvi"/>
+                        </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
@@ -1453,7 +1549,7 @@ RER
                         <viewControllerLayoutGuide type="bottom" id="1Zm-KX-qKh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8GJ-Ii-SY2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact The Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-Ly-OII">
@@ -1524,9 +1620,9 @@ www.ess.mmu.ac.uk/vo2
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bdc-NV-oDQ"/>
+        <segue reference="2wx-U3-et2"/>
     </inferredMetricsTieBreakers>
 </document>

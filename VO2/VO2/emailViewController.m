@@ -37,7 +37,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     mySingleton *singleton = [mySingleton sharedSingleton];
     resultsView.text = singleton.resultStrings;
-    NSLog(@"%@",singleton.resultStrings);
+    //NSLog(@"%@",singleton.resultStrings);
 }
 - (void)didReceiveMemoryWarning
 {

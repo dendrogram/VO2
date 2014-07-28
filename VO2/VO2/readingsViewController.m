@@ -49,7 +49,7 @@
     [self.pressureChange addTarget:self
                             action:@selector(pressureChanged:) forControlEvents:UIControlEventValueChanged];
     [self.tempChange addTarget:self
-                        action:@selector(tempChanged:) forControlEvents:UIControlEventValueChanged];
+                            action:@selector(tempChanged:) forControlEvents:UIControlEventValueChanged];
     
     //set the delegates or text did start/end will not work
     labLocationTxt.delegate = self;
@@ -283,7 +283,7 @@
 {
     CGRect frame = self.view.frame;
     //oft= the y of the text field?  make some code to find it
-    NSLog(@"oring y = %i",oft);
+    //NSLog(@"oring y = %i",oft);
     [UIView animateWithDuration:1.0
                           delay:0.5
                         options: UIViewAnimationOptionCurveEaseOut

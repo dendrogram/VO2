@@ -24,6 +24,7 @@ static mySingleton * sharedSingleton = nil;
             testTime,
             testerName,
             subjectName,
+            oldSubjectName,
             subWt,
             subHt,
 
@@ -107,7 +108,8 @@ static mySingleton * sharedSingleton = nil;
         testDate           = @"";
         testTime           = @"";
         resultStrings      = @"";
-        subjectName        = @"Subject";
+        subjectName        = @"A";
+        oldSubjectName     = @"A";
         resultStrings      = @"";
         versionNumber      = @"";
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: nil]; //empty array

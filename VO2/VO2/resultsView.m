@@ -51,7 +51,7 @@
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *extn = @"csv";
-    filename = [NSString stringWithFormat:@"%@.%@", singleton.subjectName, extn];
+    filename = [NSString stringWithFormat:@"%@.%@", singleton.oldSubjectName, extn];
     return filename;
 }
 
@@ -67,29 +67,49 @@
 
 /*Create a new file*/
 -(void)WriteToStringFile:(NSMutableString *)textToWrite{
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    int trynumber = 0;
     filepath = [[NSString alloc] init];
-    //NSError *err;
+    NSError *err;
     filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
     
     //check if file exists
-    //int fileCounter = 0;
+
     //BOOL fileExists = TRUE;
-    /*if([NSFileManager defaultManager] fileExistsAtPath:filepath) {
-     //exists, error, add 1 to filename and repeat
-     BOOL fileExists = TRUE;
-     }
-     else
-     {
+    if([[NSFileManager defaultManager] fileExistsAtPath:filepath]) {
+        //exists, error, add +1 to filename and repeat
+        //BOOL fileExists = TRUE;
+
+
+        //singleton.subjectName = [singleton.oldSubjectName stringByAppendingString: [NSString stringWithFormat:@"_%@_%i",[self getCurrentDateTimeAsNSString], trynumber]];
+        //[self WriteToStringFile:textToWrite];
+        }
+    else
+        {
      //not exists, write
-     BOOL fileExists = FALSE;
-     }
+     //BOOL fileExists = FALSE;
+        singleton.subjectName = [singleton.oldSubjectName stringByAppendingString: [NSString stringWithFormat:@"_%@",[self getCurrentDateTimeAsNSString]]];
+        }
      //needs more work *****************************
+
      BOOL ok;
      ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
      if (!ok) {
-     NSLog(@"Error writing file at %@\n%@",
-     filepath, [err localizedFailureReason]);
-     }*/
+         (statusMessageLab.text=filepath, [err localizedFailureReason]);
+         //NSLog(@"Error writing file at %@\n%@",
+         //filepath, [err localizedFailureReason]);
+     }
+}
+
+
+-(NSString*)getCurrentDateTimeAsNSString
+{
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"ddMMyyHHmmss"];
+    NSDate *now = [NSDate date];
+    NSString *retStr = [format stringFromDate:now];
+
+    return retStr;
 }
 
 - (void)saveText
@@ -170,10 +190,10 @@
     
     VESTPDlbl.text      =   @"0.0000";
     //corrFaclbl.text     =   @"0.00";
-    VO2lbl.text         =   @"0.0000";
-    VCO2lbl.text        =   @"0.0000";
-    VO2Kglbl.text       =   @"0.0000";
-    RERlbl.text         =   @"0.0000";
+    VO2lbl.text         =   @"0.00";
+    VCO2lbl.text        =   @"0.00";
+    VO2Kglbl.text       =   @"0.00";
+    RERlbl.text         =   @"0.00";
     
     labTempC         = [templbl.text     floatValue];
     FECO2            = [FECO2lbl.text    floatValue];
@@ -181,9 +201,11 @@
     labPressure_mmHg = [pressurelbl.text floatValue];
     VEATPS           = [VEATPSlbl.text   floatValue];
     subWt            = [subWtlbl.text    floatValue];
+    subHt            = [subHtlbl.text    floatValue];
     sampTime         = [samptimelbl.text floatValue];
     labO2            = [labO2lbl.text    floatValue];
-    
+    labHumidity      = [humiditylbl.text floatValue];
+
     //totalDelay=0;
 
 //do the calcs here:
@@ -203,24 +225,24 @@
     O2 = 20.93;
 
     //vestpd
-    VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
-    singleton.vestpd = [NSString stringWithFormat:@"%.8f", VESTPD];
+    VESTPD = ( 60 * ( VEATPS * ( 273 / (273 + labTempC )) * (( labPressure_mmHg - (( 1.001 * labTempC ) - 4.19 )) / 760 ))) / sampTime;
+    singleton.vestpd = [NSString stringWithFormat:@"%.6f", VESTPD];
     
     //vo2
-    VO2    = 0.0100 * (VESTPD * ((( 100.0000 - (FEO2 + FECO2)) / N2) * O2) - (VESTPD * FEO2));
-    singleton.vo2    = [NSString stringWithFormat:@"%.8f", VO2];
+    VO2    = 0.01 * (VESTPD * ((( 100 - (FEO2 + FECO2)) / N2) * O2) - (VESTPD * FEO2));
+    singleton.vo2    = [NSString stringWithFormat:@"%.6f", VO2];
     
     //vco2
-    VCO2   = 0.0100 * (VESTPD * FECO2);
-    singleton.vco2   = [NSString stringWithFormat:@"%.8f", VCO2];
+    VCO2   = 0.01 * (VESTPD * FECO2);
+    singleton.vco2   = [NSString stringWithFormat:@"%.6f", VCO2];
    
     //vo2kg
-    VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
+    VO2Kg  = ( VO2 * 1000 ) / subWt ;
     singleton.vo2kg  = [NSString stringWithFormat:@"%.6f", VO2Kg];
     
     //rer
     RER    = ( VCO2 / VO2 );
-    singleton.rer    = [NSString stringWithFormat:@"%.4f", RER];
+    singleton.rer    = [NSString stringWithFormat:@"%.2f", RER];
     
     VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   singleton.vestpd;
@@ -360,7 +382,9 @@
         
         [mailComposer setMessageBody: singleton.resultStrings isHTML:NO];
         [mailComposer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+
         [self presentViewController:mailComposer animated:YES completion:^{/*email*/}];
+
     }else{
         
     } //end of if else to check if mail is able to be sent, send message if not
@@ -383,4 +407,53 @@
     }
     statusMessageLab.text=@"Select\nNext\nTask";
 }
+
+//- (IBAction)showEmail:(NSString*)file {
+    - (IBAction)showEmail:(id)sender {
+
+    NSString *emailTitle = @"Great Photo and Doc";
+    NSString *messageBody = @"Test Email from Jon Howell - with magic attachment";
+    NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
+
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+
+    filepath = [[NSString alloc] init];
+
+    filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
+
+// Get the resource path and read the file using NSData
+
+    NSData *fileData = [NSData dataWithContentsOfFile:filepath];
+
+    // Determine the MIME type
+    NSString *mimeType; /*
+    if ([extension isEqualToString:@"jpg"]) {
+        mimeType = @"image/jpeg";
+    } else if ([extension isEqualToString:@"png"]) {
+        mimeType = @"image/png";
+    } else if ([extension isEqualToString:@"doc"]) {
+        mimeType = @"application/msword";
+    } else if ([extension isEqualToString:@"csv"]) { */
+        mimeType = @"application/msexcel";
+        /*
+    } else if ([extension isEqualToString:@"ppt"]) {
+        mimeType = @"application/vnd.ms-powerpoint";
+    } else if ([extension isEqualToString:@"html"]){
+        mimeType = @"text/html";
+    } else if ([extension isEqualToString:@"pdf"]) {
+        mimeType = @"application/pdf";
+    } */
+
+    // Add attachment
+    [mc addAttachmentData:fileData mimeType:mimeType fileName:filename];
+
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+}
+
+
 @end

@@ -25,7 +25,6 @@
 		E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */; };
 		E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E12EEABD19758ABF00CEDBD5 /* mySingleton.m */; };
 		E144B26C197FF6CC00695DBB /* calcsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E144B26B197FF6CC00695DBB /* calcsViewController.m */; };
-		E19388D819811FD0005B8EF2 /* emailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E19388D719811FD0005B8EF2 /* emailViewController.m */; };
 		E1F13E201974537000A9748D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E1F1974537000A9748D /* Foundation.framework */; };
 		E1F13E221974537000A9748D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E211974537000A9748D /* CoreGraphics.framework */; };
 		E1F13E241974537000A9748D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E231974537000A9748D /* UIKit.framework */; };
@@ -77,8 +76,6 @@
 		E12EEABD19758ABF00CEDBD5 /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySingleton.m; sourceTree = "<group>"; };
 		E144B26A197FF6CC00695DBB /* calcsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calcsViewController.h; sourceTree = "<group>"; };
 		E144B26B197FF6CC00695DBB /* calcsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calcsViewController.m; sourceTree = "<group>"; };
-		E19388D619811FD0005B8EF2 /* emailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emailViewController.h; sourceTree = "<group>"; };
-		E19388D719811FD0005B8EF2 /* emailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emailViewController.m; sourceTree = "<group>"; };
 		E1F13E1C1974537000A9748D /* VO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F13E1F1974537000A9748D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1F13E211974537000A9748D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,8 +181,6 @@
 				E1F13E2E1974537000A9748D /* AppDelegate.h */,
 				E1F13E2F1974537000A9748D /* AppDelegate.m */,
 				E1F13E311974537000A9748D /* Main_iPhone.storyboard */,
-				E19388D619811FD0005B8EF2 /* emailViewController.h */,
-				E19388D719811FD0005B8EF2 /* emailViewController.m */,
 				E144B26A197FF6CC00695DBB /* calcsViewController.h */,
 				E144B26B197FF6CC00695DBB /* calcsViewController.m */,
 				913BCB9D1974ADFD00CB112C /* images */,
@@ -352,7 +347,6 @@
 				E1F13E301974537000A9748D /* AppDelegate.m in Sources */,
 				E12BF2B8197E898300E19036 /* subjectViewController.m in Sources */,
 				E144B26C197FF6CC00695DBB /* calcsViewController.m in Sources */,
-				E19388D819811FD0005B8EF2 /* emailViewController.m in Sources */,
 				E1F13E2C1974537000A9748D /* main.m in Sources */,
 				E12BF2B5197E519600E19036 /* resultsView.m in Sources */,
 			);

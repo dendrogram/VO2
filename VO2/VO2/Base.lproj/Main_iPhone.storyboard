@@ -121,7 +121,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Version:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-FB-Tvd">
-                                <rect key="frame" x="80" y="81" width="161" height="21"/>
+                                <rect key="frame" x="130" y="81" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -130,7 +130,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="3me-aq-fBC" firstAttribute="top" secondItem="KM4-b4-LGw" secondAttribute="bottom" constant="1" id="11L-OE-qJJ"/>
+                            <constraint firstItem="3me-aq-fBC" firstAttribute="top" secondItem="KM4-b4-LGw" secondAttribute="bottom" constant="89" id="11L-OE-qJJ"/>
                             <constraint firstAttribute="centerX" secondItem="Wgh-FB-Tvd" secondAttribute="centerX" id="Ccr-h4-eyS"/>
                             <constraint firstItem="KM4-b4-LGw" firstAttribute="leading" secondItem="5Hs-dN-pLT" secondAttribute="leading" constant="20" id="Pff-IZ-93t"/>
                             <constraint firstAttribute="trailing" secondItem="KM4-b4-LGw" secondAttribute="trailing" constant="20" id="Ta5-aQ-hdg"/>
@@ -971,8 +971,8 @@ The calculation for the correction Factor is given by:-
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Subject and Lab Settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KLV-50-u78">
-                                <rect key="frame" x="20" y="20" width="280" height="37"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject and Lab Settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KLV-50-u78">
+                                <rect key="frame" x="20" y="20" width="280" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1110,10 +1110,10 @@ The calculation for the correction Factor is given by:-
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aZg-GV-bOh" firstAttribute="top" secondItem="KLV-50-u78" secondAttribute="bottom" constant="8" id="BtQ-tI-17z"/>
+                            <constraint firstItem="aZg-GV-bOh" firstAttribute="top" secondItem="KLV-50-u78" secondAttribute="bottom" constant="18" id="BtQ-tI-17z"/>
                             <constraint firstItem="KLV-50-u78" firstAttribute="top" secondItem="rr9-Dl-QMh" secondAttribute="bottom" constant="20" id="Nt7-7F-kEF"/>
                             <constraint firstItem="aZg-GV-bOh" firstAttribute="leading" secondItem="yXr-r4-7C5" secondAttribute="leading" constant="20" id="XRZ-jv-3Bj"/>
-                            <constraint firstItem="aZg-GV-bOh" firstAttribute="top" secondItem="KLV-50-u78" secondAttribute="bottom" constant="8" id="dLF-Yz-v3Z"/>
+                            <constraint firstItem="aZg-GV-bOh" firstAttribute="top" secondItem="KLV-50-u78" secondAttribute="bottom" constant="18" id="dLF-Yz-v3Z"/>
                             <constraint firstAttribute="trailing" secondItem="KLV-50-u78" secondAttribute="trailing" constant="20" id="i5R-Ti-ax6"/>
                             <constraint firstItem="KLV-50-u78" firstAttribute="leading" secondItem="yXr-r4-7C5" secondAttribute="leading" constant="20" id="mn1-Wn-0ah"/>
                             <constraint firstAttribute="trailing" secondItem="aZg-GV-bOh" secondAttribute="trailing" constant="20" id="uED-LE-Mww"/>
@@ -1132,7 +1132,7 @@ The calculation for the correction Factor is given by:-
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvg-km-3Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853" y="-706"/>
+            <point key="canvasLocation" x="838" y="-750"/>
         </scene>
         <!--View Controller - ABT Glossary-->
         <scene sceneID="d09-Wp-iTe">
@@ -1900,8 +1900,8 @@ The data file only contains the current set of readings and some header informat
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-Dw-FF6">
-                                <rect key="frame" x="102" y="513" width="116" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-Dw-FF6">
+                                <rect key="frame" x="102" y="513" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1943,7 +1943,7 @@ www.ess.mmu.ac.uk/vo2
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ew9-Dw-FF6" firstAttribute="leading" secondItem="8GJ-Ii-SY2" secondAttribute="leading" constant="102" id="0Ct-2k-Rnj"/>
-                            <constraint firstItem="1Zm-KX-qKh" firstAttribute="top" secondItem="ew9-Dw-FF6" secondAttribute="bottom" constant="20" id="80j-8e-5Hk"/>
+                            <constraint firstItem="1Zm-KX-qKh" firstAttribute="top" secondItem="ew9-Dw-FF6" secondAttribute="bottom" constant="30" id="80j-8e-5Hk"/>
                             <constraint firstItem="ew9-Dw-FF6" firstAttribute="top" secondItem="SeT-0J-d6D" secondAttribute="bottom" constant="8" id="TSx-gI-81a"/>
                             <constraint firstItem="SeT-0J-d6D" firstAttribute="top" secondItem="Kck-XH-oz8" secondAttribute="bottom" constant="8" id="fEG-7B-iEa"/>
                             <constraint firstItem="ew9-Dw-FF6" firstAttribute="top" secondItem="SeT-0J-d6D" secondAttribute="bottom" constant="8" id="hFM-jp-Wed"/>
@@ -1974,6 +1974,6 @@ www.ess.mmu.ac.uk/vo2
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2wx-U3-et2"/>
+        <segue reference="mJl-SZ-4w8"/>
     </inferredMetricsTieBreakers>
 </document>

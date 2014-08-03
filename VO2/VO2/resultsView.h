@@ -25,26 +25,26 @@
     NSDate        * testDate;
     
     UILabel * VESTPDlbl;
-    UILabel * VEATPSlbl;
+    //UILabel * VEATPSlbl;
     UILabel * RERlbl;
     UILabel * VO2lbl;
     UILabel * VCO2lbl;
     UILabel * datelbl;
     UILabel * timelbl;
-    UILabel * lablbl;
-    UILabel * testerlbl;
+    //UILabel * lablbl;
+    //UILabel * testerlbl;
     UILabel * subjectlbl;
-    UILabel * templbl;
-    UILabel * pressurelbl;
-    UILabel * humiditylbl;
-    UILabel * samptimelbl;
+    //UILabel * templbl;
+    //UILabel * pressurelbl;
+    //UILabel * humiditylbl;
+    //UILabel * samptimelbl;
     UILabel * VO2Kglbl;
-    UILabel * subHtlbl;
-    UILabel * subWtlbl;
+    //UILabel * subHtlbl;
+    //UILabel * subWtlbl;
     UILabel * corrFaclbl;
-    UILabel * FEO2lbl;
-    UILabel * FECO2lbl;
-    UILabel * labO2lbl;
+    //UILabel * FEO2lbl;
+    //UILabel * FECO2lbl;
+    //UILabel * labO2lbl;
     
     float subWt;
     float subHt;
@@ -80,26 +80,26 @@
 
 //var label outlets
 @property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
-@property (nonatomic, strong) IBOutlet UILabel * VEATPSlbl;
+//@property (nonatomic, strong) IBOutlet UILabel * VEATPSlbl;
 @property (nonatomic, strong) IBOutlet UILabel * RERlbl;
 @property (nonatomic, strong) IBOutlet UILabel * VO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * VCO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * datelbl;
 @property (nonatomic, strong) IBOutlet UILabel * timelbl;
-@property (nonatomic, strong) IBOutlet UILabel * lablbl;
-@property (nonatomic, strong) IBOutlet UILabel * testerlbl;
+//@property (nonatomic, strong) IBOutlet UILabel * lablbl;
+//@property (nonatomic, strong) IBOutlet UILabel * testerlbl;
 @property (nonatomic, strong) IBOutlet UILabel * subjectlbl;
-@property (nonatomic, strong) IBOutlet UILabel * templbl;
-@property (nonatomic, strong) IBOutlet UILabel * pressurelbl;
-@property (nonatomic, strong) IBOutlet UILabel * humiditylbl;
-@property (nonatomic, strong) IBOutlet UILabel * samptimelbl;
+//@property (nonatomic, strong) IBOutlet UILabel * templbl;
+//@property (nonatomic, strong) IBOutlet UILabel * pressurelbl;
+//@property (nonatomic, strong) IBOutlet UILabel * humiditylbl;
+//@property (nonatomic, strong) IBOutlet UILabel * samptimelbl;
 @property (nonatomic, strong) IBOutlet UILabel * VO2Kglbl;
-@property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
-@property (nonatomic, strong) IBOutlet UILabel * subWtlbl;
+//@property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
+//@property (nonatomic, strong) IBOutlet UILabel * subWtlbl;
 @property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
-@property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
-@property (nonatomic, strong) IBOutlet UILabel * labO2lbl;
+//@property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
+//@property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
+//@property (nonatomic, strong) IBOutlet UILabel * labO2lbl;
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;

@@ -20,25 +20,25 @@
 //results Labels
         RERlbl,
         VESTPDlbl,
-        VEATPSlbl,
+//        VEATPSlbl,
         VO2lbl,
         VCO2lbl,
         datelbl,
         timelbl,
-        lablbl,
-        testerlbl,
+//        lablbl,
+//        testerlbl,
         subjectlbl,
-        templbl,
-        pressurelbl,
-        humiditylbl,
-        samptimelbl,
+//        templbl,
+//        pressurelbl,
+//        humiditylbl,
+//        samptimelbl,
         VO2Kglbl,
-        subHtlbl,
-        subWtlbl,
+//        subHtlbl,
+//        subWtlbl,
         corrFaclbl,
-        FEO2lbl,
-        FECO2lbl,
-        labO2lbl,
+//        FEO2lbl,
+//        FECO2lbl,
+//        labO2lbl,
         testDate;
 
 @synthesize
@@ -201,21 +201,21 @@
     
     //read the singleton values and put into the labels
     subjectlbl.text     =   singleton.oldSubjectName;
-    testerlbl.text      =   singleton.testerName;
+    //    testerlbl.text      =   singleton.testerName;
     datelbl.text        =   singleton.testDate;
     timelbl.text        =   singleton.testTime;
-    lablbl.text         =   singleton.labLocation;
-    subWtlbl.text       =   singleton.subWt;
-    subHtlbl.text       =   singleton.subHt;
-    templbl.text        =   singleton.labTemp;
-    pressurelbl.text    =   singleton.labPressure_mmHg;
-    humiditylbl.text    =   singleton.labHumidity;
-    samptimelbl.text    =   singleton.sampTime;
-    FEO2lbl.text        =   singleton.feo2;
-    FECO2lbl.text       =   singleton.feco2;
+    //  lablbl.text         =   singleton.labLocation;
+    //  subWtlbl.text       =   singleton.subWt;
+    //  subHtlbl.text       =   singleton.subHt;
+    //  templbl.text        =   singleton.labTemp;
+    //  pressurelbl.text    =   singleton.labPressure_mmHg;
+    //  humiditylbl.text    =   singleton.labHumidity;
+    //  samptimelbl.text    =   singleton.sampTime;
+    //  FEO2lbl.text        =   singleton.feo2;
+    //  FECO2lbl.text       =   singleton.feco2;
     corrFaclbl.text     =   singleton.corrFactor;
-    labO2lbl.text       =   singleton.labO2;
-    VEATPSlbl.text      =   singleton.veatps;
+    //  labO2lbl.text       =   singleton.labO2;
+    //  VEATPSlbl.text      =   singleton.veatps;
     
     VESTPDlbl.text      =   @"0.00";
     corrFaclbl.text     =   @"0.00";
@@ -224,16 +224,16 @@
     VO2Kglbl.text       =   @"0.00";
     RERlbl.text         =   @"0.00";
     
-    labTempC         = [templbl.text     floatValue];
-    FECO2            = [FECO2lbl.text    floatValue];
-    FEO2             = [FEO2lbl.text     floatValue];
-    labPressure_mmHg = [pressurelbl.text floatValue];
-    VEATPS           = [VEATPSlbl.text   floatValue];
-    subWt            = [subWtlbl.text    floatValue];
-    subHt            = [subHtlbl.text    floatValue];
-    sampTime         = [samptimelbl.text floatValue];
-    labO2            = [labO2lbl.text    floatValue];
-    labHumidity      = [humiditylbl.text floatValue];
+    labTempC         = [singleton.labTemp     floatValue];
+    FECO2            = [singleton.feco2       floatValue];
+    FEO2             = [singleton.feo2        floatValue];
+    labPressure_mmHg = [singleton.labPressure_mmHg floatValue];
+    VEATPS           = [singleton.veatps      floatValue];
+    subWt            = [singleton.subWt       floatValue];
+    subHt            = [singleton.subHt       floatValue];
+    sampTime         = [singleton.sampTime    floatValue];
+    labO2            = [singleton.labO2       floatValue];
+    labHumidity      = [singleton.labHumidity floatValue];
 
     //totalDelay=0;
 
@@ -273,7 +273,7 @@
     RER    = ( VCO2 / VO2 );
     singleton.rer    = [NSString stringWithFormat:@"%.4f", RER];
     
-    VEATPSlbl.text      =   singleton.veatps;
+    //VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   singleton.vestpd;
     corrFaclbl.text     =   singleton.corrFactor;
     VO2lbl.text         =   singleton.vo2;
@@ -301,19 +301,19 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
                      counter,
-                     testerlbl.text,
+                     singleton.testerName,
                      subjectlbl.text,
                      datelbl.text,
                      timelbl.text,
-                     lablbl.text,
-                     labTempC,
-                     labPressure_mmHg,
-                     labHumidity,
-                     subHt,
-                     subWt,
-                     sampTime,
+                     singleton.labLocation,
+                     singleton.labTemp,
+                     singleton.labPressure_mmHg,
+                     singleton.labHumidity,
+                     singleton.subHt,
+                     singleton.subWt,
+                     singleton.sampTime,
                      FEO2,
                      FECO2,
                      labO2,

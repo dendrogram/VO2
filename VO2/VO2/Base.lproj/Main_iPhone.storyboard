@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3me-aq-fBC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Hs-dN-pLT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KM4-b4-LGw">
@@ -157,7 +157,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ioz-kn-MfC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VRt-x3-w0P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Gas Conversions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-nt-gZc">
@@ -168,7 +168,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOJ-1r-slS">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -180,7 +180,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" maximumZoomScale="6" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-Di-v2N">
-                                <rect key="frame" x="23" y="49" width="277" height="466"/>
+                                <rect key="frame" x="23" y="49" width="277" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -315,11 +315,11 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="7Dt-ho-Ayj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fbw-qK-YfE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPH-ag-q1Y">
-                                <rect key="frame" x="20" y="20" width="280" height="498"/>
+                                <rect key="frame" x="20" y="20" width="280" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VO2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8b-bp-bzS">
@@ -729,11 +729,11 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="eop-7W-DOH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NCP-nr-94f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-T7-jGb">
-                                <rect key="frame" x="20" y="20" width="280" height="496"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fi3-T7-jGb">
+                                <rect key="frame" x="20" y="20" width="280" height="409"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lab Pressure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5O1-9S-Y6Q">
@@ -829,7 +829,7 @@ The calculation for the correction Factor is given by:-
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="35" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-SR-3kL">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20.93" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-SR-3kL">
                                         <rect key="frame" x="125" y="227" width="110" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -883,7 +883,7 @@ The calculation for the correction Factor is given by:-
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="60" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="EvV-qS-Tit">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="EvV-qS-Tit">
                                         <rect key="frame" x="124" y="260" width="111" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -968,7 +968,7 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="OrI-uE-V6v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yXr-r4-7C5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject and Lab Settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="KLV-50-u78">
@@ -1030,7 +1030,7 @@ The calculation for the correction Factor is given by:-
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-6w-ZyQ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.60" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="12" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-6w-ZyQ">
                                         <rect key="frame" x="32" y="325" width="165" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1143,7 +1143,7 @@ The calculation for the correction Factor is given by:-
                         <viewControllerLayoutGuide type="bottom" id="dBC-AO-Kdg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hhp-AW-G5O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glossary of Symbols Used" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAW-gM-RtM">
@@ -1154,7 +1154,7 @@ The calculation for the correction Factor is given by:-
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppd-MK-Rpr">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1166,7 +1166,7 @@ The calculation for the correction Factor is given by:-
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPQ-LC-iIo">
-                                <rect key="frame" x="20" y="49" width="280" height="466"/>
+                                <rect key="frame" x="20" y="49" width="280" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1531,11 +1531,11 @@ Sample Time: </string>
                         <viewControllerLayoutGuide type="bottom" id="p7u-SH-vGP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gK7-Kd-rhi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" text="Nitrogen Ratio % Calculation" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-jz-efv">
-                                <rect key="frame" x="20" y="49" width="280" height="466"/>
+                                <rect key="frame" x="20" y="49" width="280" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1551,7 +1551,7 @@ Sample Time: </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSF-DB-e1h">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1628,7 +1628,7 @@ Sample Time: </string>
                         <viewControllerLayoutGuide type="bottom" id="GcV-zk-3NW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K64-Ei-Ubf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-ua-zQ9">
@@ -1639,7 +1639,7 @@ Sample Time: </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-KQ-ABi">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1651,7 +1651,7 @@ Sample Time: </string>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-aD-EaN">
-                                <rect key="frame" x="20" y="49" width="280" height="466"/>
+                                <rect key="frame" x="20" y="49" width="280" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1725,7 +1725,7 @@ The percentage O2, CO2 expired and the Oxygen inspired for lab or testing enviro
                         <viewControllerLayoutGuide type="bottom" id="PdY-vb-hif"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oil-Jr-lsu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exporting Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ks-aa-8On">
@@ -1736,7 +1736,7 @@ The percentage O2, CO2 expired and the Oxygen inspired for lab or testing enviro
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-yR-iMe">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1748,7 +1748,7 @@ The percentage O2, CO2 expired and the Oxygen inspired for lab or testing enviro
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" maximumZoomScale="6" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plN-XZ-68J">
-                                <rect key="frame" x="20" y="49" width="280" height="466"/>
+                                <rect key="frame" x="20" y="49" width="280" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1819,11 +1819,11 @@ The data file only contains the current set of readings and some header informat
                         <viewControllerLayoutGuide type="bottom" id="DXf-7M-Ti7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vO5-iw-TOE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Pz-Tm0">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1842,7 +1842,7 @@ The data file only contains the current set of readings and some header informat
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCY-yg-g3q">
-                                <rect key="frame" x="20" y="49" width="280" height="466"/>
+                                <rect key="frame" x="20" y="49" width="280" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1890,7 +1890,7 @@ The data file only contains the current set of readings and some header informat
                         <viewControllerLayoutGuide type="bottom" id="1Zm-KX-qKh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8GJ-Ii-SY2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact The Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-Ly-OII">
@@ -1901,7 +1901,7 @@ The data file only contains the current set of readings and some header informat
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-Dw-FF6">
-                                <rect key="frame" x="102" y="513" width="116" height="25"/>
+                                <rect key="frame" x="102" y="425" width="116" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="About" image="about50x50.png">
@@ -1971,7 +1971,7 @@ www.ess.mmu.ac.uk/vo2
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="mJl-SZ-4w8"/>

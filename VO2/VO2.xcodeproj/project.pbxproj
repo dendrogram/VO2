@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		912C01B3197755A7001C6093 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912C01B2197755A7001C6093 /* MessageUI.framework */; };
+		9186C330198EDEDF00E6FE67 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9186C32F198EDEDF00E6FE67 /* Settings.bundle */; };
 		E12BF2B5197E519600E19036 /* resultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = E12BF2B4197E519600E19036 /* resultsView.m */; };
 		E12BF2B8197E898300E19036 /* subjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12BF2B7197E898300E19036 /* subjectViewController.m */; };
 		E12BF2BB197E899F00E19036 /* readingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12BF2BA197E899F00E19036 /* readingsViewController.m */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		912C01B2197755A7001C6093 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9186C32F198EDEDF00E6FE67 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E12BF2B3197E519600E19036 /* resultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultsView.h; sourceTree = "<group>"; };
 		E12BF2B4197E519600E19036 /* resultsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultsView.m; sourceTree = "<group>"; };
 		E12BF2B6197E898300E19036 /* subjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subjectViewController.h; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				E1F13E281974537000A9748D /* InfoPlist.strings */,
 				E1F13E2B1974537000A9748D /* main.m */,
 				E1F13E2D1974537000A9748D /* VO2-Prefix.pch */,
+				9186C32F198EDEDF00E6FE67 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				E1EE197E1987E6B1006552A3 /* contents.png in Resources */,
 				E12EEAB519752EF300CEDBD5 /* results50x50@2x.png in Resources */,
 				E1EE19801987E6B1006552A3 /* get_info.png in Resources */,
+				9186C330198EDEDF00E6FE67 /* Settings.bundle in Resources */,
 				E1EE19811987E6B1006552A3 /* document_graph.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

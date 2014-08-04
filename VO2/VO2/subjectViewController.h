@@ -18,7 +18,9 @@
     UITextField   * startDateTxt;
     UITextField   * testDateTxt;
     UILabel       * testerNamelbl;
+    UILabel       * testerEmaillbl;
 }
+
 //subject
 @property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
@@ -26,11 +28,12 @@
 @property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
 @property (nonatomic, strong) IBOutlet UILabel     * testerNamelbl;
-
+@property (nonatomic, strong) IBOutlet UILabel     * testerEmaillbl;
 
 // for calculations and functions
 -(IBAction)setDateNow:(id)sender;
 -(IBAction)setTimeNow:(id)sender;
-
+-(IBAction)setEmailTester:(id)sender;
+-(IBAction)returnToStepOne:(UIStoryboardSegue *)segue;
 @end
 

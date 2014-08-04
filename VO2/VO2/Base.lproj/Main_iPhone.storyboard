@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlW-0N-Qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="-750"/>
+            <point key="canvasLocation" x="459" y="-750"/>
         </scene>
         <!--View Controller - Standard Gas Conversions-->
         <scene sceneID="rUe-vD-umn">
@@ -878,6 +878,16 @@ The calculation for the correction Factor is given by:-
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4EI-y1-q6n">
+                                        <rect key="frame" x="237" y="339" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="tester">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pYE-te-rFC" kind="modal" identifier="TesterNameViewControllerModal" modalTransitionStyle="flipHorizontal" id="h2c-vY-t18"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -897,7 +907,7 @@ The calculation for the correction Factor is given by:-
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fvg-km-3Hm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="-750"/>
+            <point key="canvasLocation" x="836" y="-750"/>
         </scene>
         <!--View Controller - ABT Glossary-->
         <scene sceneID="d09-Wp-iTe">
@@ -1716,6 +1726,57 @@ www.ess.mmu.ac.uk/vo2
             </objects>
             <point key="canvasLocation" x="494" y="-95"/>
         </scene>
+        <!--Tester Name View Controller - Contact-->
+        <scene sceneID="R0b-0B-UAs">
+            <objects>
+                <viewController storyboardIdentifier="TesterNameViewController" title="Contact" modalTransitionStyle="crossDissolve" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pYE-te-rFC" customClass="TesterNameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dyS-xF-E2v"/>
+                        <viewControllerLayoutGuide type="bottom" id="qog-gc-p3V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="flY-lU-t4z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tester Name Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTI-OM-eS8">
+                                <rect key="frame" x="78" y="20" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5G-Fg-iLj">
+                                <rect key="frame" x="70" y="435" width="180" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Subject Page" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="s9s-sa-3IU"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbt-0f-bQh">
+                                <rect key="frame" x="20" y="49" width="280" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Please review and add the Tester Name and Eamill address for the  results to be sent.
+
+These can be set via the iPhone/iPad Settings screen under VO2 App icon.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCa-gQ-hNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963" y="-95"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about50x50.png" width="25" height="25"/>
@@ -1729,6 +1790,6 @@ www.ess.mmu.ac.uk/vo2
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mJl-SZ-4w8"/>
+        <segue reference="s9s-sa-3IU"/>
     </inferredMetricsTieBreakers>
 </document>

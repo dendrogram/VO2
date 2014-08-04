@@ -10,7 +10,6 @@
 #import "mySingleton.h" //for global variables
 
 @interface subjectViewController ()
-
 {
     
 }
@@ -26,6 +25,7 @@
     testDateTxt,
     subjectNameTxt,
     testerNamelbl,
+    testerEmaillbl,
     subHtTxt,
     subWtTxt;
 
@@ -89,6 +89,11 @@
     }
     singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
     singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
+    // add the warning if testernamelbl and testeremaillbl are not set in settings root plist
+    // check for blank email and tester name
+    
+    // send to page to add them with warning
+    [self setEmailTester:self];
 }
 
 -(IBAction)setDateNow:(id)sender{
@@ -105,6 +110,17 @@
     [dateFormatter setDateFormat:@"HH:mm:ss"];
     NSString *timeString = [dateFormatter stringFromDate: currentTime];
     startDateTxt.text=timeString;
+}
+
+-(IBAction)setEmailTester:(id)sender{
+   // jump to new screen to add details that are missing
+    //do nothing yet
+    [self performSegueWithIdentifier  : @"TesterNameViewControllerModal"
+                                sender: self];
+}
+
+- (IBAction)returnToStepOne:(UIStoryboardSegue *)segue {
+    NSLog(@"And now we are back.");
 }
 
 -(void)refreshSettings{

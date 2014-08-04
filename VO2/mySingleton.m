@@ -27,6 +27,7 @@ static mySingleton * sharedSingleton = nil;
             oldSubjectName,
             subWt,
             subHt,
+            email,
 
             labTemp,
             labPressure_mmHg,

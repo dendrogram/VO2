@@ -46,7 +46,9 @@
         fileMgr,
         homeDir,
         filename,
-        filepath;
+        filepath,
+        myEmailAddress
+        ;
 
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
@@ -57,11 +59,11 @@
 
 //find the home directory for Document
 -(NSString *)GetDocumentDirectory{
-    fileMgr = [NSFileManager defaultManager];
-    NSString *docsDir;
-    NSArray *dirPaths;
+    fileMgr  = [NSFileManager defaultManager];
+    NSString * docsDir;
+    NSArray  * dirPaths;
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = dirPaths[0];
+    docsDir  = dirPaths[0];
     return docsDir;
 }
 
@@ -143,6 +145,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+setTranslatesAutoresizingMaskIntoConstraints:NO;
+    [self refreshSettings];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -159,6 +163,7 @@
     }
     singleton.testDate       = [NSString stringWithFormat:@"%@",  datelbl.text];
     singleton.testTime       = [NSString stringWithFormat:@"%@",  timelbl.text];
+    [self refreshSettings];
     [self calculateStats];
 }
 -(void)setDateNow:(id)sender{
@@ -177,10 +182,12 @@
     timelbl.text=timeString;
 }
 
-// +++++++++++++++++++++++++++++++++++
-// +++++++++++++++++++++++++++++++++++
-// to edit to suit VO2
-// all below to edit - when done delete this line
+-(void)refreshSettings{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.email = [defaults objectForKey:kEmail];
+    singleton.testerName = [defaults objectForKey:kTester];
+}
 
 -(void)calculateStats{
     statusMessageLab.text=@"Calculating\nStats\nPlease\nWait...";
@@ -399,13 +406,21 @@
 
 //mail from button press
 -(IBAction)sendEmail:(id)sender {
+    //
+    // this particular function for email not used at present, using alternate form below...
+    //
     statusMessageLab.text=@"E-Mail\nResults\nLoading...";
     mySingleton *singleton = [mySingleton sharedSingleton];
+    [self refreshSettings];
     
-    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+    MFMailComposeViewController * mailComposer = [[MFMailComposeViewController alloc] init];
+
     [mailComposer setMailComposeDelegate:self];
+
     if ([MFMailComposeViewController canSendMail]){
-        [mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
+
+        //[mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
+        [mailComposer setToRecipients:[NSArray arrayWithObject:myEmailAddress]];
         [mailComposer setSubject:@"Results from VO2 App"];
         //[mailComposer setMessageBody:@"Dear VO2 App User: " isHTML:YES];
         
@@ -444,10 +459,11 @@
 mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *emailTitle = [NSString stringWithFormat:@"VO2 App Data for: %@",singleton.oldSubjectName];
     NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by VO2 App.",singleton.oldSubjectName,singleton.testDate,singleton.testTime];
-    NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
+    //NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
+    NSArray  *toRecipents = [NSArray arrayWithObject:singleton.email];
 
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
+     mc.mailComposeDelegate = self;
     [mc setSubject:emailTitle];
     [mc setMessageBody:messageBody isHTML:NO];
     [mc setToRecipients:toRecipents];

@@ -34,8 +34,8 @@
 // ************************************************
 
 int v1=1;   // version: v1.v2.v3
-int v2=0;   // 24/7/14 jah
-int v3=0;   //
+int v2=0;   // 24/7/14; jah
+int v3=2;   // 3/8/14; jah
 
 // ************************************************
 // ************************************************
@@ -44,6 +44,7 @@ int v3=0;   //
 {
     [super viewDidLoad];
     //display the version number in the opening vc
+    setTranslatesAutoresizingMaskIntoConstraints:NO;
         NSString *versionNo = [NSString stringWithFormat:@"V.%i.%i.%i",v1,v2,v3];
     
     versionNumberLab.text=versionNo;

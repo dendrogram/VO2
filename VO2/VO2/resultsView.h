@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
+#define kEmail  @"emailAddress"
+#define kTester @"testerName"
+
 @interface resultsView : UIViewController <MFMailComposeViewControllerDelegate>
 {
     IBOutlet UILabel     * statusMessageLab;
@@ -23,6 +26,8 @@
 // for calculations and functions
     NSDate        * startDate;
     NSDate        * testDate;
+
+    NSString * myEmailAddress;
     
     UILabel * VESTPDlbl;
     //UILabel * VEATPSlbl;
@@ -73,6 +78,8 @@
 @property(nonatomic,retain) NSString      * homeDir;
 @property(nonatomic,retain) NSString      * filename;
 @property(nonatomic,retain) NSString      * filepath;
+
+@property(nonatomic,retain) NSString      * myEmailAddress;
 
 //dates
 @property (nonatomic, copy) NSDate * startDate;

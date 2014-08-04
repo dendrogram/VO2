@@ -44,12 +44,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    setTranslatesAutoresizingMaskIntoConstraints:NO;
     
     //look for switch changs on pressure and temperature
     [self.pressureChange addTarget:self
                             action:@selector(pressureChanged:) forControlEvents:UIControlEventValueChanged];
     [self.tempChange addTarget:self
                             action:@selector(tempChanged:) forControlEvents:UIControlEventValueChanged];
+
+    //set thecolour of the switch parts
+    //self.pressureChange.onTintColor     = [UIColor greenColor];
+    //self.pressureChange.thumbTintColor  = [UIColor yellowColor];
+    self.pressureChange.tintColor       = [UIColor blackColor];
+    //self.pressureChange.backgroundColor = [UIColor redColor]; //a bit off-putting
+
     
     //set the delegates or text did start/end will not work
     labLocationTxt.delegate = self;
@@ -89,36 +97,76 @@
     singleton.labLocation       = [NSString stringWithFormat:@"%@", labLocationTxt.text];
     singleton.labTemp           = [NSString stringWithFormat:@"%@", labTempTxt.text];
     singleton.labHumidity       = [NSString stringWithFormat:@"%@", labHumidityTxt.text];
-    singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@", labPressureTxt.text];
+    //singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@", labPressureTxt.text];
+
+    if (pressureChange.on){
+        float pressure;
+        pressure = [labPressureTxt.text floatValue];
+
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure ];
+
+        singleton.labPressure_mmHg = labPressureTxt.text;
+    } else {
+        float pressure;
+        pressure = [labPressureTxt.text floatValue];
+
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure * 0.75218];
+
+        singleton.labPressure_mmHg = labPressureTxt.text;
+    }
+
     singleton.sampTime          = [NSString stringWithFormat:@"%@", sampTimeTxt.text];
 }
 
 //Pressure switch changed, so recalculate and update textfield
 - (void)pressureChanged:(UISwitch *)switchState
 {
+    // needs work to ensure both readings are put in correctly
+    float pressure;
+
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     if ([switchState isOn]) {
+        //switch is on = mmHg
         press.text=@"mmHg";
-        labPressure_mmHg = 0.75218 * [labPressureTxt.text floatValue];
-        labPressure_mBar = labPressure_mmHg / 0.75218;
-        labPressureTxt.text = [NSString stringWithFormat:@"%.4f",labPressure_mmHg];
+
+        pressure = [labPressureTxt.text floatValue];
+
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure * 0.75218];
+
+        singleton.labPressure_mmHg = labPressureTxt.text;
+
+        //old code
+        //labPressure_mmHg = 0.75218 * [labPressureTxt.text floatValue];
+
+        //labPressure_mBar = labPressure_mmHg / 0.75218;
+        //labPressureTxt.text = [NSString stringWithFormat:@"%.4f",labPressure_mmHg];
         
-        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.4f",labPressure_mmHg];
+        //singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.4f",labPressure_mmHg];
     
     } else {
+        //switch is off = mBar
         press.text=@"mBar";
-        labPressure_mBar = [labPressureTxt.text floatValue] / 0.75218;
-        labPressure_mmHg = 0.75218 * labPressure_mBar;
-        labPressureTxt.text = [NSString stringWithFormat:@"%.4f",labPressure_mBar];
+
+        pressure = [labPressureTxt.text floatValue];
+
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure / 0.75218];
+
+        singleton.labPressure_mmHg =labPressureTxt.text;
+
+        //old code
+        //labPressure_mBar = [labPressureTxt.text floatValue] / 0.75218;
+        //labPressure_mmHg = 0.75218 * labPressure_mBar;
+        //labPressureTxt.text = [NSString stringWithFormat:@"%.4f",labPressure_mBar];
         
-        singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.4f",labPressure_mmHg];
+        //singleton.labPressure_mmHg=[NSString stringWithFormat:@"%.4f",labPressure_mmHg];
     }
 }
 
 //Temperature switch changed, so recalculate and update textfield
 - (void)tempChanged:(UISwitch *)switchState
 {
+    // not used at all, here for future use
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     if ([switchState isOn]) {

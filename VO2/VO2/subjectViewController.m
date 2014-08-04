@@ -25,20 +25,22 @@
     startDateTxt,
     testDateTxt,
     subjectNameTxt,
-    testerNameTxt,
+    testerNamelbl,
     subHtTxt,
     subWtTxt;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    setTranslatesAutoresizingMaskIntoConstraints:NO;
 
 //set the delegates or text did start/end will not work
+
+    [self refreshSettings];
     
     startDateTxt.delegate   = self;
     testDateTxt.delegate    = self;
     subjectNameTxt.delegate = self;
-    testerNameTxt.delegate  = self;
     subHtTxt.delegate       = self;
     subWtTxt.delegate       = self;
 }
@@ -46,9 +48,11 @@
 -(void)viewDidAppear:(BOOL)animated{
 // set up link to singleton
     mySingleton *singleton  = [mySingleton sharedSingleton];
+
+    [self refreshSettings];
     
     subjectNameTxt.text     =   singleton.oldSubjectName ;
-    testerNameTxt.text      =   singleton.testerName  ;
+    testerNamelbl.text      =   singleton.testerName  ;
     subWtTxt.text           =   singleton.subWt       ;
     subHtTxt.text           =   singleton.subHt       ;
     testDateTxt.text        =   singleton.testDate    ;
@@ -71,7 +75,6 @@
     mySingleton *singleton   = [mySingleton sharedSingleton];
     singleton.oldSubjectName = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
     singleton.subjectName    = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
-    singleton.testerName     = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
     singleton.subWt          = [NSString stringWithFormat:@"%@",  subWtTxt.text];
     singleton.subHt          = [NSString stringWithFormat:@"%@",  subHtTxt.text];
 
@@ -104,6 +107,12 @@
     startDateTxt.text=timeString;
 }
 
+-(void)refreshSettings{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    singleton.testerName = [defaults objectForKey:kTester];
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     //used to clear keyboard if screen touched
     // NSLog(@"Touches began with this event");
@@ -118,12 +127,7 @@
     
     //page1
     // change the color of the text box when you touch it
-    if(textField==self->testerNameTxt){
-        testerNameTxt.backgroundColor = [UIColor greenColor];
-        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
-        [self keyBoardAppeared:oft];
-    }
+
     if(textField==self->testDateTxt){
         testDateTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
@@ -164,7 +168,6 @@
     startDateTxt.backgroundColor   = [UIColor whiteColor];
     testDateTxt.backgroundColor    = [UIColor whiteColor];
     subjectNameTxt.backgroundColor = [UIColor whiteColor];
-    testerNameTxt.backgroundColor  = [UIColor whiteColor];
     subHtTxt.backgroundColor       = [UIColor whiteColor];
     subWtTxt.backgroundColor       = [UIColor whiteColor];
 }

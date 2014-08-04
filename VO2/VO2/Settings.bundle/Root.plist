@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Title</key>
-			<string>Group</string>
+			<string>Settings for VO2 App</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
@@ -20,39 +20,31 @@
 			<key>IsSecure</key>
 			<false/>
 			<key>Key</key>
-			<string>name_preference</string>
+			<string>testerName</string>
 			<key>KeyboardType</key>
-			<string>Alphabet</string>
+			<string>EmailAddress</string>
 			<key>Title</key>
-			<string>Name</string>
+			<string>Tester:</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 		</dict>
 		<dict>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
 			<key>DefaultValue</key>
-			<true/>
+			<string></string>
+			<key>IsSecure</key>
+			<false/>
 			<key>Key</key>
-			<string>enabled_preference</string>
+			<string>emailAddress</string>
+			<key>KeyboardType</key>
+			<string>EmailAddress</string>
 			<key>Title</key>
-			<string>Enabled</string>
+			<string>EMail:</string>
 			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-		</dict>
-		<dict>
-			<key>DefaultValue</key>
-			<real>0.5</real>
-			<key>Key</key>
-			<string>slider_preference</string>
-			<key>MaximumValue</key>
-			<integer>1</integer>
-			<key>MaximumValueImage</key>
-			<string></string>
-			<key>MinimumValue</key>
-			<integer>0</integer>
-			<key>MinimumValueImage</key>
-			<string></string>
-			<key>Type</key>
-			<string>PSSliderSpecifier</string>
+			<string>PSTextFieldSpecifier</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>

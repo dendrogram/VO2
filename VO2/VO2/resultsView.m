@@ -47,7 +47,7 @@
         homeDir,
         filename,
         filepath,
-        myEmailAddress
+        emaillbl
         ;
 
 -(NSString *) setFilename{
@@ -145,7 +145,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-setTranslatesAutoresizingMaskIntoConstraints:NO;
+    setTranslatesAutoresizingMaskIntoConstraints:NO;
     [self refreshSettings];
 }
 
@@ -287,6 +287,7 @@ setTranslatesAutoresizingMaskIntoConstraints:NO;
     VCO2lbl.text        =   singleton.vco2;
     VO2Kglbl.text       =   singleton.vo2kg;
     RERlbl.text         =   singleton.rer;
+    emaillbl.text       =   singleton.email;
     
     //Format for file and email outputs
     //put titles and basic params up first
@@ -420,7 +421,7 @@ setTranslatesAutoresizingMaskIntoConstraints:NO;
     if ([MFMailComposeViewController canSendMail]){
 
         //[mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
-        [mailComposer setToRecipients:[NSArray arrayWithObject:myEmailAddress]];
+        [mailComposer setToRecipients:[NSArray arrayWithObject:emaillbl.text]];
         [mailComposer setSubject:@"Results from VO2 App"];
         //[mailComposer setMessageBody:@"Dear VO2 App User: " isHTML:YES];
         

@@ -27,8 +27,7 @@
     NSDate        * startDate;
     NSDate        * testDate;
 
-    NSString * myEmailAddress;
-    
+
     UILabel * VESTPDlbl;
     //UILabel * VEATPSlbl;
     UILabel * RERlbl;
@@ -36,6 +35,7 @@
     UILabel * VCO2lbl;
     UILabel * datelbl;
     UILabel * timelbl;
+    UILabel * emaillbl;
     //UILabel * lablbl;
     //UILabel * testerlbl;
     UILabel * subjectlbl;
@@ -79,8 +79,6 @@
 @property(nonatomic,retain) NSString      * filename;
 @property(nonatomic,retain) NSString      * filepath;
 
-@property(nonatomic,retain) NSString      * myEmailAddress;
-
 //dates
 @property (nonatomic, copy) NSDate * startDate;
 @property (nonatomic, copy) NSDate * testDate;
@@ -93,6 +91,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * VCO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * datelbl;
 @property (nonatomic, strong) IBOutlet UILabel * timelbl;
+@property (nonatomic, strong) IBOutlet UILabel * emaillbl;
 //@property (nonatomic, strong) IBOutlet UILabel * lablbl;
 //@property (nonatomic, strong) IBOutlet UILabel * testerlbl;
 @property (nonatomic, strong) IBOutlet UILabel * subjectlbl;

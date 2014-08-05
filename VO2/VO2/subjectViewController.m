@@ -89,11 +89,39 @@
     }
     singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
     singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
+
     // add the warning if testernamelbl and testeremaillbl are not set in settings root plist
-    // check for blank email and tester name
-    
+    // check for blank tester name
+
+    [self checkEmailAndDisplayAlert];
+
+    if([testerNamelbl.text isEqualToString:@""] || [testerEmaillbl.text isEqualToString:@""]||[self validateEmail : singleton.email]){
     // send to page to add them with warning
+    // not ok, update
     [self setEmailTester:self];
+    } else {
+        //ok
+    }
+
+}
+
+- (BOOL)validateEmail:(NSString *)emailStr {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:emailStr];
+}
+// display an alert if email address is wrong:
+
+- (void)checkEmailAndDisplayAlert {
+        mySingleton *singleton  = [mySingleton sharedSingleton];
+    if(![self validateEmail : singleton.email]) {
+        // user entered invalid email address
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Enter a valid email address." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+
+    } else {
+        // user entered valid email address
+    }
 }
 
 -(IBAction)setDateNow:(id)sender{
@@ -124,9 +152,9 @@
 }
 
 -(void)refreshSettings{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.testerName = [defaults objectForKey:kTester];
+    NSUserDefaults * defaults  = [NSUserDefaults standardUserDefaults];
+    mySingleton    * singleton = [mySingleton sharedSingleton];
+    singleton.testerName       = [defaults objectForKey:kTester];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E54FAADE-1B45-4535-A35D-44A256E29023</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VO2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</key>
+		<string>https://github.com/dendrogram/VO2.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VO2/VO2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dendrogram/VO2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</string>
+			<key>IDESourceControlWCCName</key>
+			<string>new_results</string>
+		</dict>
+	</array>
+</dict>
+</plist>

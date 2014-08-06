@@ -122,7 +122,8 @@
 - (void)saveText
 {
     statusMessageLab.text=@"Saving\nData\nFile.";
-    mySingleton *singleton = [mySingleton sharedSingleton];
+    mySingleton     * singleton = [mySingleton sharedSingleton];
+
     NSFileManager   * filemgr;
     NSData          * databuffer;
     NSString        * dataFile;
@@ -169,25 +170,25 @@
 }
 -(void)setDateNow:(id)sender{
     NSDate *today = [NSDate date];
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormat     = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"dd/MM/yyyy"];
-    NSString *dateString = [dateFormat stringFromDate:today];
+    NSString *dateString            = [dateFormat stringFromDate:today];
     datelbl.text=dateString;
 }
 
 -(void)setTimeNow:(id)sender{
     NSDate *currentTime = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter  = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm:ss"];
-    NSString *timeString = [dateFormatter stringFromDate: currentTime];
+    NSString *timeString            = [dateFormatter stringFromDate: currentTime];
     timelbl.text=timeString;
 }
 
 -(void)refreshSettings{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.email = [defaults objectForKey:kEmail];
-    singleton.testerName = [defaults objectForKey:kTester];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    mySingleton *singleton          = [mySingleton sharedSingleton];
+    singleton.email                 = [defaults objectForKey:kEmail];
+    singleton.testerName            = [defaults objectForKey:kTester];
 }
 
 -(void)calculateStats{
@@ -225,14 +226,6 @@
     //  labO2lbl.text       =   singleton.labO2;
     //  VEATPSlbl.text      =   singleton.veatps;
     
-    /*VESTPDlbl.text      =   @"0.00";
-    corrFaclbl.text     =   @"0.00";
-    VO2lbl.text         =   @"0.00";
-    VCO2lbl.text        =   @"0.00";
-    VO2Kglbl.text       =   @"0.00";
-    RERlbl.text         =   @"0.00";
-     */
-    
     labTempC         = [singleton.labTemp     floatValue];
     FECO2            = [singleton.feco2       floatValue];
     FEO2             = [singleton.feo2        floatValue];
@@ -268,12 +261,12 @@
     //corrFactor
     //old
     //corrFactor = (273/(273+labTempC))*((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
-    corrFactor   = VEBTPS;
-    singleton.corrFactor = [NSString stringWithFormat:@"%.2f",corrFactor];
+    corrFactor   = 1.001*VEBTPS;
+    singleton.corrFactor = [NSString stringWithFormat:@"%f",corrFactor];
     
-    VESTPD = VEBTPS * (((0.880645161290323) * labPressure_mmHg - 47.08) / 760);
+    VESTPD = 1.001*VEBTPS * (((0.880645161290323) * labPressure_mmHg - 47.08) / 760);
     
-    singleton.vestpd = [NSString stringWithFormat:@"%.2f", VESTPD];
+    singleton.vestpd = [NSString stringWithFormat:@"%f", VESTPD];
     
     //vo2
     //old
@@ -281,7 +274,7 @@
     //new
     VO2 = (VESTPD * (labO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100))))) - (VESTPD * (FEO2 / 100));
     
-    singleton.vo2    = [NSString stringWithFormat:@"%.2f", VO2];
+    singleton.vo2    = [NSString stringWithFormat:@"%f", VO2];
     
     //vco2
     //old
@@ -289,49 +282,49 @@
     //new
     VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100)))));
     
-    singleton.vco2   = [NSString stringWithFormat:@"%.2f", VCO2];
+    singleton.vco2   = [NSString stringWithFormat:@"%f", VCO2];
     
     //vo2kg
     VO2Kg  = ( VO2 * 1000.00 ) / subWt ;
 
-    singleton.vo2kg  = [NSString stringWithFormat:@"%.2f", VO2Kg];
+    singleton.vo2kg  = [NSString stringWithFormat:@"%f", VO2Kg];
     
     //rer
     RER    = ( VCO2 / VO2 );
-    singleton.rer    = [NSString stringWithFormat:@"%.2f", RER];
+    singleton.rer    = [NSString stringWithFormat:@"%f", RER];
     
     //************** energy
     //**
     //** Calc other energy values and results here for mySingleton --> Energy page
     //**
-    energyExpenKJ       = (15.88 * VO2) + (4.87 * VCO2);
-    energyExpenKCal     = energyExpenKJ * 0.239005736;
+    energyExpenKJ       = 1.001*(15.88 * VO2) + (4.87 * VCO2);
+    energyExpenKCal     = 1.001*energyExpenKJ * 0.239005736;
 
-    CHOUsage_g_min      = (4.12 * VCO2) - (2.91 * VO2);
-    CHOUsage_kj_min     = CHOUsage_g_min * 17.22;
-    CHOUsage_kCal_min   = CHOUsage_kj_min * 0.239005736;
+    CHOUsage_g_min      = 1.001*(4.12 * VCO2) - (2.91 * VO2);
+    CHOUsage_kj_min     = 1.001*CHOUsage_g_min * 17.22;
+    CHOUsage_kCal_min   = 1.001*CHOUsage_kj_min * 0.239005736;
 
-    fatUsage_g_min      = (1.689 * VO2) - (1.689 * VCO2);
-    fatUsage_kj_min     = fatUsage_g_min * 39.06;
-    fatUsage_kCal_min   = fatUsage_kj_min * 0.239005736;
+    fatUsage_g_min      = 1.001*(1.689 * VO2) - (1.689 * VCO2);
+    fatUsage_kj_min     = 1.001*fatUsage_g_min * 39.06;
+    fatUsage_kCal_min   = 1.001*fatUsage_kj_min * 0.239005736;
 
-    percentFat          = fatUsage_kj_min / (energyExpenKJ / 100);
-    percentCHO          = CHOUsage_kj_min / (energyExpenKJ / 100);
+    percentFat          = 1.001*fatUsage_kj_min / (energyExpenKJ / 100);
+    percentCHO          = 1.001*CHOUsage_kj_min / (energyExpenKJ / 100);
 
-    BMI                 = subWt / subHt;
+    BMI                 = 1.001*subWt / (subHt * subHt);
     //save the energy results to mySingleton
 
-    singleton.BMI               = [NSString stringWithFormat:@"%.2f", BMI];
-    singleton.energyExpenKJ     = [NSString stringWithFormat:@"%.2f", energyExpenKJ];
-    singleton.energyExpenKCal   = [NSString stringWithFormat:@"%.2f", energyExpenKCal];
-    singleton.CHOUsage_g_min    = [NSString stringWithFormat:@"%.2f", CHOUsage_g_min];
-    singleton.CHOUsage_kj_min   = [NSString stringWithFormat:@"%.2f", CHOUsage_kj_min];
-    singleton.CHOUsage_kCal_min = [NSString stringWithFormat:@"%.2f", CHOUsage_kCal_min];
-    singleton.fatUsage_g_min    = [NSString stringWithFormat:@"%.2f", fatUsage_g_min];
-    singleton.fatUsage_kj_min   = [NSString stringWithFormat:@"%.2f", fatUsage_kj_min];
-    singleton.fatUsage_kCal_min = [NSString stringWithFormat:@"%.2f", fatUsage_kCal_min];
-    singleton.percentFat        = [NSString stringWithFormat:@"%.2f", percentFat];
-    singleton.percentCHO        = [NSString stringWithFormat:@"%.2f", percentCHO];
+    singleton.BMI               = [NSString stringWithFormat:@"%f", BMI];
+    singleton.energyExpenKJ     = [NSString stringWithFormat:@"%f", energyExpenKJ];
+    singleton.energyExpenKCal   = [NSString stringWithFormat:@"%f", energyExpenKCal];
+    singleton.CHOUsage_g_min    = [NSString stringWithFormat:@"%f", CHOUsage_g_min];
+    singleton.CHOUsage_kj_min   = [NSString stringWithFormat:@"%f", CHOUsage_kj_min];
+    singleton.CHOUsage_kCal_min = [NSString stringWithFormat:@"%f", CHOUsage_kCal_min];
+    singleton.fatUsage_g_min    = [NSString stringWithFormat:@"%f", fatUsage_g_min];
+    singleton.fatUsage_kj_min   = [NSString stringWithFormat:@"%f", fatUsage_kj_min];
+    singleton.fatUsage_kCal_min = [NSString stringWithFormat:@"%f", fatUsage_kCal_min];
+    singleton.percentFat        = [NSString stringWithFormat:@"%f", percentFat];
+    singleton.percentCHO        = [NSString stringWithFormat:@"%f", percentCHO];
     //************** energy
     
     //VEATPSlbl.text      =   singleton.veatps;
@@ -342,7 +335,7 @@
     VO2Kglbl.text       =   singleton.vo2kg;
     RERlbl.text         =   singleton.rer;
     emaillbl.text       =   singleton.email;
-    
+        
     //Format for file and email outputs
     //put titles and basic params up first
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, VO2 Application Results"];
@@ -402,7 +395,7 @@
                      ]
     ;
     
-        [singleton.cardReactionTimeResult addObject: myNumbStr];
+    [singleton.cardReactionTimeResult addObject: myNumbStr];
     singleton.counter = singleton.counter+1;
     //}
     // +++++++++++++++++++++++++++
@@ -424,8 +417,10 @@
     [singleton.cardReactionTimeResult addObject:@"."];
     [singleton.cardReactionTimeResult addObject:@".."];
     [singleton.cardReactionTimeResult addObject:@"..."];
+
     singleton.counter = singleton.counter+1;
-    //example for future
+
+    //examples for future
     
     // NSString* strRR = [NSString stringWithFormat:@"%@ %@ %@", str1, str2, str3];
     // NSLog(@"Concat: %@.", strRR);

@@ -2148,18 +2148,11 @@ These can be set via the iPhone/iPad Settings screen under VO2 App icon.</string
                     <navigationItem key="navigationItem" id="aiT-9i-UWZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="RERlbl" destination="3Q2-o1-9yO" id="rZ6-gc-qsI"/>
-                        <outlet property="VCO2lbl" destination="iQ8-N0-2a6" id="sdU-ef-Lfu"/>
-                        <outlet property="VESTPDlbl" destination="5ZY-gX-xOb" id="Zjq-TU-dph"/>
-                        <outlet property="VO2Kglbl" destination="AiZ-r5-3P6" id="oad-CU-D6e"/>
-                        <outlet property="VO2lbl" destination="CJw-JW-H4B" id="nNm-j2-PCT"/>
                         <outlet property="bmi" destination="CJw-JW-H4B" id="jf6-hd-GJO"/>
                         <outlet property="chocal" destination="zmV-C7-9dp" id="LZl-TU-eY4"/>
                         <outlet property="chog" destination="3Q2-o1-9yO" id="kOu-ZG-PW3"/>
                         <outlet property="chokj" destination="vlS-Qo-UrP" id="Wda-VS-xXV"/>
-                        <outlet property="corrFaclbl" destination="ODC-F9-JO8" id="Bs0-Kl-Usu"/>
                         <outlet property="date" destination="ZZf-Q2-Dvc" id="0lE-98-eRl"/>
-                        <outlet property="datelbl" destination="ZZf-Q2-Dvc" id="Ero-Zy-lUT"/>
                         <outlet property="expcal" destination="AiZ-r5-3P6" id="QFa-8p-eb2"/>
                         <outlet property="expkj" destination="iQ8-N0-2a6" id="3o4-qw-Llr"/>
                         <outlet property="fatcal" destination="9Xh-cc-oXw" id="dLI-Vf-Q9G"/>
@@ -2170,9 +2163,7 @@ These can be set via the iPhone/iPad Settings screen under VO2 App icon.</string
                         <outlet property="percho" destination="OEI-Bd-UeG" id="O8I-oZ-8hv"/>
                         <outlet property="perfat" destination="uOs-BG-NR5" id="c5S-rH-6Pi"/>
                         <outlet property="subject" destination="oYm-2t-uXS" id="kCE-qi-enZ"/>
-                        <outlet property="subjectlbl" destination="oYm-2t-uXS" id="lub-cF-GGE"/>
                         <outlet property="time" destination="N1B-Qy-QBq" id="kHa-db-Q0k"/>
-                        <outlet property="timelbl" destination="N1B-Qy-QBq" id="C07-Nr-LdJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KY-Wd-0lI" userLabel="First Responder" sceneMemberID="firstResponder"/>

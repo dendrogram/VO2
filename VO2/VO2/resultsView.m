@@ -272,37 +272,65 @@
     
     VESTPD = VEBTPS * (((0.880645161290323) * labPressure_mmHg - 47.08) / 760);
     
-    singleton.vestpd = [NSString stringWithFormat:@"%.4f", VESTPD];
+    singleton.vestpd = [NSString stringWithFormat:@"%.2f", VESTPD];
     
     //vo2
     //old
     //VO2    = VESTPD * ((N2 * 0.265) -  FEO2) /100;
     //new
+    VO2 = (VESTPD * (labO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100))))) - (VESTPD * (FEO2 / 100));
     
-    singleton.vo2    = [NSString stringWithFormat:@"%.4f", VO2];
+    singleton.vo2    = [NSString stringWithFormat:@"%.2f", VO2];
     
     //vco2
     //old
     //VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
     //new
+    VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100)))));
     
-    singleton.vco2   = [NSString stringWithFormat:@"%.4f", VCO2];
+    singleton.vco2   = [NSString stringWithFormat:@"%.2f", VCO2];
     
     //vo2kg
-    //old
-    //VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
-    //new
-    
-    singleton.vo2kg  = [NSString stringWithFormat:@"%.4f", VO2Kg];
+    VO2Kg  = ( VO2 * 1000.00 ) / subWt ;
+
+    singleton.vo2kg  = [NSString stringWithFormat:@"%.2f", VO2Kg];
     
     //rer
     RER    = ( VCO2 / VO2 );
-    singleton.rer    = [NSString stringWithFormat:@"%.4f", RER];
+    singleton.rer    = [NSString stringWithFormat:@"%.2f", RER];
     
     //************** energy
     //**
     //** Calc other energy values and results here for mySingleton --> Energy page
     //**
+    energyExpenKJ       = (15.88 * VO2) + (4.87 * VCO2);
+    energyExpenKCal     = energyExpenKJ * 0.239005736;
+
+    CHOUsage_g_min      = (4.12 * VCO2) - (2.91 * VO2);
+    CHOUsage_kj_min     = CHOUsage_g_min * 17.22;
+    CHOUsage_kCal_min   = CHOUsage_kj_min * 0.239005736;
+
+    fatUsage_g_min      = (1.689 * VO2) - (1.689 * VCO2);
+    fatUsage_kj_min     = fatUsage_g_min * 39.06;
+    fatUsage_kCal_min   = fatUsage_kj_min * 0.239005736;
+
+    percentFat          = fatUsage_kj_min / (energyExpenKJ / 100);
+    percentCHO          = CHOUsage_kj_min / (energyExpenKJ / 100);
+
+    BMI                 = subWt / subHt;
+    //save the energy results to mySingleton
+
+    singleton.BMI               = [NSString stringWithFormat:@"%.4f", BMI];
+    singleton.energyExpenKJ     = [NSString stringWithFormat:@"%.4f", energyExpenKJ];
+    singleton.energyExpenKCal   = [NSString stringWithFormat:@"%.4f", energyExpenKCal];
+    singleton.CHOUsage_g_min    = [NSString stringWithFormat:@"%.4f", CHOUsage_g_min];
+    singleton.CHOUsage_kj_min   = [NSString stringWithFormat:@"%.4f", CHOUsage_kj_min];
+    singleton.CHOUsage_kCal_min = [NSString stringWithFormat:@"%.4f", CHOUsage_kCal_min];
+    singleton.fatUsage_g_min    = [NSString stringWithFormat:@"%.4f", fatUsage_g_min];
+    singleton.fatUsage_kj_min   = [NSString stringWithFormat:@"%.4f", fatUsage_kj_min];
+    singleton.fatUsage_kCal_min = [NSString stringWithFormat:@"%.4f", fatUsage_kCal_min];
+    singleton.percentFat        = [NSString stringWithFormat:@"%.4f", percentFat];
+    singleton.percentCHO        = [NSString stringWithFormat:@"%.4f", percentCHO];
     //************** energy
     
     //VEATPSlbl.text      =   singleton.veatps;

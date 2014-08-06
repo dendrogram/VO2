@@ -27,6 +27,7 @@
 		E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */; };
 		E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E12EEABD19758ABF00CEDBD5 /* mySingleton.m */; };
 		E144B26C197FF6CC00695DBB /* calcsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E144B26B197FF6CC00695DBB /* calcsViewController.m */; };
+		E1A349781992693F00716296 /* EnergyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A349771992693F00716296 /* EnergyViewController.m */; };
 		E1EE19781987E6B1006552A3 /* vo2calc.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196E1987E6B1006552A3 /* vo2calc.png */; };
 		E1EE19791987E6B1006552A3 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196F1987E6B1006552A3 /* contacts.png */; };
 		E1EE197A1987E6B1006552A3 /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE19701987E6B1006552A3 /* tutorial.png */; };
@@ -91,6 +92,8 @@
 		E12EEABD19758ABF00CEDBD5 /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySingleton.m; sourceTree = "<group>"; };
 		E144B26A197FF6CC00695DBB /* calcsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calcsViewController.h; sourceTree = "<group>"; };
 		E144B26B197FF6CC00695DBB /* calcsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calcsViewController.m; sourceTree = "<group>"; };
+		E1A349761992693F00716296 /* EnergyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnergyViewController.h; sourceTree = "<group>"; };
+		E1A349771992693F00716296 /* EnergyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnergyViewController.m; sourceTree = "<group>"; };
 		E1EE196E1987E6B1006552A3 /* vo2calc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vo2calc.png; sourceTree = "<group>"; };
 		E1EE196F1987E6B1006552A3 /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts.png; sourceTree = "<group>"; };
 		E1EE19701987E6B1006552A3 /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				E12BF2BA197E899F00E19036 /* readingsViewController.m */,
 				E12BF2B3197E519600E19036 /* resultsView.h */,
 				E12BF2B4197E519600E19036 /* resultsView.m */,
+				E1A349761992693F00716296 /* EnergyViewController.h */,
+				E1A349771992693F00716296 /* EnergyViewController.m */,
 				E1F13E3A1974537000A9748D /* Images.xcassets */,
 				E1F13E261974537000A9748D /* Supporting Files */,
 			);
@@ -396,6 +401,7 @@
 				E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */,
 				E1F13E301974537000A9748D /* AppDelegate.m in Sources */,
 				E12BF2B8197E898300E19036 /* subjectViewController.m in Sources */,
+				E1A349781992693F00716296 /* EnergyViewController.m in Sources */,
 				E144B26C197FF6CC00695DBB /* calcsViewController.m in Sources */,
 				E1F13E2C1974537000A9748D /* main.m in Sources */,
 				E12BF2B5197E519600E19036 /* resultsView.m in Sources */,

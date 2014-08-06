@@ -70,6 +70,19 @@
     float VO2Kg;
     float labO2;
     
+    //energy floats follow
+    float BMI;
+    float energyExpenKJ;
+    float energyExpenKCal;
+    float CHOUsage_g_min;
+    float CHOUsage_kj_min;
+    float CHOUsage_kCal_min;
+    float fatUsage_g_min;
+    float fatUsage_kj_min;
+    float fatUsage_kCal_min;
+    float percentFat;
+    float percentCHO;
+    
     int counter;
 }
 

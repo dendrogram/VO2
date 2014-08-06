@@ -12,8 +12,6 @@
     // add all the objects that you want to be globally abailable here:
     //eg types defs
 
-
-
     //float   test;
     //BOOL    boxShow;
     //UIColor *lineColour;
@@ -27,7 +25,15 @@
     
     BOOL     addedToResults;
     BOOL     dataCompleted;
-
+    
+    //subject and results
+    NSString * testerName;
+    NSString * testDate;
+    NSString * testTime;
+    NSString * resultStrings;
+    NSString * subjectName;
+    NSString * oldSubjectName;
+    NSString * versionNumber;
     NSString * email;
     NSString * subWt;
     NSString * subHt;
@@ -45,16 +51,23 @@
     NSString * vco2;
     NSString * vo2kg;
     NSString * labO2; // percent O2 in air, obviously low if hypoxic, 20.93 approx normal stp
+    NSString * labCO2;
     NSString * rer;
-
-    NSString * testerName;
-    NSString * testDate;
-    NSString * testTime;
-    NSString * resultStrings;
-    NSString * subjectName;
-    NSString * oldSubjectName;
-    NSString * versionNumber;
+    
+    //energy outputs
+    NSString * BMI;
+    NSString * energyExpenKJ;
+    NSString * energyExpenKCal;
+    NSString * CHOUsage_g_min;
+    NSString * CHOUsage_kj_min;
+    NSString * CHOUsage_kCal_min;
+    NSString * fatUsage_g_min;
+    NSString * fatUsage_kj_min;
+    NSString * fatUsage_kCal_min;
+    NSString * percentFat;
+    NSString * percentCHO;
 }
+
 //eg defs pt2
 @property (nonatomic) int  counter;
 //@property (nonatomic) BOOL boxShow;
@@ -86,6 +99,7 @@
 @property (nonatomic, retain) NSString * vco2;
 @property (nonatomic, retain) NSString * vo2kg;
 @property (nonatomic, retain) NSString * labO2;
+@property (nonatomic, retain) NSString * labCO2;
 @property (nonatomic, retain) NSString * rer;
 @property (nonatomic, retain) NSString * resultStrings;
 @property (nonatomic, retain) NSString * subjectName;
@@ -94,6 +108,19 @@
 @property (nonatomic, retain) NSString * testDate;
 @property (nonatomic, retain) NSString * testTime;
 @property (nonatomic, retain) NSString * versionNumber;
+
+//energy
+@property (nonatomic, retain)NSString * BMI;
+@property (nonatomic, retain)NSString * energyExpenKJ;
+@property (nonatomic, retain)NSString * energyExpenKCal;
+@property (nonatomic, retain)NSString * CHOUsage_g_min;
+@property (nonatomic, retain)NSString * CHOUsage_kj_min;
+@property (nonatomic, retain)NSString * CHOUsage_kCal_min;
+@property (nonatomic, retain)NSString * fatUsage_g_min;
+@property (nonatomic, retain)NSString * fatUsage_kj_min;
+@property (nonatomic, retain)NSString * fatUsage_kCal_min;
+@property (nonatomic, retain)NSString * percentFat;
+@property (nonatomic, retain)NSString * percentCHO;
 
 //Flags BOOL
 @property (nonatomic) BOOL addedToResults;

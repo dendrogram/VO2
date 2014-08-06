@@ -37,6 +37,7 @@ static mySingleton * sharedSingleton = nil;
             feco2,
             feo2,
             labO2,
+            labCO2,
 
             veatps,
             vestpd,
@@ -45,6 +46,18 @@ static mySingleton * sharedSingleton = nil;
             vco2,
             vo2kg,
             rer,
+//energy
+            BMI,
+            energyExpenKJ,
+            energyExpenKCal,
+            CHOUsage_g_min,
+            CHOUsage_kj_min,
+            CHOUsage_kCal_min,
+            fatUsage_g_min,
+            fatUsage_kj_min,
+            fatUsage_kCal_min,
+            percentFat,
+            percentCHO,
 
             addedToResults,
             dataCompleted,
@@ -104,7 +117,21 @@ static mySingleton * sharedSingleton = nil;
         vco2               = @"0";
         vo2kg              = @"0";
         labO2              = @"20.93";
+        labCO2             = @"0.04";
         rer                = @"0";
+        //energy
+        BMI                = @"0";
+        energyExpenKJ      = @"0";
+        energyExpenKCal    = @"0";
+        CHOUsage_g_min     = @"0";
+        CHOUsage_kj_min    = @"0";
+        CHOUsage_kCal_min  = @"0";
+        fatUsage_g_min     = @"0";
+        fatUsage_kj_min    = @"0";
+        fatUsage_kCal_min  = @"0";
+        percentFat         = @"0";
+        percentCHO         = @"0";
+        
         testerName         = @"Tester";
         testDate           = @"";
         testTime           = @"";

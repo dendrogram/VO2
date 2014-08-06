@@ -280,6 +280,12 @@
     RER    = ( VCO2 / VO2 );
     singleton.rer    = [NSString stringWithFormat:@"%.4f", RER];
     
+    //************** energy
+    //**
+    //** Calc other energy values and results here for mySingleton --> Energy page
+    //**
+    //************** energy
+    
     //VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   singleton.vestpd;
     corrFaclbl.text     =   singleton.corrFactor;
@@ -305,7 +311,7 @@
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
-    //results, one per line upto number of cards
+    //results, one per line upto number of rows
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     

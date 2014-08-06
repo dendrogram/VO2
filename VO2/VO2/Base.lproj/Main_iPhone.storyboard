@@ -1849,7 +1849,7 @@ These can be set via the iPhone/iPad Settings screen under VO2 App icon.</string
         <!--Results View - Results - Energy-->
         <scene sceneID="GyM-m1-5Hd">
             <objects>
-                <viewController title="Results" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qh2-GF-f5m" userLabel="Results View - Results - Energy" customClass="resultsView" sceneMemberID="viewController">
+                <viewController title="Results" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qh2-GF-f5m" userLabel="Results View - Results - Energy" customClass="EnergyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lmm-nc-3gB"/>
                         <viewControllerLayoutGuide type="bottom" id="eGk-YF-nVS"/>
@@ -1863,14 +1863,14 @@ These can be set via the iPhone/iPad Settings screen under VO2 App icon.</string
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BMI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pW7-KY-AcB">
-                                        <rect key="frame" x="233" y="78" width="32" height="21"/>
+                                        <rect key="frame" x="215" y="78" width="32" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJw-JW-H4B">
-                                        <rect key="frame" x="225" y="107" width="48" height="21"/>
+                                        <rect key="frame" x="193" y="107" width="80" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.89417350449999999" blue="0.6320989253" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -2153,15 +2153,31 @@ These can be set via the iPhone/iPad Settings screen under VO2 App icon.</string
                         <outlet property="VESTPDlbl" destination="5ZY-gX-xOb" id="Zjq-TU-dph"/>
                         <outlet property="VO2Kglbl" destination="AiZ-r5-3P6" id="oad-CU-D6e"/>
                         <outlet property="VO2lbl" destination="CJw-JW-H4B" id="nNm-j2-PCT"/>
+                        <outlet property="bmi" destination="CJw-JW-H4B" id="jf6-hd-GJO"/>
+                        <outlet property="chocal" destination="zmV-C7-9dp" id="LZl-TU-eY4"/>
+                        <outlet property="chog" destination="3Q2-o1-9yO" id="kOu-ZG-PW3"/>
+                        <outlet property="chokj" destination="vlS-Qo-UrP" id="Wda-VS-xXV"/>
                         <outlet property="corrFaclbl" destination="ODC-F9-JO8" id="Bs0-Kl-Usu"/>
+                        <outlet property="date" destination="ZZf-Q2-Dvc" id="0lE-98-eRl"/>
                         <outlet property="datelbl" destination="ZZf-Q2-Dvc" id="Ero-Zy-lUT"/>
+                        <outlet property="expcal" destination="AiZ-r5-3P6" id="QFa-8p-eb2"/>
+                        <outlet property="expkj" destination="iQ8-N0-2a6" id="3o4-qw-Llr"/>
+                        <outlet property="fatcal" destination="9Xh-cc-oXw" id="dLI-Vf-Q9G"/>
+                        <outlet property="fatg" destination="Z2a-hw-S3R" id="oCN-bJ-B5A"/>
+                        <outlet property="fatkj" destination="Qj6-3U-UEA" id="1e0-7d-TAi"/>
+                        <outlet property="height" destination="5ZY-gX-xOb" id="2h8-kG-cUL"/>
+                        <outlet property="mass" destination="ODC-F9-JO8" id="z7h-qC-OcR"/>
+                        <outlet property="percho" destination="OEI-Bd-UeG" id="O8I-oZ-8hv"/>
+                        <outlet property="perfat" destination="uOs-BG-NR5" id="c5S-rH-6Pi"/>
+                        <outlet property="subject" destination="oYm-2t-uXS" id="kCE-qi-enZ"/>
                         <outlet property="subjectlbl" destination="oYm-2t-uXS" id="lub-cF-GGE"/>
+                        <outlet property="time" destination="N1B-Qy-QBq" id="kHa-db-Q0k"/>
                         <outlet property="timelbl" destination="N1B-Qy-QBq" id="C07-Nr-LdJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KY-Wd-0lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="-95"/>
+            <point key="canvasLocation" x="71" y="-142"/>
         </scene>
     </scenes>
     <resources>

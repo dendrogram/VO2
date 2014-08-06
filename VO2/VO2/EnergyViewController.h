@@ -9,18 +9,43 @@
 
 @interface EnergyViewController: UIViewController
 {
-    IBOutlet UILabel     * statusMessageLab;
-    //text views for text displays ie results or help screens
+    //text views for text display screens
  
     //only outputs to screen, all calculated in results and sent to mySingleton
-    //add one per field
-    UILabel * VESTPDlbl;
-
+    UILabel * date;
+    UILabel * time;
+    UILabel * subject;
+    UILabel * height;
+    UILabel * mass;
+    UILabel * bmi;
+    UILabel * expkj;
+    UILabel * expcal;
+    UILabel * chog;
+    UILabel * chokj;
+    UILabel * chocal;
+    UILabel * fatg;
+    UILabel * fatkj;
+    UILabel * fatcal;
+    UILabel * perfat;
+    UILabel * percho;
 }
 
 //var label outlets
-//add one per field
-@property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
-
+@property (nonatomic, strong) IBOutlet UILabel * date;
+@property (nonatomic, strong) IBOutlet UILabel * time;
+@property (nonatomic, strong) IBOutlet UILabel * subject;
+@property (nonatomic, strong) IBOutlet UILabel * height;
+@property (nonatomic, strong) IBOutlet UILabel * mass;
+@property (nonatomic, strong) IBOutlet UILabel * bmi;
+@property (nonatomic, strong) IBOutlet UILabel * expkj;
+@property (nonatomic, strong) IBOutlet UILabel * expcal;
+@property (nonatomic, strong) IBOutlet UILabel * chog;
+@property (nonatomic, strong) IBOutlet UILabel * chokj;
+@property (nonatomic, strong) IBOutlet UILabel * chocal;
+@property (nonatomic, strong) IBOutlet UILabel * fatg;
+@property (nonatomic, strong) IBOutlet UILabel * fatkj;
+@property (nonatomic, strong) IBOutlet UILabel * fatcal;
+@property (nonatomic, strong) IBOutlet UILabel * perfat;
+@property (nonatomic, strong) IBOutlet UILabel * percho;
 
 @end

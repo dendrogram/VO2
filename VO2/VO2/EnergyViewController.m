@@ -7,6 +7,7 @@
 //
 
 #import "EnergyViewController.h"
+#import "mySingleton.h"
 
 @interface EnergyViewController ()
 
@@ -14,7 +15,23 @@
 
 @implementation EnergyViewController
 
-@synthesize VESTPDlbl;
+@synthesize date,
+    time,
+    subject,
+    height,
+    mass,
+    bmi,
+    expkj,
+    expcal,
+    chog,
+    chokj,
+    chocal,
+    fatg,
+    fatkj,
+    fatcal,
+    perfat,
+    percho
+;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,21 +48,18 @@
     // Do any additional setup after loading the view.
 }
 
+
+-(void)viewDidAppear:(BOOL)animated{
+    //populate the cells from the mySingleton
+    // set up link to singleton
+    mySingleton *singleton      = [mySingleton sharedSingleton];
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

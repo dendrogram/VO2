@@ -14,6 +14,8 @@
 
 @implementation EnergyViewController
 
+@synthesize VESTPDlbl;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

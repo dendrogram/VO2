@@ -59,6 +59,7 @@
     float labTempF;
     float labHumidity;
     float VEATPS;
+    float VEBTPS;
     float VESTPD;
     float VO2;
     float VCO2;
@@ -69,6 +70,7 @@
     float corrFactor;
     float VO2Kg;
     float labO2;
+    float labCO2;
     
     //energy floats follow
     float BMI;

@@ -43,7 +43,8 @@
     NSString * labLocation;
     NSString * sampTime;
     NSString * veatps;
-    NSString * svestpd;
+    NSString * vebtps;
+    NSString * vestpd;
     NSString * feco2;
     NSString * feo2;
     NSString * corrFactor;
@@ -91,6 +92,7 @@
 @property (nonatomic, retain) NSString * labLocation;
 @property (nonatomic, retain) NSString * sampTime;
 @property (nonatomic, retain) NSString * veatps;
+@property (nonatomic, retain) NSString * vebtps;
 @property (nonatomic, retain) NSString * vestpd;
 @property (nonatomic, retain) NSString * feco2;
 @property (nonatomic, retain) NSString * feo2;

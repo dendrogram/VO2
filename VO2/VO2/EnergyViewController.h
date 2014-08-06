@@ -6,12 +6,8 @@
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import <MessageUI/MFMailComposeViewController.h>
 
-#define kEmail  @"emailAddress"
-#define kTester @"testerName"
-
-@interface resultsView : UIViewController <MFMailComposeViewControllerDelegate>
+@interface EnergyViewController: UIViewController
 {
     IBOutlet UILabel     * statusMessageLab;
     //text views for text displays ie results or help screens

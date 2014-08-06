@@ -8,6 +8,7 @@
 
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
+//#include "math.h"
 
 @interface resultsView()
 {
@@ -245,9 +246,6 @@
     //totalDelay=0;
 
 //do the calcs from here:
-    //corrFactor
-    corrFactor = (273/(273+labTempC))*((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
-    singleton.corrFactor = [NSString stringWithFormat:@"%.2f",corrFactor];
     
     //lab o2 N2 calcs
     //N2 (if adjust formula, cahnge same in calcViewController
@@ -258,22 +256,43 @@
     
     N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
 
-    O2   = 20.93;
-    
+    O2   = labO2;
+
     //vestpd
-    VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
+    //old
+    //VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
+    //new
+
+    VEBTPS=((VEATPS/sampTime) * 60) * (310 / (273 + labTempC)) * ((labPressure_mmHg - (exp(20.8455 - (5270 / (273 + labTempC))))) / (labPressure_mmHg - 47.08));
+    //corrFactor
+    //old
+    //corrFactor = (273/(273+labTempC))*((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
+    corrFactor   = VEBTPS;
+    singleton.corrFactor = [NSString stringWithFormat:@"%.2f",corrFactor];
+    
+    VESTPD = VEBTPS * (((0.880645161290323) * labPressure_mmHg - 47.08) / 760);
+    
     singleton.vestpd = [NSString stringWithFormat:@"%.4f", VESTPD];
     
     //vo2
-    VO2    = VESTPD * ((N2 * 0.265) -  FEO2) /100;
+    //old
+    //VO2    = VESTPD * ((N2 * 0.265) -  FEO2) /100;
+    //new
+    
     singleton.vo2    = [NSString stringWithFormat:@"%.4f", VO2];
     
     //vco2
-    VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
+    //old
+    //VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
+    //new
+    
     singleton.vco2   = [NSString stringWithFormat:@"%.4f", VCO2];
     
     //vo2kg
-    VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
+    //old
+    //VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
+    //new
+    
     singleton.vo2kg  = [NSString stringWithFormat:@"%.4f", VO2Kg];
     
     //rer
@@ -315,7 +334,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@" ,
                      counter,
                      singleton.testerName,
                      subjectlbl.text,
@@ -331,13 +350,27 @@
                      FEO2,
                      FECO2,
                      labO2,
+                     labCO2,
                      VEATPS,
                      VESTPD,
                      corrFactor,
                      VO2,
                      VCO2,
                      VO2Kg,
-                     RER]
+                     RER,
+                     //energy outputs
+                     singleton.BMI,
+                     singleton.energyExpenKJ,
+                     singleton.energyExpenKCal,
+                     singleton.CHOUsage_g_min,
+                     singleton.CHOUsage_kj_min,
+                     singleton.CHOUsage_kCal_min,
+                     singleton.fatUsage_g_min,
+                     singleton.fatUsage_kj_min,
+                     singleton.fatUsage_kCal_min,
+                     singleton.percentFat,
+                     singleton.percentCHO
+                     ]
     ;
     
         [singleton.cardReactionTimeResult addObject: myNumbStr];

@@ -38,8 +38,8 @@ static mySingleton * sharedSingleton = nil;
             feo2,
             labO2,
             labCO2,
-
             veatps,
+            vebtps,
             vestpd,
             corrFactor,
             vo2,

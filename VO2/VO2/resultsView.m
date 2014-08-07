@@ -244,9 +244,9 @@
     //lab o2 N2 calcs
     //N2 (if adjust formula, cahnge same in calcViewController
     
-    float N2;
+    double N2;
 
-    float O2;
+    double O2;
     
     N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
 
@@ -262,11 +262,11 @@
     //old
     //corrFactor = (273/(273+labTempC))*((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
     corrFactor   = 1.001*VEBTPS;
-    singleton.corrFactor = [NSString stringWithFormat:@"%f",corrFactor];
+    singleton.corrFactor = [NSString stringWithFormat:@"%.2f",corrFactor];
     
     VESTPD = 1.001*VEBTPS * (((0.880645161290323) * labPressure_mmHg - 47.08) / 760);
     
-    singleton.vestpd = [NSString stringWithFormat:@"%f", VESTPD];
+    singleton.vestpd = [NSString stringWithFormat:@"%.2f", VESTPD];
     
     //vo2
     //old
@@ -274,7 +274,7 @@
     //new
     VO2 = (VESTPD * (labO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100))))) - (VESTPD * (FEO2 / 100));
     
-    singleton.vo2    = [NSString stringWithFormat:@"%f", VO2];
+    singleton.vo2    = [NSString stringWithFormat:@"%.2f", VO2];
     
     //vco2
     //old
@@ -282,16 +282,16 @@
     //new
     VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100)))));
     
-    singleton.vco2   = [NSString stringWithFormat:@"%f", VCO2];
+    singleton.vco2   = [NSString stringWithFormat:@"%.2f", VCO2];
     
     //vo2kg
     VO2Kg  = ( VO2 * 1000.00 ) / subWt ;
 
-    singleton.vo2kg  = [NSString stringWithFormat:@"%f", VO2Kg];
+    singleton.vo2kg  = [NSString stringWithFormat:@"%.2f", VO2Kg];
     
     //rer
     RER    = ( VCO2 / VO2 );
-    singleton.rer    = [NSString stringWithFormat:@"%f", RER];
+    singleton.rer    = [NSString stringWithFormat:@"%f.2", RER];
     
     //************** energy
     //**
@@ -314,17 +314,17 @@
     BMI                 = 1.001*subWt / (subHt * subHt);
     //save the energy results to mySingleton
 
-    singleton.BMI               = [NSString stringWithFormat:@"%f", BMI];
-    singleton.energyExpenKJ     = [NSString stringWithFormat:@"%f", energyExpenKJ];
-    singleton.energyExpenKCal   = [NSString stringWithFormat:@"%f", energyExpenKCal];
-    singleton.CHOUsage_g_min    = [NSString stringWithFormat:@"%f", CHOUsage_g_min];
-    singleton.CHOUsage_kj_min   = [NSString stringWithFormat:@"%f", CHOUsage_kj_min];
-    singleton.CHOUsage_kCal_min = [NSString stringWithFormat:@"%f", CHOUsage_kCal_min];
-    singleton.fatUsage_g_min    = [NSString stringWithFormat:@"%f", fatUsage_g_min];
-    singleton.fatUsage_kj_min   = [NSString stringWithFormat:@"%f", fatUsage_kj_min];
-    singleton.fatUsage_kCal_min = [NSString stringWithFormat:@"%f", fatUsage_kCal_min];
-    singleton.percentFat        = [NSString stringWithFormat:@"%f", percentFat];
-    singleton.percentCHO        = [NSString stringWithFormat:@"%f", percentCHO];
+    singleton.BMI               = [NSString stringWithFormat:@"%.2f", BMI];
+    singleton.energyExpenKJ     = [NSString stringWithFormat:@"%.2f", energyExpenKJ];
+    singleton.energyExpenKCal   = [NSString stringWithFormat:@"%.2f", energyExpenKCal];
+    singleton.CHOUsage_g_min    = [NSString stringWithFormat:@"%.2f", CHOUsage_g_min];
+    singleton.CHOUsage_kj_min   = [NSString stringWithFormat:@"%.2f", CHOUsage_kj_min];
+    singleton.CHOUsage_kCal_min = [NSString stringWithFormat:@"%.2f", CHOUsage_kCal_min];
+    singleton.fatUsage_g_min    = [NSString stringWithFormat:@"%.2f", fatUsage_g_min];
+    singleton.fatUsage_kj_min   = [NSString stringWithFormat:@"%.2f", fatUsage_kj_min];
+    singleton.fatUsage_kCal_min = [NSString stringWithFormat:@"%.2f", fatUsage_kCal_min];
+    singleton.percentFat        = [NSString stringWithFormat:@"%.2f", percentFat];
+    singleton.percentCHO        = [NSString stringWithFormat:@"%.2f", percentCHO];
     //************** energy
     
     //VEATPSlbl.text      =   singleton.veatps;
@@ -356,7 +356,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@" ,
                      counter,
                      singleton.testerName,
                      subjectlbl.text,

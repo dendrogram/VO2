@@ -43,9 +43,9 @@
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
     
-    float N2  = 0;
-    float HyN2= 0;
-    float O2  = 0;
+    double N2  = 0;
+    double HyN2= 0;
+    double O2  = 0;
     
     N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
     HyN2 = N2 + (20.93 - [singleton.labO2 floatValue]);

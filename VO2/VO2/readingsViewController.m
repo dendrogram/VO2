@@ -100,14 +100,14 @@
     //singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@", labPressureTxt.text];
 
     if (pressureChange.on){
-        float pressure;
+        double pressure;
         pressure = [labPressureTxt.text floatValue];
 
         labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure ];
 
         singleton.labPressure_mmHg = labPressureTxt.text;
     } else {
-        float pressure;
+        double pressure;
         pressure = [labPressureTxt.text floatValue];
 
         labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure * 0.75218];
@@ -122,7 +122,7 @@
 - (void)pressureChanged:(UISwitch *)switchState
 {
     // needs work to ensure both readings are put in correctly
-    float pressure;
+    double pressure;
 
     mySingleton *singleton = [mySingleton sharedSingleton];
     

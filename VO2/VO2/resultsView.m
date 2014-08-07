@@ -185,8 +185,13 @@
 }
 
 -(void)refreshSettings{
-    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
-    mySingleton *singleton          = [mySingleton sharedSingleton];
+    //read settings file on device
+    NSUserDefaults * defaults        = [NSUserDefaults standardUserDefaults];
+    
+    //set up globals
+    mySingleton * singleton          = [mySingleton sharedSingleton];
+    
+    //settingfs and put in globals
     singleton.email                 = [defaults objectForKey:kEmail];
     singleton.testerName            = [defaults objectForKey:kTester];
 }
@@ -248,7 +253,7 @@
 
     double O2;
     
-    N2   = 100 - (singleton.feo2 + singleton.feco2) ;
+    N2   = 100 - (labCO2 + labO2) ;
 
     O2   = labO2;
 
@@ -257,35 +262,36 @@
     //VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
     //new
 
-    VEBTPS = ((VEATPS/sampTime) * 60) * (310 / (273 + labTempC)) * ((labPressure_mmHg - (exp(20.8455 - (5270 / (273 + labTempC))))) / (labPressure_mmHg - 47.08));
+    VEBTPS = ((VEATPS/sampTime) * 60.0000) * (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (exp(20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
+    
     //corrFactor
     //old
-    //corrFactor = (273/(273+labTempC))*((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
-    corrFactor   = 1.001*VEBTPS;
+    //corrFactor = (273/(273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
+    corrFactor   = VEBTPS;
     singleton.corrFactor = corrFactor;
     
-    VESTPD = 1.001*VEBTPS * (((0.880645161290323) * labPressure_mmHg - 47.08) / 760);
+    VESTPD = VEBTPS * (0.880645161290323) * ((labPressure_mmHg - 47.0800) / 760.0000);
     
     singleton.vestpd = VESTPD;
     
     //vo2
     //old
-    //VO2    = VESTPD * ((N2 * 0.265) -  FEO2) /100;
+    //VO2    = VESTPD * ((N2 * 0.265) -  (FEO2 + FECO2)) / 100;
     //new
-    VO2 = (VESTPD * (labO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100))))) - (VESTPD * (FEO2 / 100));
+    VO2 = (VESTPD * (labO2 / 100.00) * ((1 - ((FEO2 / 100.00) + (FECO2 / 100.00))) / (1 - ((labO2 / 100.00) + (labCO2 / 100.00))))) - (VESTPD * (FEO2 / 100.00));
     
     singleton.vo2    = VO2;
     
     //vco2
     //old
-    //VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
+    //VCO2   = VESTPD * ( FECO2 - labCO2 )/100;
     //new
-    VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100)))));
-    
+    VCO2 = (VESTPD * (FECO2 / 100.00)) - (VESTPD * (labCO2 / 100.00) * ((1 - ((FEO2 / 100.00) + (FECO2 / 100.00))) / (1 - ((labO2 / 100.00) + (labCO2 / 100.00)))));
+  
     singleton.vco2   = VCO2;
     
     //vo2kg
-    VO2Kg  = ( VO2 * 1000.00 ) / subWt ;
+    VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
 
     singleton.vo2kg  = VO2Kg;
     
@@ -297,21 +303,21 @@
     //**
     //** Calc other energy values and results here for mySingleton --> Energy page
     //**
-    energyExpenKJ       = 1.001*(15.88 * VO2) + (4.87 * VCO2);
-    energyExpenKCal     = 1.001*energyExpenKJ * 0.239005736;
+    energyExpenKJ       = (15.8800 * VO2) + (4.8700 * VCO2);
+    energyExpenKCal     = energyExpenKJ * 0.239005736;
 
-    CHOUsage_g_min      = 1.001*(4.12 * VCO2) - (2.91 * VO2);
-    CHOUsage_kj_min     = 1.001*CHOUsage_g_min * 17.22;
-    CHOUsage_kCal_min   = 1.001*CHOUsage_kj_min * 0.239005736;
+    CHOUsage_g_min      = (4.1200 * VCO2) - (2.9100 * VO2);
+    CHOUsage_kj_min     = CHOUsage_g_min * 17.2200;
+    CHOUsage_kCal_min   = CHOUsage_kj_min * 0.239005736;
 
-    fatUsage_g_min      = 1.001*(1.689 * VO2) - (1.689 * VCO2);
-    fatUsage_kj_min     = 1.001*fatUsage_g_min * 39.06;
-    fatUsage_kCal_min   = 1.001*fatUsage_kj_min * 0.239005736;
+    fatUsage_g_min      = (1.6890 * VO2) - (1.6890 * VCO2);
+    fatUsage_kj_min     = fatUsage_g_min * 39.0600;
+    fatUsage_kCal_min   = fatUsage_kj_min * 0.239005736;
 
-    percentFat          = 1.001*fatUsage_kj_min / (energyExpenKJ / 100);
-    percentCHO          = 1.001*CHOUsage_kj_min / (energyExpenKJ / 100);
+    percentFat          = fatUsage_kj_min / (energyExpenKJ / 100.0000);
+    percentCHO          = CHOUsage_kj_min / (energyExpenKJ / 100.0000);
 
-    BMI                 = 1.001*subWt / (subHt * subHt);
+    BMI                 = subWt / (subHt * subHt);
     //save the energy results to mySingleton
 
     singleton.BMI               = BMI;
@@ -328,12 +334,12 @@
     //************** energy
     
     //VEATPSlbl.text      =   singleton.veatps;
-    VESTPDlbl.text      =   [NSString stringWithFormat:@"%.2f", singleton.vestpd];
-    corrFaclbl.text     =   [NSString stringWithFormat:@"%.2f", singleton.corrFactor];
-    VO2lbl.text         =   [NSString stringWithFormat:@"%.2f", singleton.vo2];
-    VCO2lbl.text        =   [NSString stringWithFormat:@"%.2f", singleton.vco2];
-    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.2f", singleton.vo2kg];
-    RERlbl.text         =   [NSString stringWithFormat:@"%.2f", singleton.rer];
+    VESTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vestpd];
+    corrFaclbl.text     =   [NSString stringWithFormat:@"%f", singleton.corrFactor];
+    VO2lbl.text         =   [NSString stringWithFormat:@"%f", singleton.vo2];
+    VCO2lbl.text        =   [NSString stringWithFormat:@"%f", singleton.vco2];
+    VO2Kglbl.text       =   [NSString stringWithFormat:@"%f", singleton.vo2kg];
+    RERlbl.text         =   [NSString stringWithFormat:@"%f", singleton.rer];
     emaillbl.text       =   singleton.email;
         
     //Format for file and email outputs
@@ -345,7 +351,7 @@
     //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
     singleton.counter = singleton.counter+1;
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" "];
+    [singleton.cardReactionTimeResult addObject:@"."];
     singleton.counter = singleton.counter+1;
     //title line - results one row per data entry
     [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
@@ -401,23 +407,24 @@
     // +++++++++++++++++++++++++++
     
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
+    [singleton.cardReactionTimeResult addObject:@"." ];
     singleton.counter = singleton.counter+1;
     
     //end of data message
     [singleton.cardReactionTimeResult addObject:@"End of test data. " ];
     singleton.counter = singleton.counter+1;
     //blank line
-    [singleton.cardReactionTimeResult addObject:@" " ];
+    [singleton.cardReactionTimeResult addObject:@"." ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
     [singleton.cardReactionTimeResult addObject:@"MMU (c) 2014 VO2 App Jonathan A. Howell SAS Technical Services. " ];
     singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@"."];
+    singleton.counter = singleton.counter+1;
     [singleton.cardReactionTimeResult addObject:@".."];
+    singleton.counter = singleton.counter+1;
     [singleton.cardReactionTimeResult addObject:@"..."];
-
     singleton.counter = singleton.counter+1;
 
     //examples for future
@@ -439,11 +446,13 @@
     //add back if multi output
 
     [printString appendString:@"\n"];
-    for(int i=0; i< (singleton.counter); i++)
-    {
+    int i=0;
+    //for(i=0; i< (singleton.counter); i++)
+        i=0;// temporary force value zero
+    //{
         element = [singleton.cardReactionTimeResult objectAtIndex: i];
         [printString appendString:[NSString stringWithFormat:@"\n%@", element]];
-    }
+    //}
     [printString appendString:@"\n"];
     
     
@@ -537,7 +546,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     filepath = [self.GetDocumentDirectory stringByAppendingPathComponent:self.setFilename];
 
 // Get the resource path and read the file using NSData
-
+    
     NSData *fileData = [NSData dataWithContentsOfFile:filepath];
 
     // Determine the MIME type
@@ -562,7 +571,7 @@ mySingleton *singleton = [mySingleton sharedSingleton];
     // Add attachment
     [mc addAttachmentData:fileData mimeType:mimeType fileName:filename];
 
-    // Present mail view controller on screen
+    // P              resent mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
 }
 

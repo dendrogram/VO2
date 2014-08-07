@@ -140,7 +140,7 @@ static mySingleton * sharedSingleton = nil;
         oldSubjectName     = @"A1";
         resultStrings      = @"";
         versionNumber      = @"";
-        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: @"no data yet", nil]; //empty array
+        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: @"no data", nil]; //empty array
         counter            = 0;
     }
     return self;

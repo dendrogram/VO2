@@ -136,11 +136,11 @@ static mySingleton * sharedSingleton = nil;
         testDate           = @"";
         testTime           = @"";
         resultStrings      = @"";
-        subjectName        = @"A";
-        oldSubjectName     = @"A";
+        subjectName        = @"A1";
+        oldSubjectName     = @"A1";
         resultStrings      = @"";
         versionNumber      = @"";
-        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: nil]; //empty array
+        cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects: @"no data yet", nil]; //empty array
         counter            = 0;
     }
     return self;

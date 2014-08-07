@@ -11,7 +11,7 @@
 
 @interface subjectViewController ()
 {
-    
+// nothing here
 }
 @end
 
@@ -53,8 +53,8 @@
     
     subjectNameTxt.text     =   singleton.oldSubjectName ;
     testerNamelbl.text      =   singleton.testerName  ;
-    subWtTxt.text           =   singleton.subWt       ;
-    subHtTxt.text           =   singleton.subHt       ;
+    subWtTxt.text           =   [NSString stringWithFormat:@"%.2f", singleton.subWt]       ;
+    subHtTxt.text           =   [NSString stringWithFormat:@"%.2f", singleton.subHt]       ;
     testDateTxt.text        =   singleton.testDate    ;
     startDateTxt.text       =   singleton.testTime    ;
     
@@ -75,8 +75,8 @@
     mySingleton *singleton   = [mySingleton sharedSingleton];
     singleton.oldSubjectName = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
     singleton.subjectName    = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
-    singleton.subWt          = [NSString stringWithFormat:@"%@",  subWtTxt.text];
-    singleton.subHt          = [NSString stringWithFormat:@"%@",  subHtTxt.text];
+    singleton.subWt          = [subWtTxt.text doubleValue];
+    singleton.subHt          = [subHtTxt.text doubleValue];
 
     
     if([testDateTxt.text isEqualToString: @""]){
@@ -175,31 +175,31 @@
     if(textField==self->testDateTxt){
         testDateTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
+        int oft=textField.frame.origin.y-200;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->startDateTxt){
         startDateTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
+        int oft=textField.frame.origin.y-200;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->subjectNameTxt){
         subjectNameTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
+        int oft=textField.frame.origin.y-200;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->subWtTxt){
         subWtTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
+        int oft=textField.frame.origin.y-200;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->subHtTxt){
         subHtTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
+        int oft=textField.frame.origin.y-200;
         [self keyBoardAppeared:oft];
     }
 }

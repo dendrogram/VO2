@@ -75,28 +75,28 @@
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
     
-    FEO2Txt.text                =   singleton.feo2              ;
-    FECO2Txt.text               =   singleton.feco2             ;
-    labO2Txt.text               =   singleton.labO2             ;
-    VEATPSTxt.text              =   singleton.veatps            ;
+    FEO2Txt.text                =   [NSString stringWithFormat:@"%.2f",singleton.feo2]             ;
+    FECO2Txt.text               =   [NSString stringWithFormat:@"%.2f",singleton.feco2]             ;
+    labO2Txt.text               =   [NSString stringWithFormat:@"%.2f",singleton.labO2]             ;
+    VEATPSTxt.text              =   [NSString stringWithFormat:@"%.2f",singleton.veatps]            ;
     labLocationTxt.text         =   singleton.labLocation       ;
-    labTempTxt.text             =   singleton.labTemp           ;
-    labHumidityTxt.text         =   singleton.labHumidity       ;
-    labPressureTxt.text         =   singleton.labPressure_mmHg  ;
-    sampTimeTxt.text            =   singleton.sampTime          ;
+    labTempTxt.text             =   [NSString stringWithFormat:@"%.2f",singleton.labTemp]           ;
+    labHumidityTxt.text         =   [NSString stringWithFormat:@"%.2f",singleton.labHumidity]       ;
+    labPressureTxt.text         =   [NSString stringWithFormat:@"%.2f",singleton.labPressure_mmHg]  ;
+    sampTimeTxt.text            =   [NSString stringWithFormat:@"%.2f",singleton.sampTime]          ;
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
     // set up link to singleton
-    mySingleton *singleton      = [mySingleton sharedSingleton];
+    mySingleton *singleton      =  [mySingleton sharedSingleton];
 
-    singleton.feo2              = [NSString stringWithFormat:@"%@", FEO2Txt.text];
-    singleton.feco2             = [NSString stringWithFormat:@"%@", FECO2Txt.text];
-    singleton.labO2             = [NSString stringWithFormat:@"%@", labO2Txt.text];
-    singleton.veatps            = [NSString stringWithFormat:@"%@", VEATPSTxt.text];
-    singleton.labLocation       = [NSString stringWithFormat:@"%@", labLocationTxt.text];
-    singleton.labTemp           = [NSString stringWithFormat:@"%@", labTempTxt.text];
-    singleton.labHumidity       = [NSString stringWithFormat:@"%@", labHumidityTxt.text];
+    singleton.feo2              =  [FEO2Txt.text doubleValue];
+    singleton.feco2             =  [FECO2Txt.text doubleValue];
+    singleton.labO2             =  [labO2Txt.text doubleValue];
+    singleton.veatps            =  [VEATPSTxt.text doubleValue];
+    singleton.labLocation       =  labLocationTxt.text;
+    singleton.labTemp           =  [labTempTxt.text doubleValue];
+    singleton.labHumidity       =  [labHumidityTxt.text doubleValue];
     //singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@", labPressureTxt.text];
 
     if (pressureChange.on){
@@ -105,17 +105,17 @@
 
         labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure ];
 
-        singleton.labPressure_mmHg = labPressureTxt.text;
+        singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
     } else {
         double pressure;
         pressure = [labPressureTxt.text floatValue];
 
         labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure * 0.75218];
 
-        singleton.labPressure_mmHg = labPressureTxt.text;
+        singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
     }
 
-    singleton.sampTime          = [NSString stringWithFormat:@"%@", sampTimeTxt.text];
+    singleton.sampTime          = [sampTimeTxt.text doubleValue];
 }
 
 //Pressure switch changed, so recalculate and update textfield
@@ -134,7 +134,7 @@
 
         labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure * 0.75218];
 
-        singleton.labPressure_mmHg = labPressureTxt.text;
+        singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
 
         //old code
         //labPressure_mmHg = 0.75218 * [labPressureTxt.text floatValue];
@@ -152,7 +152,7 @@
 
         labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure / 0.75218];
 
-        singleton.labPressure_mmHg =labPressureTxt.text;
+        singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
 
         //old code
         //labPressure_mBar = [labPressureTxt.text floatValue] / 0.75218;
@@ -171,19 +171,19 @@
     
     if ([switchState isOn]) {
         degc.text=@"'C";
-        labTempC = 5 * ([labTempTxt.text floatValue] - 32) / 9;
-        labTempF = (9 * labTempC / 5 ) + 32;
-        labTempTxt.text = [NSString stringWithFormat:@"%.4f",labTempC];
+        labTempC            = 5 * ([labTempTxt.text floatValue] - 32) / 9;
+        labTempF            = (9 * labTempC / 5 ) + 32;
+        labTempTxt.text     = [NSString stringWithFormat:@"%.4f",labTempC];
         
-        singleton.labTemp=[NSString stringWithFormat:@"%.4f",labTempC];
+        singleton.labTemp   = labTempC;
         
     } else {
         degc.text=@"'F";
-        labTempF = (9 * [labTempTxt.text floatValue] / 5 ) + 32;
-        labTempC = 5 * (labTempF - 32) / 9;
-        labTempTxt.text = [NSString stringWithFormat:@"%.4f",labTempF];
+        labTempF            = (9 * [labTempTxt.text floatValue] / 5 ) + 32;
+        labTempC            = 5 * (labTempF - 32) / 9;
+        labTempTxt.text     = [NSString stringWithFormat:@"%.4f",labTempF];
         
-        singleton.labTemp=[NSString stringWithFormat:@"%.4f",labTempC];
+        singleton.labTemp   = labTempC;
     }
 }
 
@@ -207,7 +207,7 @@
      if(textField==self->labLocationTxt){
         labLocationTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-250;
+        int oft=textField.frame.origin.y-190;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->labPressureTxt){

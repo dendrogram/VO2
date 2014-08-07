@@ -222,20 +222,20 @@
     //  samptimelbl.text    =   singleton.sampTime;
     //  FEO2lbl.text        =   singleton.feo2;
     //  FECO2lbl.text       =   singleton.feco2;
-    corrFaclbl.text     =   singleton.corrFactor;
+    corrFaclbl.text     =   [NSString stringWithFormat:@"%.2f", singleton.corrFactor];
     //  labO2lbl.text       =   singleton.labO2;
     //  VEATPSlbl.text      =   singleton.veatps;
     
-    labTempC         = [singleton.labTemp     floatValue];
-    FECO2            = [singleton.feco2       floatValue];
-    FEO2             = [singleton.feo2        floatValue];
-    labPressure_mmHg = [singleton.labPressure_mmHg floatValue];
-    VEATPS           = [singleton.veatps      floatValue];
-    subWt            = [singleton.subWt       floatValue];
-    subHt            = [singleton.subHt       floatValue];
-    sampTime         = [singleton.sampTime    floatValue];
-    labO2            = [singleton.labO2       floatValue];
-    labHumidity      = [singleton.labHumidity floatValue];
+    labTempC         = singleton.labTemp;
+    FECO2            = singleton.feco2;
+    FEO2             = singleton.feo2;
+    labPressure_mmHg = singleton.labPressure_mmHg;
+    VEATPS           = singleton.veatps;
+    subWt            = singleton.subWt;
+    subHt            = singleton.subHt;
+    sampTime         = singleton.sampTime;
+    labO2            = singleton.labO2;
+    labHumidity      = singleton.labHumidity;
 
     //totalDelay=0;
 
@@ -248,7 +248,7 @@
 
     double O2;
     
-    N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
+    N2   = 100 - (singleton.feo2 + singleton.feco2) ;
 
     O2   = labO2;
 
@@ -262,11 +262,11 @@
     //old
     //corrFactor = (273/(273+labTempC))*((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
     corrFactor   = 1.001*VEBTPS;
-    singleton.corrFactor = [NSString stringWithFormat:@"%.2f",corrFactor];
+    singleton.corrFactor = corrFactor;
     
     VESTPD = 1.001*VEBTPS * (((0.880645161290323) * labPressure_mmHg - 47.08) / 760);
     
-    singleton.vestpd = [NSString stringWithFormat:@"%.2f", VESTPD];
+    singleton.vestpd = VESTPD;
     
     //vo2
     //old
@@ -274,7 +274,7 @@
     //new
     VO2 = (VESTPD * (labO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100))))) - (VESTPD * (FEO2 / 100));
     
-    singleton.vo2    = [NSString stringWithFormat:@"%.2f", VO2];
+    singleton.vo2    = VO2;
     
     //vco2
     //old
@@ -282,16 +282,16 @@
     //new
     VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((1 - ((FEO2 / 100) + (FECO2 / 100))) / (1 - ((labO2 / 100) + (labCO2 / 100)))));
     
-    singleton.vco2   = [NSString stringWithFormat:@"%.2f", VCO2];
+    singleton.vco2   = VCO2;
     
     //vo2kg
     VO2Kg  = ( VO2 * 1000.00 ) / subWt ;
 
-    singleton.vo2kg  = [NSString stringWithFormat:@"%.2f", VO2Kg];
+    singleton.vo2kg  = VO2Kg;
     
     //rer
     RER    = ( VCO2 / VO2 );
-    singleton.rer    = [NSString stringWithFormat:@"%f.2", RER];
+    singleton.rer    = RER;
     
     //************** energy
     //**
@@ -314,26 +314,26 @@
     BMI                 = 1.001*subWt / (subHt * subHt);
     //save the energy results to mySingleton
 
-    singleton.BMI               = [NSString stringWithFormat:@"%.2f", BMI];
-    singleton.energyExpenKJ     = [NSString stringWithFormat:@"%.2f", energyExpenKJ];
-    singleton.energyExpenKCal   = [NSString stringWithFormat:@"%.2f", energyExpenKCal];
-    singleton.CHOUsage_g_min    = [NSString stringWithFormat:@"%.2f", CHOUsage_g_min];
-    singleton.CHOUsage_kj_min   = [NSString stringWithFormat:@"%.2f", CHOUsage_kj_min];
-    singleton.CHOUsage_kCal_min = [NSString stringWithFormat:@"%.2f", CHOUsage_kCal_min];
-    singleton.fatUsage_g_min    = [NSString stringWithFormat:@"%.2f", fatUsage_g_min];
-    singleton.fatUsage_kj_min   = [NSString stringWithFormat:@"%.2f", fatUsage_kj_min];
-    singleton.fatUsage_kCal_min = [NSString stringWithFormat:@"%.2f", fatUsage_kCal_min];
-    singleton.percentFat        = [NSString stringWithFormat:@"%.2f", percentFat];
-    singleton.percentCHO        = [NSString stringWithFormat:@"%.2f", percentCHO];
+    singleton.BMI               = BMI;
+    singleton.energyExpenKJ     = energyExpenKJ;
+    singleton.energyExpenKCal   = energyExpenKCal;
+    singleton.CHOUsage_g_min    = CHOUsage_g_min;
+    singleton.CHOUsage_kj_min   = CHOUsage_kj_min;
+    singleton.CHOUsage_kCal_min = CHOUsage_kCal_min;
+    singleton.fatUsage_g_min    = fatUsage_g_min;
+    singleton.fatUsage_kj_min   = fatUsage_kj_min;
+    singleton.fatUsage_kCal_min = fatUsage_kCal_min;
+    singleton.percentFat        = percentFat;
+    singleton.percentCHO        = percentCHO;
     //************** energy
     
     //VEATPSlbl.text      =   singleton.veatps;
-    VESTPDlbl.text      =   singleton.vestpd;
-    corrFaclbl.text     =   singleton.corrFactor;
-    VO2lbl.text         =   singleton.vo2;
-    VCO2lbl.text        =   singleton.vco2;
-    VO2Kglbl.text       =   singleton.vo2kg;
-    RERlbl.text         =   singleton.rer;
+    VESTPDlbl.text      =   [NSString stringWithFormat:@"%.2f", singleton.vestpd];
+    corrFaclbl.text     =   [NSString stringWithFormat:@"%.2f", singleton.corrFactor];
+    VO2lbl.text         =   [NSString stringWithFormat:@"%.2f", singleton.vo2];
+    VCO2lbl.text        =   [NSString stringWithFormat:@"%.2f", singleton.vco2];
+    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.2f", singleton.vo2kg];
+    RERlbl.text         =   [NSString stringWithFormat:@"%.2f", singleton.rer];
     emaillbl.text       =   singleton.email;
         
     //Format for file and email outputs
@@ -356,7 +356,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@,%@" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f" ,
                      counter,
                      singleton.testerName,
                      subjectlbl.text,

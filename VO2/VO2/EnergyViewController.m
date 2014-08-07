@@ -45,49 +45,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    mySingleton *singleton = [mySingleton sharedSingleton];
-    
-    // Do any additional setup after loading the view.
-    date.text       = singleton.testDate;
-    time.text       = singleton.testTime;
-    subject.text    = singleton.oldSubjectName;
-    height.text     = singleton.subHt;
-    mass.text       = singleton.subWt;
-    bmi.text        = singleton.BMI;
-    expkj.text      = singleton.energyExpenKJ;
-    expcal.text     = singleton.energyExpenKCal;
-    chog.text       = singleton.CHOUsage_g_min;
-    chokj.text      = singleton.CHOUsage_kj_min;
-    chocal.text     = singleton.CHOUsage_kCal_min;
-    fatg.text       = singleton.fatUsage_g_min;
-    fatkj.text      = singleton.fatUsage_kj_min;
-    fatcal.text     = singleton.fatUsage_kCal_min;
-    perfat.text     = singleton.percentFat;
-    percho.text     = singleton.percentCHO;
+    [self refreshFields];
 }
 
-
 -(void)viewDidAppear:(BOOL)animated{
-    // populate the cells from the mySingleton
-    // set up link to singleton
-    mySingleton *singleton = [mySingleton sharedSingleton];
-
-    date.text       = singleton.testDate;
-    time.text       = singleton.testTime;
-    subject.text    = singleton.oldSubjectName;
-    height.text     = singleton.subHt;
-    mass.text       = singleton.subWt;
-    bmi.text        = singleton.BMI;
-    expkj.text      = singleton.energyExpenKJ;
-    expcal.text     = singleton.energyExpenKCal;
-    chog.text       = singleton.CHOUsage_g_min;
-    chokj.text      = singleton.CHOUsage_kj_min;
-    chocal.text     = singleton.CHOUsage_kCal_min;
-    fatg.text       = singleton.fatUsage_g_min;
-    fatkj.text      = singleton.fatUsage_kj_min;
-    fatcal.text     = singleton.fatUsage_kCal_min;
-    perfat.text     = singleton.percentFat;
-    percho.text     = singleton.percentCHO;
+    [self refreshFields];
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,4 +58,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)refreshFields{
+    // populate the cells from the mySingleton
+    // set up link to singleton
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
+    date.text       = singleton.testDate;
+    time.text       = singleton.testTime;
+    subject.text    = singleton.oldSubjectName;
+    height.text     = [NSString stringWithFormat:@"%.2f", singleton.subHt];
+    mass.text       = [NSString stringWithFormat:@"%.2f", singleton.subWt];
+    bmi.text        = [NSString stringWithFormat:@"%.2f", singleton.BMI];
+    expkj.text      = [NSString stringWithFormat:@"%.2f", singleton.energyExpenKJ];
+    expcal.text     = [NSString stringWithFormat:@"%.2f", singleton.energyExpenKCal];
+    chog.text       = [NSString stringWithFormat:@"%.2f", singleton.CHOUsage_g_min];
+    chokj.text      = [NSString stringWithFormat:@"%.2f", singleton.CHOUsage_kj_min];
+    chocal.text     = [NSString stringWithFormat:@"%.2f", singleton.CHOUsage_kCal_min];
+    fatg.text       = [NSString stringWithFormat:@"%.2f", singleton.fatUsage_g_min];
+    fatkj.text      = [NSString stringWithFormat:@"%.2f", singleton.fatUsage_kj_min];
+    fatcal.text     = [NSString stringWithFormat:@"%.2f", singleton.fatUsage_kCal_min];
+    perfat.text     = [NSString stringWithFormat:@"%.2f", singleton.percentFat];
+    percho.text     = [NSString stringWithFormat:@"%.2f", singleton.percentCHO];
+}
 @end

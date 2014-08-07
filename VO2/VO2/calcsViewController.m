@@ -47,13 +47,13 @@
     double HyN2= 0;
     double O2  = 0;
     
-    N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
-    HyN2 = N2 + (20.93 - [singleton.labO2 floatValue]);
+    N2   = 100 - (singleton.feo2 + singleton.feco2) ;
+    HyN2 = N2 + (20.93 - singleton.labO2);
     O2   = 100 - HyN2;
 
-    line1.text=[NSString stringWithFormat:@"N2E = 100 - %@ - %@ %%",singleton.feo2,singleton.feco2];
+    line1.text=[NSString stringWithFormat:@"N2E = 100 - %.2f - %.2f %%",singleton.feo2, singleton.feco2];
     line2.text=[NSString stringWithFormat:@"Therfore:- N2E = %.2f %%", N2];
-    line3.text=[NSString stringWithFormat:@"For Lab O2i = %@ %%", singleton.labO2];
+    line3.text=[NSString stringWithFormat:@"For Lab O2i = %.2f %%", singleton.labO2];
     line4.text=[NSString stringWithFormat:@"N2E = %.2f : O2 = %.2f", HyN2,O2];
 }
 

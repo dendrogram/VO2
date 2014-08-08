@@ -236,8 +236,6 @@
     labCO2           = singleton.labCO2;
     labHumidity      = singleton.labHumidity;
 
-    //totalDelay=0;
-
 //do the calcs from here:
     
     //lab o2 N2 calcs
@@ -362,7 +360,7 @@
     //
 
 
-    //VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
+    VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
     //VO2 = (VESTPD * (f2) * ((100 - ((f1) + (f4))) / (100 - ((f5 + (f2)))))) - (VESTPD * (f1));
 
     //
@@ -394,10 +392,10 @@
     //g0=vestpd*f1
         NSDecimalNumber *g0         = [vestpd decimalNumberByMultiplyingBy:f1];
     //vo2=g7-g0
-        NSDecimalNumber *vo2        = [g7 decimalNumberBySubtracting:g0];
+    //NSDecimalNumber *vo2        = [g7 decimalNumberBySubtracting:g0];
 
-    NSString *vo2x          = [NSString stringWithFormat:@"%@",vo2];
-    VO2                     = [vo2x doubleValue];
+    //NSString *vo2x          = [NSString stringWithFormat:@"%@",vo2];
+    //VO2                     = [vo2x doubleValue];
     singleton.vo2           = VO2;
 
     //
@@ -405,8 +403,8 @@
 
     VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labO2 / 100) + (labCO2 / 100)))));
 
-    //NSString *vco2x         = [NSString stringWithFormat:@"%@",vco2];
-    //VCO2                    = [vco2x doubleValue];
+    NSString *vco2x         = [NSString stringWithFormat:@"%@",vco2];
+    VCO2                    = [vco2x doubleValue];
     singleton.vco2          = VCO2;
 
     //
@@ -423,7 +421,7 @@
     //
     NSDecimalNumber *rer    = [vo2 decimalNumberByDividingBy:vo2];
 
-    RER    = ( VCO2 / VO2 );
+    //RER    = ( VCO2 / VO2 );
     NSString *rer1          = [NSString stringWithFormat:@"%@",rer];
     RER                     = [rer1 doubleValue];
     singleton.rer           = RER;

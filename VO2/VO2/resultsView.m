@@ -24,7 +24,8 @@
         RERlbl,
         VESTPDlbl,
         VEBTPSlbl,
-//        VEATPSlbl,
+        VISTPDlbl,
+        VEATPSlbl,
         VO2lbl,
         VCO2lbl,
         datelbl,
@@ -39,7 +40,6 @@
         VO2Kglbl,
 //        subHtlbl,
 //        subWtlbl,
-        VISTPDlbl,
 //        FEO2lbl,
 //        FECO2lbl,
 //        labO2lbl,
@@ -221,19 +221,7 @@
     //    testerlbl.text      =   singleton.testerName;
     datelbl.text        =   singleton.testDate;
     timelbl.text        =   singleton.testTime;
-    //  lablbl.text         =   singleton.labLocation;
-    //  subWtlbl.text       =   singleton.subWt;
-    //  subHtlbl.text       =   singleton.subHt;
-    //  templbl.text        =   singleton.labTemp;
-    //  pressurelbl.text    =   singleton.labPressure_mmHg;
-    //  humiditylbl.text    =   singleton.labHumidity;
-    //  samptimelbl.text    =   singleton.sampTime;
-    //  FEO2lbl.text        =   singleton.feo2;
-    //  FECO2lbl.text       =   singleton.feco2;
 
-    //  labO2lbl.text       =   singleton.labO2;
-    //  VEATPSlbl.text      =   singleton.veatps;
-    
     labTempC         = singleton.labTemp;
     FECO2            = singleton.feco2;
     FEO2             = singleton.feo2;
@@ -263,14 +251,13 @@
 
     O2   = labO2;
 
-
-    //decimal number arithmetic
+    //decimal number arithmetic - examples
     /*
-    NSDecimalNumber *price1 = [NSDecimalNumber decimalNumberWithString:@"1.11111111111111111111"];
-    NSDecimalNumber *price2 = [NSDecimalNumber decimalNumberWithString:@"1.11111111111111111111"];
-    NSDecimalNumber *coupon = [NSDecimalNumber decimalNumberWithString:@"1.11111111111111111111"];
-    NSDecimalNumber *discount = [NSDecimalNumber decimalNumberWithString:@"1.11111111111111111111"];
-    NSDecimalNumber *numProducts = [NSDecimalNumber decimalNumberWithString:@"1.11111111111111111111"];
+    NSDecimalNumber *price1 = [NSDecimalNumber decimalNumberWithString:@"1.23"];
+    NSDecimalNumber *price2 = [NSDecimalNumber decimalNumberWithString:@"1.45"];
+    NSDecimalNumber *coupon = [NSDecimalNumber decimalNumberWithString:@"6.00"];
+    NSDecimalNumber *discount = [NSDecimalNumber decimalNumberWithString:@"5.00"];
+    NSDecimalNumber *numProducts = [NSDecimalNumber decimalNumberWithString:@"23.00"];
 
     NSDecimalNumber *subtotal = [price1 decimalNumberByAdding:price2];
     NSDecimalNumber *afterCoupon = [subtotal decimalNumberBySubtracting:coupon];
@@ -278,9 +265,6 @@
     NSDecimalNumber *average = [afterDiscount decimalNumberByDividingBy:numProducts];
     NSDecimalNumber *averageSquared = [average decimalNumberByRaisingToPower:2];
 */
-
-
-
 
 //calc VEATPS first using decimal numbers for accuracy
     NSDecimalNumber *v60        = [NSDecimalNumber decimalNumberWithString:@"60.000"];
@@ -324,7 +308,7 @@
     NSDecimalNumber *vebtps1    = [t1 decimalNumberByMultiplyingBy:veatps1];
     NSDecimalNumber *vebtps     = [vebtps1 decimalNumberByMultiplyingBy:p3];
 
-
+    //original calcs
     //double VEATPS1 = 60 * (VEATPS / sampTime);// ok
     //double T1 = 310 / (273 + labTempC);//ok
     //double P1 = labPressure_mmHg - (exp(20.8455 - (5270 / (273 + labTempC))));
@@ -353,7 +337,6 @@
     VESTPD = [ans1 doubleValue];
     singleton.vestpd = VESTPD;
 
-
     //decimals for VIstpd
     NSDecimalNumber *fe02           = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", FEO2]];
     NSDecimalNumber *fec02          = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", FECO2]];
@@ -369,35 +352,87 @@
     //decimal value to string to double
     NSString *ans3     = [NSString stringWithFormat:@"%@",vistpd];
 
-
     // original calc of vistpd
     //double V1        = (100 - (FEO2 + FECO2));
     //double V2        = (100 - (labO2 + labCO2));
     //double VISTPD    = VESTPD * (V1 / V2);
-    VISTPD = [ans3 doubleValue];
-    singleton.VISTPD = VISTPD;
-    
-    //VO2 = 100-((VISTPD * labO2) - (VESTPD * FEO2))/100;
-    VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
-    singleton.vo2    = VO2;
+    VISTPD                  = [ans3 doubleValue];
+    singleton.VISTPD        = VISTPD;
 
-    //VCO2 = 100-((VISTPD * labCO2) - (VESTPD * FECO2))/100;
+    //
+
+
+    //VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
+    //VO2 = (VESTPD * (f2) * ((100 - ((f1) + (f4))) / (100 - ((f5 + (f2)))))) - (VESTPD * (f1));
+
+    //
+
+
+    //f1  = feo2 / 100
+        NSDecimalNumber *f1         = [fe02 decimalNumberByDividingBy:v100];
+    //f2  = labo2 / 100
+        NSDecimalNumber *f2         = [labo2 decimalNumberByDividingBy:v100];
+    //f4  = feco2 / 100
+        NSDecimalNumber *f4         = [fec02 decimalNumberByDividingBy:v100];
+    //f5  = labco2 / 100
+        NSDecimalNumber *f5         = [labco2 decimalNumberByDividingBy:v100];
+
+    //g1=f5+f2
+        NSDecimalNumber *g1         = [f5 decimalNumberByAdding:f2];
+    //g3=100-g1
+        NSDecimalNumber *g3         = [v100 decimalNumberBySubtracting:g1];
+    //g2=f1+f4
+        NSDecimalNumber *g2         = [f1 decimalNumberByAdding:f4];
+    //g4=100-g2
+        NSDecimalNumber *g4         = [v100 decimalNumberBySubtracting:g2];
+    //g5=g3/g4
+        NSDecimalNumber *g5         = [g3 decimalNumberByDividingBy:g4];
+    //g6=vestpd *f2
+        NSDecimalNumber *g6         = [vestpd decimalNumberByMultiplyingBy:f2];
+    //g7=g6*g5
+        NSDecimalNumber *g7         = [g6 decimalNumberByMultiplyingBy:g5];
+    //g0=vestpd*f1
+        NSDecimalNumber *g0         = [vestpd decimalNumberByMultiplyingBy:f1];
+    //vo2=g7-g0
+        NSDecimalNumber *vo2        = [g7 decimalNumberBySubtracting:g0];
+
+    NSString *vo2x          = [NSString stringWithFormat:@"%@",vo2];
+    VO2                     = [vo2x doubleValue];
+    singleton.vo2           = VO2;
+
+    //
+
+
     VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labO2 / 100) + (labCO2 / 100)))));
-    singleton.vco2   = VCO2;
-    
-    //vo2kg
-    VO2Kg  = ( VO2 * 1000 ) / subWt ;
 
-    singleton.vo2kg  = VO2Kg;
-    
-    //rer
+    //NSString *vco2x         = [NSString stringWithFormat:@"%@",vco2];
+    //VCO2                    = [vco2x doubleValue];
+    singleton.vco2          = VCO2;
+
+    //
+    NSDecimalNumber *subwt  = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", subWt]];
+    NSDecimalNumber *v1000  = [NSDecimalNumber decimalNumberWithString:@"1000.0000"];
+    NSDecimalNumber *x1     = [v1000 decimalNumberByMultiplyingBy:vo2];
+    NSDecimalNumber *vo2kg  = [x1 decimalNumberByDividingBy:subwt];
+
+    //VO2Kg                   = ( VO2 * 1000 ) / subWt ;
+    NSString *vo2kg1        = [NSString stringWithFormat:@"%@",vo2kg];
+    VO2Kg                   = [vo2kg1 doubleValue];
+    singleton.vo2kg         = VO2Kg;
+
+    //
+    NSDecimalNumber *rer    = [vo2 decimalNumberByDividingBy:vo2];
+
     RER    = ( VCO2 / VO2 );
-    singleton.rer    = RER;
+    NSString *rer1          = [NSString stringWithFormat:@"%@",rer];
+    RER                     = [rer1 doubleValue];
+    singleton.rer           = RER;
     
     //************** energy
     //**
     //** Calc other energy values and results here for mySingleton --> Energy page
     //**
+
     energyExpenKJ       = (15.88* VO2) + (4.87 * VCO2);
     energyExpenKCal     = energyExpenKJ * 0.239005736;
 
@@ -428,7 +463,7 @@
     singleton.percentCHO        = percentCHO;
     //************** energy
     
-    //VEATPSlbl.text      =   singleton.veatps;
+    VEATPSlbl.text      =   [NSString stringWithFormat:@"%f", singleton.veatps];
     VESTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vestpd];
     VEBTPSlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vebtps];
     VISTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.VISTPD];

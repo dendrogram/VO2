@@ -29,6 +29,7 @@
 
 
     UILabel * VESTPDlbl;
+    UILabel * VEBTPSlbl;
     //UILabel * VEATPSlbl;
     UILabel * RERlbl;
     UILabel * VO2lbl;
@@ -100,6 +101,7 @@
 
 //var label outlets
 @property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
+@property (nonatomic, strong) IBOutlet UILabel * VEBTPSlbl;
 //@property (nonatomic, strong) IBOutlet UILabel * VEATPSlbl;
 @property (nonatomic, strong) IBOutlet UILabel * RERlbl;
 @property (nonatomic, strong) IBOutlet UILabel * VO2lbl;

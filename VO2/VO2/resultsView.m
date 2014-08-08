@@ -21,6 +21,7 @@
 //results Labels
         RERlbl,
         VESTPDlbl,
+        VEBTPSlbl,
 //        VEATPSlbl,
         VO2lbl,
         VCO2lbl,
@@ -257,6 +258,7 @@
 
     O2   = labO2;
 
+
     //vestpd
     //old
     //VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
@@ -266,11 +268,13 @@
     
     //corrFactor
     //old
-    //corrFactor = (273/(273 + labTempC)) * ((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
-    corrFactor   = VEBTPS;
+    //corrFactor = (273/(273 + labTempC)) * ((labPressure_mmHg - ((labTempC) - 4.19)) / 760);
+    corrFactor   = VESTPD;
     singleton.corrFactor = corrFactor;
     
     VESTPD = VEBTPS * (0.880645161290323) * ((labPressure_mmHg - 47.0800) / 760.0000);
+    VEBTPSlbl.text = [NSString stringWithFormat:@"%.2f",VEBTPS];
+    singleton.vebtps = VEBTPS;
     
     singleton.vestpd = VESTPD;
     
@@ -278,16 +282,15 @@
     //old
     //VO2    = VESTPD * ((N2 * 0.265) -  (FEO2 + FECO2)) / 100;
     //new
-    VO2 = (VESTPD * (labO2 / 100.00) * ((1 - ((FEO2 / 100.00) + (FECO2 / 100.00))) / (1 - ((labO2 / 100.00) + (labCO2 / 100.00))))) - (VESTPD * (FEO2 / 100.00));
-    
-    singleton.vo2    = VO2;
+    VO2 = (-1.00 * (VESTPD * (labO2 / 100.00) * ((1 - ((FEO2 / 100.00) + (FECO2 / 100.00))) - (1 - ((labO2 / 100.00) + (labCO2 / 100.00))))) - (VESTPD * (FEO2 / 100.00)));
+        singleton.vo2    = VO2;
     
     //vco2
     //old
     //VCO2   = VESTPD * ( FECO2 - labCO2 )/100;
     //new
     VCO2 = (VESTPD * (FECO2 / 100.00)) - (VESTPD * (labCO2 / 100.00) * ((1 - ((FEO2 / 100.00) + (FECO2 / 100.00))) / (1 - ((labO2 / 100.00) + (labCO2 / 100.00)))));
-  
+
     singleton.vco2   = VCO2;
     
     //vo2kg
@@ -335,6 +338,7 @@
     
     //VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vestpd];
+    VEBTPSlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vebtps];
     corrFaclbl.text     =   [NSString stringWithFormat:@"%f", singleton.corrFactor];
     VO2lbl.text         =   [NSString stringWithFormat:@"%f", singleton.vo2];
     VCO2lbl.text        =   [NSString stringWithFormat:@"%f", singleton.vco2];

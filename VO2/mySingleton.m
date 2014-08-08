@@ -40,6 +40,7 @@ static mySingleton * sharedSingleton = nil;
             labCO2,
             veatps,
             vebtps,
+            VISTPD, // Vol Input  STPD
             vestpd,
             corrFactor,
             vo2,
@@ -109,8 +110,9 @@ static mySingleton * sharedSingleton = nil;
         sampTime           = 60;
         veatps             = 30;
         vestpd             = 0;
-        feco2              = 16.4;
-        feo2               = 4.53;
+        VISTPD             = 0;
+        feo2               = 16.40;
+        feco2              = 4.53;
         veatps             = 30;
         corrFactor         = 0;
         vo2                = 0;

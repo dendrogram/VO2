@@ -77,6 +77,7 @@
     double veatps;
     double vebtps;
     double vestpd;
+    double VISTPD;
     double feco2;
     double feo2;
     double corrFactor;
@@ -122,6 +123,7 @@
 @property (nonatomic) double veatps;
 @property (nonatomic) double vebtps;
 @property (nonatomic) double vestpd;
+@property (nonatomic) double VISTPD;
 @property (nonatomic) double feco2;
 @property (nonatomic) double feo2;
 @property (nonatomic) double corrFactor;

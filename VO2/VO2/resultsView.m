@@ -241,6 +241,7 @@
     subHt            = singleton.subHt;
     sampTime         = singleton.sampTime;
     labO2            = singleton.labO2;
+    labCO2           = singleton.labCO2;
     labHumidity      = singleton.labHumidity;
 
     //totalDelay=0;
@@ -258,43 +259,38 @@
 
     O2   = labO2;
 
-
-    //vestpd
-    //old
-    //VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
-    //new
-
-    VEBTPS = ((VEATPS/sampTime) * 60.0000) * (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (exp(20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
+//calc VEATPS first
+    double VEATPS1 = 60 * (VEATPS / sampTime);
+    double T1 = (273 + 37) / (273 + labTempC);
+    double P1 = labPressure_mmHg - (exp(20.8455 - (5270 / (273 + labTempC))));
+    double P2 = labPressure_mmHg - 47.08;
+    double P3 = P1 / P2;
+    VEBTPS = VEATPS1 * T1 * P3;
     
-    //corrFactor
-    //old
-    //corrFactor = (273/(273 + labTempC)) * ((labPressure_mmHg - ((labTempC) - 4.19)) / 760);
-    corrFactor   = VESTPD;
-    singleton.corrFactor = corrFactor;
+    corrFactor           = VEBTPS;
+    singleton.vebtps     = VEBTPS;
+    singleton.corrFactor = VEBTPS;
     
-    VESTPD = VEBTPS * (0.880645161290323) * ((labPressure_mmHg - 47.0800) / 760.0000);
-    VEBTPSlbl.text = [NSString stringWithFormat:@"%.2f",VEBTPS];
-    singleton.vebtps = VEBTPS;
-    
+    //this line ok
+    VESTPD = VEBTPS * 0.880645161290323 * ((labPressure_mmHg - 47.08) / 760);
+    VEBTPSlbl.text   = [NSString stringWithFormat:@"%.3f",VEBTPS];
     singleton.vestpd = VESTPD;
-    
-    //vo2
-    //old
-    //VO2    = VESTPD * ((N2 * 0.265) -  (FEO2 + FECO2)) / 100;
-    //new
-    VO2 = (-1.00 * (VESTPD * (labO2 / 100.00) * ((1 - ((FEO2 / 100.00) + (FECO2 / 100.00))) - (1 - ((labO2 / 100.00) + (labCO2 / 100.00))))) - (VESTPD * (FEO2 / 100.00)));
-        singleton.vo2    = VO2;
-    
-    //vco2
-    //old
-    //VCO2   = VESTPD * ( FECO2 - labCO2 )/100;
-    //new
-    VCO2 = (VESTPD * (FECO2 / 100.00)) - (VESTPD * (labCO2 / 100.00) * ((1 - ((FEO2 / 100.00) + (FECO2 / 100.00))) / (1 - ((labO2 / 100.00) + (labCO2 / 100.00)))));
 
+    double V1        = (100 - (FEO2 + FECO2));
+    double V2        = (100 - (labO2 + labCO2));
+    double VISTPD    = VESTPD * (V1 / V2);
+    singleton.VISTPD = VISTPD;
+    
+    //VO2 = 100-((VISTPD * labO2) - (VESTPD * FEO2))/100;
+    VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100.) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
+    singleton.vo2    = VO2;
+
+    //VCO2 = 100-((VISTPD * labCO2) - (VESTPD * FECO2))/100;
+    VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labO2 / 100) + (labCO2 / 100)))));
     singleton.vco2   = VCO2;
     
     //vo2kg
-    VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
+    VO2Kg  = ( VO2 * 1000 ) / subWt ;
 
     singleton.vo2kg  = VO2Kg;
     
@@ -306,19 +302,19 @@
     //**
     //** Calc other energy values and results here for mySingleton --> Energy page
     //**
-    energyExpenKJ       = (15.8800 * VO2) + (4.8700 * VCO2);
+    energyExpenKJ       = (15.88* VO2) + (4.87 * VCO2);
     energyExpenKCal     = energyExpenKJ * 0.239005736;
 
-    CHOUsage_g_min      = (4.1200 * VCO2) - (2.9100 * VO2);
-    CHOUsage_kj_min     = CHOUsage_g_min * 17.2200;
+    CHOUsage_g_min      = (4.12 * VCO2) - (2.91 * VO2);
+    CHOUsage_kj_min     = CHOUsage_g_min * 17.22;
     CHOUsage_kCal_min   = CHOUsage_kj_min * 0.239005736;
 
-    fatUsage_g_min      = (1.6890 * VO2) - (1.6890 * VCO2);
-    fatUsage_kj_min     = fatUsage_g_min * 39.0600;
+    fatUsage_g_min      = (1.689 * VO2) - (1.689 * VCO2);
+    fatUsage_kj_min     = fatUsage_g_min * 39.06;
     fatUsage_kCal_min   = fatUsage_kj_min * 0.239005736;
 
-    percentFat          = fatUsage_kj_min / (energyExpenKJ / 100.0000);
-    percentCHO          = CHOUsage_kj_min / (energyExpenKJ / 100.0000);
+    percentFat          = fatUsage_kj_min / (energyExpenKJ / 100);
+    percentCHO          = CHOUsage_kj_min / (energyExpenKJ / 100);
 
     BMI                 = subWt / (subHt * subHt);
     //save the energy results to mySingleton

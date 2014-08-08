@@ -47,7 +47,7 @@
     UILabel * VO2Kglbl;
     //UILabel * subHtlbl;
     //UILabel * subWtlbl;
-    UILabel * corrFaclbl;
+    UILabel * VISTPDlbl;
     //UILabel * FEO2lbl;
     //UILabel * FECO2lbl;
     //UILabel * labO2lbl;
@@ -62,6 +62,7 @@
     double VEATPS;
     double VEBTPS;
     double VESTPD;
+    double VISTPD;
     double VO2;
     double VCO2;
     double RER;
@@ -119,7 +120,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * VO2Kglbl;
 //@property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
 //@property (nonatomic, strong) IBOutlet UILabel * subWtlbl;
-@property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
+@property (nonatomic, strong) IBOutlet UILabel * VISTPDlbl;
 //@property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
 //@property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
 //@property (nonatomic, strong) IBOutlet UILabel * labO2lbl;

@@ -39,7 +39,7 @@
         VO2Kglbl,
 //        subHtlbl,
 //        subWtlbl,
-        corrFaclbl,
+        VISTPDlbl,
 //        FEO2lbl,
 //        FECO2lbl,
 //        labO2lbl,
@@ -230,7 +230,7 @@
     //  samptimelbl.text    =   singleton.sampTime;
     //  FEO2lbl.text        =   singleton.feo2;
     //  FECO2lbl.text       =   singleton.feco2;
-    corrFaclbl.text     =   [NSString stringWithFormat:@"%.2f", singleton.corrFactor];
+
     //  labO2lbl.text       =   singleton.labO2;
     //  VEATPSlbl.text      =   singleton.veatps;
     
@@ -239,6 +239,8 @@
     FEO2             = singleton.feo2;
     labPressure_mmHg = singleton.labPressure_mmHg;
     VEATPS           = singleton.veatps;
+    VEBTPS           = singleton.vebtps;
+    VISTPD           = singleton.VISTPD;
     subWt            = singleton.subWt;
     subHt            = singleton.subHt;
     sampTime         = singleton.sampTime;
@@ -335,7 +337,7 @@
     VEBTPS = [ans doubleValue];
 
     corrFactor           = VEBTPS;
-    //singleton.vebtps     = VEBTPS;
+    singleton.vebtps     = VEBTPS;
     singleton.corrFactor = VEBTPS;
     VEBTPSlbl.text   = [NSString stringWithFormat:@"%.3f",VEBTPS];
     
@@ -372,11 +374,11 @@
     //double V1        = (100 - (FEO2 + FECO2));
     //double V2        = (100 - (labO2 + labCO2));
     //double VISTPD    = VESTPD * (V1 / V2);
-    double VISTPD = [ans3 doubleValue];
+    VISTPD = [ans3 doubleValue];
     singleton.VISTPD = VISTPD;
     
     //VO2 = 100-((VISTPD * labO2) - (VESTPD * FEO2))/100;
-    VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100.) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
+    VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
     singleton.vo2    = VO2;
 
     //VCO2 = 100-((VISTPD * labCO2) - (VESTPD * FECO2))/100;
@@ -429,7 +431,7 @@
     //VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vestpd];
     VEBTPSlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vebtps];
-    corrFaclbl.text     =   [NSString stringWithFormat:@"%f", singleton.corrFactor];
+    VISTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.VISTPD];
     VO2lbl.text         =   [NSString stringWithFormat:@"%f", singleton.vo2];
     VCO2lbl.text        =   [NSString stringWithFormat:@"%f", singleton.vco2];
     VO2Kglbl.text       =   [NSString stringWithFormat:@"%f", singleton.vo2kg];
@@ -448,7 +450,7 @@
     [singleton.cardReactionTimeResult addObject:@"."];
     singleton.counter = singleton.counter+1;
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VEBTPS, VESTPD, VISTPD, VO2, VCO2, VO2kg, RER"];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -456,7 +458,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f" ,
                      counter,
                      singleton.testerName,
                      subjectlbl.text,
@@ -474,8 +476,9 @@
                      labO2,
                      labCO2,
                      VEATPS,
+                     VEBTPS,
                      VESTPD,
-                     corrFactor,
+                     VISTPD,
                      VO2,
                      VCO2,
                      VO2Kg,

@@ -75,15 +75,15 @@
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
     
-    FEO2Txt.text                =   [NSString stringWithFormat:@"%.2f",singleton.feo2]             ;
-    FECO2Txt.text               =   [NSString stringWithFormat:@"%.2f",singleton.feco2]             ;
-    labO2Txt.text               =   [NSString stringWithFormat:@"%.2f",singleton.labO2]             ;
-    VEATPSTxt.text              =   [NSString stringWithFormat:@"%.2f",singleton.veatps]            ;
+    FEO2Txt.text                =   [NSString stringWithFormat:@"%.2Lf",singleton.feo2]             ;
+    FECO2Txt.text               =   [NSString stringWithFormat:@"%.2Lf",singleton.feco2]             ;
+    labO2Txt.text               =   [NSString stringWithFormat:@"%.2Lf",singleton.labO2]             ;
+    VEATPSTxt.text              =   [NSString stringWithFormat:@"%.2Lf",singleton.veatps]            ;
     labLocationTxt.text         =   singleton.labLocation       ;
-    labTempTxt.text             =   [NSString stringWithFormat:@"%.2f",singleton.labTemp]           ;
-    labHumidityTxt.text         =   [NSString stringWithFormat:@"%.2f",singleton.labHumidity]       ;
-    labPressureTxt.text         =   [NSString stringWithFormat:@"%.2f",singleton.labPressure_mmHg]  ;
-    sampTimeTxt.text            =   [NSString stringWithFormat:@"%.2f",singleton.sampTime]          ;
+    labTempTxt.text             =   [NSString stringWithFormat:@"%.2Lf",singleton.labTemp]           ;
+    labHumidityTxt.text         =   [NSString stringWithFormat:@"%.2Lf",singleton.labHumidity]       ;
+    labPressureTxt.text         =   [NSString stringWithFormat:@"%.2Lf",singleton.labPressure_mmHg]  ;
+    sampTimeTxt.text            =   [NSString stringWithFormat:@"%.2Lf",singleton.sampTime]          ;
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -100,17 +100,17 @@
     //singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@", labPressureTxt.text];
 
     if (pressureChange.on){
-        double pressure;
+        long double pressure;
         pressure = [labPressureTxt.text floatValue];
 
-        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure ];
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4Lf", pressure ];
 
         singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
     } else {
-        double pressure;
+        long double pressure;
         pressure = [labPressureTxt.text floatValue];
 
-        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure * 0.75218];
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4Lf", pressure * 0.75218];
 
         singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
     }
@@ -122,7 +122,7 @@
 - (void)pressureChanged:(UISwitch *)switchState
 {
     // needs work to ensure both readings are put in correctly
-    double pressure;
+    long double pressure;
 
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -132,7 +132,7 @@
 
         pressure = [labPressureTxt.text floatValue];
 
-        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure * 0.75218];
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4Lf", pressure * 0.75218];
 
         singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
 
@@ -150,7 +150,7 @@
 
         pressure = [labPressureTxt.text floatValue];
 
-        labPressureTxt.text = [NSString stringWithFormat:@"%.4f", pressure / 0.75218];
+        labPressureTxt.text = [NSString stringWithFormat:@"%.4Lf", pressure / 0.75218];
 
         singleton.labPressure_mmHg = [labPressureTxt.text doubleValue];
 
@@ -173,7 +173,7 @@
         degc.text=@"'C";
         labTempC            = 5 * ([labTempTxt.text floatValue] - 32) / 9;
         labTempF            = (9 * labTempC / 5 ) + 32;
-        labTempTxt.text     = [NSString stringWithFormat:@"%.4f",labTempC];
+        labTempTxt.text     = [NSString stringWithFormat:@"%.4Lf",labTempC];
         
         singleton.labTemp   = labTempC;
         
@@ -181,7 +181,7 @@
         degc.text=@"'F";
         labTempF            = (9 * [labTempTxt.text floatValue] / 5 ) + 32;
         labTempC            = 5 * (labTempF - 32) / 9;
-        labTempTxt.text     = [NSString stringWithFormat:@"%.4f",labTempF];
+        labTempTxt.text     = [NSString stringWithFormat:@"%.4Lf",labTempF];
         
         singleton.labTemp   = labTempC;
     }

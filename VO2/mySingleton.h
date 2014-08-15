@@ -68,36 +68,36 @@
     //NSString * percentFat;
     //NSString * percentCHO;
     
-    double subWt;
-    double subHt;
-    double labTemp;
-    double labPressure_mmHg;
-    double labHumidity;
-    double sampTime;
-    double veatps;
-    double vebtps;
-    double vestpd;
-    double VISTPD;
-    double feco2;
-    double feo2;
-    double corrFactor;
-    double vo2;
-    double vco2;
-    double vo2kg;
-    double labO2; // percent
-    double labCO2;
-    double rer;
-    double BMI;
-    double energyExpenKJ;
-    double energyExpenKCal;
-    double CHOUsage_g_min;
-    double CHOUsage_kj_min;
-    double CHOUsage_kCal_min;
-    double fatUsage_g_min;
-    double fatUsage_kj_min;
-    double fatUsage_kCal_min;
-    double percentFat;
-    double percentCHO;
+    long double subWt;
+    long double subHt;
+    long double labTemp;
+    long double labPressure_mmHg;
+    long double labHumidity;
+    long double sampTime;
+    long double veatps;
+    long double vebtps;
+    long double vestpd;
+    long double VISTPD;
+    long double feco2;
+    long double feo2;
+    long double corrFactor;
+    long double vo2;
+    long double vco2;
+    long double vo2kg;
+    long double labO2; // percent
+    long double labCO2;
+    long double rer;
+    long double BMI;
+    long double energyExpenKJ;
+    long double energyExpenKCal;
+    long double CHOUsage_g_min;
+    long double CHOUsage_kj_min;
+    long double CHOUsage_kCal_min;
+    long double fatUsage_g_min;
+    long double fatUsage_kj_min;
+    long double fatUsage_kCal_min;
+    long double percentFat;
+    long double percentCHO;
 }
 
 //eg defs pt2
@@ -114,36 +114,36 @@
 //floats
 
 //doubles
-@property (nonatomic) double subWt;
-@property (nonatomic) double subHt;
-@property (nonatomic) double labTemp;
-@property (nonatomic) double labPressure_mmHg;
-@property (nonatomic) double labHumidity;
-@property (nonatomic) double sampTime;
-@property (nonatomic) double veatps;
-@property (nonatomic) double vebtps;
-@property (nonatomic) double vestpd;
-@property (nonatomic) double VISTPD;
-@property (nonatomic) double feco2;
-@property (nonatomic) double feo2;
-@property (nonatomic) double corrFactor;
-@property (nonatomic) double vo2;
-@property (nonatomic) double vco2;
-@property (nonatomic) double vo2kg;
-@property (nonatomic) double labO2;
-@property (nonatomic) double labCO2;
-@property (nonatomic) double rer;
-@property (nonatomic) double BMI;
-@property (nonatomic) double energyExpenKJ;
-@property (nonatomic) double energyExpenKCal;
-@property (nonatomic) double CHOUsage_g_min;
-@property (nonatomic) double CHOUsage_kj_min;
-@property (nonatomic) double CHOUsage_kCal_min;
-@property (nonatomic) double fatUsage_g_min;
-@property (nonatomic) double fatUsage_kj_min;
-@property (nonatomic) double fatUsage_kCal_min;
-@property (nonatomic) double percentFat;
-@property (nonatomic) double percentCHO;
+@property (nonatomic) long double subWt;
+@property (nonatomic) long double subHt;
+@property (nonatomic) long double labTemp;
+@property (nonatomic) long double labPressure_mmHg;
+@property (nonatomic) long double labHumidity;
+@property (nonatomic) long double sampTime;
+@property (nonatomic) long double veatps;
+@property (nonatomic) long double vebtps;
+@property (nonatomic) long double vestpd;
+@property (nonatomic) long double VISTPD;
+@property (nonatomic) long double feco2;
+@property (nonatomic) long double feo2;
+@property (nonatomic) long double corrFactor;
+@property (nonatomic) long double vo2;
+@property (nonatomic) long double vco2;
+@property (nonatomic) long double vo2kg;
+@property (nonatomic) long double labO2;
+@property (nonatomic) long double labCO2;
+@property (nonatomic) long double rer;
+@property (nonatomic) long double BMI;
+@property (nonatomic) long double energyExpenKJ;
+@property (nonatomic) long double energyExpenKCal;
+@property (nonatomic) long double CHOUsage_g_min;
+@property (nonatomic) long double CHOUsage_kj_min;
+@property (nonatomic) long double CHOUsage_kCal_min;
+@property (nonatomic) long double fatUsage_g_min;
+@property (nonatomic) long double fatUsage_kj_min;
+@property (nonatomic) long double fatUsage_kCal_min;
+@property (nonatomic) long double percentFat;
+@property (nonatomic) long double percentCHO;
 
 //Strings
 @property (nonatomic, retain) NSString * email;

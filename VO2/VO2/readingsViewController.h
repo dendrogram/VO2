@@ -11,11 +11,11 @@
 @interface readingsViewController : UIViewController <UITextFieldDelegate>
 
 {
-    double labPressure_mmHg;
-    double labPressure_mBar;
-    double labTempC;
-    double labTempF;
-    double VEATPS;
+    long double labPressure_mmHg;
+    long double labPressure_mBar;
+    long double labTempC;
+    long double labTempF;
+    long double VEATPS;
     
     UITextField * labLocationTxt;
     UITextField * labPressureTxt;

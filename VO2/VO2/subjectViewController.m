@@ -53,8 +53,8 @@
     
     subjectNameTxt.text     =   singleton.oldSubjectName ;
     testerNamelbl.text      =   singleton.testerName  ;
-    subWtTxt.text           =   [NSString stringWithFormat:@"%.2f", singleton.subWt]       ;
-    subHtTxt.text           =   [NSString stringWithFormat:@"%.2f", singleton.subHt]       ;
+    subWtTxt.text           =   [NSString stringWithFormat:@"%.2Lf", singleton.subWt]       ;
+    subHtTxt.text           =   [NSString stringWithFormat:@"%.2Lf", singleton.subHt]       ;
     testDateTxt.text        =   singleton.testDate    ;
     startDateTxt.text       =   singleton.testTime    ;
     

@@ -241,11 +241,11 @@
     //lab o2 N2 calcs
     //N2 (if adjust formula, cahnge same in calcViewController
     
-    double N2;
+    long double N2;
 
-    double O2;
+    long double O2;
     
-    N2   = 100 - (labCO2 + labO2) ;
+    N2   = 100.00000000f - (labCO2 + labO2) ;
 
     O2   = labO2;
 
@@ -265,6 +265,7 @@
 */
 
 //calc VEATPS first using decimal numbers for accuracy
+    /*
     NSDecimalNumber *v60        = [NSDecimalNumber decimalNumberWithString:@"60.000"];
     NSDecimalNumber *veatps     = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f",VEATPS]];
     NSDecimalNumber *samptime   = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", sampTime]];
@@ -305,27 +306,30 @@
     NSDecimalNumber *p3         = [p1d decimalNumberByDividingBy:p2];
     NSDecimalNumber *vebtps1    = [t1 decimalNumberByMultiplyingBy:veatps1];
     NSDecimalNumber *vebtps     = [vebtps1 decimalNumberByMultiplyingBy:p3];
-
+*/
     //original calcs
-    //double VEATPS1 = 60 * (VEATPS / sampTime);// ok
-    //double T1 = 310 / (273 + labTempC);//ok
-    //double P1 = labPressure_mmHg - (exp(20.8455 - (5270 / (273 + labTempC))));
-    //double P2 = labPressure_mmHg - 47.08;
-    //double P3 = P1 / P2;
-    //VEBTPS = VEATPS1 * T1 * P3;
+    ////long double VEATPS1 = 60.000000f * (VEATPS / sampTime);// ok
+    ////long double T1 = 310.000000f / (273.000000f + labTempC);//ok
+    ////long double P1 = labPressure_mmHg - (exp(20.845500f - (5270.000000f / (273.000000f + labTempC))));
+    ////long double P2 = labPressure_mmHg - 47.080000f;
+    ////long double P3 = P1 / P2;
+    ////VEBTPS = VEATPS1 * T1 * P3;
+
+    VEBTPS=((VEATPS/sampTime) * 60.00000000f) * (310.00000000f / (273.00000000f + labTempC)) * ((labPressure_mmHg - (expl(20.84550000f - (5270.00000000f / (273.00000000f + labTempC))))) / (labPressure_mmHg - 47.08000000f));
 
     //decimal value to string to double
-    NSString *ans     = [NSString stringWithFormat:@"%@",vebtps];
-    VEBTPS = [ans doubleValue];
+    //NSString *ans     = [NSString stringWithFormat:@"%Lf",VEBTPS];
+    //VEBTPS = [ans doubleValue];
 
     corrFactor           = VEBTPS;
     singleton.vebtps     = VEBTPS;
     singleton.corrFactor = VEBTPS;
-    VEBTPSlbl.text   = [NSString stringWithFormat:@"%.3f",VEBTPS];
+    VEBTPSlbl.text   = [NSString stringWithFormat:@"%.8Lf",VEBTPS];
     
     //this line ok
-    //VESTPD = VEBTPS * 0.880645161290323 * ((labPressure_mmHg - 47.08) / 760);
+    VESTPD = VEBTPS * (0.8806451612903230f * ((labPressure_mmHg - 47.08000000f) / 760.00000000f));
     //do with decimals
+    /*
     NSDecimalNumber *v08806        = [NSDecimalNumber decimalNumberWithString:@"0.880645161290323"];
     NSDecimalNumber *v760          = [NSDecimalNumber decimalNumberWithString:@"760.0000"];
     NSDecimalNumber *b1            = [p2 decimalNumberByDividingBy:v760];
@@ -349,22 +353,22 @@
     NSDecimalNumber *vistpd         = [v3 decimalNumberByMultiplyingBy:vestpd];
     //decimal value to string to double
     NSString *ans3     = [NSString stringWithFormat:@"%@",vistpd];
-
+*/
     // original calc of vistpd
-    //double V1        = (100 - (FEO2 + FECO2));
-    //double V2        = (100 - (labO2 + labCO2));
-    //double VISTPD    = VESTPD * (V1 / V2);
-    VISTPD                  = [ans3 doubleValue];
+    long double V1        = (100.00000000f - (FEO2 + FECO2));
+    long double V2        = (100.00000000f - (labO2 + labCO2));
+    VISTPD    = VESTPD * (V1 / V2);
+    //VISTPD                  = [ans3 doubleValue];
     singleton.VISTPD        = VISTPD;
 
     //
 
 
-    VO2 = (VESTPD * (labO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labCO2 / 100 + (labO2 / 100)))))) - (VESTPD * (FEO2 / 100));
+    VO2 = (VESTPD * (labO2 / 100.00000000f) * ((100.00000000f - ((FEO2 / 100.00000000f) + (FECO2 / 100.00000000f))) / (100.00000000f - ((labCO2 / 100.00000000f + (labO2 / 100.00000000f)))))) - (VESTPD * (FEO2 / 100.00000000f));
     //VO2 = (VESTPD * (f2) * ((100 - ((f1) + (f4))) / (100 - ((f5 + (f2)))))) - (VESTPD * (f1));
 
     //
-
+/*
 
     //f1  = feo2 / 100
         NSDecimalNumber *f1         = [fe02 decimalNumberByDividingBy:v100];
@@ -396,34 +400,36 @@
 
     //NSString *vo2x          = [NSString stringWithFormat:@"%@",vo2];
     //VO2                     = [vo2x doubleValue];
+ */
     singleton.vo2           = VO2;
 
     //
 
 
-    VCO2 = (VESTPD * (FECO2 / 100)) - (VESTPD * (labCO2 / 100) * ((100 - ((FEO2 / 100) + (FECO2 / 100))) / (100 - ((labO2 / 100) + (labCO2 / 100)))));
+    VCO2 = (VESTPD * (FECO2 / 100.00000000f)) - (VESTPD * (labCO2 / 100.00000000f) * ((100.00000000f - ((FEO2 / 100.00000000f) + (FECO2 / 100.00000000f))) / (100.00000000f - ((labO2 / 100.00000000f) + (labCO2 / 100.00000000f)))));
 
-    NSString *vco2x         = [NSString stringWithFormat:@"%@",vco2];
-    VCO2                    = [vco2x doubleValue];
+    //NSString *vco2x         = [NSString stringWithFormat:@"%@",vco2];
+    //VCO2                    = [vco2x doubleValue];
     singleton.vco2          = VCO2;
 
     //
+    /*
     NSDecimalNumber *subwt  = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", subWt]];
     NSDecimalNumber *v1000  = [NSDecimalNumber decimalNumberWithString:@"1000.0000"];
     NSDecimalNumber *x1     = [v1000 decimalNumberByMultiplyingBy:vo2];
     NSDecimalNumber *vo2kg  = [x1 decimalNumberByDividingBy:subwt];
-
-    //VO2Kg                   = ( VO2 * 1000 ) / subWt ;
-    NSString *vo2kg1        = [NSString stringWithFormat:@"%@",vo2kg];
-    VO2Kg                   = [vo2kg1 doubleValue];
+*/
+    VO2Kg                   = ( VO2 * 1000.00000000f ) / subWt ;
+    //NSString *vo2kg1        = [NSString stringWithFormat:@"%@",vo2kg];
+    //VO2Kg                   = [vo2kg1 doubleValue];
     singleton.vo2kg         = VO2Kg;
 
     //
-    NSDecimalNumber *rer    = [vo2 decimalNumberByDividingBy:vo2];
+    //NSDecimalNumber *rer    = [vo2 decimalNumberByDividingBy:vo2];
 
-    //RER    = ( VCO2 / VO2 );
-    NSString *rer1          = [NSString stringWithFormat:@"%@",rer];
-    RER                     = [rer1 doubleValue];
+    RER    = ( VCO2 / VO2 );
+    //NSString *rer1          = [NSString stringWithFormat:@"%@",rer];
+    //RER                     = [rer1 doubleValue];
     singleton.rer           = RER;
     
     //************** energy
@@ -431,19 +437,19 @@
     //** Calc other energy values and results here for mySingleton --> Energy page
     //**
 
-    energyExpenKJ       = (15.88* VO2) + (4.87 * VCO2);
-    energyExpenKCal     = energyExpenKJ * 0.239005736;
+    energyExpenKJ       = (15.880000f * VO2) + (4.870000f * VCO2);
+    energyExpenKCal     = energyExpenKJ * 0.239005736f;
 
-    CHOUsage_g_min      = (4.12 * VCO2) - (2.91 * VO2);
-    CHOUsage_kj_min     = CHOUsage_g_min * 17.22;
-    CHOUsage_kCal_min   = CHOUsage_kj_min * 0.239005736;
+    CHOUsage_g_min      = (4.120000f * VCO2) - (2.910000f * VO2);
+    CHOUsage_kj_min     = CHOUsage_g_min * 17.220000f;
+    CHOUsage_kCal_min   = CHOUsage_kj_min * 0.2390057360f;
 
-    fatUsage_g_min      = (1.689 * VO2) - (1.689 * VCO2);
-    fatUsage_kj_min     = fatUsage_g_min * 39.06;
-    fatUsage_kCal_min   = fatUsage_kj_min * 0.239005736;
+    fatUsage_g_min      = (1.689000f * VO2) - (1.68900f * VCO2);
+    fatUsage_kj_min     = fatUsage_g_min * 39.060000f;
+    fatUsage_kCal_min   = fatUsage_kj_min * 0.2390057360f;
 
-    percentFat          = fatUsage_kj_min / (energyExpenKJ / 100);
-    percentCHO          = CHOUsage_kj_min / (energyExpenKJ / 100);
+    percentFat          = fatUsage_kj_min / (energyExpenKJ / 100.000000f);
+    percentCHO          = CHOUsage_kj_min / (energyExpenKJ / 100.000000f);
 
     BMI                 = subWt / (subHt * subHt);
     //save the energy results to mySingleton
@@ -461,14 +467,14 @@
     singleton.percentCHO        = percentCHO;
     //************** energy
     
-    VEATPSlbl.text      =   [NSString stringWithFormat:@"%f", singleton.veatps];
-    VESTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vestpd];
-    VEBTPSlbl.text      =   [NSString stringWithFormat:@"%f", singleton.vebtps];
-    VISTPDlbl.text      =   [NSString stringWithFormat:@"%f", singleton.VISTPD];
-    VO2lbl.text         =   [NSString stringWithFormat:@"%f", singleton.vo2];
-    VCO2lbl.text        =   [NSString stringWithFormat:@"%f", singleton.vco2];
-    VO2Kglbl.text       =   [NSString stringWithFormat:@"%f", singleton.vo2kg];
-    RERlbl.text         =   [NSString stringWithFormat:@"%f", singleton.rer];
+    VEATPSlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.veatps];
+    VESTPDlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.vestpd];
+    VEBTPSlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.vebtps];
+    VISTPDlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.VISTPD];
+    VO2lbl.text         =   [NSString stringWithFormat:@"%.8Lf", singleton.vo2];
+    VCO2lbl.text        =   [NSString stringWithFormat:@"%.8Lf", singleton.vco2];
+    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.8Lf", singleton.vo2kg];
+    RERlbl.text         =   [NSString stringWithFormat:@"%.8Lf", singleton.rer];
     emaillbl.text       =   singleton.email;
         
     //Format for file and email outputs
@@ -491,7 +497,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf,%.2Lf" ,
                      counter,
                      singleton.testerName,
                      subjectlbl.text,

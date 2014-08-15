@@ -43,18 +43,18 @@
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
     
-    double N2  = 0;
-    double HyN2= 0;
-    double O2  = 0;
+    long double N2  = 0.0000f;
+    long double HyN2= 0.0000f;
+    long double O2  = 0.0000f;
     
-    N2   = 100 - (singleton.feo2 + singleton.feco2) ;
-    HyN2 = N2 + (20.93 - singleton.labO2);
-    O2   = 100 - HyN2;
+    N2   = 100.0000f - (singleton.feo2 + singleton.feco2) ;
+    HyN2 = N2 + (20.930000f - singleton.labO2);
+    O2   = 100.0000f - HyN2;
 
-    line1.text=[NSString stringWithFormat:@"N2E = 100 - %.2f - %.2f %%",singleton.feo2, singleton.feco2];
-    line2.text=[NSString stringWithFormat:@"Therfore:- N2E = %.2f %%", N2];
-    line3.text=[NSString stringWithFormat:@"For Lab O2i = %.2f %%", singleton.labO2];
-    line4.text=[NSString stringWithFormat:@"N2E = %.2f : O2 = %.2f", HyN2,O2];
+    line1.text=[NSString stringWithFormat:@"N2E = 100 - %.2Lf - %.2Lf %%",singleton.feo2, singleton.feco2];
+    line2.text=[NSString stringWithFormat:@"Therefore:- N2E = %.2Lf %%", N2];
+    line3.text=[NSString stringWithFormat:@"For Lab O2i = %.2Lf %%", singleton.labO2];
+    line4.text=[NSString stringWithFormat:@"N2E = %.2Lf : O2 = %.2Lf", HyN2,O2];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,6 +9,9 @@
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
 
+#define kEmail      @"emailAddress"
+#define kTester     @"testerName"
+
 @interface resultsView()
 {
 
@@ -183,10 +186,32 @@ setTranslatesAutoresizingMaskIntoConstraints:NO;
 }
 
 -(void)refreshSettings{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     mySingleton *singleton = [mySingleton sharedSingleton];
-    singleton.email = [defaults objectForKey:kEmail];
-    singleton.testerName = [defaults objectForKey:kTester];
+    
+    NSString * pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary * defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults         = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+  //some defaults just in case not present
+    singleton.email=@"ess.mobile@mmu.ac.uk";
+    singleton.testerName=@"Tester N1";
+    if ([defaults objectForKey:kEmail]==nil) {
+        //email address was read ok
+    }else{
+        //default value
+        singleton.email = [defaults objectForKey:kEmail];
+    }
+    if ([defaults objectForKey:kTester]==nil) {
+        //tester name was read ok
+    }else{
+        //default value
+        singleton.testerName = [defaults objectForKey:kTester];
+    }
+    
 }
 
 -(void)calculateStats{
@@ -208,7 +233,7 @@ setTranslatesAutoresizingMaskIntoConstraints:NO;
     
     //read the singleton values and put into the labels
     subjectlbl.text     =   singleton.oldSubjectName;
-    //    testerlbl.text      =   singleton.testerName;
+        //testerlbl.text      =   singleton.testerName;
     datelbl.text        =   singleton.testDate;
     timelbl.text        =   singleton.testTime;
     //  lablbl.text         =   singleton.labLocation;
@@ -349,7 +374,7 @@ setTranslatesAutoresizingMaskIntoConstraints:NO;
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
-    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2014 VO2 App Jonathan A. Howell SAS Technical Services. " ];
+    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2015 VO2 App Jonathan A. Howell SAS Technical Services. " ];
     singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@"."];
@@ -458,11 +483,13 @@ setTranslatesAutoresizingMaskIntoConstraints:NO;
 - (IBAction)showEmail:(id)sender {
 mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *emailTitle = [NSString stringWithFormat:@"VO2 App Data for: %@",singleton.oldSubjectName];
-    NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by VO2 App.",singleton.oldSubjectName,singleton.testDate,singleton.testTime];
+    
+    NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by VO2 App.",singleton.oldSubjectName, singleton.testDate, singleton.testTime];
     //NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
     NSArray  *toRecipents = [NSArray arrayWithObject:singleton.email];
 
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    
      mc.mailComposeDelegate = self;
     [mc setSubject:emailTitle];
     [mc setMessageBody:messageBody isHTML:NO];

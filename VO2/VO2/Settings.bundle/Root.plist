@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Title</key>
+	<string>VO2 Settings Valuse</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
@@ -22,7 +24,7 @@
 			<key>Key</key>
 			<string>testerName</string>
 			<key>KeyboardType</key>
-			<string>EmailAddress</string>
+			<string>Alphabet</string>
 			<key>Title</key>
 			<string>Tester:</string>
 			<key>Type</key>

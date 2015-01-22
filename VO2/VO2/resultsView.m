@@ -316,7 +316,10 @@
     ////VEBTPS = VEATPS1 * T1 * P3;
 
     VEBTPS=((VEATPS/sampTime) * 60.00000000f) * (310.00000000f / (273.00000000f + labTempC)) * ((labPressure_mmHg - (expl(20.84550000f - (5270.00000000f / (273.00000000f + labTempC))))) / (labPressure_mmHg - 47.08000000f));
-
+    
+    
+    //VEBTPS=((VEATPS/sampTime) * 60.00000000f) * (310.00000000f / (273.00000000f + labTempC)) * ((labPressure_mmHg - (expl(20.3860000f - (5132.00000000f / (273.00000000f + labTempC))))) / (labPressure_mmHg - 47.08000000f));
+    
     //decimal value to string to double
     //NSString *ans     = [NSString stringWithFormat:@"%Lf",VEBTPS];
     //VEBTPS = [ans doubleValue];
@@ -324,10 +327,15 @@
     corrFactor           = VEBTPS;
     singleton.vebtps     = VEBTPS;
     singleton.corrFactor = VEBTPS;
-    VEBTPSlbl.text   = [NSString stringWithFormat:@"%.8Lf",VEBTPS];
+    VEBTPSlbl.text   = [NSString stringWithFormat:@"%.3Lf",VEBTPS];
     
-    //this line ok
-    VESTPD = VEBTPS * (0.8806451612903230f * ((labPressure_mmHg - 47.08000000f) / 760.00000000f));
+    //this line ok...
+    //VESTPD = VEBTPS * (0.8806451612903230f * ((labPressure_mmHg - 47.08000000f) / 760.00000000f));
+    
+    //from orig vb6
+    VESTPD = (60.000000f*(VEATPS * (273.000000f/(273.000000f+labTempC))*((labPressure_mmHg-((1.001000f*labTempC)-4.1900000f))/760.000000f)))/sampTime;
+    VESTPDlbl.text= [NSString stringWithFormat:@"%.3Lf",VESTPD];
+    singleton.vestpd=VESTPD;
     //do with decimals
     /*
     NSDecimalNumber *v08806        = [NSDecimalNumber decimalNumberWithString:@"0.880645161290323"];
@@ -360,13 +368,17 @@
     VISTPD    = VESTPD * (V1 / V2);
     //VISTPD                  = [ans3 doubleValue];
     singleton.VISTPD        = VISTPD;
+    VISTPDlbl.text= [NSString stringWithFormat:@"%.3Lf",VISTPD];
 
     //
 
 
-    VO2 = (VESTPD * (labO2 / 100.00000000f) * ((100.00000000f - ((FEO2 / 100.00000000f) + (FECO2 / 100.00000000f))) / (100.00000000f - ((labCO2 / 100.00000000f + (labO2 / 100.00000000f)))))) - (VESTPD * (FEO2 / 100.00000000f));
+    //ios//VO2 = (VESTPD * (labO2 / 100.00000000f) * ((100.00000000f - ((FEO2 / 100.00000000f) + (FECO2 / 100.00000000f))) / (100.00000000f - ((labCO2 / 100.00000000f + (labO2 / 100.00000000f)))))) - (VESTPD * (FEO2 / 100.00000000f));
+    //vb6
+    VO2=0.01000000f*(VESTPD*(((100.000000f-(FEO2+ FECO2))/79.030000f)*20.9300000f)-(VESTPD*FEO2));
+    //another method
     //VO2 = (VESTPD * (f2) * ((100 - ((f1) + (f4))) / (100 - ((f5 + (f2)))))) - (VESTPD * (f1));
-
+VO2lbl.text= [NSString stringWithFormat:@"%.3Lf",VO2];
     //
 /*
 
@@ -405,13 +417,17 @@
 
     //
 
-
-    VCO2 = (VESTPD * (FECO2 / 100.00000000f)) - (VESTPD * (labCO2 / 100.00000000f) * ((100.00000000f - ((FEO2 / 100.00000000f) + (FECO2 / 100.00000000f))) / (100.00000000f - ((labO2 / 100.00000000f) + (labCO2 / 100.00000000f)))));
+//ios//
+    //VCO2 = (VESTPD * (FECO2 / 100.00000000f)) - (VESTPD * (labCO2 / 100.00000000f) * ((100.00000000f - ((FEO2 / 100.00000000f) + (FECO2 / 100.00000000f))) / (100.00000000f - ((labO2 / 100.00000000f) + (labCO2 / 100.00000000f)))));
 
     //NSString *vco2x         = [NSString stringWithFormat:@"%@",vco2];
     //VCO2                    = [vco2x doubleValue];
+    
+    //vb6
+    VCO2=0.0100000f*(VESTPD*FECO2);
+    
     singleton.vco2          = VCO2;
-
+VCO2lbl.text= [NSString stringWithFormat:@"%.3Lf",VCO2];
     //
     /*
     NSDecimalNumber *subwt  = [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", subWt]];
@@ -419,10 +435,15 @@
     NSDecimalNumber *x1     = [v1000 decimalNumberByMultiplyingBy:vo2];
     NSDecimalNumber *vo2kg  = [x1 decimalNumberByDividingBy:subwt];
 */
+    //ios//
     VO2Kg                   = ( VO2 * 1000.00000000f ) / subWt ;
     //NSString *vo2kg1        = [NSString stringWithFormat:@"%@",vo2kg];
     //VO2Kg                   = [vo2kg1 doubleValue];
+    
+    //vb6
+    VO2Kg=(VO2*1000.000000f)/subWt;
     singleton.vo2kg         = VO2Kg;
+    VO2Kglbl.text= [NSString stringWithFormat:@"%.3Lf",VO2Kg];
 
     //
     //NSDecimalNumber *rer    = [vo2 decimalNumberByDividingBy:vo2];
@@ -431,6 +452,7 @@
     //NSString *rer1          = [NSString stringWithFormat:@"%@",rer];
     //RER                     = [rer1 doubleValue];
     singleton.rer           = RER;
+    RERlbl.text= [NSString stringWithFormat:@"%.3Lf",RER];
     
     //************** energy
     //**
@@ -467,14 +489,14 @@
     singleton.percentCHO        = percentCHO;
     //************** energy
     
-    VEATPSlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.veatps];
-    VESTPDlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.vestpd];
-    VEBTPSlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.vebtps];
-    VISTPDlbl.text      =   [NSString stringWithFormat:@"%.8Lf", singleton.VISTPD];
-    VO2lbl.text         =   [NSString stringWithFormat:@"%.8Lf", singleton.vo2];
-    VCO2lbl.text        =   [NSString stringWithFormat:@"%.8Lf", singleton.vco2];
-    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.8Lf", singleton.vo2kg];
-    RERlbl.text         =   [NSString stringWithFormat:@"%.8Lf", singleton.rer];
+    VEATPSlbl.text      =   [NSString stringWithFormat:@"%.3Lf", singleton.veatps];
+    VESTPDlbl.text      =   [NSString stringWithFormat:@"%.3Lf", singleton.vestpd];
+    VEBTPSlbl.text      =   [NSString stringWithFormat:@"%.3Lf", singleton.vebtps];
+    VISTPDlbl.text      =   [NSString stringWithFormat:@"%.3Lf", singleton.VISTPD];
+    VO2lbl.text         =   [NSString stringWithFormat:@"%.3Lf", singleton.vo2];
+    VCO2lbl.text        =   [NSString stringWithFormat:@"%.3Lf", singleton.vco2];
+    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.3Lf", singleton.vo2kg];
+    RERlbl.text         =   [NSString stringWithFormat:@"%.3Lf", singleton.rer];
     emaillbl.text       =   singleton.email;
         
     //Format for file and email outputs

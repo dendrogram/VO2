@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E54FAADE-1B45-4535-A35D-44A256E29023</string>
+	<string>95E1A5DC-6935-47DC-BE10-8AE8B179D153</string>
 	<key>IDESourceControlProjectName</key>
 	<string>VO2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</key>
+		<key>FA447EEA5B3B8930161B07DC0B10FC0E438DB3E8</key>
 		<string>https://github.com/dendrogram/VO2.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>VO2/VO2.xcodeproj/project.xcworkspace</string>
+	<string>VO2/VO2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</key>
+		<key>FA447EEA5B3B8930161B07DC0B10FC0E438DB3E8</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/dendrogram/VO2.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</string>
+	<string>FA447EEA5B3B8930161B07DC0B10FC0E438DB3E8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7DDCB721-69AD-4A7F-ADF0-4095C3C70796</string>
+			<string>FA447EEA5B3B8930161B07DC0B10FC0E438DB3E8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>new_results</string>
 		</dict>

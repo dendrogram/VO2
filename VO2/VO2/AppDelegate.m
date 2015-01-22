@@ -14,9 +14,29 @@
 {
     // Override point for customization after application launch.
     //start the main App with a message
-    NSString *temp2 = [NSString stringWithFormat:@"VO2 Testing Calculator App"];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:temp2 message:@"Take a moment to read the notes pages before you run the Application ..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
+    
+    //sleep(2);
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"VO2 Oxygen Uptake and Energy Expenditure"
+                                                        message:@""
+                                                       delegate:self
+                                              cancelButtonTitle:@"Continue"
+                                              otherButtonTitles:nil];
+    
+    UILabel *txtField = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 200, 300)];
+    
+    //[txtField setFont:[UIFont fontWithName:@"Serifa-Roman" size:(16.0f)]];
+    
+    txtField.numberOfLines = 12;
+    txtField.textColor = [UIColor darkGrayColor];
+    txtField.backgroundColor = [UIColor clearColor];
+    txtField.textAlignment = NSTextAlignmentCenter;
+    
+    txtField.text = @"To see details on how to \nuse this Application\n and adjust its settings, \nplease read the notes in \nthe 'Information' section.\n\nThis Application is NOT \nfor clinical use.";
+    
+    [alertView setValue:txtField forKeyPath:@"accessoryView"]; //for ios 7 and above
+    
+    [alertView show];
     return YES;
 }
 							

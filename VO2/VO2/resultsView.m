@@ -569,13 +569,13 @@ VCO2lbl.text= [NSString stringWithFormat:@"%.3Lf",VCO2];
     singleton.counter = singleton.counter+1;
     
     //end of data message
-    [singleton.cardReactionTimeResult addObject:@"End of test data. " ];
+    [singleton.cardReactionTimeResult addObject:@"End of Test Trial Data. " ];
     singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@"." ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
-    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2014 VO2 App Jonathan A. Howell SAS Technical Services. " ];
+    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2015 VO2 App Jonathan A. Howell SAS Technical Services. " ];
     singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@"."];
@@ -605,12 +605,12 @@ VCO2lbl.text= [NSString stringWithFormat:@"%.3Lf",VCO2];
 
     [printString appendString:@"\n"];
     int i=0;
-    //for(i=0; i< (singleton.counter); i++)
-        i=0;// temporary force value zero
-    //{
+    for(i=0; i< (singleton.counter-3); i++)
+        //i=0;// temporary force value zero
+    {
         element = [singleton.cardReactionTimeResult objectAtIndex: i];
         [printString appendString:[NSString stringWithFormat:@"\n%@", element]];
-    //}
+    }
     [printString appendString:@"\n"];
     
     

@@ -243,7 +243,7 @@
     singleton.corrFactor = [NSString stringWithFormat:@"%.2f",corrFactor];
     
     //lab o2 N2 calcs
-    //N2 (if adjust formula, cahnge same in calcViewController
+    //N2 (if adjust formula, change same in calcViewController
     
     float N2;
 
@@ -253,20 +253,53 @@
 
     O2   = 20.93;
     
+    
+    /* // original code from GR //
+     'calculate VEstpd
+     VEstpd = (60 * (VEatps * (273 / (273 + TEMP)) * ((Pressure - ((1.001 * TEMP) - 4.19)) / 760))) / SAMPTIME
+     VEstpd = Format(Val(VEstpd), "##00.00")
+     txtVEstpd.Text = VEstpd
+     
+     'calculate VO2
+     VO2 = 0.01 * (VEstpd * (((100 - (FEO2 + FECO2)) / 79.03) * 20.93) - (VEstpd * FEO2))
+     VO2 = Format(Val(VO2), "##00.00")
+     txtVO2.Text = VO2
+     
+     'calculate VCO2
+     VCO2 = 0.01 * (VEstpd * FECO2)
+     VCO2 = Format(Val(VCO2), "##00.00")
+     txtVCO2.Text = VCO2
+     
+     'calculate VO2kg
+     VO2kg = (VO2 * 1000) / Weight
+     VO2kg = Format(VO2kg, "##00.00")
+     txtVO2kg.Text = VO2kg
+     
+     'calculate RER
+     RER = (VCO2 / VO2)
+     RER = Format(RER, "##00.00")
+     txtRER.Text = RER
+     */
     //vestpd
+    //VEstpd = ( 60 * ( VEatps * ( 273      / (273      + TEMP))      * (( Pressure         - (( 1.001  * TEMP)      - 4.19))    / 760))) / SAMPTIME
     VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
     singleton.vestpd = [NSString stringWithFormat:@"%.4f", VESTPD];
     
     //vo2
-    VO2    = VESTPD * ((N2 * 0.265) -  FEO2) /100;
+    //VO2    = 0.01   * (VEstpd * (((100 - (FEO2 + FECO2)) / 79.03) * 20.93) - (VEstpd * FEO2))
+    //??? VO2    = VESTPD * ((N2 * 0.265) -  FEO2) /100;
+    VO2    = 0.01   * (VESTPD * (((100 - (FEO2 + FECO2)) / 79.03) * 20.93) - (VESTPD * FEO2));
     singleton.vo2    = [NSString stringWithFormat:@"%.4f", VO2];
     
     //vco2
-    VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
+    //VCO2   = 0.01 * (VEstpd * FECO2)
+    //???VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
+    VCO2   = 0.01 * (VESTPD * FECO2);
     singleton.vco2   = [NSString stringWithFormat:@"%.4f", VCO2];
     
     //vo2kg
-    VO2Kg  = ( VO2 * 1000.0000 ) / subWt ;
+    //VO2kg = ( VO2 * 1000)       / Weight
+    VO2Kg   = ( VO2 * 1000.0000 ) / subWt ;
     singleton.vo2kg  = [NSString stringWithFormat:@"%.4f", VO2Kg];
     
     //rer
@@ -286,7 +319,7 @@
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, VO2 Application Results"];
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
-    [singleton.cardReactionTimeResult addObject:@"(c) 2014 MMU written by Jonathan A. Howell for ESS VO2 App"];
+    [singleton.cardReactionTimeResult addObject:@"(c) 2015 MMU written by Jonathan A. Howell for ESS VO2 App"];
     //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
     singleton.counter = singleton.counter+1;
     //blank line
@@ -342,7 +375,7 @@
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
-    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2014 VO2 App Jonathan A. Howell SAS Technical Services. " ];
+    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2015 VO2 App Jonathan A. Howell SAS Technical Services. " ];
     singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@"."];

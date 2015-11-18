@@ -33,7 +33,7 @@
 // ************************************************
 // ************************************************
 
-int v1=1;   // version: v1.v2.v3
+int v1=2;   // version: v1.v2.v3. v2=18/11/15
 int v2=0;   // 24/7/14 jah
 int v3=0;   //
 
@@ -48,7 +48,7 @@ int v3=0;   //
     
     versionNumberLab.text=versionNo;
     // for web page link
-    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/vo2"];
+    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webview loadRequest:request];
 }

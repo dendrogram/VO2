@@ -45,26 +45,28 @@
     UILabel * FEO2lbl;
     UILabel * FECO2lbl;
     UILabel * labO2lbl;
+    UILabel * labCO2lbl;
     
-    float subWt;
-    float subHt;
-    float labPressure_mmHg;
-    float labPressure_mBar;
-    float labTempC;
-    float labTempF;
-    float labHumidity;
-    float VEATPS;
-    float VESTPD;
-    float VO2;
-    float VCO2;
-    float RER;
-    float sampTime;
-    float FECO2;
-    float FEO2;
-    float corrFactor;
-    float VO2Kg;
-    float labO2;
-    
+    Float64 subWt;
+    Float64 subHt;
+    Float64 labPressure_mmHg;
+    Float64 labPressure_mBar;
+    Float64 labTempC;
+    Float64 labTempF;
+    Float64 labHumidity;
+    Float64 VEATPS;
+    Float64 VESTPD;
+    Float64 VO2;
+    Float64 VCO2;
+    Float64 RER;
+    Float64 sampTime;
+    Float64 FECO2;
+    Float64 FEO2;
+    Float64 corrFactor;
+    Float64 VO2Kg;
+    Float64 labO2;
+    Float64 labCO2;
+        
     int counter;
 }
 
@@ -100,6 +102,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * labO2lbl;
+@property (nonatomic, strong) IBOutlet UILabel * labCO2lbl;
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;

@@ -39,6 +39,7 @@
         FEO2lbl,
         FECO2lbl,
         labO2lbl,
+        labCO2lbl,
         testDate;
 
 @synthesize
@@ -215,6 +216,7 @@
     FECO2lbl.text       =   singleton.feco2;
     corrFaclbl.text     =   singleton.corrFactor;
     labO2lbl.text       =   singleton.labO2;
+    labCO2lbl.text      =   singleton.labCO2;
     VEATPSlbl.text      =   singleton.veatps;
     
     VESTPDlbl.text      =   @"0.00";
@@ -233,25 +235,38 @@
     subHt            = [subHtlbl.text    floatValue];
     sampTime         = [samptimelbl.text floatValue];
     labO2            = [labO2lbl.text    floatValue];
+    labCO2           = [labCO2lbl.text   floatValue];
     labHumidity      = [humiditylbl.text floatValue];
 
     //totalDelay=0;
 
 //do the calcs from here:
     //corrFactor
-    corrFactor = (273/(273+labTempC))*((labPressure_mmHg - ((1.001 * labTempC) - 4.19)) / 760);
-    singleton.corrFactor = [NSString stringWithFormat:@"%.2f",corrFactor];
+    corrFactor = (273.0000/(273.0000+labTempC))*((labPressure_mmHg - ((1.0010 * labTempC) - 4.1900)) / 760.0000);
+    singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
+    
+    /* correction factor from excel sheet
+      (0.880645161290323) * (($E$5 - 47.08) / 760)
+     */
+    
+    corrFactor =  0.880645161290323 * ((labPressure_mmHg - 47.0800) / 760.0000);
+    singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
+    
+    /* pre correction factor VeATPS
+     ((B8/C8) * 60) * (310 / (273 + D8)) * (($E$5 - (EXP(20.8455 - (5270 / (273 + D8))))) / ($E$5 - 47.08))
+     */
+    Float64 precorr = ((VEATPS/sampTime) * 60.0000) * (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (powf(2.71828182846, 20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
+    
+    //VESTPD=precorr*corrFactor;
     
     //lab o2 N2 calcs
     //N2 (if adjust formula, change same in calcViewController
     
-    float N2;
-
-    float O2;
+    Float64 N2;
+    Float64 O2;
     
-    N2   = 100 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
-
-    O2   = 20.93;
+    N2   = 100.0000 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
+    O2   = 20.9300;
     
     
     /* // original code from GR //
@@ -281,25 +296,34 @@
      txtRER.Text = RER
      */
     //vestpd
-    //VEstpd = ( 60 * ( VEatps * ( 273      / (273      + TEMP))      * (( Pressure         - (( 1.001  * TEMP)      - 4.19))    / 760))) / SAMPTIME
-    VESTPD = ( 60 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760 ))) / sampTime;
+    //v1//VEstpd = ( 60 * ( VEatps * ( 273      / (273      + TEMP))      * (( Pressure         - (( 1.001  * TEMP)      - 4.19))    / 760))) / SAMPTIME
+    
+    //v2//VESTPD = ( 60.0000 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760.0000 ))) / sampTime;
+    
+    VESTPD=precorr*corrFactor;//v3//
+    
     singleton.vestpd = [NSString stringWithFormat:@"%.4f", VESTPD];
     
     //vo2
     //VO2    = 0.01   * (VEstpd * (((100 - (FEO2 + FECO2)) / 79.03) * 20.93) - (VEstpd * FEO2))
-    //??? VO2    = VESTPD * ((N2 * 0.265) -  FEO2) /100;
-    VO2    = 0.01   * (VESTPD * (((100 - (FEO2 + FECO2)) / 79.03) * 20.93) - (VESTPD * FEO2));
+    //VO2    = VESTPD * ((N2 * 0.2650) -  FEO2) /100.000;
+    //VO2    = 0.0100   * (VESTPD * (((100.0000 - (FEO2 + FECO2)) / 79.0300) * labO2) - (VESTPD * FEO2));
+    
+    VO2= (VESTPD * (labO2 / 100.0) * ((1.0 - ((FEO2 / 100.0) + (FECO2 / 100.0))) / (1.0 - ((labO2 / 100.0) + (labCO2 / 100))))) - (VESTPD * (FEO2 / 100.0));
+    
     singleton.vo2    = [NSString stringWithFormat:@"%.4f", VO2];
     
     //vco2
     //VCO2   = 0.01 * (VEstpd * FECO2)
-    //???VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
-    VCO2   = 0.01 * (VESTPD * FECO2);
+    //v2//VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
+    VCO2   = VESTPD * ( FECO2 - 0.0400 )/100.0000;
+    //v3//VCO2   = 0.0100 * (VESTPD * FECO2);
     singleton.vco2   = [NSString stringWithFormat:@"%.4f", VCO2];
     
     //vo2kg
     //VO2kg = ( VO2 * 1000)       / Weight
     VO2Kg   = ( VO2 * 1000.0000 ) / subWt ;
+    
     singleton.vo2kg  = [NSString stringWithFormat:@"%.4f", VO2Kg];
     
     //rer

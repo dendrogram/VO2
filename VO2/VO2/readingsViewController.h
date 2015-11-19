@@ -26,6 +26,7 @@
     UITextField * FEO2Txt;
     UITextField * FECO2Txt;
     UITextField * labO2Txt;
+    UITextField * labCO2Txt;
     UISwitch    * pressureChange;
     UISwitch    * tempChange;
 }
@@ -41,6 +42,7 @@
 @property (nonatomic, strong) IBOutlet UITextField * FEO2Txt;
 @property (nonatomic, strong) IBOutlet UITextField * FECO2Txt;
 @property (nonatomic, strong) IBOutlet UITextField * labO2Txt;
+@property (nonatomic, strong) IBOutlet UITextField * labCO2Txt;
 @property (nonatomic, strong) IBOutlet UISwitch    * pressureChange;
 @property (nonatomic, strong) IBOutlet UISwitch    * tempChange;
 @property (nonatomic, strong) IBOutlet UILabel     * degc;

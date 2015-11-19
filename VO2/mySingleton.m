@@ -36,6 +36,7 @@ static mySingleton * sharedSingleton = nil;
             feco2,
             feo2,
             labO2,
+            labCO2,
 
             veatps,
             vestpd,
@@ -103,6 +104,7 @@ static mySingleton * sharedSingleton = nil;
         vco2               = @"0";
         vo2kg              = @"0";
         labO2              = @"20.93";
+        labO2              = @"0.040";
         rer                = @"0";
         testerName         = @"Tester";
         testDate           = @"";

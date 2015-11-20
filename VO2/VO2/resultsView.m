@@ -49,6 +49,18 @@
         filename,
         filepath;
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"You moved to a new screen...");
+    //if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
+        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        //RecipeDetailViewController *destViewController = segue.destinationViewController;
+        //destViewController.recipeName = [recipes objectAtIndex:indexPath.row];
+        
+        // Hide bottom tab bar in the detail view
+        //destViewController.hidesBottomBarWhenPushed = YES;
+    //}
+}
+
 -(NSString *) setFilename{
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSString *extn = @"csv";
@@ -242,20 +254,28 @@
 
 //do the calcs from here:
     //corrFactor
-    corrFactor = (273.0000/(273.0000+labTempC))*((labPressure_mmHg - ((1.0010 * labTempC) - 4.1900)) / 760.0000);
-    singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
+    //old// corrFactor = (273.0000/(273.0000+labTempC))*((labPressure_mmHg - ((1.0010 * labTempC) - 4.1900)) / 760.0000);
+    //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
     
     /* correction factor from excel sheet
       (0.880645161290323) * (($E$5 - 47.08) / 760)
      */
     
-    corrFactor =  0.880645161290323 * ((labPressure_mmHg - 47.0800) / 760.0000);
-    singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
+
     
     /* pre correction factor VeATPS
      ((B8/C8) * 60) * (310 / (273 + D8)) * (($E$5 - (EXP(20.8455 - (5270 / (273 + D8))))) / ($E$5 - 47.08))
      */
-    Float64 precorr = ((VEATPS/sampTime) * 60.0000) * (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (powf(2.71828182846, 20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
+    corrFactor =  0.880645161290323 * ((labPressure_mmHg - 47.0800) / 760.0000);
+    
+    Float64 VEBTPS = (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (powf(2.71828182846, 20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
+    
+    Float64 precorr = ((VEATPS/sampTime) * 60.0000) * VEBTPS;
+    
+    
+    
+    //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
+    singleton.corrFactor = [NSString stringWithFormat:@"%.4f", corrFactor];
     
     //VESTPD=precorr*corrFactor;
     
@@ -300,7 +320,7 @@
     
     //v2//VESTPD = ( 60.0000 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760.0000 ))) / sampTime;
     
-    VESTPD=precorr*corrFactor;//v3//
+    VESTPD = precorr*corrFactor; //v3//
     
     singleton.vestpd = [NSString stringWithFormat:@"%.4f", VESTPD];
     

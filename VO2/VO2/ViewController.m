@@ -28,7 +28,7 @@
 
 #pragma mark Inits
 
-@synthesize webview;
+@synthesize webview, tabBar;
 
 // ************************************************
 // ************************************************

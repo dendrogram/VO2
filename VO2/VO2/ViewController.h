@@ -12,8 +12,10 @@
 
 {
     IBOutlet UILabel     * versionNumberLab;
+    UITabBarController   * tabBar;
 }
 
 @property (strong, nonatomic) IBOutlet UIWebView *webview;
+@property (strong, nonatomic) IBOutlet UITabBarController * tabBar;
 
 @end

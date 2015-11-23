@@ -166,49 +166,49 @@
     if(textField==self->labPressureTxt){
         labPressureTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->labTempTxt){
         labTempTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->labHumidityTxt){
         labHumidityTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->sampTimeTxt){
         sampTimeTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->FECO2Txt){
         FECO2Txt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->FEO2Txt){
         FEO2Txt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->VEATPSTxt){
         VEATPSTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->labO2Txt){
         labO2Txt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-190;
+        int oft=textField.frame.origin.y-250;
         [self keyBoardAppeared:oft];
     }
 }

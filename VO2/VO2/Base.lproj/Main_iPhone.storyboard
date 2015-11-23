@@ -8,7 +8,7 @@
         <!--About-->
         <scene sceneID="mP2-hh-bph">
             <objects>
-                <viewController title="About" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5R5-lv-JSb" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="About" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" id="5R5-lv-JSb" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JpO-Hh-vCS"/>
                         <viewControllerLayoutGuide type="bottom" id="3me-aq-fBC"/>
@@ -524,7 +524,7 @@ Wilmore JH, Costill DL (1973). Adequacy of the Haldane transformation in the com
                         <segue destination="5R5-lv-JSb" kind="relationship" relationship="viewControllers" id="PAL-Yx-ziF"/>
                         <segue destination="POu-Nb-rvQ" kind="relationship" relationship="viewControllers" id="edQ-DA-wHq"/>
                         <segue destination="w9a-IB-qgs" kind="relationship" relationship="viewControllers" id="deZ-rV-6Wb"/>
-                        <segue destination="2po-Q0-PfL" kind="relationship" relationship="viewControllers" id="qWL-UN-10e"/>
+                        <segue destination="2po-Q0-PfL" kind="relationship" relationship="viewControllers" id="Wpr-1a-w44"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtE-xm-GdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,7 +534,7 @@ Wilmore JH, Costill DL (1973). Adequacy of the Haldane transformation in the com
         <!--Data Input-->
         <scene sceneID="sHM-sh-3iI">
             <objects>
-                <viewController title="Data Input" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="POu-Nb-rvQ" customClass="readingsViewController" sceneMemberID="viewController">
+                <viewController title="Data Input" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" id="POu-Nb-rvQ" customClass="readingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iao-Q3-gbm"/>
                         <viewControllerLayoutGuide type="bottom" id="eop-7W-DOH"/>
@@ -771,7 +771,7 @@ Wilmore JH, Costill DL (1973). Adequacy of the Haldane transformation in the com
         <!--Subject Settings-->
         <scene sceneID="Oog-DS-60G">
             <objects>
-                <viewController title="Subject Settings" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w9a-IB-qgs" customClass="subjectViewController" sceneMemberID="viewController">
+                <viewController title="Subject Settings" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" id="w9a-IB-qgs" customClass="subjectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rr9-Dl-QMh"/>
                         <viewControllerLayoutGuide type="bottom" id="OrI-uE-V6v"/>
@@ -3295,7 +3295,7 @@ Cg
         <!--Results-->
         <scene sceneID="hhg-1i-47g">
             <objects>
-                <viewController storyboardIdentifier="Results Summary" title="Results" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2po-Q0-PfL" customClass="resultsView" sceneMemberID="viewController">
+                <viewController title="Results" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" id="2po-Q0-PfL" customClass="resultsView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M2T-lZ-9Nu"/>
                         <viewControllerLayoutGuide type="bottom" id="MhD-uP-TuZ"/>
@@ -3746,7 +3746,7 @@ Cg
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Results Summary" image="vo2_50x50.png" id="sv6-gb-8Ve"/>
+                    <tabBarItem key="tabBarItem" title="Results" image="vo2_50x50.png" id="sv6-gb-8Ve"/>
                     <navigationItem key="navigationItem" id="Yrz-Qr-QaQ"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -3790,6 +3790,6 @@ Cg
         <image name="vo2_50x50.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Uot-1z-0g3"/>
+        <segue reference="bdc-NV-oDQ"/>
     </inferredMetricsTieBreakers>
 </document>

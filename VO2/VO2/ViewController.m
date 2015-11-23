@@ -48,9 +48,9 @@ int v3=0;   //
     
     versionNumberLab.text=versionNo;
     // for web page link
-    NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [webview loadRequest:request];
+    //NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    //[webview loadRequest:request];
 }
 
 @end

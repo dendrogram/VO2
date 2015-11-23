@@ -15,7 +15,7 @@
     // Override point for customization after application launch.
     //start the main App with a message
     NSString *temp2 = [NSString stringWithFormat:@"VO2 Testing Calculator App"];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:temp2 message:@"Take a moment to read the notes pages before you run the Application ..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:temp2 message:@"Take a moment to read\nthe 'About' pages\nbefore you run \nthe Application." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
     return YES;
 }

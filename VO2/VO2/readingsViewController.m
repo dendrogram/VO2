@@ -30,6 +30,7 @@
         FECO2Txt,
         FEO2Txt,
         labO2Txt,
+        labCO2Txt,
 
 //switches
         pressureChange,

@@ -24,6 +24,7 @@
         VEBTPSlbl,
         VO2lbl,
         VCO2lbl,
+        N2lbl,
         datelbl,
         timelbl,
         lablbl,
@@ -230,6 +231,7 @@
     FECO2lbl.text       =   singleton.feco2;
     corrFaclbl.text     =   singleton.corrFactor;
     labO2lbl.text       =   singleton.labO2;
+    N2lbl.text          =   singleton.n2;
     labCO2lbl.text      =   singleton.labCO2;
     VEATPSlbl.text      =   singleton.veatps;
     
@@ -250,6 +252,7 @@
     sampTime         = [samptimelbl.text floatValue];
     labO2            = [labO2lbl.text    floatValue];
     labCO2           = [labCO2lbl.text   floatValue];
+    N2               = [labCO2lbl.text   floatValue];
     labHumidity      = [humiditylbl.text floatValue];
 
     //totalDelay=0;
@@ -269,14 +272,14 @@
      ((B8/C8) * 60) * (310 / (273 + D8)) * (($E$5 - (EXP(20.8455 - (5270 / (273 + D8))))) / ($E$5 - 47.08))
      */
     corrFactor1 =  0.880645161290323 * ((labPressure_mmHg - 47.0800) / 760.0000);
-    NSLog(@"Corr pt 1 = %f",corrFactor1);
+    //NSLog(@"Corr pt 1 = %f",corrFactor1);
     
     VEBTPS = (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (powf(2.71828182846, 20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
     
     Float64 precorr = ((VEATPS/sampTime) * 60.0000) * VEBTPS;
-    NSLog(@"VEBTPS vebtps = %f",VEBTPS);
-    NSLog(@"VESTPD = %f",precorr * corrFactor1);
-    NSLog(@"cor fact = %f",VEBTPS * corrFactor1);
+    //NSLog(@"VEBTPS vebtps = %f",VEBTPS);
+    //NSLog(@"VESTPD = %f",precorr * corrFactor1);
+    //NSLog(@"cor fact = %f",VEBTPS * corrFactor1);
     
     corrFactor = VEBTPS * corrFactor1;
     
@@ -288,10 +291,11 @@
     //lab o2 N2 calcs
     //N2 (if adjust formula, change same in calcViewController
     
-    Float64 N2;
     Float64 O2;
     
     N2   = 100.0000 - ([singleton.feo2 floatValue] + [singleton.feco2 floatValue]) ;
+    singleton.n2 = [NSString stringWithFormat:@"%.2f", N2];
+    
     O2   = 20.9300;
     
     
@@ -363,6 +367,7 @@
     corrFaclbl.text     =   singleton.corrFactor;
     VO2lbl.text         =   singleton.vo2;
     VCO2lbl.text        =   singleton.vco2;
+    N2lbl.text          =   singleton.n2;
     VO2Kglbl.text       =   singleton.vo2kg;
     RERlbl.text         =   singleton.rer;
     
@@ -378,7 +383,7 @@
     [singleton.cardReactionTimeResult addObject:@" "];
     singleton.counter = singleton.counter+1;
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, N2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -386,7 +391,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
                      counter,
                      testerlbl.text,
                      subjectlbl.text,
@@ -402,6 +407,7 @@
                      FEO2,
                      FECO2,
                      labO2,
+                     N2,
                      VEATPS,
                      VEBTPS,
                      VESTPD,

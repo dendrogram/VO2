@@ -31,6 +31,7 @@
     UILabel * RERlbl;
     UILabel * VO2lbl;
     UILabel * VCO2lbl;
+    UILabel * N2lbl;
     UILabel * datelbl;
     UILabel * timelbl;
     UILabel * lablbl;
@@ -61,6 +62,7 @@
     Float64 VEBTPS;
     Float64 VO2;
     Float64 VCO2;
+    Float64 N2;
     Float64 RER;
     Float64 sampTime;
     Float64 FECO2;
@@ -91,6 +93,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * RERlbl;
 @property (nonatomic, strong) IBOutlet UILabel * VO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * VCO2lbl;
+@property (nonatomic, strong) IBOutlet UILabel * N2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * datelbl;
 @property (nonatomic, strong) IBOutlet UILabel * timelbl;
 @property (nonatomic, strong) IBOutlet UILabel * lablbl;

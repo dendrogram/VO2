@@ -44,6 +44,7 @@ static mySingleton * sharedSingleton = nil;
             corrFactor,
             vo2,
             vco2,
+            n2, //nitrogen
             vo2kg,
             rer,
 
@@ -104,6 +105,7 @@ static mySingleton * sharedSingleton = nil;
         corrFactor         = @"1";
         vo2                = @"0";
         vco2               = @"0";
+        n2                 = @"0";
         vo2kg              = @"0";
         labO2              = @"20.93";
         labCO2             = @"0.040";

@@ -40,6 +40,7 @@
     NSString * vebtps;
     NSString * feco2;
     NSString * feo2;
+    NSString * n2;
     NSString * corrFactor;
     NSString * vo2;
     NSString * vco2;
@@ -82,6 +83,7 @@
 @property (nonatomic, retain) NSString * vebtps;
 @property (nonatomic, retain) NSString * feco2;
 @property (nonatomic, retain) NSString * feo2;
+@property (nonatomic, retain) NSString * n2;
 @property (nonatomic, retain) NSString * corrFactor;
 @property (nonatomic, retain) NSString * vo2;
 @property (nonatomic, retain) NSString * vco2;

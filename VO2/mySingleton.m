@@ -40,6 +40,7 @@ static mySingleton * sharedSingleton = nil;
 
             veatps,
             vestpd,
+            vebtps,
             corrFactor,
             vo2,
             vco2,
@@ -99,6 +100,7 @@ static mySingleton * sharedSingleton = nil;
         feco2              = @"0";
         feo2               = @"0";
         veatps             = @"30";
+        vebtps             = @"0";
         corrFactor         = @"1";
         vo2                = @"0";
         vco2               = @"0";

@@ -13,6 +13,7 @@
 {
     IBOutlet UILabel     * statusMessageLab;
     //text views for text displays ie results or help screens
+    //although assigned, not used at present... too fast to be useful
     
 // for file manager
     NSFileManager * fileMgr;
@@ -26,6 +27,7 @@
     
     UILabel * VESTPDlbl;
     UILabel * VEATPSlbl;
+    UILabel * VEBTPSlbl;
     UILabel * RERlbl;
     UILabel * VO2lbl;
     UILabel * VCO2lbl;
@@ -56,12 +58,14 @@
     Float64 labHumidity;
     Float64 VEATPS;
     Float64 VESTPD;
+    Float64 VEBTPS;
     Float64 VO2;
     Float64 VCO2;
     Float64 RER;
     Float64 sampTime;
     Float64 FECO2;
     Float64 FEO2;
+    Float64 corrFactor1;
     Float64 corrFactor;
     Float64 VO2Kg;
     Float64 labO2;
@@ -83,6 +87,7 @@
 //var label outlets
 @property (nonatomic, strong) IBOutlet UILabel * VESTPDlbl;
 @property (nonatomic, strong) IBOutlet UILabel * VEATPSlbl;
+@property (nonatomic, strong) IBOutlet UILabel * VEBTPSlbl;
 @property (nonatomic, strong) IBOutlet UILabel * RERlbl;
 @property (nonatomic, strong) IBOutlet UILabel * VO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * VCO2lbl;

@@ -21,6 +21,7 @@
         RERlbl,
         VESTPDlbl,
         VEATPSlbl,
+        VEBTPSlbl,
         VO2lbl,
         VCO2lbl,
         datelbl,
@@ -113,7 +114,7 @@
      BOOL ok;
      ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
      if (!ok) {
-         (statusMessageLab.text=filepath, [err localizedFailureReason]);
+         //(statusMessageLab.text=filepath, [err localizedFailureReason]);
          //NSLog(@"Error writing file at %@\n%@", filepath, [err localizedFailureReason]);
      }
 }
@@ -131,7 +132,7 @@
 
 - (void)saveText
 {
-    statusMessageLab.text=@"Saving\nData\nFile.";
+    //statusMessageLab.text=@"Saving\nData\nFile.";
     mySingleton *singleton = [mySingleton sharedSingleton];
     NSFileManager   * filemgr;
     NSData          * databuffer;
@@ -156,6 +157,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    statusMessageLab.hidden = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -196,7 +198,7 @@
 // all below to edit - when done delete this line
 
 -(void)calculateStats{
-    statusMessageLab.text=@"Calculating\nStats\nPlease\nWait...";
+    //statusMessageLab.text=@"Calculating\nStats\nPlease\nWait...";
     
     mySingleton *singleton = [mySingleton sharedSingleton];
     
@@ -254,25 +256,29 @@
 
 //do the calcs from here:
     //corrFactor
-    //old// corrFactor = (273.0000/(273.0000+labTempC))*((labPressure_mmHg - ((1.0010 * labTempC) - 4.1900)) / 760.0000);
+     //corrFactor = (273.0000/(273.0000+labTempC))*((labPressure_mmHg - ((1.0010 * labTempC) - 4.1900)) / 760.0000);
+    //NSLog(@"Corr old = %f",corrFactor);
+    
     //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
     
     /* correction factor from excel sheet
       (0.880645161290323) * (($E$5 - 47.08) / 760)
      */
     
-
-    
     /* pre correction factor VeATPS
      ((B8/C8) * 60) * (310 / (273 + D8)) * (($E$5 - (EXP(20.8455 - (5270 / (273 + D8))))) / ($E$5 - 47.08))
      */
-    corrFactor =  0.880645161290323 * ((labPressure_mmHg - 47.0800) / 760.0000);
+    corrFactor1 =  0.880645161290323 * ((labPressure_mmHg - 47.0800) / 760.0000);
+    NSLog(@"Corr pt 1 = %f",corrFactor1);
     
-    Float64 VEBTPS = (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (powf(2.71828182846, 20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
+    VEBTPS = (310.0000 / (273.0000 + labTempC)) * ((labPressure_mmHg - (powf(2.71828182846, 20.8455 - (5270.0000 / (273.0000 + labTempC))))) / (labPressure_mmHg - 47.0800));
     
     Float64 precorr = ((VEATPS/sampTime) * 60.0000) * VEBTPS;
+    NSLog(@"VEBTPS vebtps = %f",VEBTPS);
+    NSLog(@"VESTPD = %f",precorr * corrFactor1);
+    NSLog(@"cor fact = %f",VEBTPS * corrFactor1);
     
-    
+    corrFactor = VEBTPS * corrFactor1;
     
     //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
     singleton.corrFactor = [NSString stringWithFormat:@"%.4f", corrFactor];
@@ -320,7 +326,7 @@
     
     //v2//VESTPD = ( 60.0000 * ( VEATPS * ( 273.0000 / (273.0000 + labTempC )) * (( labPressure_mmHg - (( 1.0010 * labTempC ) - 4.1900 )) / 760.0000 ))) / sampTime;
     
-    VESTPD = precorr*corrFactor; //v3//
+    VESTPD = precorr*corrFactor1; //v3//
     
     singleton.vestpd = [NSString stringWithFormat:@"%.4f", VESTPD];
     
@@ -344,7 +350,8 @@
     //VO2kg = ( VO2 * 1000)       / Weight
     VO2Kg   = ( VO2 * 1000.0000 ) / subWt ;
     
-    singleton.vo2kg  = [NSString stringWithFormat:@"%.4f", VO2Kg];
+    singleton.vo2kg     = [NSString stringWithFormat:@"%.4f", VO2Kg];
+    singleton.vebtps    = [NSString stringWithFormat:@"%.4f", VEBTPS];
     
     //rer
     RER    = ( VCO2 / VO2 );
@@ -352,6 +359,7 @@
     
     VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   singleton.vestpd;
+    VEBTPSlbl.text      =   singleton.vebtps;
     corrFaclbl.text     =   singleton.corrFactor;
     VO2lbl.text         =   singleton.vo2;
     VCO2lbl.text        =   singleton.vco2;
@@ -370,7 +378,7 @@
     [singleton.cardReactionTimeResult addObject:@" "];
     singleton.counter = singleton.counter+1;
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -378,7 +386,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
                      counter,
                      testerlbl.text,
                      subjectlbl.text,
@@ -395,6 +403,7 @@
                      FECO2,
                      labO2,
                      VEATPS,
+                     VEBTPS,
                      VESTPD,
                      corrFactor,
                      VO2,
@@ -468,7 +477,7 @@
 
     [self WriteToStringFile:[printString mutableCopy]];
     
-    statusMessageLab.text=@"Waiting\nfor\nNext\nInstruction.";
+    //statusMessageLab.text=@"Waiting\nfor\nNext\nInstruction.";
 }
 // all above to edit - when done delete this line
 // +++++++++++++++++++++++++++++++++++
@@ -476,7 +485,7 @@
 
 //mail from button press
 -(IBAction)sendEmail:(id)sender {
-    statusMessageLab.text=@"E-Mail\nResults\nLoading...";
+    //statusMessageLab.text=@"E-Mail\nResults\nLoading...";
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
@@ -494,24 +503,24 @@
     }else{
         
     } //end of if else to check if mail is able to be sent, send message if not
-    statusMessageLab.text=@"Select\nNext\nTask";
+    //statusMessageLab.text=@"Select\nNext\nTask";
 } // end of mail function
 
 //set out mail controller warnings screen
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
-    statusMessageLab.text=@"Mail\nController";
+    //statusMessageLab.text=@"Mail\nController";
     if (error) {
         UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@",[error description]] delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil,nil];
         [alertview show];
         //[alert release];
         [self dismissViewControllerAnimated:YES completion:^{/*error*/}];
-        statusMessageLab.text=@"An mail\nError\nOccurred.";
+        //statusMessageLab.text=@"An mail\nError\nOccurred.";
     }
     else{
         [self dismissViewControllerAnimated:YES completion:^{/*ok*/}];
-        statusMessageLab.text=@"E-Mail Sent\nOK.";
+        //statusMessageLab.text=@"E-Mail Sent\nOK.";
     }
-    statusMessageLab.text=@"Select\nNext\nTask";
+    //statusMessageLab.text=@"Select\nNext\nTask";
 }
 
 //if file name is passed, use...

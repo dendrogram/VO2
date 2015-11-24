@@ -120,7 +120,6 @@
      }
 }
 
-
 -(NSString*)getCurrentDateTimeAsNSString
 {
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
@@ -282,6 +281,8 @@
     //NSLog(@"cor fact = %f",VEBTPS * corrFactor1);
     
     corrFactor = VEBTPS * corrFactor1;
+    //now make the vebtps the right figure
+    VEBTPS = VEBTPS * VEATPS;
     
     //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
     singleton.corrFactor = [NSString stringWithFormat:@"%.4f", corrFactor];
@@ -346,7 +347,11 @@
     //vco2
     //VCO2   = 0.01 * (VEstpd * FECO2)
     //v2//VCO2   = VESTPD * ( FECO2 - 0.04 )/100;
-    VCO2   = VESTPD * ( FECO2 - 0.0400 )/100.0000;
+    //VCO2   = VESTPD * ( FECO2 - 0.0400 )/100.0000; //question why 0.04 and not labco2?
+    //VCO2   = VESTPD * ( FECO2 - labCO2 )/100.0000; //try?
+    
+    VCO2 = (VESTPD * (FECO2 / 100.0)) - (VESTPD * (labCO2 / 100.0) * ((1.0 - ((FEO2 / 100.0) + (FECO2 / 100.0))) / (1.0 - ((labO2 / 100.0) + (labCO2 / 100.0)))));
+    
     //v3//VCO2   = 0.0100 * (VESTPD * FECO2);
     singleton.vco2   = [NSString stringWithFormat:@"%.4f", VCO2];
     

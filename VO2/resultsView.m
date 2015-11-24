@@ -254,6 +254,7 @@
     labCO2           = [labCO2lbl.text   floatValue];
     N2               = [labCO2lbl.text   floatValue];
     labHumidity      = [humiditylbl.text floatValue];
+    
     //pressure check
     
     if (singleton.ismmHg==YES) {

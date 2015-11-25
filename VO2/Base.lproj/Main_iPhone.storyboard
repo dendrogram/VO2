@@ -805,7 +805,7 @@ Wilmore JH, Costill DL (1973). Adequacy of the Haldane transformation in the com
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="resetO2btn:" destination="POu-Nb-rvQ" eventType="touchUpInside" id="WKe-P9-hMm"/>
+                                            <action selector="resetO2btn:" destination="POu-Nb-rvQ" eventType="touchUpInside" id="Ajs-Jp-C6Q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tK9-HZ-VLP">
@@ -817,7 +817,7 @@ Wilmore JH, Costill DL (1973). Adequacy of the Haldane transformation in the com
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="resetCO2btn:" destination="POu-Nb-rvQ" eventType="touchUpInside" id="e7u-a0-wBl"/>
+                                            <action selector="resetCO2btn:" destination="POu-Nb-rvQ" eventType="touchUpInside" id="SIh-vz-rvt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -844,8 +844,8 @@ Wilmore JH, Costill DL (1973). Adequacy of the Haldane transformation in the com
                         <outlet property="labTempTxt" destination="naE-km-Tr8" id="2BR-TM-5iJ"/>
                         <outlet property="press" destination="N9Y-qY-Ow8" id="I6f-It-IyF"/>
                         <outlet property="pressureChange" destination="q0e-NP-xAM" id="D1u-Lm-vk7"/>
-                        <outlet property="resetCO2" destination="tK9-HZ-VLP" id="19G-J6-uMC"/>
-                        <outlet property="resetO2" destination="DXI-8d-gid" id="ZF7-L3-Q43"/>
+                        <outlet property="resetCO2" destination="tK9-HZ-VLP" id="MrL-RX-QS7"/>
+                        <outlet property="resetO2" destination="DXI-8d-gid" id="Rpb-DE-URk"/>
                         <outlet property="sampTimeTxt" destination="EvV-qS-Tit" id="wSq-e8-NeP"/>
                         <outlet property="tempChange" destination="n4B-T3-wxO" id="CmJ-hp-xqW"/>
                     </connections>

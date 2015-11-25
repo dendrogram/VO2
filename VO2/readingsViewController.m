@@ -60,6 +60,7 @@
     [pressureChange setOn:YES];
     [tempChange setOn:YES];
     
+    //as defaults are used, hide the reset button
     resetO2.hidden=YES;
     resetCO2.hidden=YES;
     
@@ -93,7 +94,6 @@
     labHumidityTxt.text         =   singleton.labHumidity       ;
     labPressureTxt.text         =   singleton.labPressure_mmHg  ;
     sampTimeTxt.text            =   singleton.sampTime          ;
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -115,23 +115,22 @@
     press.text=@"mmHg";
     [pressureChange setOn:YES];
     [tempChange setOn:YES];
+    
     [self resetGassesCheckBtnHidden];
 }
 
 -(void)resetGassesCheckBtnHidden{
+    resetO2.hidden = NO;
     //O2 reset visible?
-    if([labO2Txt.text floatValue] == 20.93){
+    if([labO2Txt.text  isEqual: @"20.93"]){
         labO2Txt.text=@"20.93";
         resetO2.hidden=YES;
-    }else{
-        resetO2.hidden=NO;
     }
     //CO2 reset visible?
-    if([labCO2Txt.text floatValue] == 0.04){
-        labO2Txt.text=@"0.04";
+    resetCO2.hidden = NO;
+    if([labCO2Txt.text  isEqual: @"0.04"]){
+        labCO2Txt.text=@"0.04";
         resetCO2.hidden=YES;
-    }else{
-        resetCO2.hidden=NO;
     }
 }
 
@@ -158,7 +157,7 @@
 }
 
 -(IBAction)resetCO2btn:(id)sender{
-    labCO2Txt.text = @"0.040";
+    labCO2Txt.text = @"0.04";
     resetCO2.hidden=YES;
 }
 
@@ -345,6 +344,42 @@
         labPressure_mmHg=1200;
         labPressureTxt.text=@"1200.00";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
+    }
+    
+    if ([labO2Txt.text floatValue] > 30) {
+        labO2Txt.textColor=[UIColor redColor];
+        labO2Txt.text=@"30";
+        labO2Txt.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labO2Txt.text floatValue] < 0) {
+        labO2Txt.textColor=[UIColor redColor];
+        labO2Txt.text=@"0";
+        labO2Txt.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labCO2Txt.text floatValue] > 20) {
+        labCO2Txt.textColor=[UIColor redColor];
+        labCO2Txt.text=@"20";
+        labCO2Txt.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labCO2Txt.text floatValue] < 0) {
+        labCO2Txt.textColor=[UIColor redColor];
+        labCO2Txt.text=@"0";
+        labCO2Txt.backgroundColor = [UIColor yellowColor];
+    }
+    if ([sampTimeTxt.text floatValue] < 0) {
+        sampTimeTxt.textColor=[UIColor redColor];
+        sampTimeTxt.text=@"0";
+        sampTimeTxt.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labHumidityTxt.text floatValue] < 0) {
+        labHumidityTxt.textColor=[UIColor redColor];
+        labHumidityTxt.text=@"0";
+        labHumidityTxt.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labHumidityTxt.text floatValue] > 100) {
+        labHumidityTxt.textColor=[UIColor redColor];
+        labHumidityTxt.text=@"100";
+        labHumidityTxt.backgroundColor = [UIColor yellowColor];
     }
     
     VEATPSTxt.textColor=[UIColor blackColor];

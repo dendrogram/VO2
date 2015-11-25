@@ -29,6 +29,8 @@
     UITextField * labCO2Txt;
     UISwitch    * pressureChange;
     UISwitch    * tempChange;
+    UIButton    * resetO2;
+    UIButton    * resetCO2;
 }
 
 //text field inputs
@@ -47,6 +49,11 @@
 @property (nonatomic, strong) IBOutlet UISwitch    * tempChange;
 @property (nonatomic, strong) IBOutlet UILabel     * degc;
 @property (nonatomic, strong) IBOutlet UILabel     * press;
+@property (nonatomic, strong) IBOutlet UIButton    * resetO2;
+@property (nonatomic, strong) IBOutlet UIButton    * resetCO2;
 
+-(IBAction)resetO2btn:(id)sender;
+-(IBAction)resetCO2btn:(id)sender;
+-(void)resetGassesCheckBtnHidden;
 @end
 

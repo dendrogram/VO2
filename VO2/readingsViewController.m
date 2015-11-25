@@ -10,6 +10,9 @@
 #import "mySingleton.h" //for global variables
 
 @interface readingsViewController ()
+{
+    
+}
 
 @end
 
@@ -38,8 +41,9 @@
 
 //labels for units
         press,
-        degc
-        ;
+        degc,
+        resetO2,
+        resetCO2;
 
 - (void)viewDidLoad
 {
@@ -52,8 +56,12 @@
 
     degc.text=@"'C";
     press.text=@"mmHg";
+    
     [pressureChange setOn:YES];
     [tempChange setOn:YES];
+    
+    resetO2.hidden=YES;
+    resetCO2.hidden=YES;
     
     //look for switch changs on pressure and temperature
     [self.pressureChange addTarget:self
@@ -107,6 +115,24 @@
     press.text=@"mmHg";
     [pressureChange setOn:YES];
     [tempChange setOn:YES];
+    [self resetGassesCheckBtnHidden];
+}
+
+-(void)resetGassesCheckBtnHidden{
+    //O2 reset visible?
+    if([labO2Txt.text floatValue] == 20.93){
+        labO2Txt.text=@"20.93";
+        resetO2.hidden=YES;
+    }else{
+        resetO2.hidden=NO;
+    }
+    //CO2 reset visible?
+    if([labCO2Txt.text floatValue] == 0.04){
+        labO2Txt.text=@"0.04";
+        resetCO2.hidden=YES;
+    }else{
+        resetCO2.hidden=NO;
+    }
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -124,6 +150,16 @@
     singleton.labHumidity       = [NSString stringWithFormat:@"%@", labHumidityTxt.text];
     singleton.labPressure_mmHg  = [NSString stringWithFormat:@"%@", labPressureTxt.text];
     singleton.sampTime          = [NSString stringWithFormat:@"%@", sampTimeTxt.text];
+}
+
+-(IBAction)resetO2btn:(id)sender{
+    labO2Txt.text = @"20.93";
+    resetO2.hidden=YES;
+}
+
+-(IBAction)resetCO2btn:(id)sender{
+    labCO2Txt.text = @"0.040";
+    resetCO2.hidden=YES;
 }
 
 //Pressure switch changed, so recalculate and update textfield
@@ -273,16 +309,19 @@
     FEO2Txt.backgroundColor        = [UIColor whiteColor];
     labO2Txt.backgroundColor       = [UIColor whiteColor];
     labCO2Txt.backgroundColor      = [UIColor whiteColor];
+
+    //check if reset buttons need to be shown
+    [self resetGassesCheckBtnHidden];
     
- /*
+
   //colour change if out of range and insert range max/min value
   //set backgrounds to yellow/red if had to correct
   
     labTempTxt.textColor=[UIColor blackColor];
-    if (labTempC<-50) {
+    if (labTempC<-40) {
         labTempTxt.textColor=[UIColor redColor];
-        labTempC=-50.0;
-        labTempTxt.text=@"-50.00";
+        labTempC=-40.0;
+        labTempTxt.text=@"-40.00";
         labTempTxt.backgroundColor = [UIColor yellowColor];
     }
     
@@ -294,17 +333,17 @@
     }
     
     labPressureTxt.textColor=[UIColor blackColor];
-    if (labPressure_mmHg<600) {
+    if (labPressure_mmHg<200) {
         labPressureTxt.textColor=[UIColor redColor];
-        labPressure_mmHg=600;
-        labPressureTxt.text=@"600.00";
+        labPressure_mmHg=200;
+        labPressureTxt.text=@"200.00";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if (labPressure_mmHg>1000) {
+    if (labPressure_mmHg>1200) {
         labPressureTxt.textColor=[UIColor redColor];
-        labPressure_mmHg=1000;
-        labPressureTxt.text=@"1000.00";
+        labPressure_mmHg=1200;
+        labPressureTxt.text=@"1200.00";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
     
@@ -322,8 +361,6 @@
         VEATPSTxt.text=@"1.000";
         VEATPSTxt.backgroundColor = [UIColor yellowColor];
     }
-  */
-    //check if value typed in is mmHg or mBar
 }
 
 -(void) keyBoardAppeared :(int)oft

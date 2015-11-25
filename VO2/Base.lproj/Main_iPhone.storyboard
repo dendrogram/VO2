@@ -2338,7 +2338,7 @@ Cg
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXP-JF-Fz1">
                                         <rect key="frame" x="204" y="175" width="61" height="21"/>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.99607843137254903" green="1" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2566,6 +2566,7 @@ Cg
                         <outlet property="VO2lbl" destination="ppz-em-aUl" id="saz-qd-gWd"/>
                         <outlet property="corrFaclbl" destination="hxs-XD-WCF" id="oAX-Uq-e1d"/>
                         <outlet property="datelbl" destination="Ukk-4q-6Oo" id="mhq-e8-BIK"/>
+                        <outlet property="emailBtn" destination="tjI-CH-ovU" id="CYA-sT-eAh"/>
                         <outlet property="humiditylbl" destination="BfQ-ff-Ol7" id="CW7-f6-Gb5"/>
                         <outlet property="labCO2lbl" destination="nXP-JF-Fz1" id="XlO-J2-bR4"/>
                         <outlet property="labO2lbl" destination="c4b-Dp-bWc" id="qXA-bJ-gRY"/>

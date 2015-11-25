@@ -174,26 +174,26 @@
     //colour change if out of range and insert range max/min value
     //set backgrounds to yellow/red if had to correct
     
-    if ([subHtTxt.text floatValue] < 10.0) {
+    if ([subHtTxt.text floatValue] < 0.10) {
         subHtTxt.textColor = [UIColor redColor];
-        subHtTxt.text = @"10.0";
+        subHtTxt.text = @"0.10";
         subHtTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if ([subHtTxt.text floatValue] > 300.0) {
+    if ([subHtTxt.text floatValue] > 3.00) {
         subHtTxt.textColor = [UIColor redColor];
-        subHtTxt.text = @"300.0";
+        subHtTxt.text = @"3.00";
         subHtTxt.backgroundColor = [UIColor yellowColor];
     }
-    if ([subWtTxt.text floatValue] < 1.0) {
+    if ([subWtTxt.text floatValue] < 1.00) {
         subWtTxt.textColor = [UIColor redColor];
-        subWtTxt.text = @"1.0";
+        subWtTxt.text = @"1.00";
         subWtTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if ([subWtTxt.text floatValue] > 300.0) {
+    if ([subWtTxt.text floatValue] > 300.00) {
         subWtTxt.textColor = [UIColor redColor];
-        subWtTxt.text = @"300.0";
+        subWtTxt.text = @"300.00";
         subWtTxt.backgroundColor = [UIColor yellowColor];
     }
 }

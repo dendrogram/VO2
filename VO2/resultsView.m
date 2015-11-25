@@ -9,6 +9,9 @@
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
 
+//rgb colour setting for boxes
+#define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
+
 @interface resultsView()
 {
 
@@ -49,7 +52,8 @@
         fileMgr,
         homeDir,
         filename,
-        filepath;
+        filepath,
+        emailBtn;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"You moved to a new screen...");
@@ -176,7 +180,38 @@
     singleton.testTime       = [NSString stringWithFormat:@"%@",  timelbl.text];
     
     [self calculateStats];
+    
+    emailBtn.hidden=NO;
+    FEO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
+    FECO2lbl.backgroundColor = Rgb2UIColor(255, 255, 200);
+    VCO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
+    RERlbl.backgroundColor   = Rgb2UIColor(255, 255, 200);
+    
+    if ([FEO2lbl.text  floatValue] <= 0.0) {
+        //red if blank
+        emailBtn.hidden=YES;
+        FECO2lbl.backgroundColor = [UIColor redColor];
+    }
+    
+    if ([FECO2lbl.text  floatValue] <= 0.0) {
+        //red if blank
+        emailBtn.hidden=YES;
+        FEO2lbl.backgroundColor = [UIColor redColor];
+    }
+    
+    if ([VCO2lbl.text  floatValue] <= 0.0) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    
+    if ([RERlbl.text  floatValue] <= 0.0) {
+        //red if negative
+        emailBtn.hidden=YES;
+        RERlbl.backgroundColor = [UIColor redColor];
+    }
 }
+
 -(void)setDateNow:(id)sender{
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];

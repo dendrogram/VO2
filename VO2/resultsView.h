@@ -50,6 +50,8 @@
     UILabel * labO2lbl;
     UILabel * labCO2lbl;
     
+    UIButton * emailBtn;
+    
     Float64 subWt;
     Float64 subHt;
     Float64 labPressure_mmHg;
@@ -111,6 +113,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * labO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * labCO2lbl;
+@property (nonatomic, strong) IBOutlet UIButton * emailBtn;
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;

@@ -56,7 +56,8 @@
         emailBtn;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"You moved to a new screen...");
+    //NSLog(@"You moved to a new screen...");
+    
     //if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         //RecipeDetailViewController *destViewController = segue.destinationViewController;
@@ -165,6 +166,8 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    statusMessageLab.hidden = YES;
+    
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     // set up link to singleton
@@ -212,6 +215,10 @@
     }
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    statusMessageLab.hidden = YES;
+}
+
 -(void)setDateNow:(id)sender{
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -234,6 +241,8 @@
 // all below to edit - when done delete this line
 
 -(void)calculateStats{
+    statusMessageLab.hidden = YES;
+    
     //statusMessageLab.text=@"Calculating\nStats\nPlease\nWait...";
     
     mySingleton *singleton = [mySingleton sharedSingleton];

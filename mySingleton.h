@@ -30,6 +30,7 @@
     BOOL     isDegC;
     BOOL     ismmHg;
     
+    NSString * email;
     NSString * subWt;
     NSString * subHt;
     NSString * labTemp;
@@ -73,6 +74,7 @@
 //floats
 
 //Strings
+@property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * subWt;
 @property (nonatomic, retain) NSString * subHt;
 @property (nonatomic, retain) NSString * labTemp;

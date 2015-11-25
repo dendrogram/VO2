@@ -14,6 +14,7 @@
     UITextField   * subHtTxt;
     UITextField   * subjectNameTxt;
     UITextField   * testerNameTxt;
+    UITextField   * emailTxt;
     UITextField   * startDateTxt;
     UITextField   * testDateTxt;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
+@property (nonatomic, strong) IBOutlet UITextField * emailTxt;
 @property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
 

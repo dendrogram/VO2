@@ -27,6 +27,7 @@ static mySingleton * sharedSingleton = nil;
             oldSubjectName,
             subWt,
             subHt,
+            email,
 
             labTemp,
             labPressure_mmHg,
@@ -115,6 +116,7 @@ static mySingleton * sharedSingleton = nil;
         labCO2             = @"0.04";
         rer                = @"0";
         testerName         = @"Tester";
+        email              = @"me@myemail.com";
         testDate           = @"";
         testTime           = @"";
         resultStrings      = @"";

@@ -9,8 +9,11 @@
 #import "subjectViewController.h"
 #import "mySingleton.h" //for global variables
 
-@interface subjectViewController ()
+//for settings plist storage of tester and their emal address
+#define kEmail      @"emailAddress"
+#define kTester     @"testerName"
 
+@interface subjectViewController ()
 {
     
 }
@@ -25,6 +28,7 @@
     startDateTxt,
     testDateTxt,
     subjectNameTxt,
+    emailTxt,
     testerNameTxt,
     subHtTxt,
     subWtTxt;
@@ -37,6 +41,7 @@
     
     startDateTxt.delegate   = self;
     testDateTxt.delegate    = self;
+    emailTxt.delegate       = self;
     subjectNameTxt.delegate = self;
     testerNameTxt.delegate  = self;
     subHtTxt.delegate       = self;
@@ -48,11 +53,34 @@
     mySingleton *singleton  = [mySingleton sharedSingleton];
     
     subjectNameTxt.text     =   singleton.oldSubjectName ;
-    testerNameTxt.text      =   singleton.testerName  ;
+    //testerNameTxt.text      =   singleton.testerName  ;
+    //emailTxt.text           =   singleton.email       ;
     subWtTxt.text           =   singleton.subWt       ;
     subHtTxt.text           =   singleton.subHt       ;
     testDateTxt.text        =   singleton.testDate    ;
     startDateTxt.text       =   singleton.testTime    ;
+    
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //tester name
+    testerNameTxt.text     = [defaults objectForKey:kTester];
+    if([testerNameTxt.text isEqualToString: @ "" ]){
+        testerNameTxt.text =  @"Me";
+        [defaults setObject:@"Me" forKey:kTester];
+    }
+    //email name
+    emailTxt.text     = [defaults objectForKey:kEmail];
+    if([emailTxt.text isEqualToString: @ "" ]){
+        emailTxt.text =  @"me@mymailaddress.com";
+        [defaults setObject:@"me@mymailaddress.com" forKey:kEmail];
+    }
     
     if([testDateTxt.text isEqualToString: @""]){
         //if blank put in today date
@@ -69,12 +97,26 @@
 -(void)viewDidDisappear:(BOOL)animated{
 // set up link to singleton
     mySingleton *singleton   = [mySingleton sharedSingleton];
+    
     singleton.oldSubjectName = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
     singleton.subjectName    = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
-    singleton.testerName     = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
+    //singleton.testerName     = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
+    //singleton.email          = [NSString stringWithFormat:@"%@",  emailTxt.text];
     singleton.subWt          = [NSString stringWithFormat:@"%@",  subWtTxt.text];
     singleton.subHt          = [NSString stringWithFormat:@"%@",  subHtTxt.text];
 
+    //set up the plist params
+    NSString * pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString * settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary * defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults * defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //save the updated names to plist
+    [defaults setObject:singleton.testerName forKey: kTester ];
+    [defaults setObject:singleton.email      forKey: kEmail  ];
     
     if([testDateTxt.text isEqualToString: @""]){
         //if blank put in today date
@@ -154,6 +196,12 @@
         int oft=textField.frame.origin.y-165;
         [self keyBoardAppeared:oft];
     }
+    if(textField==self->emailTxt){
+        emailTxt.backgroundColor = [UIColor greenColor];
+        textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
+        int oft=textField.frame.origin.y-165;
+        [self keyBoardAppeared:oft];
+    }
 }
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
@@ -167,6 +215,7 @@
     testerNameTxt.backgroundColor  = [UIColor whiteColor];
     subHtTxt.backgroundColor       = [UIColor whiteColor];
     subWtTxt.backgroundColor       = [UIColor whiteColor];
+    emailTxt.backgroundColor       = [UIColor whiteColor];
 //
     subHtTxt.textColor       = [UIColor blackColor];
     subWtTxt.textColor       = [UIColor blackColor];

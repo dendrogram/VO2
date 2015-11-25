@@ -301,7 +301,7 @@
 				ORGANIZATIONNAME = "Manchester Metropolitan University - ESS - essmobile";
 				TargetAttributes = {
 					E1F13E1B1974537000A9748D = {
-						DevelopmentTeam = G8Q878PY9S;
+						DevelopmentTeam = 4SPW49WK35;
 					};
 					E1F13E3F1974537000A9748D = {
 						TestTargetID = E1F13E1B1974537000A9748D;
@@ -519,6 +519,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VO2/VO2-Prefix.pch";
 				INFOPLIST_FILE = "VO2/VO2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.VO2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -537,6 +538,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VO2/VO2-Prefix.pch";
 				INFOPLIST_FILE = "VO2/VO2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.VO2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

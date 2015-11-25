@@ -562,7 +562,8 @@
 
 //mail from button press
 -(IBAction)sendEmail:(id)sender {
-    //statusMessageLab.text=@"E-Mail\nResults\nLoading...";
+    statusMessageLab.hidden = NO;
+    statusMessageLab.text=@"E-Mail\nResults\nLoading...";
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
@@ -585,17 +586,18 @@
 
 //set out mail controller warnings screen
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *) error {
-    //statusMessageLab.text=@"Mail\nController";
+    statusMessageLab.hidden = NO;
+    statusMessageLab.text=@"Mail\nController";
     if (error) {
         UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"error" message:[NSString stringWithFormat:@"error %@",[error description]] delegate:nil cancelButtonTitle:@"dismiss" otherButtonTitles:nil,nil];
         [alertview show];
         //[alert release];
         [self dismissViewControllerAnimated:YES completion:^{/*error*/}];
-        //statusMessageLab.text=@"An mail\nError\nOccurred.";
+        statusMessageLab.text=@"An mail\nError\nOccurred.";
     }
     else{
         [self dismissViewControllerAnimated:YES completion:^{/*ok*/}];
-        //statusMessageLab.text=@"E-Mail Sent\nOK.";
+        statusMessageLab.text=@"E-Mail Sent\nOK.";
     }
     //statusMessageLab.text=@"Select\nNext\nTask";
 }
@@ -604,11 +606,14 @@
 //- (IBAction)showEmail:(NSString*)file {
 
 - (IBAction)showEmail:(id)sender {
-mySingleton *singleton = [mySingleton sharedSingleton];
+    statusMessageLab.hidden = YES;
+    mySingleton *singleton = [mySingleton sharedSingleton];
+    
     NSString *emailTitle = [NSString stringWithFormat:@"VO2 App Data for: %@",singleton.oldSubjectName];
     NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, .csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by VO2 App.",singleton.oldSubjectName,singleton.testDate,singleton.testTime];
     //old for testing// NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
-    NSArray  *toRecipents = [NSArray arrayWithObject:@"test@mmu.ac.uk"];
+    
+    NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email]];
 
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;

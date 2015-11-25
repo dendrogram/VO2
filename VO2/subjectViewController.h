@@ -22,8 +22,8 @@
 @property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subjectNameTxt;
-@property (nonatomic, strong) IBOutlet UITextField * testerNameTxt;
-@property (nonatomic, strong) IBOutlet UITextField * emailTxt;
+@property (nonatomic, retain) IBOutlet UITextField * testerNameTxt;
+@property (nonatomic, retain) IBOutlet UITextField * emailTxt;
 @property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
 

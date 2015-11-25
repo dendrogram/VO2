@@ -53,8 +53,8 @@
     mySingleton *singleton  = [mySingleton sharedSingleton];
     
     subjectNameTxt.text     =   singleton.oldSubjectName ;
-    //testerNameTxt.text      =   singleton.testerName  ;
-    //emailTxt.text           =   singleton.email       ;
+    testerNameTxt.text      =   singleton.testerName  ;
+    emailTxt.text           =   singleton.email       ;
     subWtTxt.text           =   singleton.subWt       ;
     subHtTxt.text           =   singleton.subHt       ;
     testDateTxt.text        =   singleton.testDate    ;
@@ -69,18 +69,26 @@
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    //for plist
     //tester name
     testerNameTxt.text     = [defaults objectForKey:kTester];
     if([testerNameTxt.text isEqualToString: @ "" ]){
         testerNameTxt.text =  @"Me";
-        [defaults setObject:@"Me" forKey:kTester];
+        [defaults setObject:[NSString stringWithFormat:@"%@", singleton.testerName] forKey:kTester];
     }
     //email name
     emailTxt.text     = [defaults objectForKey:kEmail];
     if([emailTxt.text isEqualToString: @ "" ]){
         emailTxt.text =  @"me@mymailaddress.com";
-        [defaults setObject:@"me@mymailaddress.com" forKey:kEmail];
+        [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
     }
+    singleton.testerName = testerNameTxt.text;
+    singleton.email      = emailTxt.text;
+    
+    [defaults synchronize];//make sure all are updated
+    
+    singleton.email=emailTxt.text;
+    singleton.testerName=testerNameTxt.text;
     
     if([testDateTxt.text isEqualToString: @""]){
         //if blank put in today date
@@ -100,8 +108,8 @@
     
     singleton.oldSubjectName = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
     singleton.subjectName    = [NSString stringWithFormat:@"%@",  subjectNameTxt.text];
-    //singleton.testerName     = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
-    //singleton.email          = [NSString stringWithFormat:@"%@",  emailTxt.text];
+    singleton.testerName     = [NSString stringWithFormat:@"%@",  testerNameTxt.text];
+    singleton.email          = [NSString stringWithFormat:@"%@",  emailTxt.text];
     singleton.subWt          = [NSString stringWithFormat:@"%@",  subWtTxt.text];
     singleton.subHt          = [NSString stringWithFormat:@"%@",  subHtTxt.text];
 
@@ -115,8 +123,10 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     //save the updated names to plist
-    [defaults setObject:singleton.testerName forKey: kTester ];
-    [defaults setObject:singleton.email      forKey: kEmail  ];
+    [defaults setObject:[NSString stringWithFormat:@"%@",singleton.testerName] forKey: kTester ];
+    [defaults setObject:[NSString stringWithFormat:@"%@",singleton.email]      forKey: kEmail  ];
+    
+    [defaults synchronize];//make sure all are updated
     
     if([testDateTxt.text isEqualToString: @""]){
         //if blank put in today date
@@ -126,6 +136,7 @@
         //if blank put in now time
         [self setTimeNow:self];
     }
+    
     singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
     singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
 }

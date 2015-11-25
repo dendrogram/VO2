@@ -12,8 +12,6 @@
     // add all the objects that you want to be globally abailable here:
     //eg types defs
 
-
-
     //float   test;
     //BOOL    boxShow;
     //UIColor *lineColour;

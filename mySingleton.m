@@ -57,8 +57,7 @@ static mySingleton * sharedSingleton = nil;
             cardReactionTimeResult,
             counter,
 
-            versionNumber
-            ;
+            versionNumber;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -120,10 +119,10 @@ static mySingleton * sharedSingleton = nil;
         testDate           = @"";
         testTime           = @"";
         resultStrings      = @"";
-        subjectName        = @"A";
-        oldSubjectName     = @"A";
+        subjectName        = @"Sub";
+        oldSubjectName     = @"Sub";
         resultStrings      = @"";
-        versionNumber      = @"";
+        versionNumber      = @"2.2.25.11.15";
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         counter            = 0;
     }

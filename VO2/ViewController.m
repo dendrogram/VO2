@@ -37,7 +37,7 @@
 
 #pragma mark Inits
 
-@synthesize webview, tabBar;
+@synthesize webview, tabBar, essweblink, mmuweblink ;
 
 // ************************************************
 // ************************************************
@@ -117,12 +117,12 @@ int v3=1;   //
     [defaults synchronize];//make sure all are updated
 }
 
-- (IBAction)weblinkjump:(id)sender {
+- (IBAction)esswebjump:(id)sender{
     //jump to mmu page
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.ess.mmu.ac.uk"]];
 }
 
-- (IBAction)mmuwebjump:(id)sender {
+- (IBAction)mmuwebjump:(id)sender{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.mmu.ac.uk"]];
 }
 @end

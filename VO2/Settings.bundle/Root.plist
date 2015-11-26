@@ -10,11 +10,11 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Names - Tester</string>
+			<string>Tester Name &amp; Email Address</string>
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<string></string>
+			<string>me</string>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
 			<key>AutocorrectionType</key>
@@ -32,7 +32,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<string></string>
+			<string>me@mmu.ac.uk</string>
 			<key>KeyboardType</key>
 			<string>EmailAddress</string>
 			<key>AutocorrectionType</key>

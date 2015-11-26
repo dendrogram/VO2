@@ -13,6 +13,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //set up the plist params
+    NSString       * pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString       * settingsBundlePath    = [pathStr stringByAppendingPathComponent:           @"Settings.bundle"];
+    NSString       * defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary   * defaultPrefs          = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults * defaults              = [NSUserDefaults standardUserDefaults];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [defaults synchronize];//make sure all are updated
+    
     //start the main App with a message
     NSString *temp2 = [NSString stringWithFormat:@"VO2 Testing Calculator App"];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:temp2 message:@"Take a moment to read\nthe 'About' pages\nbefore you run \nthe Application." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];

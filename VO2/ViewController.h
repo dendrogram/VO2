@@ -13,10 +13,16 @@
 
 {
     IBOutlet UILabel     * versionNumberLab;
+    IBOutlet UIButton     * weblink;
     UITabBarController   * tabBar;
 }
 
 @property (strong, nonatomic) IBOutlet UIWebView          * webview;
 @property (strong, nonatomic) IBOutlet UITabBarController * tabBar;
+@property (strong, nonatomic) IBOutlet UIButton * weblink;
+
+- (IBAction)weblinkjump:(id)sender;
+
+- (IBAction)mmuwebjump:(id)sender;
 
 @end

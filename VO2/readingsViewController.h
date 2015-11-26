@@ -47,6 +47,7 @@
 @property (nonatomic, strong) IBOutlet UITextField * labCO2Txt;
 @property (nonatomic, strong) IBOutlet UISwitch    * pressureChange;
 @property (nonatomic, strong) IBOutlet UISwitch    * tempChange;
+@property (nonatomic, strong) IBOutlet UILabel     * degf;
 @property (nonatomic, strong) IBOutlet UILabel     * degc;
 @property (nonatomic, strong) IBOutlet UILabel     * press;
 @property (nonatomic, strong) IBOutlet UIButton    * resetO2;

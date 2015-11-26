@@ -44,7 +44,7 @@
 
 int v1=2;   // version: v1.v2.v3. v2=18/11/15
 int v2=2;   // 24/7/14 jah, v2.1=19/11/15, v2.2=25/11/15
-int v3=0;   //
+int v3=1;   //
 
 // ************************************************
 // ************************************************
@@ -85,7 +85,7 @@ int v3=0;   //
     //*************************************************************
     //version, set anyway *****************************************
     //*************************************************************
-    version0 =  @"v2.2.0.25.11.15";             // version   *** keep short
+    version0 =  @"v2.2.1.25.11.15";             // version   *** keep short
     version1 =  @"MMU (c) 2015";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -117,4 +117,12 @@ int v3=0;   //
     [defaults synchronize];//make sure all are updated
 }
 
+- (IBAction)weblinkjump:(id)sender {
+    //jump to mmu page
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.ess.mmu.ac.uk"]];
+}
+
+- (IBAction)mmuwebjump:(id)sender {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.mmu.ac.uk"]];
+}
 @end

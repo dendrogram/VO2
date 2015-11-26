@@ -41,7 +41,8 @@
 
 //labels for units
         press,
-        degc,
+        degc, //label units 'c
+        degf, // 'f
         resetO2,
         resetCO2;
 
@@ -54,7 +55,8 @@
 
     //temp check
 
-    degc.text=@"'C";
+    degc.hidden=NO;
+    degf.hidden=YES;
     press.text=@"mmHg";
     
     [pressureChange setOn:YES];
@@ -111,7 +113,8 @@
     labPressureTxt.text         =   singleton.labPressure_mmHg  ;
     sampTimeTxt.text            =   singleton.sampTime          ;
     
-    degc.text=@"'C";
+    degc.hidden=NO;
+    degf.hidden=YES;
     press.text=@"mmHg";
     [pressureChange setOn:YES];
     [tempChange setOn:YES];
@@ -192,7 +195,8 @@
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     if ([switchState isOn]) {
-        degc.text=@"'C";
+        degc.hidden=NO;
+        degf.hidden=YES;
         labTempC = 5 * ([labTempTxt.text floatValue] - 32) / 9;
         labTempF = (9 * labTempC / 5 ) + 32;
         labTempTxt.text = [NSString stringWithFormat:@"%.1f",labTempC];
@@ -201,7 +205,8 @@
         singleton.isDegC=YES;
         
     } else {
-        degc.text=@"'F";
+        degc.hidden=YES;
+        degf.hidden=NO;
         labTempF = (9 * [labTempTxt.text floatValue] / 5 ) + 32;
         labTempC = 5 * (labTempF - 32) / 9;
         labTempTxt.text = [NSString stringWithFormat:@"%.1f",labTempF];

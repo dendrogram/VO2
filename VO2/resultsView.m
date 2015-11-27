@@ -40,6 +40,7 @@
         VO2Kglbl,
         subHtlbl,
         subWtlbl,
+        subBMIlbl,
         corrFaclbl,
         FEO2lbl,
         FECO2lbl,
@@ -189,6 +190,7 @@
     FECO2lbl.backgroundColor = Rgb2UIColor(255, 255, 200);
     VCO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     RERlbl.backgroundColor   = Rgb2UIColor(255, 255, 200);
+    subBMIlbl.backgroundColor= Rgb2UIColor(255, 255, 200);
     
     if ([FEO2lbl.text  floatValue] <= 0.0) {
         //red if blank
@@ -212,6 +214,16 @@
         //red if negative
         emailBtn.hidden=YES;
         RERlbl.backgroundColor = [UIColor redColor];
+    }
+    if ([subBMIlbl.text  floatValue] < 12.0) {
+        //red if too low
+        emailBtn.hidden=NO;
+        subBMIlbl.backgroundColor = [UIColor redColor];
+    }
+    if ([subBMIlbl.text  floatValue] > 50.0) {
+        //red if too high
+        emailBtn.hidden=NO;
+        subBMIlbl.backgroundColor = [UIColor redColor];
     }
 }
 
@@ -293,6 +305,9 @@
     VEATPS           = [VEATPSlbl.text   floatValue];
     subWt            = [subWtlbl.text    floatValue];
     subHt            = [subHtlbl.text    floatValue];
+    
+    subBMI           = subWt / (subHt*subHt);
+    
     sampTime         = [samptimelbl.text floatValue];
     labO2            = [labO2lbl.text    floatValue];
     labCO2           = [labCO2lbl.text   floatValue];
@@ -441,6 +456,7 @@
     RER    = ( VCO2 / VO2 );
     singleton.rer    = [NSString stringWithFormat:@"%.4f", RER];
     
+    subBMIlbl.text      =  [NSString stringWithFormat:@"%.1f", subBMI];
     VEATPSlbl.text      =   singleton.veatps;
     VESTPDlbl.text      =   singleton.vestpd;
     VEBTPSlbl.text      =   singleton.vebtps;
@@ -463,7 +479,7 @@
     [singleton.cardReactionTimeResult addObject:@" "];
     singleton.counter = singleton.counter+1;
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, N2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Sub BMI, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, N2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -471,7 +487,7 @@
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
                      counter,
                      testerlbl.text,
                      subjectlbl.text,
@@ -483,6 +499,7 @@
                      labHumidity,
                      subHt,
                      subWt,
+                     subBMI,
                      sampTime,
                      FEO2,
                      FECO2,

@@ -266,9 +266,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1F13E511974537000A9748D /* Build configuration list for PBXNativeTarget "VO2" */;
 			buildPhases = (
+				E1073DBF1C0875AA002DA7A0 /* ShellScript */,
 				E1F13E181974537000A9748D /* Sources */,
-				E1F13E191974537000A9748D /* Frameworks */,
 				E1F13E1A1974537000A9748D /* Resources */,
+				E1F13E191974537000A9748D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -378,6 +379,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1073DBF1C0875AA002DA7A0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python /Users/jonhowell/Documents/VO2newsimple2015/VO2/Settings.bundle/Licence.py";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1F13E181974537000A9748D /* Sources */ = {

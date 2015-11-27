@@ -44,6 +44,7 @@
     UILabel * VO2Kglbl;
     UILabel * subHtlbl;
     UILabel * subWtlbl;
+    UILabel * subBMIlbl;
     UILabel * corrFaclbl;
     UILabel * FEO2lbl;
     UILabel * FECO2lbl;
@@ -54,6 +55,7 @@
     
     Float64 subWt;
     Float64 subHt;
+    Float64 subBMI;
     Float64 labPressure_mmHg;
     Float64 labPressure_mBar;
     Float64 labTempC;
@@ -108,6 +110,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * VO2Kglbl;
 @property (nonatomic, strong) IBOutlet UILabel * subHtlbl;
 @property (nonatomic, strong) IBOutlet UILabel * subWtlbl;
+@property (nonatomic, strong) IBOutlet UILabel * subBMIlbl;
 @property (nonatomic, strong) IBOutlet UILabel * corrFaclbl;
 @property (nonatomic, strong) IBOutlet UILabel * FEO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * FECO2lbl;

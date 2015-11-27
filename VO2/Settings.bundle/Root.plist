@@ -66,9 +66,15 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
+			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>Copyright:</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Copyright</string>
 			<key>Key</key>
 			<string>version1</string>
 			<key>DefaultValue</key>
@@ -93,6 +99,20 @@
 			<string>version3</string>
 			<key>DefaultValue</key>
 			<string>http://www.ess.mmu.ac.uk</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>License Information</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Acknowledgements and Licence</string>
+			<key>File</key>
+			<string>Acknowledgements</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>

@@ -44,9 +44,10 @@
 
 int v1=2;   // version: v1.v2.v3. v2=18/11/15
 int v2=2;   // 24/7/14 jah, v2.1=19/11/15, v2.2=25/11/15
-int v3=1;   //
+int v3=2;   //
 
 // ************************************************
+// licemnse text is in the Acknowledgements.license file in the settings bundle directory.  Change the text accordingly before build.  The Build phases has a run script section.  The Python script reads the .license file, formats it and writes a new Acknowledgement.plist file.  This is a better approach to printing larger text blocks in the settings App
 // ************************************************
 
 - (void)viewDidLoad
@@ -85,7 +86,7 @@ int v3=1;   //
     //*************************************************************
     //version, set anyway *****************************************
     //*************************************************************
-    version0 =  @"v2.2.1.25.11.15";             // version   *** keep short
+    version0 =  @"v2.2.2.26.11.15";             // version   *** keep short
     version1 =  @"MMU (c) 2015";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen

@@ -37,14 +37,11 @@
 
 #pragma mark Inits
 
-@synthesize webview, versionNumberLab, tabBar, essweblink, mmuweblink ;
+//@synthesize webview, versionNumberLab, tabBar, essweblink, mmuweblink ;
+@synthesize versionNumberLab, essweblink, mmuweblink ;
 
 // ************************************************
 // ************************************************
-
-int v1=2;   // version: v1.v2.v3. v2=18/11/15
-int v2=2;   // 24/7/14 jah, v2.1=19/11/15, v2.2=25/11/15
-int v3=3;   //
 
 // ************************************************
 // licemnse text is in the Acknowledgements.license file in the settings bundle directory.  Change the text accordingly before build.  The Build phases has a run script section.  The Python script reads the .license file, formats it and writes a new Acknowledgement.plist file.  This is a better approach to printing larger text blocks in the settings App
@@ -56,8 +53,6 @@ int v3=3;   //
     
     mySingleton *singleton = [mySingleton sharedSingleton];
     
-    //display the version number in the opening vc
-        NSString *versionNo = [NSString stringWithFormat:@"V.%i.%i.%i",v1,v2,v3];
     //for plist version group
     NSString * version0; //version number
     NSString * version1; //copyright info
@@ -65,8 +60,7 @@ int v3=3;   //
     NSString * version3; //web site info
     NSString * tester; //web site info
     NSString * email; //web site info
-    
-    versionNumberLab.text=versionNo;
+
     // for web page link
     //NSURL *url = [NSURL URLWithString:@"http://www.ess.mmu.ac.uk/"];
     //NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -86,6 +80,7 @@ int v3=3;   //
     //*************************************************************
     //version, set anyway *****************************************
     //*************************************************************
+    
     version0 =  @"Version 2.2.3 - 27.11.15";    // version   *** keep short
     version1 =  @"MMU (c) 2015";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
@@ -117,7 +112,8 @@ int v3=3;   //
     
     [defaults synchronize];//make sure all are updated
     
-    versionNumberLab.text = version0;
+    versionNumberLab.text   = version0;
+    singleton.versionNumber = version0;
 }
 
 - (IBAction)esswebjump:(id)sender{

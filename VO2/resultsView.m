@@ -473,6 +473,9 @@
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
     [singleton.cardReactionTimeResult addObject:@"(c) 2015 MMU written by Jonathan A. Howell for ESS VO2 App"];
+    singleton.counter = singleton.counter+1;
+    //mmu version no
+    [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@",singleton.versionNumber]];
     //[singleton.cardReactionTimeResult addObject:singleton.versionNumber];
     singleton.counter = singleton.counter+1;
     //blank line

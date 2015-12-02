@@ -93,13 +93,13 @@
     if([testDateTxt.text isEqualToString: @""]){
         //if blank put in today date
         [self setDateNow:self];
+        singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
     }
     if([startDateTxt.text isEqualToString: @""]){
         //if blank put in now time
         [self setTimeNow:self];
+        singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
     }
-    singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
-    singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -112,6 +112,8 @@
     singleton.email          = [NSString stringWithFormat:@"%@",  emailTxt.text];
     singleton.subWt          = [NSString stringWithFormat:@"%@",  subWtTxt.text];
     singleton.subHt          = [NSString stringWithFormat:@"%@",  subHtTxt.text];
+    singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
+    singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
 
     //set up the plist params
     NSString * pathStr               = [[NSBundle mainBundle] bundlePath];
@@ -131,14 +133,13 @@
     if([testDateTxt.text isEqualToString: @""]){
         //if blank put in today date
         [self setDateNow:self];
+        singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
     }
     if([startDateTxt.text isEqualToString: @""]){
         //if blank put in now time
         [self setTimeNow:self];
+        singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
     }
-    
-    singleton.testDate       = [NSString stringWithFormat:@"%@",  testDateTxt.text];
-    singleton.testTime       = [NSString stringWithFormat:@"%@",  startDateTxt.text];
 }
 
 -(IBAction)setDateNow:(id)sender{
@@ -169,53 +170,67 @@
     //***** change all to suit inputs *****
     //the number refers to the scrolling of the text input field to avoid the keyboard when it appears, then it is moved back afterwards to the 0 origin
     
+    //no effrect as this App is being ported to iPhone only, even though displaying on an iPad, compromise value
+#define IDIOM    UI_USER_INTERFACE_IDIOM()
+#define IPAD     UIUserInterfaceIdiomPad
+    int yy;
+    if ( IDIOM == IPAD ) {
+        /* do something specifically for iPad. */
+        yy=135;
+    } else {
+        /* do something specifically for iPhone or iPod touch. */
+        yy=135;
+    }
+    
     //page1
     // change the color of the text box when you touch it
     if(textField==self->testerNameTxt){
         testerNameTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-165;
+        int oft=textField.frame.origin.y-yy;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->testDateTxt){
         testDateTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-165;
+        int oft=textField.frame.origin.y-yy;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->startDateTxt){
         startDateTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-165;
+        int oft=textField.frame.origin.y-yy;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->subjectNameTxt){
         subjectNameTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-165;
+        int oft=textField.frame.origin.y-yy;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->subWtTxt){
         subWtTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-165;
+        int oft=textField.frame.origin.y-yy;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->subHtTxt){
         subHtTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-165;
+        int oft=textField.frame.origin.y-yy;
         [self keyBoardAppeared:oft];
     }
     if(textField==self->emailTxt){
         emailTxt.backgroundColor = [UIColor greenColor];
         textField.frame = CGRectMake(textField.frame.origin.x, (textField.frame.origin.y), textField.frame.size.width, textField.frame.size.height);
-        int oft=textField.frame.origin.y-165;
+        int oft=textField.frame.origin.y-yy;
         [self keyBoardAppeared:oft];
     }
 }
 
 -(void)textFieldDidEndEditing:(UITextField *) textField {
+    
+    mySingleton *singleton   = [mySingleton sharedSingleton];
     
 //move the screen back to the original place
     [self keyBoardDisappeared:0];
@@ -234,28 +249,111 @@
     //colour change if out of range and insert range max/min value
     //set backgrounds to yellow/red if had to correct
     
-    if ([subHtTxt.text floatValue] < 0.10) {
+    if ([testerNameTxt.text isEqualToString:@""]||[testerNameTxt.text isEqualToString:@"Me"]) {
+        testerNameTxt.backgroundColor = [UIColor yellowColor];
+        testerNameTxt.text=@"Me";
+    }
+    if ([subjectNameTxt.text isEqualToString:@""]||[subjectNameTxt.text isEqualToString:@"- Test Subject - No Name -"]) {
+        subjectNameTxt.backgroundColor = [UIColor yellowColor];
+        subjectNameTxt.text=@"- Test Subject - No Name -";
+    }
+    if ([emailTxt.text isEqualToString:@""]||[emailTxt.text isEqualToString:@"- No Email Address -"]) {
+        emailTxt.backgroundColor = [UIColor yellowColor];
+        emailTxt.text=@"- No Email Address -";
+    }
+    
+    if ([subHtTxt.text floatValue] <= 0.10) {
         subHtTxt.textColor = [UIColor redColor];
         subHtTxt.text = @"0.10";
         subHtTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if ([subHtTxt.text floatValue] > 3.00) {
+    if ([subHtTxt.text floatValue] >= 3.00) {
         subHtTxt.textColor = [UIColor redColor];
         subHtTxt.text = @"3.00";
         subHtTxt.backgroundColor = [UIColor yellowColor];
     }
-    if ([subWtTxt.text floatValue] < 1.00) {
+    if ([subWtTxt.text floatValue] <= 1.00) {
         subWtTxt.textColor = [UIColor redColor];
         subWtTxt.text = @"1.00";
         subWtTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if ([subWtTxt.text floatValue] > 300.00) {
+    if ([subWtTxt.text floatValue] >= 300.00) {
         subWtTxt.textColor = [UIColor redColor];
         subWtTxt.text = @"300.00";
         subWtTxt.backgroundColor = [UIColor yellowColor];
     }
+    
+    //maybe do some date and time format testing here?
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    BOOL validDate = YES;
+    BOOL validTime = YES;
+
+    long add,year,month,day,second,minute,hour;
+    
+    add = 10 - [startDateTxt.text length];
+    if (add > 0) {
+        NSString *pad = [[NSString string] stringByPaddingToLength:add withString:@" " startingAtIndex:0];
+         startDateTxt.text = [startDateTxt.text stringByAppendingString:pad];
+    }
+    add = 10 - [testDateTxt.text length];
+    if (add > 0) {
+        NSString *pad = [[NSString string] stringByPaddingToLength:add withString:@" " startingAtIndex:0];
+        testDateTxt.text = [testDateTxt.text stringByAppendingString:pad];//pad with spaces after, to ensure index of string is valid
+        //ntestDateTxt = [pad stringByAppendingString:testDateTxt.text];//pad with spaces before
+    }
+    //NSLog(@">date<>date<= >%@<>%@<",startDateTxt.text, nstartDateTxt);
+    //NSLog(@">time<>time<= >%@<>%@<",testDateTxt.text, ntestDateTxt);
+    //3,2=month, 0,2=day, 6,4=year
+    
+//check date, day:month:year is within range and valid
+    
+    year = [[testDateTxt.text substringWithRange:NSMakeRange(6, 4)] intValue];
+    //NSLog(@"str, dd mm yy = %@, ... %i, %i %i",testDateTxt.text, day, month, year);
+    if (year < 2000 || year > 2020) {
+        validDate = NO;
+    }
+    month = [[testDateTxt.text substringWithRange:NSMakeRange(3, 2)] intValue];
+    if (month < 1|| month > 12) {
+        validDate = NO;
+    }
+    day = [[testDateTxt.text substringWithRange:NSMakeRange(0, 2)] intValue];
+    if (day < 1 || day > 31) {
+        validDate = NO;
+    }
+//check time, hour:min:sec is within range and valid
+    hour = [[startDateTxt.text substringWithRange:NSMakeRange(0, 2)] intValue];
+    if (hour < 0 || hour > 23) {
+        validTime = NO;
+    }
+    minute = [[startDateTxt.text substringWithRange:NSMakeRange(3, 2)] intValue];
+    if (minute < 0 || minute > 59) {
+        validTime = NO;
+    }
+    second = [[startDateTxt.text substringWithRange:NSMakeRange(6, 2)] intValue];
+    if (second < 0 || second > 59) {
+        validDate = NO;
+    }
+    if (hour+minute+second<=0) {
+        startDateTxt.text=@"00:00:00";
+        startDateTxt.backgroundColor   = [UIColor yellowColor];
+    }
+    
+    //**********
+    if (validDate == NO){
+        [self setDateNow:self];
+        testDateTxt.backgroundColor    = [UIColor yellowColor];
+        singleton.testDate = [NSString stringWithFormat:@"%@",  testDateTxt.text];
+    }
+    if (validTime == NO){
+        [self setTimeNow:self];
+        startDateTxt.backgroundColor   = [UIColor yellowColor];
+        singleton.testTime = [NSString stringWithFormat:@"%@",  startDateTxt.text];
+    }
+    //
+    //***********
+    
 }
 
 -(void) keyBoardAppeared :(int)oft

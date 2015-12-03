@@ -333,7 +333,7 @@
   //colour change if out of range and insert range max/min value
   //set backgrounds to yellow/red if had to correct
 
-    if ([labTempTxt.text floatValue] < -40.0) {
+    if ([labTempTxt.text floatValue] < -40.0||[labTempTxt isEqual:@""]||[labTempTxt isEqual:NULL]) {
         labTempTxt.textColor = [UIColor redColor];
         labTempC = -40.0;
         labTempTxt.text = @"-40.0";
@@ -366,7 +366,7 @@
         labO2Txt.text = @"30.0";
         labO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([labO2Txt.text floatValue] < 0) {
+    if ([labO2Txt.text floatValue] < 0||[labO2Txt isEqual:@""]||[labO2Txt isEqual:NULL]) {
         labO2Txt.textColor = [UIColor redColor];
         labO2Txt.text = @"0.0";
         labO2Txt.backgroundColor = [UIColor yellowColor];
@@ -376,12 +376,12 @@
         labCO2Txt.text = @"20.0";
         labCO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([labCO2Txt.text floatValue] < 0) {
+    if ([labCO2Txt.text floatValue] < 0||[labCO2Txt isEqual:@""]||[labCO2Txt isEqual:NULL]) {
         labCO2Txt.textColor=[UIColor redColor];
         labCO2Txt.text = @"0.0";
         labCO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([sampTimeTxt.text floatValue] < 0) {
+    if ([sampTimeTxt.text floatValue] < 0||[sampTimeTxt isEqual:@""]||[sampTimeTxt isEqual:NULL]) {
         sampTimeTxt.textColor=[UIColor redColor];
         sampTimeTxt.text = @"0.0";
         sampTimeTxt.backgroundColor = [UIColor yellowColor];
@@ -391,7 +391,7 @@
         sampTimeTxt.text = @"10000.0";
         sampTimeTxt.backgroundColor = [UIColor yellowColor];
     }
-    if ([labHumidityTxt.text floatValue] < 0) {
+    if ([labHumidityTxt.text floatValue] < 0||[labHumidityTxt isEqual:@""]||[labHumidityTxt isEqual:NULL]) {
         labHumidityTxt.textColor = [UIColor redColor];
         labHumidityTxt.text = @"0";
         labHumidityTxt.backgroundColor = [UIColor yellowColor];
@@ -416,7 +416,7 @@
         VEATPSTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if ([FEO2Txt.text floatValue] < 0.000) {
+    if ([FEO2Txt.text floatValue] < 0.000||[FEO2Txt isEqual:@""]||[FEO2Txt isEqual:NULL]) {
         FEO2Txt.textColor = [UIColor redColor];
         FEO2Txt.text = @"0.000";
         FEO2Txt.backgroundColor = [UIColor yellowColor];
@@ -427,7 +427,7 @@
         FEO2Txt.text = @"100.00";
         FEO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([FECO2Txt.text floatValue] < 0.000) {
+    if ([FECO2Txt.text floatValue] < 0.000||[FECO2Txt isEqual:@""]||[FECO2Txt isEqual:NULL]) {
         FECO2Txt.textColor = [UIColor redColor];
         FECO2Txt.text = @"0.000";
         FECO2Txt.backgroundColor = [UIColor yellowColor];

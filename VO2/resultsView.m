@@ -170,19 +170,21 @@
     statusMessageLab.hidden = YES;
     
     mySingleton *singleton = [mySingleton sharedSingleton];
-    
+    timelbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
+    datelbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     //only if blank date
     // set up link to singleton
     if([datelbl.text isEqualToString: @""]){
         //if blank put in today date
         [self setDateNow:self];
         singleton.testDate       = [NSString stringWithFormat:@"%@",  datelbl.text];
-        
+        datelbl.backgroundColor  = [UIColor yellowColor]; //color if was changed
     }
     if([timelbl.text isEqualToString: @""]){
         //if blank put in now time
         [self setTimeNow:self];
         singleton.testTime       = [NSString stringWithFormat:@"%@",  timelbl.text];
+        timelbl.backgroundColor  = [UIColor yellowColor];
     }
     
     [self calculateStats];
@@ -193,26 +195,48 @@
     VCO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     RERlbl.backgroundColor   = Rgb2UIColor(255, 255, 200);
     subBMIlbl.backgroundColor= Rgb2UIColor(255, 255, 200);
+    //timelbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
+    //datelbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     
-    if ([FEO2lbl.text  floatValue] <= 0.0) {
+    if ([FEO2lbl.text  floatValue] <= 0.0||[FEO2lbl isEqual:@""]) {
         //red if blank
         emailBtn.hidden=YES;
         FECO2lbl.backgroundColor = [UIColor redColor];
     }
     
-    if ([FECO2lbl.text  floatValue] <= 0.0) {
+    if ([FECO2lbl.text  floatValue] <= 0.0||[FECO2lbl isEqual:@""]) {
         //red if blank
         emailBtn.hidden=YES;
         FEO2lbl.backgroundColor = [UIColor redColor];
     }
     
-    if ([VCO2lbl.text  floatValue] <= 0.0) {
+    if ([VCO2lbl.text  floatValue] <= 0.0||[VCO2lbl isEqual:@""]) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([templbl.text isEqual:@""]) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([humiditylbl.text isEqual:@""]) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([labCO2lbl.text isEqual:@""]) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([labO2lbl.text isEqual:@""]) {
         //red if negative
         emailBtn.hidden=YES;
         VCO2lbl.backgroundColor = [UIColor redColor];
     }
     
-    if ([RERlbl.text  floatValue] <= 0.0) {
+    if ([RERlbl.text  floatValue] <= 0.0||[RERlbl isEqual:@""]||[RERlbl isEqual:NULL]) {
         //red if negative
         emailBtn.hidden=YES;
         RERlbl.backgroundColor = [UIColor redColor];

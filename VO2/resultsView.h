@@ -52,6 +52,7 @@
     UILabel * labCO2lbl;
     
     UIButton * emailBtn;
+    UIButton * energyBtn;
     
     Float64 subWt;
     Float64 subHt;
@@ -117,6 +118,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * labO2lbl;
 @property (nonatomic, strong) IBOutlet UILabel * labCO2lbl;
 @property (nonatomic, strong) IBOutlet UIButton * emailBtn;
+@property (nonatomic, strong) IBOutlet UIButton * energyBtn;
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;

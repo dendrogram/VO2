@@ -137,7 +137,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-zo-D0s">
-                                        <rect key="frame" x="105" y="18" width="70" height="65"/>
+                                        <rect key="frame" x="105" y="13" width="70" height="70"/>
                                         <animations/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aX-cY-eOS">
@@ -1326,12 +1326,12 @@ Cg
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="bdc-NV-oDQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="L52-3G-8hj">
-                                <rect key="frame" x="20" y="20" width="33" height="33"/>
-                                <animations/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about50x50.png" translatesAutoresizingMaskIntoConstraints="NO" id="67H-cW-rTk">
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="HUp-qk-H6l">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -1691,8 +1691,8 @@ Cg
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="v18-Xm-eQf">
-                                <rect key="frame" x="20" y="20" width="33" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="BXq-HF-SaF">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -1890,8 +1890,8 @@ Cg
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="gyv-pt-m7x">
-                                <rect key="frame" x="20" y="20" width="33" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="MdF-72-FxQ">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -2565,8 +2565,8 @@ Sample Time :</string>
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="ndx-qg-pr9">
-                                <rect key="frame" x="20" y="20" width="33" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="yT6-8m-dTx">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -3036,8 +3036,8 @@ Expired air (FE-O</string>
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="RWK-RI-1Lq">
-                                <rect key="frame" x="20" y="20" width="33" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="kZz-yq-22a">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -3198,8 +3198,8 @@ Cg
                                 <rect key="frame" x="268" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-ny-ouL">
-                                <rect key="frame" x="21" y="20" width="33" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="gjA-xK-k95">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -3242,46 +3242,7 @@ Cg
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
@@ -3297,46 +3258,7 @@ email: j.a.howell@mmu.ac.uk
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
@@ -3344,46 +3266,7 @@ email: j.a.howell@mmu.ac.uk
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Italic"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
@@ -3391,46 +3274,7 @@ email: j.a.howell@mmu.ac.uk
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
@@ -3468,46 +3312,7 @@ Cg
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
                                         </attributes>
                                     </fragment>
@@ -3517,46 +3322,7 @@ to David J. Egan,
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
@@ -3564,46 +3330,7 @@ to David J. Egan,
 University of Limerick, Ireland,</string>
                                         <attributes>
                                             <font key="NSFont" size="13" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
@@ -3611,91 +3338,13 @@ University of Limerick, Ireland,</string>
 for the GasCalc Excel ® sheet</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=".">
                                         <attributes>
                                             <font key="NSFont" size="13" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="477" defaultTabInterval="36" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -3728,8 +3377,8 @@ for the GasCalc Excel ® sheet</string>
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="RPW-Hz-FeV">
-                                <rect key="frame" x="18" y="20" width="33" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="HXm-X5-ruG">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -3816,14 +3465,14 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppz-em-aUl">
-                                        <rect key="frame" x="101" y="244" width="97" height="21"/>
+                                        <rect key="frame" x="82" y="244" width="97" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="L/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2L-0v-FxF">
-                                        <rect key="frame" x="202" y="267" width="48" height="21"/>
+                                        <rect key="frame" x="182" y="268" width="39" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
@@ -3850,14 +3499,14 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at8-uR-qkf">
-                                        <rect key="frame" x="101" y="267" width="97" height="21"/>
+                                        <rect key="frame" x="82" y="268" width="97" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="L/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIm-yv-G2f">
-                                        <rect key="frame" x="202" y="243" width="39" height="21"/>
+                                        <rect key="frame" x="182" y="244" width="39" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
@@ -3891,7 +3540,7 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJT-ve-iyY">
-                                        <rect key="frame" x="101" y="315" width="99" height="21"/>
+                                        <rect key="frame" x="82" y="315" width="97" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -3905,7 +3554,7 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esu-I9-hcF">
-                                        <rect key="frame" x="101" y="339" width="69" height="21"/>
+                                        <rect key="frame" x="82" y="339" width="97" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -4257,7 +3906,7 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ml/kg/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AX-gk-cO7">
-                                        <rect key="frame" x="204" y="315" width="65" height="21"/>
+                                        <rect key="frame" x="182" y="314" width="65" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
@@ -4399,6 +4048,18 @@ for the GasCalc Excel ® sheet</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUr-5U-qg5">
+                                        <rect key="frame" x="224" y="244" width="53" height="45"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Energy">
+                                            <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="rKf-PX-SQL" kind="modal" id="hVe-uG-hpD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -4429,7 +4090,7 @@ for the GasCalc Excel ® sheet</string>
                                 <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="SLs-c7-tk5">
-                                <rect key="frame" x="20" y="20" width="33" height="33"/>
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -4437,6 +4098,7 @@ for the GasCalc Excel ® sheet</string>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="vo2_50x50.png" id="D0w-X9-BgI"/>
+                    <navigationItem key="navigationItem" id="hrh-lg-Vfb"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -4454,6 +4116,7 @@ for the GasCalc Excel ® sheet</string>
                         <outlet property="corrFaclbl" destination="hxs-XD-WCF" id="oAX-Uq-e1d"/>
                         <outlet property="datelbl" destination="Ukk-4q-6Oo" id="mhq-e8-BIK"/>
                         <outlet property="emailBtn" destination="tjI-CH-ovU" id="W9g-xT-ba2"/>
+                        <outlet property="energyBtn" destination="wUr-5U-qg5" id="AsB-ve-VDV"/>
                         <outlet property="humiditylbl" destination="BfQ-ff-Ol7" id="CW7-f6-Gb5"/>
                         <outlet property="labCO2lbl" destination="nXP-JF-Fz1" id="XlO-J2-bR4"/>
                         <outlet property="labO2lbl" destination="c4b-Dp-bWc" id="qXA-bJ-gRY"/>
@@ -4477,7 +4140,7 @@ for the GasCalc Excel ® sheet</string>
         <!--Energy-->
         <scene sceneID="vae-2I-8RS">
             <objects>
-                <viewController storyboardIdentifier="energy" title="Energy" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rKf-PX-SQL" customClass="resultsView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="energy" title="Energy" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rKf-PX-SQL" customClass="EnergyView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hx8-h6-fI7"/>
                         <viewControllerLayoutGuide type="bottom" id="9Hb-R9-uhL"/>
@@ -4793,8 +4456,20 @@ for the GasCalc Excel ® sheet</string>
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="L5D-fg-1Mw">
-                                <rect key="frame" x="20" y="20" width="33" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIm-fc-Yax">
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
+                                <animations/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Back" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="0I4-RL-VTM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rcn-0l-Swh">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -4802,23 +4477,29 @@ for the GasCalc Excel ® sheet</string>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="vo2_50x50.png" id="cqn-Tv-zm0"/>
+                    <navigationItem key="navigationItem" id="l3b-ou-y4A"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="datelbl" destination="NsT-BL-V5g" id="YOe-AE-qS7"/>
-                        <outlet property="lablbl" destination="S9C-aU-dkW" id="Nqg-Uu-BTi"/>
-                        <outlet property="subBMIlbl" destination="3K9-lU-RXU" id="cr5-ZJ-rFP"/>
-                        <outlet property="subHtlbl" destination="RME-w4-czp" id="3jZ-xT-Vh7"/>
-                        <outlet property="subWtlbl" destination="sIH-be-Lnb" id="zR4-Ha-RA2"/>
-                        <outlet property="subjectlbl" destination="65u-aA-53W" id="WTM-Qh-FEc"/>
-                        <outlet property="testerlbl" destination="BPc-4k-eTL" id="qtU-FW-bQd"/>
-                        <outlet property="timelbl" destination="Ux5-NI-XSS" id="APV-Hq-xHn"/>
+                        <outlet property="RERlbl" destination="wF3-lT-7xc" id="Ub3-VW-0hn"/>
+                        <outlet property="VCO2lbl" destination="e7n-mM-boA" id="U8W-ez-3kC"/>
+                        <outlet property="VO2Kglbl" destination="oZV-jE-ae5" id="jqD-1r-jeD"/>
+                        <outlet property="VO2lbl" destination="O3Z-gL-shd" id="GBO-kx-bBl"/>
+                        <outlet property="corrFaclbl" destination="kBR-vu-SXN" id="Yd7-nq-Rtl"/>
+                        <outlet property="datelbl" destination="NsT-BL-V5g" id="tQc-79-Pin"/>
+                        <outlet property="lablbl" destination="S9C-aU-dkW" id="5hD-LS-VSM"/>
+                        <outlet property="subBMIlbl" destination="3K9-lU-RXU" id="YUw-ZC-gD0"/>
+                        <outlet property="subHtlbl" destination="RME-w4-czp" id="59g-Xz-HW4"/>
+                        <outlet property="subWtlbl" destination="sIH-be-Lnb" id="df0-rg-WIO"/>
+                        <outlet property="subjectlbl" destination="65u-aA-53W" id="kfY-zj-Uxx"/>
+                        <outlet property="testerlbl" destination="BPc-4k-eTL" id="0ga-XH-dkn"/>
+                        <outlet property="timelbl" destination="Ux5-NI-XSS" id="YGN-LL-DLX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaA-2f-siJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1510" y="-1050"/>
+            <point key="canvasLocation" x="1569" y="-812"/>
         </scene>
     </scenes>
     <resources>
@@ -4830,6 +4511,6 @@ for the GasCalc Excel ® sheet</string>
         <image name="vo2_50x50.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bdc-NV-oDQ"/>
+        <segue reference="0I4-RL-VTM"/>
     </inferredMetricsTieBreakers>
 </document>

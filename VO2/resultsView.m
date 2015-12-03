@@ -46,15 +46,14 @@
         FECO2lbl,
         labO2lbl,
         labCO2lbl,
-        testDate;
-
-@synthesize
+        testDate,
         startDate,
         fileMgr,
         homeDir,
         filename,
         filepath,
-        emailBtn;
+        emailBtn,
+        energyBtn;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //NSLog(@"You moved to a new screen...");
@@ -164,10 +163,12 @@
 {
     [super viewDidLoad];
     statusMessageLab.hidden = YES;
+    energyBtn.hidden=YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     statusMessageLab.hidden = YES;
+    energyBtn.hidden=YES;
     
     mySingleton *singleton = [mySingleton sharedSingleton];
     timelbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
@@ -193,6 +194,7 @@
     
     FEO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     FECO2lbl.backgroundColor = Rgb2UIColor(255, 255, 200);
+    VO2lbl.backgroundColor   = Rgb2UIColor(255, 255, 200);
     VCO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     RERlbl.backgroundColor   = Rgb2UIColor(255, 255, 200);
     subBMIlbl.backgroundColor= Rgb2UIColor(255, 255, 200);
@@ -291,6 +293,11 @@
     if ([testerlbl.text isEqual:@""]||[testerlbl.text isEqual:NULL]||[testerlbl.text isEqual:@"Me"]) {
         //orange missing
         testerlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([testerlbl.text isEqual:@"Jon"]) {
+        //orange missing
+        testerlbl.backgroundColor = [UIColor whiteColor];
+        energyBtn.hidden=NO;
     }
     if ([lablbl.text isEqual:@""]||[lablbl.text isEqual:NULL]) {
         //orange missing
@@ -827,6 +834,5 @@
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
 }
-
 
 @end

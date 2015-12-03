@@ -171,17 +171,19 @@
     
     mySingleton *singleton = [mySingleton sharedSingleton];
     
+    //only if blank date
     // set up link to singleton
     if([datelbl.text isEqualToString: @""]){
         //if blank put in today date
         [self setDateNow:self];
+        singleton.testDate       = [NSString stringWithFormat:@"%@",  datelbl.text];
+        
     }
     if([timelbl.text isEqualToString: @""]){
         //if blank put in now time
         [self setTimeNow:self];
+        singleton.testTime       = [NSString stringWithFormat:@"%@",  timelbl.text];
     }
-    singleton.testDate       = [NSString stringWithFormat:@"%@",  datelbl.text];
-    singleton.testTime       = [NSString stringWithFormat:@"%@",  timelbl.text];
     
     [self calculateStats];
     

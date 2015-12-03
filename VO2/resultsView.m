@@ -189,7 +189,8 @@
     
     [self calculateStats];
     
-    emailBtn.hidden=NO;
+    emailBtn.hidden=NO; //show the button for now
+    
     FEO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     FECO2lbl.backgroundColor = Rgb2UIColor(255, 255, 200);
     VCO2lbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
@@ -198,58 +199,175 @@
     //timelbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     //datelbl.backgroundColor  = Rgb2UIColor(255, 255, 200);
     
-    if ([FEO2lbl.text  floatValue] <= 0.0||[FEO2lbl isEqual:@""]) {
-        //red if blank
-        emailBtn.hidden=YES;
-        FECO2lbl.backgroundColor = [UIColor redColor];
-    }
+    //if any errors, hide the email
     
-    if ([FECO2lbl.text  floatValue] <= 0.0||[FECO2lbl isEqual:@""]) {
+    if ([FEO2lbl.text  floatValue] <= 0.0||[FEO2lbl.text isEqual:@""]||[FEO2lbl.text isEqual:NULL]||isnan([FEO2lbl.text floatValue])) {
         //red if blank
         emailBtn.hidden=YES;
         FEO2lbl.backgroundColor = [UIColor redColor];
     }
     
-    if ([VCO2lbl.text  floatValue] <= 0.0||[VCO2lbl isEqual:@""]) {
-        //red if negative
+    if ([FECO2lbl.text  floatValue] <= 0.0||[FECO2lbl.text isEqual:@""]||[FECO2lbl.text isEqual:NULL]||isnan([FECO2lbl.text floatValue])) {
+        //red if blank
         emailBtn.hidden=YES;
-        VCO2lbl.backgroundColor = [UIColor redColor];
-    }
-    if ([templbl.text isEqual:@""]) {
-        //red if negative
-        emailBtn.hidden=YES;
-        VCO2lbl.backgroundColor = [UIColor redColor];
-    }
-    if ([humiditylbl.text isEqual:@""]) {
-        //red if negative
-        emailBtn.hidden=YES;
-        VCO2lbl.backgroundColor = [UIColor redColor];
-    }
-    if ([labCO2lbl.text isEqual:@""]) {
-        //red if negative
-        emailBtn.hidden=YES;
-        VCO2lbl.backgroundColor = [UIColor redColor];
-    }
-    if ([labO2lbl.text isEqual:@""]) {
-        //red if negative
-        emailBtn.hidden=YES;
-        VCO2lbl.backgroundColor = [UIColor redColor];
+        FECO2lbl.backgroundColor = [UIColor redColor];
     }
     
-    if ([RERlbl.text  floatValue] <= 0.0||[RERlbl isEqual:@""]||[RERlbl isEqual:NULL]) {
+    if ([VCO2lbl.text  floatValue] <= 0.0||[VCO2lbl.text isEqual:@""]||[VCO2lbl.text isEqual:NULL]||isnan([VCO2lbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([VO2lbl.text  floatValue] <= 0.0||[VO2lbl.text isEqual:@""]||[VO2lbl.text isEqual:NULL]||isnan([VO2lbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([VO2Kglbl.text  floatValue] <= 0.0||[VO2Kglbl.text isEqual:@""]||[VO2Kglbl.text isEqual:NULL]||isnan([VO2Kglbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VO2Kglbl.backgroundColor = [UIColor redColor];
+    }
+    if ([templbl.text isEqual:@""]||[templbl.text isEqual:NULL]||isnan([templbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        templbl.backgroundColor = [UIColor redColor];
+    }
+    if ([VESTPDlbl.text isEqual:@""]||[VESTPDlbl.text isEqual:NULL]||isnan([VESTPDlbl.text floatValue])||[VESTPDlbl.text floatValue]==INFINITY) {
+        //red if negative
+        emailBtn.hidden=YES;
+        VESTPDlbl.backgroundColor = [UIColor redColor];
+    }
+    if ([humiditylbl.text isEqual:@""]||[humiditylbl.text isEqual:NULL]||isnan([humiditylbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        humiditylbl.backgroundColor = [UIColor redColor];
+    }
+    if ([labCO2lbl.text isEqual:@""]||[labCO2lbl.text isEqual:NULL]||isnan([labCO2lbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        labCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([labO2lbl.text isEqual:@""]||[labO2lbl.text isEqual:NULL]||isnan([labO2lbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        labO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([samptimelbl.text isEqual:@""]||[samptimelbl.text isEqual:NULL]||isnan([samptimelbl.text floatValue])) {
+        //red if negative
+        emailBtn.hidden=YES;
+        samptimelbl.backgroundColor = [UIColor redColor];
+    }
+    
+    if ([RERlbl.text  floatValue] <= 0.0||[RERlbl.text isEqual:@""]||[RERlbl.text isEqual:NULL]||isnan([RERlbl.text floatValue])) {
         //red if negative
         emailBtn.hidden=YES;
         RERlbl.backgroundColor = [UIColor redColor];
     }
     if ([subBMIlbl.text  floatValue] < 12.0) {
         //red if too low
-        emailBtn.hidden=NO;
-        subBMIlbl.backgroundColor = [UIColor redColor];
+        subBMIlbl.backgroundColor = [UIColor orangeColor];
     }
     if ([subBMIlbl.text  floatValue] > 50.0) {
         //red if too high
-        emailBtn.hidden=NO;
-        subBMIlbl.backgroundColor = [UIColor redColor];
+        subBMIlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subWtlbl.text  floatValue] <30) {
+        //orange low
+        subWtlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subWtlbl.text  floatValue] >130) {
+        //orange high
+        subWtlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subHtlbl.text  floatValue] <=1.0) {
+        //orange low
+        subHtlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subHtlbl.text  floatValue] >=1.9) {
+        //orange high
+        subHtlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([testerlbl.text isEqual:@""]||[testerlbl.text isEqual:NULL]||[testerlbl.text isEqual:@"Me"]) {
+        //orange missing
+        testerlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([lablbl.text isEqual:@""]||[lablbl.text isEqual:NULL]) {
+        //orange missing
+        lablbl.backgroundColor = [UIColor yellowColor];
+    }
+
+    if ([pressurelbl.text  floatValue] <=740) {
+        //orange low
+        pressurelbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([pressurelbl.text  floatValue] >=770) {
+        //orange high
+        pressurelbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([templbl.text  floatValue] <=15) {
+        //orange low
+        templbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([templbl.text  floatValue] >=27) {
+        //orange high
+        templbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([samptimelbl.text  floatValue] <30) {
+        //orange low
+        samptimelbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([samptimelbl.text  floatValue] >60) {
+        //orange high
+        samptimelbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([humiditylbl.text  floatValue] <30) {
+        //orange low
+        humiditylbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([humiditylbl.text  floatValue] >75) {
+        //orange high
+        humiditylbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labO2lbl.text  floatValue] <18) {
+        //orange low
+        labO2lbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labO2lbl.text  floatValue] >21) {
+        //orange high
+        labO2lbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labCO2lbl.text  floatValue] <0.02) {
+        //orange low
+        labCO2lbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([labCO2lbl.text  floatValue] >0.1) {
+        //orange high
+        labCO2lbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([N2lbl.text  floatValue] <=65) {
+        //orange low
+        N2lbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([N2lbl.text  floatValue] >=80) {
+        //orange high
+        N2lbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([VEATPSlbl.text  floatValue] <=25) {
+        //orange low
+        VEATPSlbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([VEATPSlbl.text  floatValue] >=35) {
+        //orange high
+        VEATPSlbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([VESTPDlbl.text  floatValue] <=20) {
+        //orange low
+        VESTPDlbl.backgroundColor = [UIColor yellowColor];
+    }
+    if ([VESTPDlbl.text  floatValue] >=45) {
+        //orange high
+        VESTPDlbl.backgroundColor = [UIColor yellowColor];
     }
 }
 

@@ -253,7 +253,7 @@
         testerNameTxt.backgroundColor = [UIColor yellowColor];
         testerNameTxt.text=@"Me";
     }
-    if ([subjectNameTxt.text isEqualToString:@""]||[subjectNameTxt.text isEqualToString:@"- Test Subject - No Name -"]) {
+    if ([subjectNameTxt.text isEqualToString:@""]||[subjectNameTxt.text isEqualToString:@"- Test Subject - No Name -"]||[subjectNameTxt.text isEqualToString:@"Me"]) {
         subjectNameTxt.backgroundColor = [UIColor yellowColor];
         subjectNameTxt.text=@"- Test Subject - No Name -";
     }
@@ -262,7 +262,7 @@
         emailTxt.text=@"- No Email Address -";
     }
     
-    if ([subHtTxt.text floatValue] <= 0.10) {
+    if ([subHtTxt.text floatValue] <= 0.10||[subHtTxt.text isEqual:@""]||[subHtTxt.text isEqual:NULL]) {
         subHtTxt.textColor = [UIColor redColor];
         subHtTxt.text = @"0.10";
         subHtTxt.backgroundColor = [UIColor yellowColor];
@@ -273,7 +273,7 @@
         subHtTxt.text = @"3.00";
         subHtTxt.backgroundColor = [UIColor yellowColor];
     }
-    if ([subWtTxt.text floatValue] <= 1.00) {
+    if ([subWtTxt.text floatValue] <= 1.00||[subWtTxt.text isEqual:@""]||[subWtTxt.text isEqual:NULL]) {
         subWtTxt.textColor = [UIColor redColor];
         subWtTxt.text = @"1.00";
         subWtTxt.backgroundColor = [UIColor yellowColor];
@@ -286,7 +286,6 @@
     }
     
     //maybe do some date and time format testing here?
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     BOOL validDate = YES;
     BOOL validTime = YES;
 

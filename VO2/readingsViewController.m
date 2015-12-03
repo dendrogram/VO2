@@ -120,6 +120,8 @@
     [tempChange setOn:YES];
     
     [self resetGassesCheckBtnHidden];
+    
+    [self FEO2CO2check];
 }
 
 -(void)resetGassesCheckBtnHidden{
@@ -333,7 +335,7 @@
   //colour change if out of range and insert range max/min value
   //set backgrounds to yellow/red if had to correct
 
-    if ([labTempTxt.text floatValue] < -40.0||[labTempTxt isEqual:@""]||[labTempTxt isEqual:NULL]) {
+    if ([labTempTxt.text floatValue] < -40.0||[labTempTxt.text isEqual:@""]||[labTempTxt.text isEqual:NULL]) {
         labTempTxt.textColor = [UIColor redColor];
         labTempC = -40.0;
         labTempTxt.text = @"-40.0";
@@ -347,7 +349,7 @@
         labTempTxt.backgroundColor = [UIColor yellowColor];
     }
 
-    if ([labPressureTxt.text floatValue] < 200.0) {
+    if ([labPressureTxt.text floatValue] < 200.0||[labPressureTxt.text isEqual:@""]||[labPressureTxt.text isEqual:NULL]) {
         labPressureTxt.textColor = [UIColor redColor];
         labPressure_mmHg = 200.0;
         labPressureTxt.text = @"200.0";
@@ -366,7 +368,7 @@
         labO2Txt.text = @"30.0";
         labO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([labO2Txt.text floatValue] < 0||[labO2Txt isEqual:@""]||[labO2Txt isEqual:NULL]) {
+    if ([labO2Txt.text floatValue] < 0||[labO2Txt.text isEqual:@""]||[labO2Txt.text isEqual:NULL]) {
         labO2Txt.textColor = [UIColor redColor];
         labO2Txt.text = @"0.0";
         labO2Txt.backgroundColor = [UIColor yellowColor];
@@ -376,12 +378,12 @@
         labCO2Txt.text = @"20.0";
         labCO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([labCO2Txt.text floatValue] < 0||[labCO2Txt isEqual:@""]||[labCO2Txt isEqual:NULL]) {
+    if ([labCO2Txt.text floatValue] < 0||[labCO2Txt.text isEqual:@""]||[labCO2Txt.text isEqual:NULL]) {
         labCO2Txt.textColor=[UIColor redColor];
         labCO2Txt.text = @"0.0";
         labCO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([sampTimeTxt.text floatValue] < 0||[sampTimeTxt isEqual:@""]||[sampTimeTxt isEqual:NULL]) {
+    if ([sampTimeTxt.text floatValue] < 0||[sampTimeTxt.text isEqual:@""]||[sampTimeTxt.text isEqual:NULL]) {
         sampTimeTxt.textColor=[UIColor redColor];
         sampTimeTxt.text = @"0.0";
         sampTimeTxt.backgroundColor = [UIColor yellowColor];
@@ -391,7 +393,7 @@
         sampTimeTxt.text = @"10000.0";
         sampTimeTxt.backgroundColor = [UIColor yellowColor];
     }
-    if ([labHumidityTxt.text floatValue] < 0||[labHumidityTxt isEqual:@""]||[labHumidityTxt isEqual:NULL]) {
+    if ([labHumidityTxt.text floatValue] < 0||[labHumidityTxt.text isEqual:@""]||[labHumidityTxt.text isEqual:NULL]) {
         labHumidityTxt.textColor = [UIColor redColor];
         labHumidityTxt.text = @"0";
         labHumidityTxt.backgroundColor = [UIColor yellowColor];
@@ -416,7 +418,11 @@
         VEATPSTxt.backgroundColor = [UIColor yellowColor];
     }
     
-    if ([FEO2Txt.text floatValue] < 0.000||[FEO2Txt isEqual:@""]||[FEO2Txt isEqual:NULL]) {
+    [self FEO2CO2check];
+}
+
+-(void)FEO2CO2check{
+    if ([FEO2Txt.text floatValue] <= 0.000||[FEO2Txt.text isEqual:@""]||[FEO2Txt.text isEqual:NULL]) {
         FEO2Txt.textColor = [UIColor redColor];
         FEO2Txt.text = @"0.000";
         FEO2Txt.backgroundColor = [UIColor yellowColor];
@@ -427,7 +433,7 @@
         FEO2Txt.text = @"100.00";
         FEO2Txt.backgroundColor = [UIColor yellowColor];
     }
-    if ([FECO2Txt.text floatValue] < 0.000||[FECO2Txt isEqual:@""]||[FECO2Txt isEqual:NULL]) {
+    if ([FECO2Txt.text floatValue] <= 0.000||[FECO2Txt.text isEqual:@""]||[FECO2Txt.text isEqual:NULL]) {
         FECO2Txt.textColor = [UIColor redColor];
         FECO2Txt.text = @"0.000";
         FECO2Txt.backgroundColor = [UIColor yellowColor];
@@ -439,7 +445,6 @@
         FECO2Txt.backgroundColor = [UIColor yellowColor];
     }
 }
-
 -(void) keyBoardAppeared :(int)oft
 {
     CGRect frame = self.view.frame;

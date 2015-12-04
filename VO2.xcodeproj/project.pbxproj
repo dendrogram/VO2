@@ -29,6 +29,7 @@
 		E1AEEACF1C05EA07007D243E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1AEEACE1C05EA07007D243E /* Settings.bundle */; };
 		E1B6D0AC1C1083E9004C0E9E /* mmulogoshape.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B6D0AB1C1083E9004C0E9E /* mmulogoshape.png */; };
 		E1B6D0AF1C108F4E004C0E9E /* EnergyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B6D0AE1C108F4E004C0E9E /* EnergyView.m */; };
+		E1B6D0B21C11E954004C0E9E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B6D0B01C11E954004C0E9E /* Main_iPad.storyboard */; };
 		E1EE19781987E6B1006552A3 /* vo2calc.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196E1987E6B1006552A3 /* vo2calc.png */; };
 		E1EE19791987E6B1006552A3 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196F1987E6B1006552A3 /* contacts.png */; };
 		E1EE197A1987E6B1006552A3 /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE19701987E6B1006552A3 /* tutorial.png */; };
@@ -93,6 +94,7 @@
 		E1B6D0AB1C1083E9004C0E9E /* mmulogoshape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mmulogoshape.png; sourceTree = "<group>"; };
 		E1B6D0AD1C108F4E004C0E9E /* EnergyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnergyView.h; sourceTree = "<group>"; };
 		E1B6D0AE1C108F4E004C0E9E /* EnergyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnergyView.m; sourceTree = "<group>"; };
+		E1B6D0B11C11E954004C0E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		E1EE196E1987E6B1006552A3 /* vo2calc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vo2calc.png; sourceTree = "<group>"; };
 		E1EE196F1987E6B1006552A3 /* contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contacts.png; sourceTree = "<group>"; };
 		E1EE19701987E6B1006552A3 /* tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial.png; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				E1F13E2E1974537000A9748D /* AppDelegate.h */,
 				E1F13E2F1974537000A9748D /* AppDelegate.m */,
 				E1F13E311974537000A9748D /* Main_iPhone.storyboard */,
+				E1B6D0B01C11E954004C0E9E /* Main_iPad.storyboard */,
 				913BCB9D1974ADFD00CB112C /* images */,
 				E1F13E371974537000A9748D /* ViewController.h */,
 				E1F13E381974537000A9748D /* ViewController.m */,
@@ -362,6 +365,7 @@
 				E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */,
 				E12EEAB219752EF300CEDBD5 /* calc50x50.png in Resources */,
 				915A77DB198B078700FBCC92 /* data.plist in Resources */,
+				E1B6D0B21C11E954004C0E9E /* Main_iPad.storyboard in Resources */,
 				E12EEAB419752EF300CEDBD5 /* results50x50.png in Resources */,
 				E1B6D0AC1C1083E9004C0E9E /* mmulogoshape.png in Resources */,
 				E12EEAB619752EF300CEDBD5 /* send50x50.png in Resources */,
@@ -440,6 +444,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E1B6D0B01C11E954004C0E9E /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1B6D0B11C11E954004C0E9E /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
 		E1F13E281974537000A9748D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

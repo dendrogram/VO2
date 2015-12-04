@@ -159,7 +159,6 @@
                     <tabBarItem key="tabBarItem" title="About" image="about50x50.png" id="I8P-AL-7br"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="mmuweblink" destination="4aX-cY-eOS" id="LBV-GN-Vin"/>
                         <outlet property="versionNumberLab" destination="Wgh-FB-Tvd" id="oyh-UD-3Ra"/>
@@ -178,7 +177,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ioz-kn-MfC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VRt-x3-w0P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas Calculations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cf-nt-gZc">
@@ -192,7 +191,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" canCancelContentTouches="NO" maximumZoomScale="6" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-Di-v2N">
-                                <rect key="frame" x="20" y="59" width="280" height="368"/>
+                                <rect key="frame" x="20" y="59" width="280" height="456"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -1483,7 +1482,7 @@ Cg
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOJ-1r-slS">
-                                <rect key="frame" x="102" y="435" width="116" height="25"/>
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <animations/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="about50x50.png">
@@ -1531,7 +1530,6 @@ Cg
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCe-AI-Plh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1543,7 +1541,6 @@ Cg
                 <tabBarController title="Gas Analyser" extendedLayoutIncludesOpaqueBars="YES" definesPresentationContext="YES" modalTransitionStyle="crossDissolve" id="Nut-v4-lUQ" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="vTi-8c-WCq">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1893,7 +1890,6 @@ Cg
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Data Entry" image="calc50x50.png" id="wCu-BG-g9G"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="FECO2Txt" destination="DbV-z4-FHE" id="7Ov-0d-qco"/>
                         <outlet property="FEO2Txt" destination="Lb6-uy-qIs" id="Hvn-Y1-fGu"/>
@@ -2092,7 +2088,6 @@ Cg
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Subject Data" image="results50x50.png" id="bHz-Mr-jhN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="emailTxt" destination="sZ1-dL-gmh" id="tyJ-eA-UVX"/>
                         <outlet property="startDateTxt" destination="H9L-48-gBT" id="6wm-ZN-4cf"/>
@@ -2116,7 +2111,7 @@ Cg
                         <viewControllerLayoutGuide type="bottom" id="dBC-AO-Kdg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hhp-AW-G5O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glossary of Symbols Used" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAW-gM-RtM">
@@ -2130,7 +2125,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPQ-LC-iIo">
-                                <rect key="frame" x="20" y="59" width="280" height="368"/>
+                                <rect key="frame" x="20" y="59" width="280" height="456"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -2745,7 +2740,7 @@ Sample Time :</string>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppd-MK-Rpr">
-                                <rect key="frame" x="101" y="435" width="116" height="25"/>
+                                <rect key="frame" x="101" y="523" width="116" height="25"/>
                                 <animations/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="about50x50.png">
@@ -2791,7 +2786,6 @@ Sample Time :</string>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnN-NJ-Pei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2806,7 +2800,7 @@ Sample Time :</string>
                         <viewControllerLayoutGuide type="bottom" id="GcV-zk-3NW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K64-Ei-Ubf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Entry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymb-ua-zQ9">
@@ -2820,7 +2814,7 @@ Sample Time :</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-aD-EaN">
-                                <rect key="frame" x="20" y="59" width="280" height="368"/>
+                                <rect key="frame" x="20" y="59" width="280" height="456"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -3241,7 +3235,7 @@ Expired air (FE-O</string>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-KQ-ABi">
-                                <rect key="frame" x="102" y="435" width="116" height="25"/>
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <animations/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="about50x50.png">
@@ -3284,7 +3278,6 @@ Expired air (FE-O</string>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oci-Up-Yfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3299,7 +3292,7 @@ Expired air (FE-O</string>
                         <viewControllerLayoutGuide type="bottom" id="PdY-vb-hif"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oil-Jr-lsu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exporting Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ks-aa-8On">
@@ -3313,7 +3306,7 @@ Expired air (FE-O</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" maximumZoomScale="6" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plN-XZ-68J">
-                                <rect key="frame" x="21" y="59" width="280" height="368"/>
+                                <rect key="frame" x="21" y="59" width="280" height="456"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -3411,7 +3404,7 @@ Cg
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-yR-iMe">
-                                <rect key="frame" x="102" y="435" width="116" height="25"/>
+                                <rect key="frame" x="102" y="523" width="116" height="25"/>
                                 <animations/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="about50x50.png">
@@ -3457,7 +3450,6 @@ Cg
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JrF-8o-lVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3472,7 +3464,7 @@ Cg
                         <viewControllerLayoutGuide type="bottom" id="1Zm-KX-qKh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8GJ-Ii-SY2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact The Developer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2X-Ly-OII">
@@ -3636,7 +3628,6 @@ for the GasCalc Excel ® sheet</string>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="essweblink" destination="R6b-HT-hDx" id="1bR-fw-jyA"/>
                     </connections>
@@ -4351,7 +4342,6 @@ for the GasCalc Excel ® sheet</string>
                     <navigationItem key="navigationItem" id="hrh-lg-Vfb"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="FECO2lbl" destination="gNY-II-MZn" id="SJ9-OZ-89T"/>
                         <outlet property="FEO2lbl" destination="xeL-ro-i55" id="sEv-Tm-ep2"/>
@@ -4909,12 +4899,8 @@ for the GasCalc Excel ® sheet</string>
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rcn-0l-Swh">
-                                <rect key="frame" x="20" y="22" width="29" height="29"/>
-                                <animations/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIm-fc-Yax">
-                                <rect key="frame" x="102" y="523" width="116" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIm-fc-Yax">
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
                                 <animations/>
                                 <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Back" image="about50x50.png">
@@ -4925,18 +4911,18 @@ for the GasCalc Excel ® sheet</string>
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="0I4-RL-VTM"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="Rcn-0l-Swh">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="9Hb-R9-uhL" firstAttribute="top" secondItem="EIm-fc-Yax" secondAttribute="bottom" constant="20" id="Qe3-X1-qHn"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Results" image="vo2_50x50.png" id="cqn-Tv-zm0"/>
                     <navigationItem key="navigationItem" id="l3b-ou-y4A"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="RERlbl" destination="wF3-lT-7xc" id="Ub3-VW-0hn"/>
                         <outlet property="VCO2lbl" destination="e7n-mM-boA" id="U8W-ez-3kC"/>

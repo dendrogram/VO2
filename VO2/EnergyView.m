@@ -111,6 +111,47 @@ vo2level;
     
     pcho = choukj / (energyExpend / 100.0);
     pcholbl.text = [NSString stringWithFormat:@"%.4f", pcho];
+    
+    if ([VCO2lbl.text  floatValue] <= 0.0||[VCO2lbl.text isEqual:@""]||[VCO2lbl.text isEqual:NULL]||isnan([VCO2lbl.text floatValue])) {
+        //red if negative
+        VCO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([VO2lbl.text  floatValue] <= 0.0||[VO2lbl.text isEqual:@""]||[VO2lbl.text isEqual:NULL]||isnan([VO2lbl.text floatValue])) {
+        //red if negative
+        VO2lbl.backgroundColor = [UIColor redColor];
+    }
+    if ([VO2Kglbl.text  floatValue] <= 0.0||[VO2Kglbl.text isEqual:@""]||[VO2Kglbl.text isEqual:NULL]||isnan([VO2Kglbl.text floatValue])) {
+        //red if negative
+        VO2Kglbl.backgroundColor = [UIColor redColor];
+    }
+    if ([RERlbl.text  floatValue] <= 0.0||[RERlbl.text isEqual:@""]||[RERlbl.text isEqual:NULL]||isnan([RERlbl.text floatValue])) {
+        //red if negative
+        RERlbl.backgroundColor = [UIColor redColor];
+    }
+    if ([subBMIlbl.text  floatValue] < 12.0) {
+        //red if too low
+        subBMIlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subBMIlbl.text  floatValue] > 50.0) {
+        //red if too high
+        subBMIlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subWtlbl.text  floatValue] <30) {
+        //orange low
+        subWtlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subWtlbl.text  floatValue] >130) {
+        //orange high
+        subWtlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subHtlbl.text  floatValue] <=1.0) {
+        //orange low
+        subHtlbl.backgroundColor = [UIColor orangeColor];
+    }
+    if ([subHtlbl.text  floatValue] >=1.9) {
+        //orange high
+        subHtlbl.backgroundColor = [UIColor orangeColor];
+    }
 }
 
 -(IBAction)indexChangedCHO:(UISegmentedControl *)sender

@@ -294,7 +294,7 @@
         //orange missing
         testerlbl.backgroundColor = [UIColor orangeColor];
     }
-    if ([testerlbl.text isEqual:@"Jon"]) {
+    if ([testerlbl.text isEqual:@"Energy"]||[testerlbl.text isEqual:@"Jon Howell"]||[testerlbl.text isEqual:@"Dr C Morse"]) {
         //orange missing
         testerlbl.backgroundColor = [UIColor whiteColor];
         energyBtn.hidden=NO;
@@ -526,7 +526,7 @@
     VEBTPS = VEBTPS * VEATPS;
     
     //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
-    singleton.corrFactor = [NSString stringWithFormat:@"%.4f", corrFactor];
+    singleton.corrFactor = [NSString stringWithFormat:@"%.15f", corrFactor];
     
     //VESTPD=precorr*corrFactor;
     
@@ -574,7 +574,7 @@
     
     VESTPD = precorr*corrFactor1; //v3//
     
-    singleton.vestpd = [NSString stringWithFormat:@"%.4f", VESTPD];
+    singleton.vestpd = [NSString stringWithFormat:@"%.15f", VESTPD];
     
     //vo2
     //VO2    = 0.01   * (VEstpd * (((100 - (FEO2 + FECO2)) / 79.03) * 20.93) - (VEstpd * FEO2))
@@ -583,7 +583,7 @@
     
     VO2= (VESTPD * (labO2 / 100.0) * ((1.0 - ((FEO2 / 100.0) + (FECO2 / 100.0))) / (1.0 - ((labO2 / 100.0) + (labCO2 / 100))))) - (VESTPD * (FEO2 / 100.0));
     
-    singleton.vo2    = [NSString stringWithFormat:@"%.4f", VO2];
+    singleton.vo2    = [NSString stringWithFormat:@"%.15f", VO2];
     
     //vco2
     //VCO2   = 0.01 * (VEstpd * FECO2)
@@ -594,29 +594,39 @@
     VCO2 = (VESTPD * (FECO2 / 100.0)) - (VESTPD * (labCO2 / 100.0) * ((1.0 - ((FEO2 / 100.0) + (FECO2 / 100.0))) / (1.0 - ((labO2 / 100.0) + (labCO2 / 100.0)))));
     
     //v3//VCO2   = 0.0100 * (VESTPD * FECO2);
-    singleton.vco2   = [NSString stringWithFormat:@"%.4f", VCO2];
+    singleton.vco2   = [NSString stringWithFormat:@"%.15f", VCO2];
     
     //vo2kg
     //VO2kg = ( VO2 * 1000)       / Weight
     VO2Kg   = ( VO2 * 1000.0000 ) / subWt ;
     
-    singleton.vo2kg     = [NSString stringWithFormat:@"%.4f", VO2Kg];
-    singleton.vebtps    = [NSString stringWithFormat:@"%.4f", VEBTPS];
+    singleton.vo2kg     = [NSString stringWithFormat:@"%.15f", VO2Kg];
+    singleton.vebtps    = [NSString stringWithFormat:@"%.15f", VEBTPS];
     
     //rer
     RER    = ( VCO2 / VO2 );
-    singleton.rer    = [NSString stringWithFormat:@"%.4f", RER];
+    singleton.rer    = [NSString stringWithFormat:@"%.15f", RER];
+    
+    subBMIlbl.text      =   [NSString stringWithFormat:@"%.1f", subBMI];
+    VEATPSlbl.text      =   [NSString stringWithFormat:@"%.2f",[singleton.veatps floatValue]];
+    VESTPDlbl.text      =   [NSString stringWithFormat:@"%.4f",[singleton.vestpd floatValue]];
+    VEBTPSlbl.text      =   [NSString stringWithFormat:@"%.4f",[singleton.vebtps floatValue]];
     
     subBMIlbl.text      =  [NSString stringWithFormat:@"%.1f", subBMI];
-    VEATPSlbl.text      =   singleton.veatps;
-    VESTPDlbl.text      =   singleton.vestpd;
-    VEBTPSlbl.text      =   singleton.vebtps;
-    corrFaclbl.text     =   singleton.corrFactor;
-    VO2lbl.text         =   singleton.vo2;
-    VCO2lbl.text        =   singleton.vco2;
+    
+    corrFaclbl.text     =   [NSString stringWithFormat:@"%.4f",[singleton.corrFactor floatValue]];
+    VO2lbl.text         =   [NSString stringWithFormat:@"%.4f",[singleton.vo2 floatValue]];
+    VCO2lbl.text        =   [NSString stringWithFormat:@"%.4f",[singleton.vco2 floatValue]];
+    
+    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.4f",[singleton.vo2kg floatValue]];
+    RERlbl.text         =   [NSString stringWithFormat:@"%.4f",[singleton.rer floatValue]];
+    
+    //corrFaclbl.text     =   singleton.corrFactor;
+    //VO2lbl.text         =   singleton.vo2;
+    //VCO2lbl.text        =   singleton.vco2;
     N2lbl.text          =   singleton.n2;
-    VO2Kglbl.text       =   singleton.vo2kg;
-    RERlbl.text         =   singleton.rer;
+    //VO2Kglbl.text       =   singleton.vo2kg;
+    //RERlbl.text         =   singleton.rer;
     
     //Format for file and email outputs
     //put titles and basic params up first

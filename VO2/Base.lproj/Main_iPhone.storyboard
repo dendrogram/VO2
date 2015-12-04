@@ -187,8 +187,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" canCancelContentTouches="NO" maximumZoomScale="6" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-Di-v2N">
-                                <rect key="frame" x="20" y="49" width="280" height="378"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" canCancelContentTouches="NO" maximumZoomScale="6" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-Di-v2N">
+                                <rect key="frame" x="20" y="59" width="280" height="368"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -373,9 +373,27 @@ VE</string>
                                     </fragment>
                                     <fragment>
                                         <string key="content">Where: 
-PB 	= barometric pressure (mmHg), 
-T 	= temperature of sample gas in volume measuring device (°C), 
-PH</string>
+PB 		= barometric pressure (mmHg), 
+T 		= temperature of sample gas in
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">volume measuring device (°C), 
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="108" headIndent="72" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="PH">
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -650,7 +668,7 @@ FEO</string>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> 	= fraction of O</string>
+                                        <string key="content"> 		= fraction of O</string>
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -685,7 +703,7 @@ FECO</string>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> 	= fraction of CO</string>
+                                        <string key="content">		= fraction of CO</string>
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -720,7 +738,7 @@ FIO</string>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> 	= fraction of O</string>
+                                        <string key="content"> 		= fraction of O</string>
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -755,7 +773,7 @@ FICO</string>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> 	= fraction of CO</string>
+                                        <string key="content"> 		= fraction of CO</string>
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -991,9 +1009,28 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-Rate of fat metabolism (g/min) = 
-          (1.689 x VO</string>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">For CHO Energy Expenditure Calculations:
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Note the figure of 4.12 and 2.91 changes with the ratio of glucose to glycogen that is metabolized in the exercise, and is approximately 4.344 and 3.061 at 50:50 glu:gly (about 40-50% VO</string>
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1009,7 +1046,7 @@ Rate of fat metabolism (g/min) =
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=") - (1.689 x VCO">
+                                    <fragment content=" max), and 4.210 and 2.962 at 20:80 glu:gly (about 50-75% of VO">
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1026,7 +1063,7 @@ Rate of fat metabolism (g/min) =
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">)
+                                        <string key="content"> max). Jeukendrup AE, Wallis GA, et al (2005).
 
 Rate of carbohydrate metabolism (g/min) = 
           (4.12 x VCO</string>
@@ -1064,7 +1101,29 @@ Rate of carbohydrate metabolism (g/min) =
                                     <fragment>
                                         <string key="content">).
 
-Note the figure of 4.12 and 2.91 changes with the ratio of glucose to glycogen that is metabolized in the exercise, and is approximately 4.344 and 3.061 at 50:50 glu:gly (about 40-50% VO</string>
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">For Fat Energy Expenditure Calculations:
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Note that different studies have produced different values for energy from fat.  Brouwer says 1.718:1.718, Frayn and Ferranninni agree at 1.67:1.67, Peronnet and Massicotte say 1.695:1.701.  Egan says 1.689:1.689 in the equation:
+
+Rate of fat metabolism (g/min) = 
+          (1.689 x VO</string>
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1080,7 +1139,7 @@ Note the figure of 4.12 and 2.91 changes with the ratio of glucose to glycogen t
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" max), and 4.210 and 2.962 at 20:80 glu:gly (about 50-75% of VO">
+                                    <fragment content=") - (1.689 x VCO">
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
@@ -1097,7 +1156,7 @@ Note the figure of 4.12 and 2.91 changes with the ratio of glucose to glycogen t
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> max). Jeukendrup AE, Wallis GA, et al (2005).
+                                        <string key="content">)
 
 Rate of energy expenditure (kJ/min) = 
           (15.88 x VO</string>
@@ -1143,7 +1202,9 @@ Rate of energy expenditure (kJ/min) =
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="References">
+                                    <fragment>
+                                        <string key="content">References
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="10" name="Arial-BoldMT"/>
@@ -1155,6 +1216,43 @@ Rate of energy expenditure (kJ/min) =
                                     <fragment>
                                         <string key="content" base64-UTF8="YES">
 Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Brouwer E.">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">On simple formulae for calculating the heat expenditure and the quantities of carbohydrate and fat oxidized in metabolism of men and animals, from gaseous exchange. (Oxygen and carbonic acid output) and urine-N.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSUnderlineColor" red="0.011764705882352941" green="0.14117647058823529" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">  Acta Physiol Pharmacol Neerl. 1957;  6 795-802
+
 </string>
                                         <attributes>
                                             <font key="NSFont" size="10" name="ArialMT"/>
@@ -1182,6 +1280,97 @@ Cg
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
+                                    <fragment content="Ferrannini E.">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="The theoretical bases of indirect calorimetry: a review.">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSUnderlineColor" red="0.011764705882352941" green="0.14117647058823529" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">  Metabolism. 1988;  37 287-301
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Frayn K N.">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Calculation of substrate oxidation rates in vivo from gaseous exchange.">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSUnderlineColor" red="0.011764705882352941" green="0.14117647058823529" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">  J Appl Physiol. 1983;  55 628-634
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Jeukendrup AE, Wallis GA, (2005).">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> Measurement of Substrate Oxidation During Exercise by Means of Gas Exchange Measurements. Int Journal Sports Med,  26: S28-S37
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
                                     <fragment content="Mc Ardle WD, Katch FI Katch VL (1994).">
                                         <attributes>
                                             <font key="NSFont" size="10" name="Arial-BoldMT"/>
@@ -1192,6 +1381,42 @@ Cg
                                     </fragment>
                                     <fragment>
                                         <string key="content"> Essentials of Exercise Physiology. Malvern PA: Lea &amp; Febiger
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Péronnet F, Massicotte D.">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Table of nonprotein respiratory quotient: An update.">
+                                        <attributes>
+                                            <font key="NSFont" size="10" name="ArialMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSUnderlineColor" red="0.011764705882352941" green="0.14117647058823529" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">  Can J Sport Sci. 1991;  16 23-29
 
 </string>
                                         <attributes>
@@ -1228,24 +1453,8 @@ Cg
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" Adequacy of the Haldane transformation in the computation of exercise VO">
-                                        <attributes>
-                                            <font key="NSFont" size="10" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="2">
-                                        <attributes>
-                                            <font key="NSFont" size="7" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
                                     <fragment>
-                                        <string key="content"> in man. Journal of Applied Physiology, 35, 85-89
+                                        <string key="content"> Adequacy of the Haldane transformation in the computation of exercise VO2 in man. Journal of Applied Physiology, 35, 85-89
 
 </string>
                                         <attributes>
@@ -1253,50 +1462,6 @@ Cg
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Jeukendrup AE, Wallis GA, (2005).">
-                                        <attributes>
-                                            <font key="NSFont" size="10" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" Measurement of Substrate Oxidation During Exercise by Means of Gas Exchange Measurements. Int Journal Sports Med,  ">
-                                        <attributes>
-                                            <font key="NSFont" size="10" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="26: S28-S37">
-                                        <attributes>
-                                            <font key="NSFont" size="10" name="Verdana"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="10" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="432" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="10" name="Verdana"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
                                     </fragment>
                                     <fragment>
@@ -1311,8 +1476,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOJ-1r-slS">
                                 <rect key="frame" x="102" y="435" width="116" height="25"/>
@@ -1776,7 +1940,7 @@ Cg
                                         <rect key="frame" x="20" y="322" width="79" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subject Mass" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XB-dI-bFf">
                                         <rect key="frame" x="21" y="299" width="112" height="21"/>
@@ -1880,7 +2044,7 @@ Cg
                                         <rect key="frame" x="147" y="322" width="88" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                                 <animations/>
@@ -1935,7 +2099,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPQ-LC-iIo">
-                                <rect key="frame" x="20" y="49" width="280" height="378"/>
+                                <rect key="frame" x="20" y="59" width="280" height="368"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -2599,8 +2763,8 @@ Sample Time :</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-aD-EaN">
-                                <rect key="frame" x="20" y="49" width="280" height="378"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5K-aD-EaN">
+                                <rect key="frame" x="20" y="59" width="280" height="368"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -3085,7 +3249,7 @@ Expired air (FE-O</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" maximumZoomScale="6" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plN-XZ-68J">
-                                <rect key="frame" x="21" y="51" width="280" height="376"/>
+                                <rect key="frame" x="21" y="59" width="280" height="368"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
@@ -3233,7 +3397,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kck-XH-oz8">
-                                <rect key="frame" x="20" y="49" width="280" height="378"/>
+                                <rect key="frame" x="20" y="59" width="280" height="368"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
@@ -3363,16 +3527,6 @@ for the GasCalc Excel ® sheet</string>
                                     <segue destination="Nut-v4-lUQ" kind="modal" id="mJl-SZ-4w8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6b-HT-hDx">
-                                <rect key="frame" x="20" y="260" width="280" height="28"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="www.ess.mmu.ac.uk"/>
-                                <connections>
-                                    <action selector="esswebjump:" destination="eSj-Wu-xI1" eventType="touchUpInside" id="3ug-ds-nZk"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about50x50.png" translatesAutoresizingMaskIntoConstraints="NO" id="0XU-hg-N8h">
                                 <rect key="frame" x="267" y="20" width="33" height="33"/>
                                 <animations/>
@@ -3381,6 +3535,16 @@ for the GasCalc Excel ® sheet</string>
                                 <rect key="frame" x="20" y="22" width="29" height="29"/>
                                 <animations/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6b-HT-hDx">
+                                <rect key="frame" x="20" y="270" width="280" height="28"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="www.ess.mmu.ac.uk"/>
+                                <connections>
+                                    <action selector="esswebjump:" destination="eSj-Wu-xI1" eventType="touchUpInside" id="3ug-ds-nZk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
@@ -3436,7 +3600,7 @@ for the GasCalc Excel ® sheet</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btx-Oa-rXe">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btx-Oa-rXe">
                                         <rect key="frame" x="187" y="5" width="85" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -3661,12 +3825,6 @@ for the GasCalc Excel ® sheet</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ht" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK8-y9-Ab9">
-                                        <rect key="frame" x="108" y="74" width="21" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anR-fk-NZu">
                                         <rect key="frame" x="130" y="74" width="53" height="21"/>
                                         <animations/>
@@ -3884,7 +4042,7 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-AT-oif">
-                                        <rect key="frame" x="89" y="73" width="19" height="21"/>
+                                        <rect key="frame" x="89" y="74" width="19" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
@@ -4060,6 +4218,12 @@ for the GasCalc Excel ® sheet</string>
                                             <segue destination="rKf-PX-SQL" kind="modal" id="hVe-uG-hpD"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ht" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK8-y9-Ab9">
+                                        <rect key="frame" x="108" y="74" width="21" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -4178,7 +4342,7 @@ for the GasCalc Excel ® sheet</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux5-NI-XSS">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux5-NI-XSS">
                                         <rect key="frame" x="187" y="5" width="85" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.89420127579999997" green="1" blue="0.66009751149999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -4298,7 +4462,7 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-VF-MPj">
-                                        <rect key="frame" x="21" y="115" width="38" height="21"/>
+                                        <rect key="frame" x="13" y="98" width="38" height="21"/>
                                         <animations/>
                                         <attributedString key="attributedText">
                                             <fragment content="VO">
@@ -4319,20 +4483,20 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3Z-gL-shd">
-                                        <rect key="frame" x="99" y="115" width="97" height="21"/>
+                                        <rect key="frame" x="91" y="98" width="97" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="L/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNC-jP-Yj1">
-                                        <rect key="frame" x="200" y="138" width="48" height="21"/>
+                                        <rect key="frame" x="192" y="122" width="48" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggu-Vv-bDV">
-                                        <rect key="frame" x="21" y="139" width="53" height="21"/>
+                                        <rect key="frame" x="13" y="122" width="53" height="21"/>
                                         <animations/>
                                         <attributedString key="attributedText">
                                             <fragment content="VCO">
@@ -4353,20 +4517,20 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7n-mM-boA">
-                                        <rect key="frame" x="99" y="138" width="97" height="21"/>
+                                        <rect key="frame" x="91" y="122" width="97" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="L/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUC-fp-OFr">
-                                        <rect key="frame" x="200" y="114" width="39" height="21"/>
+                                        <rect key="frame" x="192" y="97" width="39" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbc-43-62B">
-                                        <rect key="frame" x="21" y="186" width="65" height="21"/>
+                                        <rect key="frame" x="13" y="169" width="65" height="21"/>
                                         <animations/>
                                         <attributedString key="attributedText">
                                             <fragment content="VO">
@@ -4394,44 +4558,247 @@ for the GasCalc Excel ® sheet</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZV-jE-ae5">
-                                        <rect key="frame" x="99" y="186" width="99" height="21"/>
+                                        <rect key="frame" x="91" y="169" width="99" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-mB-eLJ">
-                                        <rect key="frame" x="21" y="210" width="43" height="21"/>
+                                        <rect key="frame" x="144" y="145" width="43" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-lT-7xc">
-                                        <rect key="frame" x="99" y="210" width="69" height="21"/>
+                                        <rect key="frame" x="192" y="146" width="69" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBR-vu-SXN">
-                                        <rect key="frame" x="99" y="163" width="69" height="21"/>
+                                        <rect key="frame" x="49" y="146" width="69" height="21"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ml/kg/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dR-XE-lXF">
-                                        <rect key="frame" x="202" y="186" width="65" height="21"/>
+                                        <rect key="frame" x="194" y="169" width="65" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Corr. F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vR0-3t-cU6">
-                                        <rect key="frame" x="21" y="163" width="53" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cor.F." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vR0-3t-cU6">
+                                        <rect key="frame" x="8" y="146" width="43" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIF-qg-Bip">
+                                        <rect key="frame" x="13" y="192" width="65" height="21"/>
+                                        <animations/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="EExpend">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHv-6K-dlc">
+                                        <rect key="frame" x="91" y="192" width="97" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="g/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-AZ-Daa">
+                                        <rect key="frame" x="120" y="216" width="41" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kj/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foi-oH-feN">
+                                        <rect key="frame" x="243" y="215" width="48" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5re-fT-lQo">
+                                        <rect key="frame" x="8" y="216" width="43" height="21"/>
+                                        <animations/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="CHO">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysh-pw-IoZ">
+                                        <rect key="frame" x="49" y="216" width="69" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kj/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVL-eT-UxL">
+                                        <rect key="frame" x="192" y="191" width="39" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwg-3D-MeP">
+                                        <rect key="frame" x="246" y="263" width="21" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dih-Ij-fxi">
+                                        <rect key="frame" x="8" y="239" width="43" height="21"/>
+                                        <animations/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="FATu">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLU-3q-f0Z">
+                                        <rect key="frame" x="6" y="263" width="35" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyI-TR-Aqd">
+                                        <rect key="frame" x="8" y="289" width="100" height="21"/>
+                                        <animations/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="% of VO">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="2Max">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32r-Pv-5Ig">
+                                        <rect key="frame" x="49" y="263" width="68" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xES-GO-4dK">
+                                        <rect key="frame" x="163" y="215" width="69" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="g/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-FV-hxd">
+                                        <rect key="frame" x="120" y="239" width="41" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9H-OQ-C4u">
+                                        <rect key="frame" x="163" y="239" width="76" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kj/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAe-wW-qoI">
+                                        <rect key="frame" x="243" y="239" width="37" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miP-Bi-VvZ">
+                                        <rect key="frame" x="121" y="263" width="38" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-lb-8rM">
+                                        <rect key="frame" x="163" y="263" width="76" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="V63-Yh-mov">
+                                        <rect key="frame" x="108" y="286" width="164" height="29"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="40-50%"/>
+                                            <segment title="50-75%"/>
+                                            <segment title="75+ %"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="indexChangedCHO:" destination="rKf-PX-SQL" eventType="valueChanged" id="bZt-Ls-bW4"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="3qK-09-1g4">
+                                        <rect key="frame" x="6" y="332" width="266" height="29"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="Brouwer"/>
+                                            <segment title="Frayn"/>
+                                            <segment title="Feranninni"/>
+                                            <segment title="Egan"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="indexChangedFAT:" destination="rKf-PX-SQL" eventType="valueChanged" id="Oc6-Sr-psR"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxK-rF-PIB">
+                                        <rect key="frame" x="49" y="239" width="68" height="21"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.99785768470000002" green="1" blue="0.78303455879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbm-7v-oLQ">
+                                        <rect key="frame" x="8" y="311" width="100" height="21"/>
+                                        <animations/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Fat Mot.Eq.">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -4486,15 +4853,24 @@ for the GasCalc Excel ® sheet</string>
                         <outlet property="VCO2lbl" destination="e7n-mM-boA" id="U8W-ez-3kC"/>
                         <outlet property="VO2Kglbl" destination="oZV-jE-ae5" id="jqD-1r-jeD"/>
                         <outlet property="VO2lbl" destination="O3Z-gL-shd" id="GBO-kx-bBl"/>
+                        <outlet property="chousegmlbl" destination="Ysh-pw-IoZ" id="zU5-2j-iLD"/>
+                        <outlet property="chousekjmlbl" destination="xES-GO-4dK" id="8hr-Ko-Lf9"/>
                         <outlet property="corrFaclbl" destination="kBR-vu-SXN" id="Yd7-nq-Rtl"/>
                         <outlet property="datelbl" destination="NsT-BL-V5g" id="tQc-79-Pin"/>
+                        <outlet property="energyExpendlbl" destination="MHv-6K-dlc" id="fmE-BO-O4q"/>
+                        <outlet property="fatlevel" destination="3qK-09-1g4" id="Gzi-UK-q5m"/>
+                        <outlet property="fatusegmlbl" destination="VxK-rF-PIB" id="xFZ-Hi-wC9"/>
+                        <outlet property="fatusekjmlbl" destination="K9H-OQ-C4u" id="tQJ-O2-q5H"/>
                         <outlet property="lablbl" destination="S9C-aU-dkW" id="5hD-LS-VSM"/>
+                        <outlet property="pcholbl" destination="ILr-lb-8rM" id="XAk-yZ-LdK"/>
+                        <outlet property="pfatlbl" destination="32r-Pv-5Ig" id="7Sl-d8-zpQ"/>
                         <outlet property="subBMIlbl" destination="3K9-lU-RXU" id="YUw-ZC-gD0"/>
                         <outlet property="subHtlbl" destination="RME-w4-czp" id="59g-Xz-HW4"/>
                         <outlet property="subWtlbl" destination="sIH-be-Lnb" id="df0-rg-WIO"/>
                         <outlet property="subjectlbl" destination="65u-aA-53W" id="kfY-zj-Uxx"/>
                         <outlet property="testerlbl" destination="BPc-4k-eTL" id="0ga-XH-dkn"/>
                         <outlet property="timelbl" destination="Ux5-NI-XSS" id="YGN-LL-DLX"/>
+                        <outlet property="vo2level" destination="V63-Yh-mov" id="Qdi-ra-dbz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaA-2f-siJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

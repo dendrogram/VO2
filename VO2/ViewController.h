@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
-
 {
     IBOutlet UILabel     * versionNumberLab;
     IBOutlet UIButton    * essweblink;
@@ -25,7 +24,6 @@
 @property (strong, nonatomic) IBOutlet UIButton           * mmuweblink;
 
 - (IBAction)esswebjump:(id)sender;
-
 - (IBAction)mmuwebjump:(id)sender;
 
 @end

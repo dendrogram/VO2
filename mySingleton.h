@@ -5,12 +5,12 @@
 //  Created by Jon Howell on 15/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
+//  additional vars for energy 4/12/15
 
 #import <Foundation/Foundation.h>
 
 @interface mySingleton : NSObject {
     // add all the objects that you want to be globally abailable here:
-    //eg types defs
 
     //float   test;
     //BOOL    boxShow;
@@ -57,8 +57,13 @@
     NSString * subjectName;
     NSString * oldSubjectName;
     NSString * versionNumber;
+    
+    Float64 cho412;
+    Float64 cho291;
+    Float64 fata;
+    Float64 fatb;
 }
-//eg defs pt2
+
 @property (nonatomic) int  counter;
 //@property (nonatomic) BOOL boxShow;
 //@property (nonatomic,retain) UIColor *lineColour;
@@ -67,11 +72,6 @@
 @property (nonatomic, retain) NSMutableArray * cardReactionTimeResult;
 //@property (nonatomic, retain) NSString *resultStrings;
 
-//Integers
-
-//floats
-
-//Strings
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * subWt;
 @property (nonatomic, retain) NSString * subHt;
@@ -100,14 +100,16 @@
 @property (nonatomic, retain) NSString * testDate;
 @property (nonatomic, retain) NSString * testTime;
 @property (nonatomic, retain) NSString * versionNumber;
+@property (nonatomic) Float64 cho412;
+@property (nonatomic) Float64 cho291;
+@property (nonatomic) Float64 fata;
+@property (nonatomic) Float64 fatb;
 
 //Flags BOOL
 @property (nonatomic) BOOL addedToResults;
 @property (nonatomic) BOOL dataCompleted;
 @property (nonatomic) BOOL isDegC;
 @property (nonatomic) BOOL ismmHg;
-
-//Images and Colours
 
 //set up singleton shared
 

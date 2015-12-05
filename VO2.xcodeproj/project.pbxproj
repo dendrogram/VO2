@@ -405,7 +405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python /Users/jonhowell/Documents/VO2newsimple2015/VO2/Settings.bundle/Licence.py";
+			shellScript = "python /Users/jonathanhowell/Documents/VO2/VO2/Settings.bundle/Licence.py";
 		};
 /* End PBXShellScriptBuildPhase section */
 

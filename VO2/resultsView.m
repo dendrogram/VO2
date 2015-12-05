@@ -8,6 +8,7 @@
 
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
+#define kEnergyButton  @"eresults"
 
 //rgb colour setting for boxes
 #define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
@@ -53,7 +54,8 @@
         filename,
         filepath,
         emailBtn,
-        energyBtn;
+        energyBtn,
+        energyButtonVisible;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //NSLog(@"You moved to a new screen...");
@@ -167,6 +169,16 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    energyButtonVisible     = [defaults objectForKey:kEnergyButton]; //set the animation speed off or 1/2 second
+
     statusMessageLab.hidden = YES;
     energyBtn.hidden=YES;
     
@@ -294,10 +306,10 @@
         //orange missing
         testerlbl.backgroundColor = [UIColor orangeColor];
     }
-    if ([testerlbl.text isEqual:@"Energy"]||[testerlbl.text isEqual:@"Jon Howell"]||[testerlbl.text isEqual:@"Dr C Morse"]) {
+    if ([testerlbl.text isEqual:@"Energy"]||energyButtonVisible==YES) {
         //orange missing
         testerlbl.backgroundColor = [UIColor whiteColor];
-        energyBtn.hidden=NO;
+        energyBtn.hidden = NO;
     }
     if ([lablbl.text isEqual:@""]||[lablbl.text isEqual:NULL]) {
         //orange missing

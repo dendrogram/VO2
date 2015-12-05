@@ -12,6 +12,7 @@
 //for settings plist storage of tester and their emal address
 #define kEmail      @"emailAddress"
 #define kTester     @"testerName"
+#define kAnim       @"kanim"
 
 @interface subjectViewController ()
 {
@@ -31,7 +32,10 @@
     emailTxt,
     testerNameTxt,
     subHtTxt,
-    subWtTxt;
+    subWtTxt,
+    keyboardAnim,
+    keyboardAnimSpeed,
+    keyboardAnimDelay;
 
 - (void)viewDidLoad
 {
@@ -82,6 +86,15 @@
         emailTxt.text =  @"me@mymailaddress.com";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
     }
+    keyboardAnim     = [defaults objectForKey:kAnim]; //set the animation speed off or 1/2 second
+    if(keyboardAnim == NO ){
+        keyboardAnimSpeed   =  1.0;
+        keyboardAnimDelay   =  0.5;
+    }else{
+        keyboardAnimSpeed   =  0.0;
+        keyboardAnimDelay   =  0.0;
+    }
+    
     singleton.testerName = testerNameTxt.text;
     singleton.email      = emailTxt.text;
     
@@ -359,15 +372,22 @@
 {
     //move screen up or down as needed to avoid text field entry
     CGRect frame = self.view.frame;
+    
+    //move frame without anim if toggle in settings indicates yes
+    if (keyboardAnim == NO){
+    
     //oft= the y of the text field?  make some code to find it
-    [UIView animateWithDuration:1.0
-                          delay:0.5
+    [UIView animateWithDuration:keyboardAnimSpeed
+                          delay:keyboardAnimDelay
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);
                      }
                      completion:^(BOOL finished){
                      }];
+    }else{
+        //just move it
+        self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);}
 }
 
 -(void) keyBoardDisappeared :(int)oft
@@ -375,13 +395,17 @@
     //move the screen back to original position
     CGRect frame = self.view.frame;
     //oft= the y of the text field?  make some code to find it
-    [UIView animateWithDuration:1.0
-                          delay:0.5
+    if (keyboardAnim == NO){
+    [UIView animateWithDuration:keyboardAnimSpeed
+                          delay:keyboardAnimDelay
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.view.frame = CGRectMake(frame.origin.x, oft, frame.size.width, frame.size.height);
                      }
                      completion:^(BOOL finished){
                      }];
+    }else{
+        //just move it
+        self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);}
 }
 @end

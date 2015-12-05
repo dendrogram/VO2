@@ -8,6 +8,7 @@
 
 #import "readingsViewController.h"
 #import "mySingleton.h" //for global variables
+#define kAnim       @"kanim"
 
 @interface readingsViewController ()
 {
@@ -21,6 +22,9 @@
 #pragma mark Inits
 
 @synthesize
+keyboardAnim,
+keyboardAnimSpeed,
+keyboardAnimDelay,
 //lab
         labLocationTxt,
         labTempTxt,
@@ -99,6 +103,22 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    keyboardAnim     = [defaults objectForKey:kAnim]; //set the animation speed off or 1/2 second
+    if(keyboardAnim == NO ){
+        keyboardAnimSpeed   =  1.0;
+        keyboardAnimDelay   =  0.5;
+    }else{keyboardAnimSpeed =  0.0;
+        keyboardAnimDelay   =  0.0;
+    }
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
     
@@ -447,31 +467,42 @@
 }
 -(void) keyBoardAppeared :(int)oft
 {
+    //move screen up or down as needed to avoid text field entry
     CGRect frame = self.view.frame;
-    //oft= the y of the text field?  make some code to find it
-    //NSLog(@"oring y = %i",oft);
-    [UIView animateWithDuration:1.0
-                          delay:0.5
-                        options: UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);
-                     }
-                     completion:^(BOOL finished){
-                     }];
+    
+    //move frame without anim if toggle in settings indicates yes
+    if (keyboardAnim == NO){
+        
+        //oft= the y of the text field?  make some code to find it
+        [UIView animateWithDuration:keyboardAnimSpeed
+                              delay:keyboardAnimDelay
+                            options: UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);
+                         }
+                         completion:^(BOOL finished){
+                         }];
+    }else{
+        //just move it
+        self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);}
 }
 
 -(void) keyBoardDisappeared :(int)oft
 {
+    //move the screen back to original position
     CGRect frame = self.view.frame;
     //oft= the y of the text field?  make some code to find it
-    
-    [UIView animateWithDuration:1.0
-                          delay:0.5
-                        options: UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         self.view.frame = CGRectMake(frame.origin.x, oft, frame.size.width, frame.size.height);
-                     }
-                     completion:^(BOOL finished){
-                     }];
+    if (keyboardAnim == NO){
+        [UIView animateWithDuration:keyboardAnimSpeed
+                              delay:keyboardAnimDelay
+                            options: UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.view.frame = CGRectMake(frame.origin.x, oft, frame.size.width, frame.size.height);
+                         }
+                         completion:^(BOOL finished){
+                         }];
+    }else{
+        //just move it
+        self.view.frame = CGRectMake(frame.origin.x, -oft, frame.size.width, frame.size.height);}
 }
 @end

@@ -44,7 +44,8 @@ fatusekjmlbl,
 energyExpendlbl,
 pcholbl,
 pfatlbl,
-vo2level;
+vo2level,
+fatlevel;
 
 - (void)viewDidLoad
 {
@@ -161,23 +162,23 @@ vo2level;
     {
         case 0:
         //0-50% vo2 max
-        singleton.cho412=4.344;
-        singleton.cho291=2.370;
+            singleton.cho412=4.344;
+            singleton.cho291=2.370;
         break;
         case 1:
         //50-75%
-        singleton.cho412=4.210;
-        singleton.cho291=2.962;
+            singleton.cho412=4.210;
+            singleton.cho291=2.962;
         break;
         case 2:
         //75+%
-        singleton.cho412=4.120;
-        singleton.cho291=2.910;
+            singleton.cho412=4.120;
+            singleton.cho291=2.910;
         break;
         default:
         //0-50%
-        singleton.cho412=4.120;
-        singleton.cho291=2.910;
+            singleton.cho412=4.120;
+            singleton.cho291=2.910;
         break;
     }
     [self calculateStats];
@@ -189,23 +190,23 @@ vo2level;
     {
         case 0:
         //Brouwer
-        singleton.fata=1.718;
-        singleton.fatb=1.718;
+            singleton.fata=1.718;
+            singleton.fatb=1.718;
         break;
         case 1:
         //Frayn; Ferranninni
-        singleton.fata=1.67;
-        singleton.fatb=1.67;
+            singleton.fata=1.67;
+            singleton.fatb=1.67;
         break;
         case 2:
         //Peronnet and Massicotte
-        singleton.fata=1.695;
-        singleton.fatb=1.701;
+            singleton.fata=1.695;
+            singleton.fatb=1.701;
         break;
         case 3:
         //Egan Excel
-        singleton.fata=1.689;
-        singleton.fatb=1.689;
+            singleton.fata=1.689;
+            singleton.fatb=1.689;
         break;
     }
     [self calculateStats];

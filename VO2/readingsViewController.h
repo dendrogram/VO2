@@ -17,6 +17,10 @@
     float labTempF;
     float VEATPS;
     
+    BOOL  keyboardAnim;
+    float keyboardAnimSpeed;
+    float keyboardAnimDelay;
+    
     UITextField * labLocationTxt;
     UITextField * labPressureTxt;
     UITextField * labTempTxt;
@@ -52,6 +56,9 @@
 @property (nonatomic, strong) IBOutlet UILabel     * press;
 @property (nonatomic, strong) IBOutlet UIButton    * resetO2;
 @property (nonatomic, strong) IBOutlet UIButton    * resetCO2;
+@property (nonatomic) BOOL                              keyboardAnim;
+@property (nonatomic) float                             keyboardAnimSpeed;
+@property (nonatomic) float                             keyboardAnimDelay;
 
 -(IBAction)resetO2btn:(id)sender;
 -(IBAction)resetCO2btn:(id)sender;

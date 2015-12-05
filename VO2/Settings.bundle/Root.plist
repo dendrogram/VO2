@@ -62,7 +62,27 @@
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>2.2.0.25.11.15</string>
+			<string>2.2.8.5.12.15</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Keyboard Animations</string>
+			<key>Key</key>
+			<string>kanim</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Energy Results</string>
+			<key>Key</key>
+			<string>eresults</string>
+			<key>DefaultValue</key>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>

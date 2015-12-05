@@ -112,13 +112,11 @@ keyboardAnimDelay,
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    keyboardAnim     = [defaults objectForKey:kAnim]; //set the animation speed off or 1/2 second
-    if(keyboardAnim == NO ){
+    keyboardAnim     = [defaults objectForKey:kAnim];
+    
         keyboardAnimSpeed   =  1.0;
         keyboardAnimDelay   =  0.5;
-    }else{keyboardAnimSpeed =  0.0;
-        keyboardAnimDelay   =  0.0;
-    }
+
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];
     
@@ -471,7 +469,7 @@ keyboardAnimDelay,
     CGRect frame = self.view.frame;
     
     //move frame without anim if toggle in settings indicates yes
-    if (keyboardAnim == NO){
+    if (keyboardAnim == YES){
         
         //oft= the y of the text field?  make some code to find it
         [UIView animateWithDuration:keyboardAnimSpeed
@@ -492,7 +490,7 @@ keyboardAnimDelay,
     //move the screen back to original position
     CGRect frame = self.view.frame;
     //oft= the y of the text field?  make some code to find it
-    if (keyboardAnim == NO){
+    if (keyboardAnim == YES){
         [UIView animateWithDuration:keyboardAnimSpeed
                               delay:keyboardAnimDelay
                             options: UIViewAnimationOptionCurveEaseOut

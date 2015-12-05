@@ -310,7 +310,10 @@
         //orange missing
         testerlbl.backgroundColor = [UIColor whiteColor];
         energyBtn.hidden = NO;
-    }
+    }else{
+        testerlbl.backgroundColor = [UIColor yellowColor];
+        energyBtn.hidden = YES;}
+    
     if ([lablbl.text isEqual:@""]||[lablbl.text isEqual:NULL]) {
         //orange missing
         lablbl.backgroundColor = [UIColor yellowColor];

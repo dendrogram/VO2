@@ -86,14 +86,10 @@
         emailTxt.text =  @"me@mymailaddress.com";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
     }
-    keyboardAnim     = [defaults objectForKey:kAnim]; //set the animation speed off or 1/2 second
-    if(keyboardAnim == NO ){
+    keyboardAnim     = [defaults objectForKey:kAnim]; 
+    
         keyboardAnimSpeed   =  1.0;
         keyboardAnimDelay   =  0.5;
-    }else{
-        keyboardAnimSpeed   =  0.0;
-        keyboardAnimDelay   =  0.0;
-    }
     
     singleton.testerName = testerNameTxt.text;
     singleton.email      = emailTxt.text;
@@ -374,7 +370,7 @@
     CGRect frame = self.view.frame;
     
     //move frame without anim if toggle in settings indicates yes
-    if (keyboardAnim == NO){
+    if (keyboardAnim == YES){
     
     //oft= the y of the text field?  make some code to find it
     [UIView animateWithDuration:keyboardAnimSpeed
@@ -395,7 +391,7 @@
     //move the screen back to original position
     CGRect frame = self.view.frame;
     //oft= the y of the text field?  make some code to find it
-    if (keyboardAnim == NO){
+    if (keyboardAnim == YES){
     [UIView animateWithDuration:keyboardAnimSpeed
                           delay:keyboardAnimDelay
                         options: UIViewAnimationOptionCurveEaseOut

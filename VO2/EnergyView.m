@@ -176,7 +176,7 @@ fatlevel;
             singleton.cho291=2.910;
         break;
         default:
-        //0-50%
+        //vo2max
             singleton.cho412=4.120;
             singleton.cho291=2.910;
         break;
@@ -205,6 +205,11 @@ fatlevel;
         break;
         case 3:
         //Egan Excel
+            singleton.fata=1.689;
+            singleton.fatb=1.689;
+        break;
+        default:
+            //Egan vo2max
             singleton.fata=1.689;
             singleton.fatb=1.689;
         break;

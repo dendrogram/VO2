@@ -120,7 +120,7 @@
 @property (nonatomic, strong) IBOutlet UILabel * labCO2lbl;
 @property (nonatomic, strong) IBOutlet UIButton * emailBtn;
 @property (nonatomic, strong) IBOutlet UIButton * energyBtn;
-@property (nonatomic) BOOL energyButtonVisible;
+//@property (nonatomic) BOOL energyButtonVisible;
 
 // button press to send the mail
 -(IBAction)sendEmail:(id)sender;

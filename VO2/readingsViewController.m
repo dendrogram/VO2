@@ -22,9 +22,9 @@
 #pragma mark Inits
 
 @synthesize
-keyboardAnim,
-keyboardAnimSpeed,
-keyboardAnimDelay,
+//keyboardAnim,
+//keyboardAnimSpeed,
+//keyboardAnimDelay,
 //lab
         labLocationTxt,
         labTempTxt,
@@ -55,8 +55,26 @@ keyboardAnimDelay,
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
         mySingleton *singleton      = [mySingleton sharedSingleton];
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
+    bool test1 = [defaults boolForKey:kAnim];
+    
+    bool test2;
+    test2 = [defaults boolForKey:kAnim];
 
+    keyboardAnimSpeed   =  1.0;
+    keyboardAnimDelay   =  0.5;
+    keyboardAnim     = [defaults boolForKey:kAnim];
+    NSLog(@"keyAnimobje=%i",keyboardAnim);
+    NSLog(@"keyAnimoriginalbool=%i",test1);
+    NSLog(@"keyAnimfinalset=%i",test2);
     //temp check
 
     degc.hidden=NO;
@@ -111,11 +129,12 @@ keyboardAnimDelay,
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
+    [defaults synchronize];//make sure all are updated
+
     keyboardAnim     = [defaults objectForKey:kAnim];
-    
-        keyboardAnimSpeed   =  1.0;
-        keyboardAnimDelay   =  0.5;
+
+    keyboardAnimSpeed   =  1.0;
+    keyboardAnimDelay   =  0.5;
 
     // set up link to singleton
     mySingleton *singleton      = [mySingleton sharedSingleton];

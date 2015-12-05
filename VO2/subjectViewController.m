@@ -32,17 +32,26 @@
     emailTxt,
     testerNameTxt,
     subHtTxt,
-    subWtTxt,
-    keyboardAnim,
-    keyboardAnimSpeed,
-    keyboardAnimDelay;
+subWtTxt;
+    //keyboardAnim,
+    //keyboardAnimSpeed,
+    //keyboardAnimDelay;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
 //set the delegates or text did start/end will not work
-    
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    keyboardAnim     = [defaults objectForKey:kAnim];
+        
     startDateTxt.delegate   = self;
     testDateTxt.delegate    = self;
     emailTxt.delegate       = self;
@@ -86,15 +95,24 @@
         emailTxt.text =  @"me@mymailaddress.com";
         [defaults setObject:[NSString stringWithFormat:@"%@", singleton.email] forKey:kEmail];
     }
-    keyboardAnim     = [defaults objectForKey:kAnim]; 
+    [defaults synchronize];//make sure all are updated
     
+    bool test1 = [defaults boolForKey:kAnim];
+    
+    bool test2;
+    test2 = [defaults boolForKey:kAnim];
+
         keyboardAnimSpeed   =  1.0;
         keyboardAnimDelay   =  0.5;
+    keyboardAnim     = [defaults boolForKey:kAnim];
+    NSLog(@"keyAnimobje=%i", keyboardAnim);
+    NSLog(@"keyAnimbooloriginal=%i", test1);
+    NSLog(@"keyAnimnew set=%i", test2);
     
     singleton.testerName = testerNameTxt.text;
     singleton.email      = emailTxt.text;
     
-    [defaults synchronize];//make sure all are updated
+    
     
     singleton.email=emailTxt.text;
     singleton.testerName=testerNameTxt.text;

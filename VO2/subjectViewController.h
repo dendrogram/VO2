@@ -29,9 +29,9 @@
 @property (nonatomic, retain) IBOutlet UITextField * emailTxt;
 @property (nonatomic, strong) IBOutlet UITextField * startDateTxt;
 @property (nonatomic, strong) IBOutlet UITextField * testDateTxt;
-@property (nonatomic) BOOL                              keyboardAnim;
-@property (nonatomic) float                             keyboardAnimSpeed;
-@property (nonatomic) float                             keyboardAnimDelay;
+//@property (nonatomic) BOOL                              keyboardAnim;
+//@property (nonatomic) float                             keyboardAnimSpeed;
+//@property (nonatomic) float                             keyboardAnimDelay;
 
 // for calculations and functions
 -(IBAction)setDateNow:(id)sender;

@@ -56,9 +56,9 @@
 @property (nonatomic, strong) IBOutlet UILabel     * press;
 @property (nonatomic, strong) IBOutlet UIButton    * resetO2;
 @property (nonatomic, strong) IBOutlet UIButton    * resetCO2;
-@property (nonatomic) BOOL                              keyboardAnim;
-@property (nonatomic) float                             keyboardAnimSpeed;
-@property (nonatomic) float                             keyboardAnimDelay;
+//@property (nonatomic) BOOL                              keyboardAnim;
+//@property (nonatomic) float                             keyboardAnimSpeed;
+//@property (nonatomic) float                             keyboardAnimDelay;
 
 -(IBAction)resetO2btn:(id)sender;
 -(IBAction)resetCO2btn:(id)sender;

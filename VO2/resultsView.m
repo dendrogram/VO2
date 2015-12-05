@@ -54,8 +54,8 @@
         filename,
         filepath,
         emailBtn,
-        energyBtn,
-        energyButtonVisible;
+energyBtn;
+        //energyButtonVisible;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //NSLog(@"You moved to a new screen...");
@@ -166,6 +166,16 @@
     [super viewDidLoad];
     statusMessageLab.hidden = YES;
     energyBtn.hidden=YES;
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    energyButtonVisible     = [defaults objectForKey:kEnergyButton];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -177,8 +187,14 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    energyButtonVisible     = [defaults objectForKey:kEnergyButton]; //set the animation speed off or 1/2 second
-
+    
+    bool test2;
+    test2 = [defaults boolForKey:kEnergyButton];
+    
+    [defaults synchronize];
+    energyButtonVisible     = [defaults boolForKey:kEnergyButton];
+    NSLog(@"Energy button=%i",energyButtonVisible);
+    
     statusMessageLab.hidden = YES;
     energyBtn.hidden=YES;
     
@@ -306,6 +322,7 @@
         //orange missing
         testerlbl.backgroundColor = [UIColor orangeColor];
     }
+    [defaults synchronize];//make sure all are updated
     if ([testerlbl.text isEqual:@"Energy"]||energyButtonVisible==YES) {
         //orange missing
         testerlbl.backgroundColor = [UIColor whiteColor];

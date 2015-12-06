@@ -88,6 +88,8 @@
     Float64 energyExpend;
     
     int counter;
+    int dpd; //decimal places displayed in results output (text only)
+    NSString * dpds;
     BOOL energyButtonVisible;
 }
 
@@ -138,5 +140,6 @@
 -(NSString *) setFilename;
 -(void) WriteToStringFile:(NSMutableString *)textToWrite;
 -(void) calculateStats;
+-(void) decimapPlaces;
 
 @end

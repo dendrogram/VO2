@@ -9,6 +9,7 @@
 #import "resultsView.h"
 #import "mySingleton.h" //for global variables
 #define kEnergyButton  @"eresults"
+#define kDecimalPlaces @"decimalPlaces"
 
 //rgb colour setting for boxes
 #define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
@@ -176,6 +177,35 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     energyButtonVisible     = [defaults boolForKey:kEnergyButton];
+    dpd  = [[defaults objectForKey:kDecimalPlaces]doubleValue];
+    
+    [self decimapPlaces];
+}
+
+-(void)decimapPlaces{
+    switch (dpd) {
+        case 1:
+            dpds=@"%.1f";
+            break;
+        case 2:
+            dpds=@"%.2f";
+            break;
+        case 3:
+            dpds=@"%.3f";
+            break;
+        case 4:
+            dpds=@"%.4f";
+            break;
+        case 5:
+            dpds=@"%.5f";
+            break;
+        case 6:
+            dpds=@"%.6f";
+            break;
+        default:
+            dpds=@"%.4f";
+            break;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -193,6 +223,8 @@
     
     [defaults synchronize];
     energyButtonVisible     = [defaults boolForKey:kEnergyButton];
+    dpd  = [[defaults objectForKey:kDecimalPlaces]doubleValue];
+    [self decimapPlaces];
     
     //NSLog(@"Energy button=%i",energyButtonVisible);
     
@@ -535,7 +567,7 @@
      //corrFactor = (273.0000/(273.0000+labTempC))*((labPressure_mmHg - ((1.0010 * labTempC) - 4.1900)) / 760.0000);
     //NSLog(@"Corr old = %f",corrFactor);
     
-    //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
+    //old// singleton.corrFactor = [NSString stringWithFormat:dpds,corrFactor];
     
     /* correction factor from excel sheet
       (0.880645161290323) * (($E$5 - 47.08) / 760)
@@ -558,7 +590,7 @@
     //now make the vebtps the right figure
     VEBTPS = VEBTPS * VEATPS;
     
-    //old// singleton.corrFactor = [NSString stringWithFormat:@"%.4f",corrFactor];
+    //old// singleton.corrFactor = [NSString stringWithFormat:dpds,corrFactor];
     singleton.corrFactor = [NSString stringWithFormat:@"%.15f", corrFactor];
     
     //VESTPD=precorr*corrFactor;
@@ -642,42 +674,43 @@
     
     subBMIlbl.text      =   [NSString stringWithFormat:@"%.1f", subBMI];
     VEATPSlbl.text      =   [NSString stringWithFormat:@"%.2f",[singleton.veatps floatValue]];
-    VESTPDlbl.text      =   [NSString stringWithFormat:@"%.4f",[singleton.vestpd floatValue]];
-    VEBTPSlbl.text      =   [NSString stringWithFormat:@"%.4f",[singleton.vebtps floatValue]];
+    
+    VESTPDlbl.text      =   [NSString stringWithFormat:dpds,[singleton.vestpd floatValue]];
+    VEBTPSlbl.text      =   [NSString stringWithFormat:dpds,[singleton.vebtps floatValue]];
     
     subBMIlbl.text      =  [NSString stringWithFormat:@"%.1f", subBMI];
     
-    corrFaclbl.text     =   [NSString stringWithFormat:@"%.4f",[singleton.corrFactor floatValue]];
-    VO2lbl.text         =   [NSString stringWithFormat:@"%.4f",[singleton.vo2 floatValue]];
-    VCO2lbl.text        =   [NSString stringWithFormat:@"%.4f",[singleton.vco2 floatValue]];
+    corrFaclbl.text     =   [NSString stringWithFormat:dpds,[singleton.corrFactor floatValue]];
+    VO2lbl.text         =   [NSString stringWithFormat:dpds,[singleton.vo2 floatValue]];
+    VCO2lbl.text        =   [NSString stringWithFormat:dpds,[singleton.vco2 floatValue]];
     
-    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.4f",[singleton.vo2kg floatValue]];
-    RERlbl.text         =   [NSString stringWithFormat:@"%.4f",[singleton.rer floatValue]];
+    VO2Kglbl.text       =   [NSString stringWithFormat:dpds,[singleton.vo2kg floatValue]];
+    RERlbl.text         =   [NSString stringWithFormat:dpds,[singleton.rer floatValue]];
     
     //energies for email
     energyExpend = ([singleton.vo2 floatValue]*15.88)+([singleton.vco2 floatValue] * 4.87);
-    singleton.energyExpend=[NSString stringWithFormat:@"%.4f", energyExpend];
+    singleton.energyExpend=[NSString stringWithFormat:dpds, energyExpend];
     
     //choug
     choug = ([singleton.vco2 floatValue] * singleton.cho412) - ([singleton.vo2 floatValue] * singleton.cho291);
-    singleton.chug=[NSString stringWithFormat:@"%.4f", choug];
+    singleton.chug=[NSString stringWithFormat:dpds, choug];
     
     choukj = (choug * 17.22);
-    singleton.chukj=[NSString stringWithFormat:@"%.4f", choukj];
+    singleton.chukj=[NSString stringWithFormat:dpds, choukj];
     
     //fatg
     fatug = ([singleton.vo2 floatValue] * singleton.fata)-([singleton.vco2 floatValue] * singleton.fatb);
-    singleton.fatg=[NSString stringWithFormat:@"%.4f", fatug];
+    singleton.fatg=[NSString stringWithFormat:dpds, fatug];
     
     fatukj = (fatug * 39.06);
-    singleton.fatkj=[NSString stringWithFormat:@"%.4f", fatukj];
+    singleton.fatkj=[NSString stringWithFormat:dpds, fatukj];
     
     //% fat %cho
     pfat = fatukj / (energyExpend / 100.0);
-    singleton.pfat=[NSString stringWithFormat:@"%.4f", pfat];
+    singleton.pfat=[NSString stringWithFormat:dpds, pfat];
     
     pcho = choukj / (energyExpend / 100.0);
-    singleton.pcho=[NSString stringWithFormat:@"%.4f", pcho];
+    singleton.pcho=[NSString stringWithFormat:dpds, pcho];
     
     //corrFaclbl.text     =   singleton.corrFactor;
     //VO2lbl.text         =   singleton.vo2;

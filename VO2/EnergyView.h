@@ -50,6 +50,9 @@
     Float64 RER;
     Float64 corrFactor;
     Float64 VO2Kg;
+    
+    int dpd;
+    NSString * dpds;
 }
 
 //dates
@@ -89,4 +92,5 @@
 - (void)    calculateStats;
 - (IBAction)indexChangedCHO:(UISegmentedControl *)sender;
 - (IBAction)indexChangedFAT:(UISegmentedControl *)sender;
+- (void) decimapPlaces;
 @end

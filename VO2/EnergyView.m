@@ -8,6 +8,7 @@
 
 #import "EnergyView.h"
 #import "mySingleton.h" //for global variables
+#define kDecimalPlaces @"decimalPlaces"
 
 //rgb colour setting for boxes
 #define Rgb2UIColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
@@ -50,14 +51,62 @@ fatlevel;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    dpd  = [[defaults objectForKey: kDecimalPlaces]doubleValue];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    //set up the plist params
+    NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
+    NSString *defaultPrefsFile      = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    NSDictionary *defaultPrefs      = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
+    NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    dpd  = [[defaults objectForKey: kDecimalPlaces]doubleValue];
+    
+    [self decimapPlaces];
     [self calculateStats];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
 
+}
+
+-(void)decimapPlaces{
+    switch (dpd) {
+        case 1:
+            dpds=@"%.1f";
+            break;
+        case 2:
+            dpds=@"%.2f";
+            break;
+        case 3:
+            dpds=@"%.3f";
+            break;
+        case 4:
+            dpds=@"%.4f";
+            break;
+        case 5:
+            dpds=@"%.5f";
+            break;
+        case 6:
+            dpds=@"%.6f";
+            break;
+        default:
+            dpds=@"%.4f";
+            break;
+    }
 }
 
 -(void)calculateStats{
@@ -82,42 +131,45 @@ fatlevel;
     
     subBMIlbl.text      =   [NSString stringWithFormat:@"%.1f", subBMI];
 
-    corrFaclbl.text     =   [NSString stringWithFormat:@"%.4f",[singleton.corrFactor floatValue]];
-    VO2lbl.text         =   [NSString stringWithFormat:@"%.4f",[singleton.vo2 floatValue]];
-    VCO2lbl.text        =   [NSString stringWithFormat:@"%.4f",[singleton.vco2 floatValue]];
+    corrFaclbl.text     =   [NSString stringWithFormat:dpds,[singleton.corrFactor floatValue]];
+    VO2lbl.text         =   [NSString stringWithFormat:dpds,[singleton.vo2 floatValue]];
+    VCO2lbl.text        =   [NSString stringWithFormat:dpds,[singleton.vco2 floatValue]];
  
-    VO2Kglbl.text       =   [NSString stringWithFormat:@"%.4f",[singleton.vo2kg floatValue]];
-    RERlbl.text         =   [NSString stringWithFormat:@"%.4f",[singleton.rer floatValue]];
+    VO2Kglbl.text       =   [NSString stringWithFormat:dpds,[singleton.vo2kg floatValue]];
+    RERlbl.text         =   [NSString stringWithFormat:dpds,[singleton.rer floatValue]];
     
     energyExpend = ([singleton.vo2 floatValue]*15.88)+([singleton.vco2 floatValue] * 4.87);
-    energyExpendlbl.text =  [NSString stringWithFormat:@"%.4f", energyExpend];
+    energyExpendlbl.text =  [NSString stringWithFormat:dpds, energyExpend];
     singleton.energyExpend=energyExpendlbl.text;
     
     //choug
+    //NSLog(@"dpd=%i",dpd);
+    //NSLog(@"DPDS=%@",dpds);
+    
     choug = ([singleton.vco2 floatValue] * singleton.cho412) - ([singleton.vo2 floatValue] * singleton.cho291);
-    chousegmlbl.text = [NSString stringWithFormat:@"%.4f", choug];
+    chousegmlbl.text = [NSString stringWithFormat:dpds, choug];
     singleton.chug=chousegmlbl.text;
     
     choukj = (choug * 17.22);
-    chousekjmlbl.text = [NSString stringWithFormat:@"%.4f", choukj];
+    chousekjmlbl.text = [NSString stringWithFormat:dpds, choukj];
     singleton.chukj=chousekjmlbl.text;
     
     //fatg
     fatug = ([singleton.vo2 floatValue] * singleton.fata)-([singleton.vco2 floatValue] * singleton.fatb);
-    fatusegmlbl.text = [NSString stringWithFormat:@"%.4f", fatug];
+    fatusegmlbl.text = [NSString stringWithFormat:dpds, fatug];
     singleton.fatg=fatusegmlbl.text;
     
     fatukj = (fatug * 39.06);
-    fatusekjmlbl.text = [NSString stringWithFormat:@"%.4f", fatukj];
+    fatusekjmlbl.text = [NSString stringWithFormat:dpds, fatukj];
     singleton.fatkj=fatusekjmlbl.text;
     
     //% fat %cho
     pfat = fatukj / (energyExpend / 100.0);
-    pfatlbl.text = [NSString stringWithFormat:@"%.4f", pfat];
+    pfatlbl.text = [NSString stringWithFormat:dpds, pfat];
     singleton.pfat=pfatlbl.text;
     
     pcho = choukj / (energyExpend / 100.0);
-    pcholbl.text = [NSString stringWithFormat:@"%.4f", pcho];
+    pcholbl.text = [NSString stringWithFormat:dpds, pcho];
     singleton.pcho=pcholbl.text;
     
     if ([VCO2lbl.text  floatValue] <= 0.0||[VCO2lbl.text isEqual:@""]||[VCO2lbl.text isEqual:NULL]||isnan([VCO2lbl.text floatValue])) {

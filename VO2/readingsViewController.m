@@ -463,7 +463,7 @@
 -(void)FEO2CO2check{
     if ([FEO2Txt.text floatValue] <= 0.000||[FEO2Txt.text isEqual:@""]||[FEO2Txt.text isEqual:NULL]) {
         FEO2Txt.textColor = [UIColor redColor];
-        FEO2Txt.text = @"0.000";
+        FEO2Txt.text = @"0.00";
         FEO2Txt.backgroundColor = [UIColor yellowColor];
     }
     
@@ -474,7 +474,7 @@
     }
     if ([FECO2Txt.text floatValue] <= 0.000||[FECO2Txt.text isEqual:@""]||[FECO2Txt.text isEqual:NULL]) {
         FECO2Txt.textColor = [UIColor redColor];
-        FECO2Txt.text = @"0.000";
+        FECO2Txt.text = @"0.00";
         FECO2Txt.backgroundColor = [UIColor yellowColor];
     }
     

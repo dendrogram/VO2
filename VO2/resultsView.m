@@ -720,7 +720,7 @@
     //loop if rows of results
     //results, one per line upto number of cards
     //for (int y=1; y<singleton.counter+1; y++) {
-        //uncomment when formatted
+        //uncomment when formatted 
     
         if (energyButtonVisible==YES||[testerlbl.text isEqual:@"Energy"]) {
         myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f" ,

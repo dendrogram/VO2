@@ -48,22 +48,12 @@
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>VO2 Version Information</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Version Number:</string>
-			<key>Key</key>
-			<string>version0</string>
-			<key>DefaultValue</key>
-			<string>2.2.8.5.12.15</string>
-		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Keyboard Animation Delay</string>
+        </dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
@@ -78,6 +68,12 @@
 			<key>FalseValue</key>
 			<false/>
 		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Energy Results Screen Shown</string>
+        </dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
@@ -92,12 +88,28 @@
 			<key>FalseValue</key>
 			<false/>
 		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Copyright:</string>
-		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>VO2 Version Information</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSTitleValueSpecifier</string>
+            <key>Title</key>
+            <string>Version Number:</string>
+            <key>Key</key>
+            <string>version0</string>
+            <key>DefaultValue</key>
+            <string>2.2.8.5.12.15</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Copyright:</string>
+        </dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>

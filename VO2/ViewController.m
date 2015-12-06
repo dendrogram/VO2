@@ -16,6 +16,9 @@
 #define kVersion1   @"version1"
 #define kVersion2   @"version2"
 #define kVersion3   @"version3"
+#define kEnergyButton  @"eresults"
+#define kAnim          @"kanim"
+
 
 // use the following line in any method that needs the singleton
 // mySingleton *singleton = [mySingleton sharedSingleton];
@@ -81,7 +84,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"Version 2.2.9 - 5.12.15";     // version   *** keep short
+    version0 =  @"Version 2.3.0 - 5.12.15";     // version   *** keep short
     version1 =  @"MMU (C) 2015";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
@@ -95,6 +98,16 @@
     //*************************************************************
 
     //for plist
+    //set up the plist params
+
+    
+    //bool test2;
+    //test2 = [defaults boolForKey:kEnergyButton];
+    
+    [defaults synchronize];
+//if any settings not already set, as in new installation, put the defaults in.
+    [self registerDefaultsFromSettingsBundle];
+    
     //tester name
     tester     = [defaults objectForKey:kTester];
     if([tester isEqualToString: @ "" ]){
@@ -114,6 +127,26 @@
     
     versionNumberLab.text   = version0;
     singleton.versionNumber = version0;
+}
+
+- (void)registerDefaultsFromSettingsBundle {
+    NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
+    if(!settingsBundle) {
+        NSLog(@"Could not find Settings.bundle");
+        return;
+    }
+    
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[settingsBundle stringByAppendingPathComponent:@"Root.plist"]];
+    NSArray *preferences = [settings objectForKey:@"PreferenceSpecifiers"];
+    
+    NSMutableDictionary *defaultsToRegister = [[NSMutableDictionary alloc] initWithCapacity:[preferences count]];
+    for(NSDictionary *prefSpecification in preferences) {
+        NSString *key = [prefSpecification objectForKey:@"Key"];
+        if(key) {
+            [defaultsToRegister setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
+        }
+    }
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultsToRegister];
 }
 
 - (IBAction)esswebjump:(id)sender{

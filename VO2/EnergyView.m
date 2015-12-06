@@ -91,27 +91,34 @@ fatlevel;
     
     energyExpend = ([singleton.vo2 floatValue]*15.88)+([singleton.vco2 floatValue] * 4.87);
     energyExpendlbl.text =  [NSString stringWithFormat:@"%.4f", energyExpend];
+    singleton.energyExpend=energyExpendlbl.text;
     
     //choug
     choug = ([singleton.vco2 floatValue] * singleton.cho412) - ([singleton.vo2 floatValue] * singleton.cho291);
     chousegmlbl.text = [NSString stringWithFormat:@"%.4f", choug];
+    singleton.chug=chousegmlbl.text;
     
     choukj = (choug * 17.22);
     chousekjmlbl.text = [NSString stringWithFormat:@"%.4f", choukj];
+    singleton.chukj=chousekjmlbl.text;
     
     //fatg
     fatug = ([singleton.vo2 floatValue] * singleton.fata)-([singleton.vco2 floatValue] * singleton.fatb);
     fatusegmlbl.text = [NSString stringWithFormat:@"%.4f", fatug];
+    singleton.fatg=fatusegmlbl.text;
     
     fatukj = (fatug * 39.06);
     fatusekjmlbl.text = [NSString stringWithFormat:@"%.4f", fatukj];
+    singleton.fatkj=fatusekjmlbl.text;
     
     //% fat %cho
     pfat = fatukj / (energyExpend / 100.0);
     pfatlbl.text = [NSString stringWithFormat:@"%.4f", pfat];
+    singleton.pfat=pfatlbl.text;
     
     pcho = choukj / (energyExpend / 100.0);
     pcholbl.text = [NSString stringWithFormat:@"%.4f", pcho];
+    singleton.pcho=pcholbl.text;
     
     if ([VCO2lbl.text  floatValue] <= 0.0||[VCO2lbl.text isEqual:@""]||[VCO2lbl.text isEqual:NULL]||isnan([VCO2lbl.text floatValue])) {
         //red if negative

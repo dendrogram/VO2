@@ -32,7 +32,7 @@
     emailTxt,
     testerNameTxt,
     subHtTxt,
-subWtTxt;
+    subWtTxt;
     //keyboardAnim,
     //keyboardAnimSpeed,
     //keyboardAnimDelay;
@@ -50,7 +50,7 @@ subWtTxt;
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPrefs];
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    keyboardAnim     = [defaults objectForKey:kAnim];
+    keyboardAnim     = [defaults boolForKey:kAnim];
         
     startDateTxt.delegate   = self;
     testDateTxt.delegate    = self;
@@ -97,17 +97,19 @@ subWtTxt;
     }
     [defaults synchronize];//make sure all are updated
     
-    bool test1 = [defaults boolForKey:kAnim];
+    //bool test1 = [defaults boolForKey:kAnim];
     
-    bool test2;
-    test2 = [defaults boolForKey:kAnim];
+    //bool test2;
+    //test2 = [defaults boolForKey:kAnim];
 
         keyboardAnimSpeed   =  1.0;
         keyboardAnimDelay   =  0.5;
+    
     keyboardAnim     = [defaults boolForKey:kAnim];
-    NSLog(@"keyAnimobje=%i", keyboardAnim);
-    NSLog(@"keyAnimbooloriginal=%i", test1);
-    NSLog(@"keyAnimnew set=%i", test2);
+    
+    //NSLog(@"keyAnimobje=%i", keyboardAnim);
+    //NSLog(@"keyAnimbooloriginal=%i", test1);
+    //NSLog(@"keyAnimnew set=%i", test2);
     
     singleton.testerName = testerNameTxt.text;
     singleton.email      = emailTxt.text;

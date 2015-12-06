@@ -64,17 +64,19 @@
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    bool test1 = [defaults boolForKey:kAnim];
+    //bool test1 = [defaults boolForKey:kAnim];
     
-    bool test2;
-    test2 = [defaults boolForKey:kAnim];
+    //bool test2;
+    //test2 = [defaults boolForKey:kAnim];
 
     keyboardAnimSpeed   =  1.0;
     keyboardAnimDelay   =  0.5;
+    
     keyboardAnim     = [defaults boolForKey:kAnim];
-    NSLog(@"keyAnimobje=%i",keyboardAnim);
-    NSLog(@"keyAnimoriginalbool=%i",test1);
-    NSLog(@"keyAnimfinalset=%i",test2);
+    
+    //NSLog(@"keyAnimobje=%i",keyboardAnim);
+    //NSLog(@"keyAnimoriginalbool=%i",test1);
+    //NSLog(@"keyAnimfinalset=%i",test2);
     //temp check
 
     degc.hidden=NO;
@@ -131,7 +133,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     [defaults synchronize];//make sure all are updated
 
-    keyboardAnim     = [defaults objectForKey:kAnim];
+    keyboardAnim     = [defaults boolForKey:kAnim];
 
     keyboardAnimSpeed   =  1.0;
     keyboardAnimDelay   =  0.5;

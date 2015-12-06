@@ -61,7 +61,15 @@ static mySingleton * sharedSingleton = nil;
             fata,
             fatb,
             cho291,
-            cho412;
+            cho412,
+//energies
+energyExpend,
+chug,
+chukj,
+fatg,
+fatkj,
+pfat,
+pcho;
 
 #pragma mark -
 #pragma mark Singleton Methods
@@ -133,6 +141,14 @@ static mySingleton * sharedSingleton = nil;
         cho412             = 4.12;
         fata               = 1.689;
         fatb               = 1.689;
+        //energies
+        energyExpend        = @"0";
+        chug                = @"0";
+        chukj               = @"0";
+        fatg                = @"0";
+        fatkj               = @"0";
+        pfat                = @"0";
+        pcho                = @"0";
     }
     return self;
 }

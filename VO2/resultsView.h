@@ -77,7 +77,16 @@
     Float64 VO2Kg;
     Float64 labO2;
     Float64 labCO2;
-        
+    
+    //energies
+    Float64 choug;
+    Float64 choukj;
+    Float64 fatug;
+    Float64 fatukj;
+    Float64 pfat;
+    Float64 pcho;
+    Float64 energyExpend;
+    
     int counter;
     BOOL energyButtonVisible;
 }

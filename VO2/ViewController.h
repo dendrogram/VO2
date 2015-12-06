@@ -25,5 +25,6 @@
 
 - (IBAction)esswebjump:(id)sender;
 - (IBAction)mmuwebjump:(id)sender;
+- (void)registerDefaultsFromSettingsBundle;
 
 @end

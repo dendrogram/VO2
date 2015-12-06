@@ -54,7 +54,7 @@
         filename,
         filepath,
         emailBtn,
-energyBtn;
+        energyBtn;
         //energyButtonVisible;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -175,7 +175,7 @@ energyBtn;
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    energyButtonVisible     = [defaults objectForKey:kEnergyButton];
+    energyButtonVisible     = [defaults boolForKey:kEnergyButton];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -188,12 +188,13 @@ energyBtn;
     NSUserDefaults *defaults        = [NSUserDefaults standardUserDefaults];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    bool test2;
-    test2 = [defaults boolForKey:kEnergyButton];
+    //bool test2;
+    //test2 = [defaults boolForKey:kEnergyButton];
     
     [defaults synchronize];
     energyButtonVisible     = [defaults boolForKey:kEnergyButton];
-    NSLog(@"Energy button=%i",energyButtonVisible);
+    
+    //NSLog(@"Energy button=%i",energyButtonVisible);
     
     statusMessageLab.hidden = YES;
     energyBtn.hidden=YES;
@@ -323,7 +324,7 @@ energyBtn;
         testerlbl.backgroundColor = [UIColor orangeColor];
     }
     [defaults synchronize];//make sure all are updated
-    if ([testerlbl.text isEqual:@"Energy"]||energyButtonVisible==YES) {
+    if ([testerlbl.text isEqual:@"Energy"] || energyButtonVisible == YES) {
         //orange missing
         testerlbl.backgroundColor = [UIColor whiteColor];
         energyBtn.hidden = NO;
@@ -653,6 +654,31 @@ energyBtn;
     VO2Kglbl.text       =   [NSString stringWithFormat:@"%.4f",[singleton.vo2kg floatValue]];
     RERlbl.text         =   [NSString stringWithFormat:@"%.4f",[singleton.rer floatValue]];
     
+    //energies for email
+    energyExpend = ([singleton.vo2 floatValue]*15.88)+([singleton.vco2 floatValue] * 4.87);
+    singleton.energyExpend=[NSString stringWithFormat:@"%.4f", energyExpend];
+    
+    //choug
+    choug = ([singleton.vco2 floatValue] * singleton.cho412) - ([singleton.vo2 floatValue] * singleton.cho291);
+    singleton.chug=[NSString stringWithFormat:@"%.4f", choug];
+    
+    choukj = (choug * 17.22);
+    singleton.chukj=[NSString stringWithFormat:@"%.4f", choukj];
+    
+    //fatg
+    fatug = ([singleton.vo2 floatValue] * singleton.fata)-([singleton.vco2 floatValue] * singleton.fatb);
+    singleton.fatg=[NSString stringWithFormat:@"%.4f", fatug];
+    
+    fatukj = (fatug * 39.06);
+    singleton.fatkj=[NSString stringWithFormat:@"%.4f", fatukj];
+    
+    //% fat %cho
+    pfat = fatukj / (energyExpend / 100.0);
+    singleton.pfat=[NSString stringWithFormat:@"%.4f", pfat];
+    
+    pcho = choukj / (energyExpend / 100.0);
+    singleton.pcho=[NSString stringWithFormat:@"%.4f", pcho];
+    
     //corrFaclbl.text     =   singleton.corrFactor;
     //VO2lbl.text         =   singleton.vo2;
     //VCO2lbl.text        =   singleton.vco2;
@@ -674,8 +700,21 @@ energyBtn;
     //blank line
     [singleton.cardReactionTimeResult addObject:@" "];
     singleton.counter = singleton.counter+1;
+    
     //title line - results one row per data entry
-    [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Sub BMI, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, N2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    if (energyButtonVisible==YES||[testerlbl.text isEqual:@"Energy"]) {
+        [singleton.cardReactionTimeResult addObject:@"Gas Exchange and Metabolism Results"];
+    }else{
+        [singleton.cardReactionTimeResult addObject:@"Gas Exchange Results"];
+    }
+    singleton.counter = singleton.counter+1;
+    
+    //add enrgies if requested
+    if (energyButtonVisible==YES||[testerlbl.text isEqual:@"Energy"]) {
+        [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Sub BMI, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, N2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER, EExpend, CHOg, CHOkj,FATg,FATkj,CHO%,%Fat"];
+    }else{
+        [singleton.cardReactionTimeResult addObject:@"TestNo., Tester, Subject, Test Date, Test Time, Lab Loc'n, Lab Temp 'C, Lab Press mmHg, Lab Hum %, Sub Ht, Sub Wt, Sub BMI, Samp Time s,FEO2 L, FECO2 L, Lab O2 %, N2 %, VEATPS, VEBTPS, VESTPD, Corr Fac, VO2, VCO2, VO2kg, RER"];
+    }
     singleton.counter = singleton.counter+1;
     // +++++++++++++++++++++++++++
     //loop if rows of results
@@ -683,7 +722,8 @@ energyBtn;
     //for (int y=1; y<singleton.counter+1; y++) {
         //uncomment when formatted
     
-        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f" ,
+        if (energyButtonVisible==YES||[testerlbl.text isEqual:@"Energy"]) {
+        myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f" ,
                      counter,
                      testerlbl.text,
                      subjectlbl.text,
@@ -708,8 +748,44 @@ energyBtn;
                      VO2,
                      VCO2,
                      VO2Kg,
-                     RER]
-    ;
+                     RER,
+                     energyExpend,
+                     choug,
+                     choukj,
+                     fatug,
+                     fatukj,
+                     pcho,
+                     pfat
+                     ];
+        }else{
+            myNumbStr = [NSString stringWithFormat:@"%i,%@,%@,%@,%@,%@,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f,%2.4f" ,
+                         counter,
+                         testerlbl.text,
+                         subjectlbl.text,
+                         datelbl.text,
+                         timelbl.text,
+                         lablbl.text,
+                         labTempC,
+                         labPressure_mmHg,
+                         labHumidity,
+                         subHt,
+                         subWt,
+                         subBMI,
+                         sampTime,
+                         FEO2,
+                         FECO2,
+                         labO2,
+                         N2,
+                         VEATPS,
+                         VEBTPS,
+                         VESTPD,
+                         corrFactor,
+                         VO2,
+                         VCO2,
+                         VO2Kg,
+                         RER
+                         ];
+            }
     
         [singleton.cardReactionTimeResult addObject: myNumbStr];
     singleton.counter = singleton.counter+1;
@@ -721,13 +797,16 @@ energyBtn;
     singleton.counter = singleton.counter+1;
     
     //end of data message
-    [singleton.cardReactionTimeResult addObject:@"End of test data. " ];
+    [singleton.cardReactionTimeResult addObject:@"End of results table. " ];
     singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
     [singleton.cardReactionTimeResult addObject:@"MMU (c) 2015 VO2 App Jonathan A. Howell SAS Technical Services. " ];
+    singleton.counter = singleton.counter+1;
+    //version number
+    [singleton.cardReactionTimeResult addObject: singleton.versionNumber ];
     singleton.counter = singleton.counter+1;
     //blank line
     [singleton.cardReactionTimeResult addObject:@"."];
@@ -791,7 +870,7 @@ energyBtn;
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     [mailComposer setMailComposeDelegate:self];
     if ([MFMailComposeViewController canSendMail]){
-        [mailComposer setToRecipients:[NSArray arrayWithObjects:@"" ,Nil]];
+        [mailComposer setToRecipients:[NSArray arrayWithObjects:singleton.email ,Nil]];
         [mailComposer setSubject:@"Results from VO2 App"];
         //[mailComposer setMessageBody:@"Dear VO2 App User: " isHTML:YES];
         
@@ -828,14 +907,14 @@ energyBtn;
 //- (IBAction)showEmail:(NSString*)file {
 
 - (IBAction)showEmail:(id)sender {
-    statusMessageLab.hidden = YES;
+    statusMessageLab.hidden = NO;
     mySingleton *singleton = [mySingleton sharedSingleton];
     
     NSString *emailTitle = [NSString stringWithFormat:@"VO2 App Data for: %@",singleton.oldSubjectName];
     NSString *messageBody = [NSString stringWithFormat:@"The test data for the subject:%@ taken at the date: %@ and time: %@, is attached as a text/csv file.  \n\nThe file is comma separated variable, .csv extension.  \n\nThe data can be read by MS-Excel, then analysed by your own functions. \n\nSent by VO2 App.",singleton.oldSubjectName,singleton.testDate,singleton.testTime];
     //old for testing// NSArray  *toRecipents = [NSArray arrayWithObject:@"j.a.howell@mmu.ac.uk"];
     
-    NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email]];
+    NSArray  *toRecipents = [NSArray arrayWithObject:[NSString stringWithFormat:@"%@", singleton.email,Nil]];
 
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;

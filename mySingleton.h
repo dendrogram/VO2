@@ -57,7 +57,18 @@
     NSString * subjectName;
     NSString * oldSubjectName;
     NSString * versionNumber;
+    NSString * CHOratio;
+    NSString * FATratio;
     
+    //energies
+    NSString * energyExpend;
+    NSString * choug;
+    NSString * choukj;
+    NSString * fatug;
+    NSString * fatukj;
+    NSString * pfat;
+    NSString * pcho;
+    //for cals of energies
     Float64 cho412;
     Float64 cho291;
     Float64 fata;
@@ -100,10 +111,19 @@
 @property (nonatomic, retain) NSString * testDate;
 @property (nonatomic, retain) NSString * testTime;
 @property (nonatomic, retain) NSString * versionNumber;
+//energies
 @property (nonatomic) Float64 cho412;
 @property (nonatomic) Float64 cho291;
 @property (nonatomic) Float64 fata;
 @property (nonatomic) Float64 fatb;
+
+@property (nonatomic, retain) NSString * energyExpend;
+@property (nonatomic, retain) NSString * chug;
+@property (nonatomic, retain) NSString * chukj;
+@property (nonatomic, retain) NSString * fatg;
+@property (nonatomic, retain) NSString * fatkj;
+@property (nonatomic, retain) NSString * pfat;
+@property (nonatomic, retain) NSString * pcho;
 
 //Flags BOOL
 @property (nonatomic) BOOL addedToResults;

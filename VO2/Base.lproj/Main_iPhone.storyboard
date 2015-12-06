@@ -4836,7 +4836,7 @@ for the GasCalc Excel ® sheet</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="V63-Yh-mov">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="V63-Yh-mov">
                                         <rect key="frame" x="108" y="289" width="164" height="29"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -4845,11 +4845,12 @@ for the GasCalc Excel ® sheet</string>
                                             <segment title="50-75%"/>
                                             <segment title="75+ %"/>
                                         </segments>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="indexChangedCHO:" destination="rKf-PX-SQL" eventType="valueChanged" id="vWL-B4-ISD"/>
                                         </connections>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="3qK-09-1g4">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="3qK-09-1g4">
                                         <rect key="frame" x="8" y="332" width="266" height="29"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -4859,6 +4860,7 @@ for the GasCalc Excel ® sheet</string>
                                             <segment title="Feranninni"/>
                                             <segment title="Egan"/>
                                         </segments>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="indexChangedFAT:" destination="rKf-PX-SQL" eventType="valueChanged" id="5d7-kC-WcX"/>
                                         </connections>

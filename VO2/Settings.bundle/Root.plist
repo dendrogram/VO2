@@ -14,7 +14,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<string>me</string>
+			<string>Me</string>
 			<key>KeyboardType</key>
 			<string>Alphabet</string>
 			<key>AutocorrectionType</key>
@@ -32,7 +32,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<string>me@mmu.ac.uk</string>
+			<string>@mmu.ac.uk</string>
 			<key>KeyboardType</key>
 			<string>EmailAddress</string>
 			<key>AutocorrectionType</key>
@@ -48,17 +48,17 @@
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 		</dict>
-        <dict>
-            <key>Type</key>
-            <string>PSGroupSpecifier</string>
-            <key>Title</key>
-            <string>Keyboard Animation Delay</string>
-        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Keyboard Animation Delay</string>
+		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Keyboard Animations</string>
+			<string>Keyboard Delay</string>
 			<key>Key</key>
 			<string>kanim</string>
 			<key>DefaultValue</key>
@@ -68,12 +68,12 @@
 			<key>FalseValue</key>
 			<false/>
 		</dict>
-        <dict>
-            <key>Type</key>
-            <string>PSGroupSpecifier</string>
-            <key>Title</key>
-            <string>Energy Results Screen Shown</string>
-        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Energy Results Screen Shown</string>
+		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
@@ -88,28 +88,28 @@
 			<key>FalseValue</key>
 			<false/>
 		</dict>
-        <dict>
-            <key>Type</key>
-            <string>PSGroupSpecifier</string>
-            <key>Title</key>
-            <string>VO2 Version Information</string>
-        </dict>
-        <dict>
-            <key>Type</key>
-            <string>PSTitleValueSpecifier</string>
-            <key>Title</key>
-            <string>Version Number:</string>
-            <key>Key</key>
-            <string>version0</string>
-            <key>DefaultValue</key>
-            <string>2.2.8.5.12.15</string>
-        </dict>
-        <dict>
-            <key>Type</key>
-            <string>PSGroupSpecifier</string>
-            <key>Title</key>
-            <string>Copyright:</string>
-        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>VO2 Version Information</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version Number:</string>
+			<key>Key</key>
+			<string>version0</string>
+			<key>DefaultValue</key>
+			<string>2.3.1.6.12.15</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Copyright:</string>
+		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>

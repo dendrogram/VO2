@@ -5012,20 +5012,28 @@ for the GasCalc Excel ® sheet</string>
                                     <fragment>
                                         <string key="content">The settings App of your iPad or iPhone, under the VO2 icon, holds details of the App and some extra settings that adjust the way data is input and displayed.
 
+Results Decimal Places
 The number of decimal places the App displays its calculated data can be altered from 1 to 6 places.  The default is 2 places.
 
+Energy Calculations
 There are energy calculations that follow various referenced papers. You can find the references in the Calculations page.  The Energy Calculations are turned off by default, but can be enabled in the settings App.
 
+Tester and Results Email
 The testers name and the email for the results is saved in the settings App page and can be edited in the Subject Data page or the settings App page.
 
+Keyboard Animation
 The data entry in to fields in the VO2 App moves the field out of the way of the keyboard display.  The delay in the animation of this process can be turned off or on.  The default is ON.
 
+New Installations and Updates
 When installing an update to this App, delete the old App first, using a long press on the icon and confirming the delete process.  This will clear the data and correctly allow the new version to be installed.  
 
+Coloured Data Fields
 Any data that appears in red or orange is suspect in some way.  Yellow fields indicate that the validation of the data produced a default value to be placed in the field.
 
-Typing the entry 'Energy' in the tester name filed will turn on the Energy Calculations independently from the settings App file.
+Energy Button
+Typing the entry 'Energy' in the tester name field will turn on the Energy Calculations independently from the settings App file.
 
+Email Button
 The email button will format an email of the data and this is addressed to the entry that you have already entered.  Edit this if necessary to the receiving account if different.
 
 JAH 6/12/15

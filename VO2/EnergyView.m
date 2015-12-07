@@ -45,6 +45,7 @@ fatusekjmlbl,
 energyExpendlbl,
 pcholbl,
 pfatlbl,
+//segmented controls
 vo2level,
 fatlevel;
 
@@ -61,6 +62,12 @@ fatlevel;
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     dpd  = [[defaults objectForKey: kDecimalPlaces]doubleValue];
+    
+    //UIFont *font = [UIFont boldSystemFontOfSize:12.0f];
+    UIFont *font = [UIFont boldSystemFontOfSize:8.0f];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
+    [vo2level setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    [fatlevel setTitleTextAttributes:attributes forState:UIControlStateNormal];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -234,7 +241,7 @@ fatlevel;
             singleton.cho412=4.120;
             singleton.cho291=2.910;
         break;
-        default:
+        default://Egan values from GasCalc Excel
         //vo2max
             singleton.cho412=4.120;
             singleton.cho291=2.910;

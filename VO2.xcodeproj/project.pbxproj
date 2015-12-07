@@ -405,7 +405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python /Users/jonathanhowell/Documents/VO2/VO2/Settings.bundle/Licence.py";
+			shellScript = "// python /Users/jonathanhowell/Documents/VO2/VO2/Settings.bundle/Licence.py //home mac\npython /Users/jonhowell/Documents/VO2newsimple2015/VO2/Settings.bundle/Licence.py //mmu desk mac";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -580,7 +580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: manchester metropolitan University";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: manchester metropolitan University";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VO2/VO2-Prefix.pch";

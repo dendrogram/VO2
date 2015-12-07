@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>StringsTable</key>
+    <string>Root</string>
 	<key>Title</key>
 	<string>VO2 Calculator Settings</string>
 	<key>PreferenceSpecifiers</key>
@@ -189,7 +191,5 @@
 			<string>Acknowledgements</string>
 		</dict>
 	</array>
-	<key>StringsTable</key>
-	<string>Root</string>
 </dict>
 </plist>

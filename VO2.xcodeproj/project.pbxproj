@@ -405,7 +405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "// python /Users/jonathanhowell/Documents/VO2/VO2/Settings.bundle/Licence.py //home mac\npython /Users/jonhowell/Documents/VO2newsimple2015/VO2/Settings.bundle/Licence.py //mmu desk mac";
+			shellScript = "// python /Users/jonathanhowell/Documents/VO2/VO2/Settings.bundle/Licence.py //home mac\npython /Users/jonhowell/Documents/VO2newsimple2015/VO2/Settings.bundle/Licence.py //mmu desk mac\n/usr/libexec/plistbuddy -c \"Set :BSDidMoveSqliteDb 0\" path_to_plist //to remove old plist settings";
 		};
 /* End PBXShellScriptBuildPhase section */
 

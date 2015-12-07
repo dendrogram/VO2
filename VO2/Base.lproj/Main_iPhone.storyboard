@@ -90,7 +90,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-h9-G5r">
-                                        <rect key="frame" x="78" y="243" width="125" height="45"/>
+                                        <rect key="frame" x="147" y="243" width="125" height="45"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Contact Links">
@@ -146,6 +146,18 @@
                                         <animations/>
                                         <connections>
                                             <action selector="mmuwebjump:" destination="5R5-lv-JSb" eventType="touchUpInside" id="4h3-E8-D4b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhm-6E-sWu">
+                                        <rect key="frame" x="8" y="243" width="125" height="45"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Using The App">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="mv1-io-ae9" kind="modal" id="LLY-OZ-QOi"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3288,7 +3300,7 @@ Expired air (FE-O</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oci-Up-Yfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="-1562"/>
+            <point key="canvasLocation" x="1136" y="-1562"/>
         </scene>
         <!--ABT Export-->
         <scene sceneID="lXb-zR-5aV">
@@ -4979,6 +4991,124 @@ for the GasCalc Excel ® sheet</string>
             </objects>
             <point key="canvasLocation" x="1509" y="-816"/>
         </scene>
+        <!--ABT Using The VO2 App-->
+        <scene sceneID="XIj-zl-pOe">
+            <objects>
+                <viewController title="ABT Using The VO2 App" modalTransitionStyle="crossDissolve" id="mv1-io-ae9" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WoP-Ju-cAk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yke-eG-itD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cFa-j5-4vP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="black" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YG-0b-wqd">
+                                <rect key="frame" x="20" y="59" width="280" height="368"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" hint="Notes on the conversion" label="Standard Gas Conversion from Laboratory Readings to Dry Standard for the Calculations."/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The settings App of your iPad or iPhone, under the VO2 icon, holds details of the App and some extra settings that adjust the way data is input and displayed.
+
+The number of decimal places the App displays its calculated data can be altered from 1 to 6 places.  The default is 2 places.
+
+There are energy calculations that follow various referenced papers. You can find the references in the Calculations page.  The Energy Calculations are turned off by default, but can be enabled in the settings App.
+
+The testers name and the email for the results is saved in the settings App page and can be edited in the Subject Data page or the settings App page.
+
+The data entry in to fields in the VO2 App moves the field out of the way of the keyboard display.  The delay in the animation of this process can be turned off or on.  The default is ON.
+
+When installing an update to this App, delete the old App first, using a long press on the icon and confirming the delete process.  This will clear the data and correctly allow the new version to be installed.  
+
+Any data that appears in red or orange is suspect in some way.  Yellow fields indicate that the validation of the data produced a default value to be placed in the field.
+
+Typing the entry 'Energy' in the tester name filed will turn on the Energy Calculations independently from the settings App file.
+
+The email button will format an email of the data and this is addressed to the entry that you have already entered.  Edit this if necessary to the receiving account if different.
+
+JAH 6/12/15
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tailIndent="262.25" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdH-Rn-vow">
+                                <rect key="frame" x="102" y="435" width="116" height="25"/>
+                                <animations/>
+                                <inset key="imageEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Back" image="about50x50.png">
+                                    <color key="titleColor" red="0.21486746549999999" green="0.028425790480000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nut-v4-lUQ" kind="modal" id="zT3-zv-6BX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="about50x50.png" translatesAutoresizingMaskIntoConstraints="NO" id="O7W-Kk-Vfk">
+                                <rect key="frame" x="267" y="20" width="33" height="33"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mmulogoshape.png" translatesAutoresizingMaskIntoConstraints="NO" id="y7V-nM-qlO">
+                                <rect key="frame" x="20" y="22" width="29" height="29"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5p-8I-AMk">
+                                <rect key="frame" x="56" y="22" width="209" height="21"/>
+                                <animations/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Using the ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="VO">
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="2">
+                                        <attributes>
+                                            <color key="NSColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" App">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.95234378850000001" blue="0.8036439179" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CPX-3P-BFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="-1562"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about50x50.png" width="25" height="25"/>
@@ -4989,6 +5119,6 @@ for the GasCalc Excel ® sheet</string>
         <image name="vo2_50x50.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0I4-RL-VTM"/>
+        <segue reference="zT3-zv-6BX"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>FooterText</key>
-			<string>This App was designed to replace an earlier PC Program Written by David Glover (Tech) and Grant Rockley (Tech).  This App was designed by Jonathan A. Howell (Tech) and uses calculations that are standard for Exercise Physiology since the 1960's.  David J. Egan et al wrote GasCalc.xls for PC/Mac systems with Excel(R), and this App's data results' agree with those calculations and output from GasCalc.  Take the time to examine the 'About' pages in the App for more details on the calculations.</string>
+			<string>This App was designed to replace earlier PC Programs Written by David Glover (Tech) and Grant Rockley (Tech).  This App is designed and programmed by Jonathan A. Howell (Tech), and uses calculations that are well known Exercise Physiology since the 1960's.  David J. Egan et al wrote GasCalc.xls for PC/Mac systems with Excel(R), and this App's data results' agree with those calculations and output from GasCalc.  Take the time to examine the 'About' pages in the App for more details on the calculations.</string>
 			<key>Title</key>
 			<string>Acknowledgements</string>
 			<key>Type</key>
@@ -14,9 +14,9 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>To contact the Developer, Mr Jonathan Howell, please use the information below:-
+			<string>To contact the Developer of this App, Mr Jonathan Howell, please use the information below:-
 
-Address :
+Postal Address :
 MMU Cheshire
 Crewe Green Road
 Crewe
@@ -34,9 +34,9 @@ J.A.Howell@mmu.ac.uk</string>
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>This App is only to be used for Educational purposes, i.e. for a programme of study or for individual self improvement.  The App is not designed to meet requirements of clinical use or research without further written documentation clearly expressing the parameters of such use and legal obligations.
+			<string>This App is only to be used for Educational purposes, i.e. for a programme of study or for individual self improvement.  The App is not designed to meet requirements of clinical use or research without further written documentation clearly expressing the parameters of such use and legal obligations. It is the responsibility of the user to ensure that the output rsults meet the requirements of any work that will rely upon it.
 
-No warranty is implied expressly or otherwise, and no claim for damages will be accepted as non are possible in the Educational use.  Inappropriate use is the sole responsibility of the user.  This App is not sold nor does it generate any income expressly.</string>
+No warranty is implied expressly or otherwise, and no claim for damages will be accepted as non are possible in the Educational use.  Inappropriate use is the sole responsibility of the user.  This App is not 'sold' nor does it generate any income expressly.</string>
 			<key>Title</key>
 			<string>Disclaimer</string>
 			<key>Type</key>
@@ -44,7 +44,7 @@ No warranty is implied expressly or otherwise, and no claim for damages will be 
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>This App, VO2, is available for one year from the date of build and is only available to current Staff and Students of Manchester Metropolitan University.  The data calculated in the App is not warranted in any way as accurate, and must not be used as the basis for a clinical judgment.  The App is for Educational Purposes only.
+			<string>This App, VO2, is available for one year from the date of code building and compiling, and is only available to current Staff and Students of Manchester Metropolitan University.  The data calculated in the App is not warranted in any way as accurate, and must not be used as the basis for a clinical judgment.  The App is for Educational Purposes only.
 
 This App is subject to licence restrictions on distribution governed by Apple Inc, who restrict the distribution of this App to Staff and Students of Mancheter Metropolitan University.  No other use is licenced.</string>
 			<key>Title</key>

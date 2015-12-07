@@ -80,7 +80,7 @@
 			<key>Key</key>
 			<string>decimalPlaces</string>
 			<key>DefaultValue</key>
-			<integer>4</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>Type</key>

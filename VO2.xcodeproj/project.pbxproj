@@ -26,10 +26,11 @@
 		E12EEABA19752EF300CEDBD5 /* vo2_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAD19752EF300CEDBD5 /* vo2_50x50.png */; };
 		E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */; };
 		E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E12EEABD19758ABF00CEDBD5 /* mySingleton.m */; };
-		E1AEEACF1C05EA07007D243E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1AEEACE1C05EA07007D243E /* Settings.bundle */; };
 		E1B6D0AC1C1083E9004C0E9E /* mmulogoshape.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B6D0AB1C1083E9004C0E9E /* mmulogoshape.png */; };
 		E1B6D0AF1C108F4E004C0E9E /* EnergyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B6D0AE1C108F4E004C0E9E /* EnergyView.m */; };
 		E1B6D0B21C11E954004C0E9E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B6D0B01C11E954004C0E9E /* Main_iPad.storyboard */; };
+		E1B6D0B31C15C006004C0E9E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1AEEACE1C05EA07007D243E /* Settings.bundle */; };
+		E1B6D0B41C15C015004C0E9E /* Settings.bundle in Sources */ = {isa = PBXBuildFile; fileRef = E1AEEACE1C05EA07007D243E /* Settings.bundle */; };
 		E1EE19781987E6B1006552A3 /* vo2calc.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196E1987E6B1006552A3 /* vo2calc.png */; };
 		E1EE19791987E6B1006552A3 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196F1987E6B1006552A3 /* contacts.png */; };
 		E1EE197A1987E6B1006552A3 /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE19701987E6B1006552A3 /* tutorial.png */; };
@@ -350,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B6D0B31C15C006004C0E9E /* Settings.bundle in Resources */,
 				E1EE197F1987E6B1006552A3 /* export_to_file.png in Resources */,
 				E1EE197C1987E6B1006552A3 /* people.png in Resources */,
 				E12EEABA19752EF300CEDBD5 /* vo2_50x50.png in Resources */,
@@ -378,7 +380,6 @@
 				E1EE197E1987E6B1006552A3 /* contents.png in Resources */,
 				E12EEAB519752EF300CEDBD5 /* results50x50@2x.png in Resources */,
 				E1EE19801987E6B1006552A3 /* get_info.png in Resources */,
-				E1AEEACF1C05EA07007D243E /* Settings.bundle in Resources */,
 				E1EE19811987E6B1006552A3 /* document_graph.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B6D0B41C15C015004C0E9E /* Settings.bundle in Sources */,
 				E1F13E391974537000A9748D /* ViewController.m in Sources */,
 				E12BF2BB197E899F00E19036 /* readingsViewController.m in Sources */,
 				E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */,

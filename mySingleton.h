@@ -5,7 +5,7 @@
 //  Created by Jon Howell on 15/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
-//  additional vars for energy 4/12/15
+//  additional vars for energy 4/12/15, 7/12/15
 
 #import <Foundation/Foundation.h>
 

@@ -84,7 +84,7 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"Version 2.3.3 - 7.12.15";     // version   *** keep short
+    version0 =  @"Version 2.3.4 - 7.12.15";     // version   *** keep short
     version1 =  @"MMU (C) 2015";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen

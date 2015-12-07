@@ -90,7 +90,7 @@
 		E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vo2_50x50@2x.png"; sourceTree = "<group>"; };
 		E12EEABC19758ABF00CEDBD5 /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySingleton.h; sourceTree = "<group>"; };
 		E12EEABD19758ABF00CEDBD5 /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySingleton.m; sourceTree = "<group>"; };
-		E1AEEACE1C05EA07007D243E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E1AEEACE1C05EA07007D243E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = VO2/Settings.bundle; sourceTree = "<group>"; };
 		E1B6D0AB1C1083E9004C0E9E /* mmulogoshape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mmulogoshape.png; sourceTree = "<group>"; };
 		E1B6D0AD1C108F4E004C0E9E /* EnergyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnergyView.h; sourceTree = "<group>"; };
 		E1B6D0AE1C108F4E004C0E9E /* EnergyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnergyView.m; sourceTree = "<group>"; };
@@ -187,6 +187,7 @@
 			children = (
 				E12EEABC19758ABF00CEDBD5 /* mySingleton.h */,
 				E12EEABD19758ABF00CEDBD5 /* mySingleton.m */,
+				E1AEEACE1C05EA07007D243E /* Settings.bundle */,
 				E1F13E251974537000A9748D /* VO2 */,
 				E1F13E471974537000A9748D /* VO2Tests */,
 				E1F13E1E1974537000A9748D /* Frameworks */,
@@ -247,7 +248,6 @@
 				E1F13E2B1974537000A9748D /* main.m */,
 				E1F13E2D1974537000A9748D /* VO2-Prefix.pch */,
 				915A77DA198B078700FBCC92 /* data.plist */,
-				E1AEEACE1C05EA07007D243E /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -405,7 +405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "// python /Users/jonathanhowell/Documents/VO2/VO2/Settings.bundle/Licence.py //home mac\npython /Users/jonhowell/Documents/VO2newsimple2015/VO2/Settings.bundle/Licence.py //mmu desk mac\n/usr/libexec/plistbuddy -c \"Set :BSDidMoveSqliteDb 0\" path_to_plist //to remove old plist settings";
+			shellScript = "// python /Users/jonathanhowell/Documents/VO2/VO2/Settings.bundle/Licence.py //home mac\npython /Users/jonhowell/Documents/VO2newsimple2015/VO2/Settings.bundle/Licence.py //mmu desk mac";
 		};
 /* End PBXShellScriptBuildPhase section */
 

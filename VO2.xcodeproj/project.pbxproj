@@ -26,11 +26,11 @@
 		E12EEABA19752EF300CEDBD5 /* vo2_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAD19752EF300CEDBD5 /* vo2_50x50.png */; };
 		E12EEABB19752EF300CEDBD5 /* vo2_50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */; };
 		E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E12EEABD19758ABF00CEDBD5 /* mySingleton.m */; };
+		E1ACC8041DE72D0700504C0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1ACC8031DE72D0700504C0C /* UIKit.framework */; };
 		E1B6D0AC1C1083E9004C0E9E /* mmulogoshape.png in Resources */ = {isa = PBXBuildFile; fileRef = E1B6D0AB1C1083E9004C0E9E /* mmulogoshape.png */; };
 		E1B6D0AF1C108F4E004C0E9E /* EnergyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B6D0AE1C108F4E004C0E9E /* EnergyView.m */; };
 		E1B6D0B21C11E954004C0E9E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B6D0B01C11E954004C0E9E /* Main_iPad.storyboard */; };
 		E1B6D0B31C15C006004C0E9E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1AEEACE1C05EA07007D243E /* Settings.bundle */; };
-		E1B6D0B41C15C015004C0E9E /* Settings.bundle in Sources */ = {isa = PBXBuildFile; fileRef = E1AEEACE1C05EA07007D243E /* Settings.bundle */; };
 		E1EE19781987E6B1006552A3 /* vo2calc.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196E1987E6B1006552A3 /* vo2calc.png */; };
 		E1EE19791987E6B1006552A3 /* contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE196F1987E6B1006552A3 /* contacts.png */; };
 		E1EE197A1987E6B1006552A3 /* tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE19701987E6B1006552A3 /* tutorial.png */; };
@@ -43,16 +43,13 @@
 		E1EE19811987E6B1006552A3 /* document_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EE19771987E6B1006552A3 /* document_graph.png */; };
 		E1F13E201974537000A9748D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E1F1974537000A9748D /* Foundation.framework */; };
 		E1F13E221974537000A9748D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E211974537000A9748D /* CoreGraphics.framework */; };
-		E1F13E241974537000A9748D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E231974537000A9748D /* UIKit.framework */; };
 		E1F13E2A1974537000A9748D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1F13E281974537000A9748D /* InfoPlist.strings */; };
 		E1F13E2C1974537000A9748D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F13E2B1974537000A9748D /* main.m */; };
 		E1F13E301974537000A9748D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F13E2F1974537000A9748D /* AppDelegate.m */; };
 		E1F13E331974537000A9748D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F13E311974537000A9748D /* Main_iPhone.storyboard */; };
 		E1F13E391974537000A9748D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F13E381974537000A9748D /* ViewController.m */; };
 		E1F13E3B1974537000A9748D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F13E3A1974537000A9748D /* Images.xcassets */; };
-		E1F13E421974537000A9748D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E411974537000A9748D /* XCTest.framework */; };
 		E1F13E431974537000A9748D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E1F1974537000A9748D /* Foundation.framework */; };
-		E1F13E441974537000A9748D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F13E231974537000A9748D /* UIKit.framework */; };
 		E1F13E4C1974537000A9748D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1F13E4A1974537000A9748D /* InfoPlist.strings */; };
 		E1F13E4E1974537000A9748D /* VO2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F13E4D1974537000A9748D /* VO2Tests.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +88,8 @@
 		E12EEAAE19752EF300CEDBD5 /* vo2_50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vo2_50x50@2x.png"; sourceTree = "<group>"; };
 		E12EEABC19758ABF00CEDBD5 /* mySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySingleton.h; sourceTree = "<group>"; };
 		E12EEABD19758ABF00CEDBD5 /* mySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySingleton.m; sourceTree = "<group>"; };
+		E1ACC8021DE72A3D00504C0C /* VO2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VO2.entitlements; sourceTree = "<group>"; };
+		E1ACC8031DE72D0700504C0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1AEEACE1C05EA07007D243E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = VO2/Settings.bundle; sourceTree = "<group>"; };
 		E1B6D0AB1C1083E9004C0E9E /* mmulogoshape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mmulogoshape.png; sourceTree = "<group>"; };
 		E1B6D0AD1C108F4E004C0E9E /* EnergyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnergyView.h; sourceTree = "<group>"; };
@@ -109,7 +108,6 @@
 		E1F13E1C1974537000A9748D /* VO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F13E1F1974537000A9748D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E1F13E211974537000A9748D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E1F13E231974537000A9748D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1F13E271974537000A9748D /* VO2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VO2-Info.plist"; sourceTree = "<group>"; };
 		E1F13E291974537000A9748D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1F13E2B1974537000A9748D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		E1F13E381974537000A9748D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E1F13E3A1974537000A9748D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1F13E401974537000A9748D /* VO2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VO2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1F13E411974537000A9748D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E1F13E491974537000A9748D /* VO2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VO2Tests-Info.plist"; sourceTree = "<group>"; };
 		E1F13E4B1974537000A9748D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1F13E4D1974537000A9748D /* VO2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VO2Tests.m; sourceTree = "<group>"; };
@@ -132,9 +129,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1ACC8041DE72D0700504C0C /* UIKit.framework in Frameworks */,
 				912C01B3197755A7001C6093 /* MessageUI.framework in Frameworks */,
 				E1F13E221974537000A9748D /* CoreGraphics.framework in Frameworks */,
-				E1F13E241974537000A9748D /* UIKit.framework in Frameworks */,
 				E1F13E201974537000A9748D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,8 +140,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1F13E421974537000A9748D /* XCTest.framework in Frameworks */,
-				E1F13E441974537000A9748D /* UIKit.framework in Frameworks */,
 				E1F13E431974537000A9748D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,11 +203,10 @@
 		E1F13E1E1974537000A9748D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1ACC8031DE72D0700504C0C /* UIKit.framework */,
 				912C01B2197755A7001C6093 /* MessageUI.framework */,
 				E1F13E1F1974537000A9748D /* Foundation.framework */,
 				E1F13E211974537000A9748D /* CoreGraphics.framework */,
-				E1F13E231974537000A9748D /* UIKit.framework */,
-				E1F13E411974537000A9748D /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,6 +214,7 @@
 		E1F13E251974537000A9748D /* VO2 */ = {
 			isa = PBXGroup;
 			children = (
+				E1ACC8021DE72A3D00504C0C /* VO2.entitlements */,
 				E1F13E2E1974537000A9748D /* AppDelegate.h */,
 				E1F13E2F1974537000A9748D /* AppDelegate.m */,
 				E1F13E311974537000A9748D /* Main_iPhone.storyboard */,
@@ -316,13 +311,20 @@
 		E1F13E141974537000A9748D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Manchester Metropolitan University - ESS - essmobile";
 				TargetAttributes = {
 					E1F13E1B1974537000A9748D = {
 						DevelopmentTeam = 4SPW49WK35;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					E1F13E3F1974537000A9748D = {
+						DevelopmentTeam = 4SPW49WK35;
 						TestTargetID = E1F13E1B1974537000A9748D;
 					};
 				};
@@ -397,7 +399,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		E1073DBF1C0875AA002DA7A0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -415,7 +417,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B6D0B41C15C015004C0E9E /* Settings.bundle in Sources */,
 				E1F13E391974537000A9748D /* ViewController.m in Sources */,
 				E12BF2BB197E899F00E19036 /* readingsViewController.m in Sources */,
 				E12EEABE19758ABF00CEDBD5 /* mySingleton.m in Sources */,
@@ -494,15 +495,22 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 4SPW49WK35;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -514,10 +522,12 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "ffd793db-713c-4bf8-8f27-9bbcc166a53a";
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -536,22 +546,30 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: manchester metropolitan University";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: manchester metropolitan University";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				PROVISIONING_PROFILE = "c9f104d3-8af0-49d4-9d4d-f3df223871a1";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -563,8 +581,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = VO2/VO2.entitlements;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VO2/VO2-Prefix.pch";
 				INFOPLIST_FILE = "VO2/VO2-Info.plist";
@@ -572,6 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.VO2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -582,8 +603,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: manchester metropolitan University";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: manchester metropolitan University";
+				CODE_SIGN_ENTITLEMENTS = VO2/VO2.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VO2/VO2-Prefix.pch";
 				INFOPLIST_FILE = "VO2/VO2-Info.plist";
@@ -591,6 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.mmu.ess.www.jah.VO2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -601,6 +625,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VO2.app/VO2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -624,6 +649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VO2.app/VO2";
+				DEVELOPMENT_TEAM = 4SPW49WK35;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

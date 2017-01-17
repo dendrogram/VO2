@@ -4,6 +4,8 @@
 //
 //  Created by Jon Howell on 03/12/2015.
 //  Copyright © 2015 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  updated 1/10/16 jah for ios 10.0.2
+//
 //
 
 #import "EnergyView.h"
@@ -249,6 +251,7 @@ fatlevel;
     }
     [self calculateStats];
 }
+
 -(IBAction)indexChangedFAT:(UISegmentedControl *)sender
 {
     mySingleton *singleton = [mySingleton sharedSingleton];

@@ -5,6 +5,8 @@
 //  Created by Jon Howell on 15/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //  7/12/15
+//  updated 1/10/16 jah for ios 10.0.2
+//
 //
 
 #import "mySingleton.h"
@@ -135,7 +137,7 @@ pcho;
         subjectName        = @"Sub";
         oldSubjectName     = @"Sub";
         resultStrings      = @"";
-        versionNumber      = @"2.2.3 - 00.00.15";
+        versionNumber      = @"2.3.8 - 17.1.17";
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         counter            = 0;
         cho291             = 2.91;

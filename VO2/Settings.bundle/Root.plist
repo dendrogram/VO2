@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>StringsTable</key>
-    <string>Root</string>
+	<key>StringsTable</key>
+	<string>Root</string>
 	<key>Title</key>
 	<string>VO2 Calculator Settings</string>
 	<key>PreferenceSpecifiers</key>
@@ -134,11 +134,11 @@
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>Version Number:</string>
+			<string>Version</string>
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>2.3.1.6.12.15</string>
+			<string>2.3.8</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -154,7 +154,7 @@
 			<key>Key</key>
 			<string>version1</string>
 			<key>DefaultValue</key>
-			<string>MMU (c) 2015</string>
+			<string>MMU (c) 2017</string>
 		</dict>
 		<dict>
 			<key>Type</key>

@@ -5,6 +5,8 @@
 //  Created by Jon Howell on 22/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
+//  updated 1/10/16 jah for ios 10.0.2
+//
 
 #import "subjectViewController.h"
 #import "mySingleton.h" //for global variables
@@ -381,7 +383,6 @@
     }
     //
     //***********
-    
 }
 
 -(void) keyBoardAppeared :(int)oft

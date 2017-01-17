@@ -4,6 +4,8 @@
 //
 //  Created by Jon Howell on 22/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  updated 1/10/16 jah for ios 10.0.2
+//
 //
 
 #import "readingsViewController.h"
@@ -12,7 +14,6 @@
 
 @interface readingsViewController ()
 {
-    
 }
 
 @end
@@ -370,7 +371,6 @@
     //check if reset buttons need to be shown
     [self resetGassesCheckBtnHidden];
     
-
   //colour change if out of range and insert range max/min value
   //set backgrounds to yellow/red if had to correct
 
@@ -380,28 +380,24 @@
         labTempTxt.text = @"-40.0";
         labTempTxt.backgroundColor = [UIColor yellowColor];
     }
-    
     if ([labTempTxt.text floatValue] > 60.0) {
         labTempTxt.textColor = [UIColor redColor];
         labTempC = 60.0;
         labTempTxt.text = @"60.0";
         labTempTxt.backgroundColor = [UIColor yellowColor];
     }
-
     if ([labPressureTxt.text floatValue] < 200.0||[labPressureTxt.text isEqual:@""]||[labPressureTxt.text isEqual:NULL]) {
         labPressureTxt.textColor = [UIColor redColor];
         labPressure_mmHg = 200.0;
         labPressureTxt.text = @"200.0";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
-    
     if ([labPressureTxt.text floatValue] >1200.0) {
         labPressureTxt.textColor = [UIColor redColor];
         labPressure_mmHg = 1200.0;
         labPressureTxt.text = @"1200.0";
         labPressureTxt.backgroundColor = [UIColor yellowColor];
     }
-    
     if ([labO2Txt.text floatValue] > 30.0) {
         labO2Txt.textColor = [UIColor redColor];
         labO2Txt.text = @"30.0";
@@ -442,14 +438,12 @@
         labHumidityTxt.text = @"100";
         labHumidityTxt.backgroundColor = [UIColor yellowColor];
     }
-    
     if ([VEATPSTxt.text floatValue] < 0.500) {
         VEATPSTxt.textColor = [UIColor redColor];
         VEATPS = 0.500;
         VEATPSTxt.text = @"0.500";
         VEATPSTxt.backgroundColor = [UIColor yellowColor];
     }
-    
     if ([VEATPSTxt.text floatValue ] > 150.000) {
         VEATPSTxt.textColor = [UIColor redColor];
         VEATPS = 150.000;
@@ -484,6 +478,7 @@
         FECO2Txt.backgroundColor = [UIColor yellowColor];
     }
 }
+
 -(void) keyBoardAppeared :(int)oft
 {
     //move screen up or down as needed to avoid text field entry

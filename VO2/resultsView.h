@@ -15,6 +15,8 @@
     IBOutlet UILabel     * statusMessageLab;
     //text views for text displays ie results or help screens
     //although assigned, not used at present... too fast to be useful
+    //  updated 1/10/16 jah for ios 10.0.2
+    //
     
 // for file manager
     NSFileManager * fileMgr;

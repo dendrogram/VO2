@@ -5,6 +5,8 @@
 //  Created by Jon Howell on 22/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //  6/12/15
+//  updated 1/10/16 jah for ios 10.0.2
+//
 //
 
 #import <UIKit/UIKit.h>
@@ -18,10 +20,11 @@
     UITextField   * emailTxt;
     UITextField   * startDateTxt;
     UITextField   * testDateTxt;
-    BOOL keyboardAnim;
+    BOOL  keyboardAnim;
     float keyboardAnimSpeed;
     float keyboardAnimDelay;
 }
+
 //subject
 @property (nonatomic, strong) IBOutlet UITextField * subWtTxt;
 @property (nonatomic, strong) IBOutlet UITextField * subHtTxt;

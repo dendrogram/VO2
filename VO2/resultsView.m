@@ -4,6 +4,8 @@
 //
 //  Created by Jon Howell on 22/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
+//  updated 1/10/16 jah for ios 10.0.2
+//
 //
 
 #import "resultsView.h"
@@ -209,6 +211,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+       
     //set up the plist params
     NSString *pathStr               = [[NSBundle mainBundle] bundlePath];
     NSString *settingsBundlePath    = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
@@ -321,7 +324,6 @@
         emailBtn.hidden=YES;
         samptimelbl.backgroundColor = [UIColor redColor];
     }
-    
     if ([RERlbl.text  floatValue] <= 0.0||[RERlbl.text isEqual:@""]||[RERlbl.text isEqual:NULL]||isnan([RERlbl.text floatValue])) {
         //red if negative
         emailBtn.hidden=YES;
@@ -559,7 +561,6 @@
         singleton.labTemp = templbl.text;
     }
 
-
     //totalDelay=0;
 
 //do the calcs from here:
@@ -724,7 +725,7 @@
     [singleton.cardReactionTimeResult addObject:@"MMU Cheshire, Exercise and Sport Science, VO2 Application Results"];
     singleton.counter = singleton.counter+1;
     //mmu copyright message 2014 JAH
-    [singleton.cardReactionTimeResult addObject:@"(c) 2015 MMU written by Jonathan A. Howell for ESS VO2 App"];
+    [singleton.cardReactionTimeResult addObject:@"(c) 2017 MMU written by Jonathan A. Howell for ESS VO2 App"];
     singleton.counter = singleton.counter+1;
     //mmu version no
     [singleton.cardReactionTimeResult addObject:[NSString stringWithFormat:@"%@",singleton.versionNumber]];
@@ -836,7 +837,7 @@
     [singleton.cardReactionTimeResult addObject:@" " ];
     singleton.counter = singleton.counter+1;
     //mmu copyright message
-    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2015 VO2 App Jonathan A. Howell SAS Technical Services. " ];
+    [singleton.cardReactionTimeResult addObject:@"MMU (c) 2017 VO2 App Jonathan A. Howell SAS Technical Services. " ];
     singleton.counter = singleton.counter+1;
     //version number
     [singleton.cardReactionTimeResult addObject: singleton.versionNumber ];

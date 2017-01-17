@@ -5,6 +5,8 @@
 //  Created by Jon Howell on 14/07/2014.
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
+//  updated 1/10/16 jah for ios 10.0.2
+//
 
 #import "AppDelegate.h"
 

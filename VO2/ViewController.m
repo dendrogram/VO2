@@ -6,16 +6,18 @@
 //  Copyright (c) 2014 Manchester Metropolitan University - ESS - essmobile. All rights reserved.
 //
 //  Updated and improved 24/11/15, 6/12/15
+//  updated 1/10/16 jah for ios 10.0.2
+//
 
 #import "ViewController.h"
 #import "mySingleton.h" //for global variables
 
-#define kEmail      @"emailAddress"
-#define kTester     @"testerName"
-#define kVersion0   @"version0"
-#define kVersion1   @"version1"
-#define kVersion2   @"version2"
-#define kVersion3   @"version3"
+#define kEmail         @"emailAddress"
+#define kTester        @"testerName"
+#define kVersion0      @"version0"
+#define kVersion1      @"version1"
+#define kVersion2      @"version2"
+#define kVersion3      @"version3"
 #define kEnergyButton  @"eresults"
 #define kAnim          @"kanim"
 
@@ -32,7 +34,7 @@
 
 @interface ViewController ()
 {
-
+//
 }
 @end
 
@@ -84,8 +86,8 @@
     //version, set anyway *****************************************
     //*************************************************************
     
-    version0 =  @"Version 2.3.4 - 7.12.15";     // version   *** keep short
-    version1 =  @"MMU (C) 2015";                // copyright *** limited line space
+    version0 =  @"Version 2.3.8 - 17.10.17";     // version   *** keep short
+    version1 =  @"MMU (C) 2017";                // copyright *** limited line space
     version2 =  @"j.a.howell@mmu.ac.uk";        // author    *** to display on device
     version3 =  @"http://www.ess.mmu.ac.uk";    // web site  *** settings screen
     //*************************************************************

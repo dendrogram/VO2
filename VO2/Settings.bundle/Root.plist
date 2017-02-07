@@ -138,7 +138,7 @@
 			<key>Key</key>
 			<string>version0</string>
 			<key>DefaultValue</key>
-			<string>2.3.8</string>
+			<string>2.3.9</string>
 		</dict>
 		<dict>
 			<key>Type</key>

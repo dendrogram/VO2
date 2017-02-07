@@ -137,7 +137,7 @@ pcho;
         subjectName        = @"Sub";
         oldSubjectName     = @"Sub";
         resultStrings      = @"";
-        versionNumber      = @"2.3.8 - 17.1.17";
+        versionNumber      = @"2.3.9 - 7.2.17";
         cardReactionTimeResult = [[NSMutableArray alloc]initWithObjects:@"", nil]; //empty array
         counter            = 0;
         cho291             = 2.91;

@@ -100,7 +100,7 @@
      BOOL ok;
      ok = [textToWrite writeToFile:filepath atomically:YES encoding:NSASCIIStringEncoding error:&err];
      if (!ok) {
-         (statusMessageLab.text=filepath, [err localizedFailureReason]);
+         ((void)(statusMessageLab.text=filepath), [err localizedFailureReason]);
          //NSLog(@"Error writing file at %@\n%@", filepath, [err localizedFailureReason]);
      }
 }
